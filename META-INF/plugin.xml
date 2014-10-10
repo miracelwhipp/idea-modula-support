@@ -1,0 +1,71 @@
+<idea-plugin version="2">
+    <id>org.modula.intellij.plugin</id>
+    <name>intellij modula plugin</name>
+    <version>1.0</version>
+    <vendor email="miracelwhipp@gmx.de" url="http://www.yourcompany.com">free</vendor>
+
+    <description><![CDATA[
+      A plugin bringing the modula language to intellij.
+      ]]></description>
+
+    <change-notes><![CDATA[
+      First try.
+      ]]>
+    </change-notes>
+
+    <!-- please see http://confluence.jetbrains.net/display/IDEADEV/Build+Number+Ranges for description -->
+    <idea-version since-build="107.105"/>
+
+    <!-- please see http://confluence.jetbrains.net/display/IDEADEV/Plugin+Compatibility+with+IntelliJ+Platform+Products
+         on how to target different products -->
+    <!-- uncomment to enable plugin in all products
+    <depends>com.intellij.modules.lang</depends>
+    -->
+
+    <application-components>
+        <!-- Add your application components here -->
+    </application-components>
+
+    <project-components>
+        <!-- Add your project components here -->
+    </project-components>
+
+    <actions>
+        <!-- Add your actions here -->
+    </actions>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <fileTypeFactory implementation="org.modula.files.ModulaFileTypeFactory"/>
+        <lang.parserDefinition language="modula-def"
+                               implementationClass="org.modula.parsing.DefinitionParserDefinition"/>
+        <lang.parserDefinition language="modula-compile-time-condition"
+                               implementationClass="org.modula.parsing.CompileTimeParserDefinition"/>
+        <lang.parserDefinition language="modula-p1-compile-time-condition"
+                               implementationClass="org.modula.parsing.P1CompileTimeParserDefinition"/>
+        <lang.syntaxHighlighterFactory key="modula-def"
+                                       implementationClass="org.modula.helpers.highlight.ModulaSyntaxHighlighterFactory"/>
+
+        <annotator language="modula-def" implementationClass="org.modula.helpers.annotators.WrongEndNameAnnotator"/>
+        <annotator language="modula-def" implementationClass="org.modula.helpers.annotators.UnknownModuleAnnotator"/>
+        <annotator language="modula-def" implementationClass="org.modula.helpers.annotators.UnknownSymbolAnnotator"/>
+        <annotator language="modula-def" implementationClass="org.modula.helpers.annotators.UnknownDesignatorAnnotator"/>
+
+        <lang.commenter language="modula-def" implementationClass="org.modula.helpers.ModulaCommenter"/>
+
+        <stubIndex implementation="org.modula.helpers.index.keys.ModuleIndex"/>
+        <stubIndex implementation="org.modula.helpers.index.keys.ModuleDefinitionFileIndex"/>
+        <stubIndex implementation="org.modula.helpers.index.keys.TypeByDefinitionFile"/>
+        <stubIndex implementation="org.modula.helpers.index.keys.TypeByModule"/>
+        <stubIndex implementation="org.modula.helpers.index.keys.ConstantByDefinitionFile"/>
+        <stubIndex implementation="org.modula.helpers.index.keys.ConstantByModule"/>
+        <stubIndex implementation="org.modula.helpers.index.keys.VariableByDefinitionFile"/>
+        <stubIndex implementation="org.modula.helpers.index.keys.VariableByModule"/>
+        <stubIndex implementation="org.modula.helpers.index.keys.ProcedureByDefinitionFile"/>
+        <stubIndex implementation="org.modula.helpers.index.keys.ProcedureByModule"/>
+        <stubIndex implementation="org.modula.helpers.index.keys.SymbolByModule"/>
+        <stubIndex implementation="org.modula.helpers.index.keys.SymbolIndex"/>
+
+        <completion.contributor language="modula-def" implementationClass="org.modula.helpers.completion.ModuleNameCompletionContributor"/>
+        <completion.contributor language="modula-def" implementationClass="org.modula.helpers.completion.SymbolImportCompletionContributor"/>
+    </extensions>
+</idea-plugin>

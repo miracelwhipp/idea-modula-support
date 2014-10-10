@@ -1,0 +1,28 @@
+
+
+{
+  parserClass="org.modula.parsing.compile.time.ConditionParser"
+
+  extends="com.intellij.extapi.psi.ASTWrapperPsiElement"
+
+  psiClassPrefix="CompileTimeCondition"
+  psiImplClassSuffix="Impl"
+  psiPackage="org.modula.parsing.compile.time.psi"
+  psiImplPackage="org.modula.parsing.compile.time.psi.impl"
+
+  elementTypeHolderClass="org.modula.parsing.compile.time.psi.CompileTimeConditionTypes"
+  elementTypeClass="org.modula.parsing.psi.CompileTimeElementType"
+  tokenTypeClass="org.modula.parsing.psi.CompileTimeTokenType"
+}
+
+condition ::= disjunction
+
+disjunction ::= conjunction OR disjunction | conjunction
+
+conjunction ::= negation AND conjunction | negation
+
+negation ::= NOT negation | term
+
+term ::= TAG | TRUE | FALSE | OPEN_BRACKET disjunction CLOSE_BRACKET
+
+
