@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="expression-console-sample">
     <CLASSES>
-      <root url="jar://$USER_HOME$/Desktop/expression-console-sample.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/expression-console-sample.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

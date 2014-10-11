@@ -35,7 +35,7 @@ public class UnknownSymbolAnnotator implements Annotator {
 
 		Project project = element.getProject();
 
-		if (!ModuleIndex.INSTANCE.getAllKeys(project).contains(moduleName)) {
+		if (!ModuleIndex.INSTANCE.getAllKeys(project).contains(moduleName) && !ImplicitEntities.isImplicitModule(moduleName)) {
 			holder.createErrorAnnotation(importClause.getModuleName(), "module not found : " + moduleName).setHighlightType(ProblemHighlightType.LIKE_UNKNOWN_SYMBOL);
 			return;
 		}
@@ -55,6 +55,10 @@ public class UnknownSymbolAnnotator implements Annotator {
 			String symbolName = symbol.getText();
 
 			if (symbolsDefined.contains(symbolName)) {
+				continue;
+			}
+
+			if (ImplicitEntities.isImplicitSymbol(moduleName, symbolName)) {
 				continue;
 			}
 

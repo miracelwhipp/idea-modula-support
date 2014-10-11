@@ -8,6 +8,7 @@ import com.intellij.psi.PsiElement;
 import com.intellij.psi.search.GlobalSearchScope;
 import org.jetbrains.annotations.NotNull;
 import org.modula.helpers.fixes.ImportUnknownDesignatorFix;
+import org.modula.helpers.index.keys.ImplicitEntities;
 import org.modula.helpers.index.keys.ModuleIndex;
 import org.modula.helpers.index.keys.SymbolIndex;
 import org.modula.helpers.index.stubs.SymbolStubPsiElement;
@@ -44,6 +45,10 @@ public class UnknownDesignatorAnnotator implements Annotator {
 		String symbolName = definitionSymbolName.getText();
 
 		if (imported(symbolName, SymbolImportStore.getSymbolImportMap(element)) || imported(symbolName, ModuleImportStore.getModuleImportMap(element))) {
+			return;
+		}
+
+		if (ImplicitEntities.isImplicitImport(symbolName)) {
 			return;
 		}
 

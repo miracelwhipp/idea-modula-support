@@ -1,176 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" name="Default" comment="" />
+    <list default="true" id="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/org/modula/helpers/index/keys/ImplicitEntities.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test-src/org/modula/parsing/CommentaryDenesterTest.java" afterPath="$PROJECT_DIR$/test-src/org/modula/parsing/CommentaryDenesterTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/modula/parsing/grammar/CompileTimeConditionLexer.java" afterPath="$PROJECT_DIR$/src/org/modula/parsing/grammar/CompileTimeConditionLexer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/modula/parsing/psi/ImportMap.java" afterPath="$PROJECT_DIR$/src/org/modula/parsing/psi/ImportMap.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/modula/parsing/utility/ModulaPsiTraversingUtility.java" afterPath="$PROJECT_DIR$/src/org/modula/parsing/utility/ModulaPsiTraversingUtility.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/modula/parsing/psi/ModuleImportStore.java" afterPath="$PROJECT_DIR$/src/org/modula/parsing/psi/ModuleImportStore.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test-src/org/modula/parsing/SerializeBooleanStackTest.java" afterPath="$PROJECT_DIR$/test-src/org/modula/parsing/SerializeBooleanStackTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/modula/parsing/psi/SymbolImportStore.java" afterPath="$PROJECT_DIR$/src/org/modula/parsing/psi/SymbolImportStore.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/modula/helpers/annotators/UnknownDesignatorAnnotator.java" afterPath="$PROJECT_DIR$/src/org/modula/helpers/annotators/UnknownDesignatorAnnotator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/modula/helpers/annotators/UnknownModuleAnnotator.java" afterPath="$PROJECT_DIR$/src/org/modula/helpers/annotators/UnknownModuleAnnotator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/modula/helpers/annotators/UnknownSymbolAnnotator.java" afterPath="$PROJECT_DIR$/src/org/modula/helpers/annotators/UnknownSymbolAnnotator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/expression_console_sample.xml" afterPath="$PROJECT_DIR$/.idea/libraries/expression_console_sample.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/org_testng_testng_6_7.xml" afterPath="$PROJECT_DIR$/.idea/libraries/org_testng_testng_6_7.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/META-INF/plugin.xml" afterPath="$PROJECT_DIR$/META-INF/plugin.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="idea-modula-support.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Modula.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1371762651875" ignored="false" />
-    <file path="/Icons.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1368863030660" ignored="false" />
-    <file path="$PROJECT_DIR$/src/org/modula/files.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1368863084263" ignored="false" />
-    <file path="/ModuleDefinitionType.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1368863329941" ignored="false" />
-    <file path="/ModuleImplementationType.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1368863444950" ignored="false" />
-    <file path="/ModulaFileTypeFactory.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1386083185371" ignored="false" />
-    <file path="/plugin.xml" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1389111701633" ignored="false" />
-    <file path="/ModulaTokenType.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1368864342360" ignored="false" />
-    <file path="/ModulaElementType.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1368864432809" ignored="false" />
-    <file path="$PROJECT_DIR$/src/org/modula/parsing/grammar/Def/bnf.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1368864533674" ignored="false" />
-    <file path="/Def.bnf" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1389109595966" ignored="false" />
-    <file path="/Def.flex" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387191272184" ignored="false" />
-    <file path="/DefinitionFile.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1368871218758" ignored="false" />
-    <file path="/fragment.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1390668227343" ignored="false" />
-    <file path="/DefinitionParserDefinition.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387125427557" ignored="false" />
-    <file path="/ModulaSyntaxHighlighter.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1368888082015" ignored="false" />
-    <file path="/ModuleDefinitionSyntaxHighlighter.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1386893335858" ignored="false" />
-    <file path="/ModulaSyntaxHighlighterFactory.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1368888295714" ignored="false" />
-    <file path="/PreProcessingLexer.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1369071794576" ignored="false" />
-    <file path="/PreProcessor.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1369052439837" ignored="false" />
-    <file path="/CommentaryDenester.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1369080584523" ignored="false" />
-    <file path="/MatchIterable.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1369069098781" ignored="false" />
-    <file path="/Dummy.txt" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1413024125929" ignored="false" />
-    <file path="/CommentaryDenesterTest.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1369071339920" ignored="false" />
-    <file path="/NestedCommentaryAwareLexer.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1370641627141" ignored="false" />
-    <file path="/NestedCommentaryAwareLexerAdapter.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1370642042276" ignored="false" />
-    <file path="$PROJECT_DIR$/gen/org/modula/parsing/psi/impl/DefinitionCompileTimeTagImpl.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1370108546518" ignored="false" />
-    <file path="$PROJECT_DIR$/gen/org/modula/parsing/psi/impl/DefinitionDefinitionsImpl.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1370110193007" ignored="false" />
-    <file path="$PROJECT_DIR$/gen/org/modula/parsing/psi/impl/DefinitionCompileTimeNegationImpl.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1370108546518" ignored="false" />
-    <file path="$PROJECT_DIR$/gen/org/modula/parsing/psi/impl/DefinitionConditionalCompilationElseImpl.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1370108546518" ignored="false" />
-    <file path="$PROJECT_DIR$/gen/org/modula/parsing/psi/impl/DefinitionConditionalCompilationElsifImpl.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1370108546518" ignored="false" />
-    <file path="$PROJECT_DIR$/gen/org/modula/parsing/psi/impl/DefinitionCompileTimeConditionImpl.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1370108546518" ignored="false" />
-    <file path="$PROJECT_DIR$/gen/org/modula/parsing/psi/impl/DefinitionConditionalCompilationImpl.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1370108546518" ignored="false" />
-    <file path="$PROJECT_DIR$/gen/org/modula/parsing/psi/impl/DefinitionImportsImpl.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1370110193007" ignored="false" />
-    <file path="$PROJECT_DIR$/gen/org/modula/parsing/psi/impl/DefinitionCompileTimeConjunctionImpl.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1370108546518" ignored="false" />
-    <file path="/WrongEndNameAnnotator.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387263623535" ignored="false" />
-    <file path="/ModulaCommenter.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1370197051424" ignored="false" />
-    <file path="/ChangeFooterNameFix.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1389105229481" ignored="false" />
-    <file path="/AstTraversingUtility.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1389105100910" ignored="false" />
-    <file path="/ChangeModuleNameFix.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1370204794734" ignored="false" />
-    <file path="/ModuleDefinitionLexer.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1370805258022" ignored="false" />
-    <file path="/CompileTimeConditionUtility.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1385904445458" ignored="false" />
-    <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/resources/relaxng.rng" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1371233523111" ignored="false" />
-    <file path="/CompileTime.bnf" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1371761159412" ignored="false" />
-    <file path="/CompileTimeTokenType.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1371911913547" ignored="false" />
-    <file path="/CompileTimeElementType.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1371911878163" ignored="false" />
-    <file path="/CompileTime.flex" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387191243371" ignored="false" />
-    <file path="/CompileTimeConditionAwareLexer.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1386688370409" ignored="false" />
-    <file path="/ModulaSpecialtyAwareLexer.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1371760075817" ignored="false" />
-    <file path="/PreprocessingInMemoryFileType.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1371910818466" ignored="false" />
-    <file path="/CompileTimeParserDefinition.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1380917861748" ignored="false" />
-    <file path="/CompileTimeFile.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1371762979940" ignored="false" />
-    <file path="/CompileTimeConditionLanguage.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1371762739660" ignored="false" />
-    <file path="/PreprocessingInMemoryFile.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1371910946935" ignored="false" />
-    <file path="/ModulaParseException.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1371913565478" ignored="false" />
-    <file path="/CompileTimeConditionParsingTest.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1371940850393" ignored="false" />
-    <file path="/TutorialParsingTest.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1371940239335" ignored="false" />
-    <file path="/TestTest.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1380913809349" ignored="false" />
-    <file path="/test.txt" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1380911981040" ignored="false" />
-    <file path="$USER_HOME$/IdeaProjects/untitled2/src/huha.def" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1380915611991" ignored="false" />
-    <file path="/ParsingTest.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1380916287892" ignored="false" />
-    <file path="/DefitionParsingTest.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1380919006436" ignored="false" />
-    <file path="/NestedCommentaryTest.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1380921932402" ignored="false" />
-    <file path="/P1CompileTime.bnf" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1380964140933" ignored="false" />
-    <file path="/P1PreprocessingInMemoryFile.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1380965100871" ignored="false" />
-    <file path="/P1CompileTimeTokenType.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1380965150240" ignored="false" />
-    <file path="/P1CompileTimeElementType.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1380965177121" ignored="false" />
-    <file path="$PROJECT_DIR$/../cryptotest/pom.xml" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1382288695261" ignored="false" />
-    <file path="/pom.xml" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1382288683135" ignored="false" />
-    <file path="$PROJECT_DIR$/../cryptotest/src/main/java/org/test/CryptSomethinh.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1382288801333" ignored="false" />
-    <file path="/CryptSomethinh.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1382288819399" ignored="false" />
-    <file path="$PROJECT_DIR$/../cryptotest/src/main/java/org/test/CryptSomething.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1382288827609" ignored="false" />
-    <file path="/BooleanStack.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1386173709989" ignored="false" />
-    <file path="/BooleanStackSerializableAsByte.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1386337568269" ignored="false" />
-    <file path="/SerializeBooleanStackTest.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1386337729381" ignored="false" />
-    <file path="/BooleanStackSerializableAsShort.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1386344103417" ignored="false" />
-    <file path="/ModulaSpecialtyAwareLexerAdapter.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1386688812806" ignored="false" />
-    <file path="/DefinitionLexerBase.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387017631666" ignored="false" />
-    <file path="$PROJECT_DIR$/gen/org/modula/parsing/psi/ModulaTypes.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387014669318" ignored="false" />
-    <file path="$PROJECT_DIR$/gen/org/modula/parsing/psi/DefinitionRelationalOperator.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387014669317" ignored="false" />
-    <file path="$PROJECT_DIR$/gen/org/modula/parsing/psi/DefinitionNegationOperator.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387014669318" ignored="false" />
-    <file path="$PROJECT_DIR$/gen/org/modula/parsing/psi/DefinitionProductOperator.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387014669318" ignored="false" />
-    <file path="$PROJECT_DIR$/gen/org/modula/parsing/psi/DefinitionSumOperator.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387014669318" ignored="false" />
-    <file path="$PROJECT_DIR$/gen/org/modula/parsing/psi/impl/DefinitionProductOperatorImpl.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387014669317" ignored="false" />
-    <file path="$PROJECT_DIR$/gen/org/modula/parsing/psi/impl/DefinitionRelationalOperatorImpl.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387014669318" ignored="false" />
-    <file path="$PROJECT_DIR$/gen/org/modula/parsing/psi/impl/DefinitionNegationOperatorImpl.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387014669318" ignored="false" />
-    <file path="$PROJECT_DIR$/gen/org/modula/parsing/psi/impl/DefinitionSumImpl.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1386939810020" ignored="false" />
-    <file path="/UnkownModuleAnnotator.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387027867636" ignored="false" />
-    <file path="/UnknownModuleAnnotator.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387265155196" ignored="false" />
-    <file path="/ModuleStub.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387313166030" ignored="false" />
-    <file path="/ModuleStubImpl.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387195224055" ignored="false" />
-    <file path="/ModuleStubBasedPsiElement.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387111925568" ignored="false" />
-    <file path="/ModuleStubBasedPsiElementImpl.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387112124922" ignored="false" />
-    <file path="/ModuleStubElementType.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387312097208" ignored="false" />
-    <file path="/IndexKeys.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387121105315" ignored="false" />
-    <file path="/ModulaStubElementTypeHolder.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387183097842" ignored="false" />
-    <file path="/ModuleIndex.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387186599982" ignored="false" />
-    <file path="/ModuleNameCompletionContributor.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387148826421" ignored="false" />
-    <file path="/TypeStub.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387313011666" ignored="false" />
-    <file path="/NamedStub.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387311920971" ignored="false" />
-    <file path="/AbstractNamedStub.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387311930122" ignored="false" />
-    <file path="/TypeStubImpl.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387283533003" ignored="false" />
-    <file path="/TypeStubElementType.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387402671486" ignored="false" />
-    <file path="/ModuleDefinitionFileIndex.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387192526736" ignored="false" />
-    <file path="/TypeByDefinitionFile.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387187776314" ignored="false" />
-    <file path="/SymbolImportCompletionContributor.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387315383335" ignored="false" />
-    <file path="/TypeByModule.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387189396926" ignored="false" />
-    <file path="/FileContainableStub.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387194207172" ignored="false" />
-    <file path="/SerializableStub.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387195000671" ignored="false" />
-    <file path="/P1CompileTime.flex" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387195357551" ignored="false" />
-    <file path="/UnkownSymbolAnnotator.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387262076946" ignored="false" />
-    <file path="/UnknownSymbolAnnotator.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387403137311" ignored="false" />
-    <file path="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionNewModuleImportClause.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387262207367" ignored="false" />
-    <file path="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionNewSymbolImportClause.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387262207367" ignored="false" />
-    <file path="/SymbolStub.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387413190995" ignored="false" />
-    <file path="/AbstractSymbolStub.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387283634366" ignored="false" />
-    <file path="/ConstantStub.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387313112509" ignored="false" />
-    <file path="/ConstantStubImpl.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387284363258" ignored="false" />
-    <file path="/ConstantStubElementType.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1389111072573" ignored="false" />
-    <file path="/ModulaPsiTraversingUtility.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1389104972841" ignored="false" />
-    <file path="/ConstantByDefinitionFile.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387289996637" ignored="false" />
-    <file path="/ConstantByModule.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387290069770" ignored="false" />
-    <file path="/VariableStub.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387313065515" ignored="false" />
-    <file path="/VariableStubImpl.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387297102633" ignored="false" />
-    <file path="/VariableStubElementType.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387314049674" ignored="false" />
-    <file path="/AbstractDefinitionStubElementType.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387295921038" ignored="false" />
-    <file path="/VariableByModule.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387296650176" ignored="false" />
-    <file path="/VariableByDefinitionFile.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387296718319" ignored="false" />
-    <file path="/TypeStubBasedPsiElement.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387402436711" ignored="false" />
-    <file path="/Type.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387312974337" ignored="false" />
-    <file path="/Variable.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387313029916" ignored="false" />
-    <file path="/Constant.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387314557222" ignored="false" />
-    <file path="/Module.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387313137450" ignored="false" />
-    <file path="/ConstantStubBasedPsiElement.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387402474186" ignored="false" />
-    <file path="/VariableStubBasedPsiElement.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387402464833" ignored="false" />
-    <file path="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionFunctionNameImpl.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387410739713" ignored="false" />
-    <file path="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionFunctionName.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387410739711" ignored="false" />
-    <file path="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionSetName.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387410739711" ignored="false" />
-    <file path="/Function.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387401551028" ignored="false" />
-    <file path="/ProcedureStub.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387401645697" ignored="false" />
-    <file path="/ProcedureStubImpl.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387401730653" ignored="false" />
-    <file path="/ProcedureStubBasedPsiElement.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387402534455" ignored="false" />
-    <file path="/SymbolStubBasedPsiElement.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387402274612" ignored="false" />
-    <file path="/ProcedureStubElementType.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387403355500" ignored="false" />
-    <file path="/ProcedureByDefinitionFile.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387403014716" ignored="false" />
-    <file path="/ProcedureByModule.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387403087224" ignored="false" />
-    <file path="/ModuleImportMemorizer.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387406522542" ignored="false" />
-    <file path="/ModuleImportStore.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387451827501" ignored="false" />
-    <file path="/ImportMap.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387454976921" ignored="false" />
-    <file path="/SymbolImportStore.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387411058184" ignored="false" />
-    <file path="/Designator.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387410423377" ignored="false" />
-    <file path="/UnknownDesignatorAnnotator.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1389116621063" ignored="false" />
-    <file path="/SymbolByModule.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387412956489" ignored="false" />
-    <file path="/SymbolStubPsiElement.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387413336778" ignored="false" />
-    <file path="/PsiElementInModulaFileChecker.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387455071148" ignored="false" />
-    <file path="/PsiElementInModulaFileRepairer.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1387454768841" ignored="false" />
-    <file path="/ImportModuleFix.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1389114704785" ignored="false" />
-    <file path="/DefinitionElementFactory.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1389116492048" ignored="false" />
-    <file path="/ImportSymbolFix.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1389118105015" ignored="false" />
-    <file path="/SymbolIndex.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1389110808772" ignored="false" />
-    <file path="/ImportUnknownDesignatorFix.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1389116631020" ignored="false" />
-    <file path="/a.dummy" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1390667953526" ignored="false" />
-    <file path="G:/d12/api/src/main/java/org/d12/orp/view/JsGeneratingTag.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1390668087757" ignored="false" />
-    <file path="/JsGeneratingTag.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1390668064652" ignored="false" />
-    <file path="G:/d12/api/derby.log" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1390668271266" ignored="false" />
-    <file path="$PROJECT_DIR$/../git-test/src/main/java/org/modula2/test/GenericMain.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1412977591311" ignored="false" />
-    <file path="/GenericMain.java" changelist="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" time="1412976945375" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,9 +30,6 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
-  <component name="CompilerWorkspaceConfiguration">
-    <option name="USE_COMPILE_SERVER" value="false" />
-  </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
@@ -188,44 +37,7 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
-    <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
-      <breakpoint>
-        <option name="NOTIFY_CAUGHT" value="true" />
-        <option name="NOTIFY_UNCAUGHT" value="true" />
-        <option name="ENABLED" value="false" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint>
-        <option name="NOTIFY_CAUGHT" value="true" />
-        <option name="NOTIFY_UNCAUGHT" value="true" />
-        <option name="ENABLED" value="false" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-    </breakpoint_any>
-    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
+    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" converted="true">
       <breakpoint url="file://G:/idea-src/idea/platform/core-impl/src/com/intellij/extapi/psi/StubBasedPsiElementBase.java" line="180" class="com.intellij.extapi.psi.StubBasedPsiElementBase" package="com.intellij.extapi.psi">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
@@ -272,8 +84,44 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </line_breakpoints>
-    <breakpoint_rules />
-    <ui_properties />
+    <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true" converted="true">
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </breakpoint_any>
+    <breakpoint_rules converted="true" />
+    <ui_properties converted="true" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
@@ -281,92 +129,62 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="UnknownDesignatorAnnotator.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/annotators/UnknownDesignatorAnnotator.java">
+      <file leaf-file-name="Def.bnf" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/modula/parsing/grammar/Def.bnf">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="55" column="0" selection-start="2050" selection-end="2050" vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="-6.214286" vertical-offset="3192" max-vertical-offset="4335">
+              <caret line="211" column="23" selection-start-line="211" selection-start-column="23" selection-end-line="211" selection-end-column="23" />
+              <folding>
+                <marker date="1413070358648" expanded="true" signature="8329:8530" placeholder="{..}" />
+                <marker date="1413070358648" expanded="true" signature="10985:11116" placeholder="{..}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Def.flex" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/org/modula/parsing/grammar/Def.flex">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.53217393" vertical-offset="2312" max-vertical-offset="4828">
+              <caret line="154" column="43" selection-start-line="154" selection-start-column="43" selection-end-line="154" selection-end-column="43" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DefinitionElementFactory.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/modula/parsing/utility/DefinitionElementFactory.java">
+      <file leaf-file-name="ModuleDefinitionFileIndex.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/index/keys/ModuleDefinitionFileIndex.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="0" selection-start="1934" selection-end="1934" vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="731">
+              <caret line="8" column="40" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ImportUnknownDesignatorFix.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/fixes/ImportUnknownDesignatorFix.java">
+      <file leaf-file-name="CommentaryDenesterTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test-src/org/modula/parsing/CommentaryDenesterTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="75" column="0" selection-start="2379" selection-end="2379" vertical-scroll-proportion="0.0">
-              <folding />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1088">
+              <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+              <folding>
+                <element signature="e#2219#2220#0" expanded="true" />
+                <element signature="e#2319#2320#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PsiElement.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://G:/idea-src/idea/platform/core-api/src/com/intellij/psi/PsiElement.java">
+      <file leaf-file-name="SerializeBooleanStackTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test-src/org/modula/parsing/SerializeBooleanStackTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="298" column="13" selection-start="9805" selection-end="9805" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SymbolIndex.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/index/keys/SymbolIndex.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="17" selection-start="326" selection-end="326" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ConstantStubElementType.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/index/stub/element/types/ConstantStubElementType.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="55" column="26" selection-start="1955" selection-end="1955" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TypeStubElementType.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/index/stub/element/types/TypeStubElementType.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="101" selection-start="932" selection-end="932" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DefinitionTypeDefinition.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionTypeDefinition.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="19" selection-start="626" selection-end="626" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ModulaCommenter.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/ModulaCommenter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="20" selection-start="429" selection-end="429" vertical-scroll-proportion="0.53125">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DefinitionTypeAliasDefinition.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionTypeAliasDefinition.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="17" selection-start="219" selection-end="219" vertical-scroll-proportion="0.0">
-              <folding />
+            <state vertical-scroll-proportion="0.0" vertical-offset="791" max-vertical-offset="1853">
+              <caret line="96" column="28" selection-start-line="96" selection-start-column="28" selection-end-line="96" selection-end-column="28" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#635#645#0" expanded="true" />
+                <element signature="e#918#928#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -389,22 +207,37 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/org/modula/parsing/utility/ModulaPsiTraversingUtility.java" />
         <option value="$PROJECT_DIR$/src/org/modula/parsing/utility/AstTraversingUtility.java" />
         <option value="$PROJECT_DIR$/src/org/modula/helpers/fixes/ChangeFooterNameFix.java" />
-        <option value="$PROJECT_DIR$/src/org/modula/parsing/grammar/Def.bnf" />
         <option value="$PROJECT_DIR$/src/org/modula/helpers/index/keys/SymbolIndex.java" />
         <option value="$PROJECT_DIR$/src/org/modula/helpers/index/keys/SymbolByModule.java" />
         <option value="$PROJECT_DIR$/src/org/modula/helpers/index/stub/element/types/ConstantStubElementType.java" />
         <option value="$PROJECT_DIR$/src/org/modula/helpers/index/stub/element/types/ProcedureStubElementType.java" />
         <option value="$PROJECT_DIR$/src/org/modula/helpers/index/stub/element/types/TypeStubElementType.java" />
         <option value="$PROJECT_DIR$/src/org/modula/helpers/index/stub/element/types/VariableStubElementType.java" />
-        <option value="$PROJECT_DIR$/META-INF/plugin.xml" />
         <option value="$PROJECT_DIR$/src/org/modula/helpers/fixes/ImportModuleFix.java" />
         <option value="$PROJECT_DIR$/src/org/modula/parsing/utility/DefinitionElementFactory.java" />
         <option value="$PROJECT_DIR$/src/org/modula/helpers/fixes/ImportSymbolFix.java" />
-        <option value="$PROJECT_DIR$/src/org/modula/helpers/annotators/UnknownDesignatorAnnotator.java" />
         <option value="$PROJECT_DIR$/src/org/modula/helpers/fixes/ImportUnknownDesignatorFix.java" />
+        <option value="$PROJECT_DIR$/test-src/org/modula/parsing/DefitionParsingTest.java" />
+        <option value="$PROJECT_DIR$/src/org/modula/parsing/psi/SymbolImportStore.java" />
+        <option value="$PROJECT_DIR$/src/org/modula/parsing/psi/ModuleImportStore.java" />
+        <option value="$PROJECT_DIR$/META-INF/plugin.xml" />
+        <option value="$PROJECT_DIR$/src/org/modula/parsing/utility/ModulaPsiTraversingUtility.java" />
+        <option value="$PROJECT_DIR$/src/org/modula/parsing/psi/ImportMap.java" />
+        <option value="$PROJECT_DIR$/src/org/modula/helpers/index/keys/PreFilledIndex.java" />
+        <option value="$PROJECT_DIR$/src/org/modula/helpers/index/stub/element/types/ModuleStubElementType.java" />
+        <option value="$PROJECT_DIR$/src/org/modula/helpers/index/keys/ConstantByModule.java" />
+        <option value="$PROJECT_DIR$/src/org/modula/helpers/index/keys/ModuleIndex.java" />
+        <option value="$PROJECT_DIR$/src/org/modula/helpers/index/keys/ImplicitModules.java" />
+        <option value="$PROJECT_DIR$/src/org/modula/helpers/annotators/UnknownModuleAnnotator.java" />
+        <option value="$PROJECT_DIR$/src/org/modula/helpers/annotators/UnknownDesignatorAnnotator.java" />
+        <option value="$PROJECT_DIR$/src/org/modula/helpers/index/keys/ImplicitEntities.java" />
+        <option value="$PROJECT_DIR$/src/org/modula/helpers/annotators/UnknownSymbolAnnotator.java" />
+        <option value="$PROJECT_DIR$/test-src/org/modula/parsing/CommentaryDenesterTest.java" />
+        <option value="$PROJECT_DIR$/test-src/org/modula/parsing/SerializeBooleanStackTest.java" />
+        <option value="$PROJECT_DIR$/src/org/modula/parsing/grammar/Def.bnf" />
+        <option value="$PROJECT_DIR$/src/org/modula/parsing/grammar/Def.flex" />
       </list>
     </option>
   </component>
@@ -414,8 +247,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1696" />
-    <option name="height" value="1036" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -441,14 +274,14 @@
     <OptionsSetting value="true" id="Update" />
     <OptionsSetting value="true" id="Status" />
     <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="2" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectReloadState">
     <option name="STATE" value="0" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+    <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -460,6 +293,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -475,6 +309,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="idea-modula-support" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="idea-modula-support" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="idea-modula-support" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test-src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="parsing" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -566,32 +418,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="psi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="idea-modula-support" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="idea-modula-support" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modula" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="parsing" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="grammar" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -641,78 +467,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="index" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="stubs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="idea-modula-support" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="idea-modula-support" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modula" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="helpers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="index" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="stub" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="types" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="idea-modula-support" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="idea-modula-support" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modula" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="helpers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="index" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="stub" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="delegators" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -768,32 +522,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="fixes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="idea-modula-support" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="idea-modula-support" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modula" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="helpers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="annotators" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -816,7 +544,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="files" />
+              <option name="myItemId" value="gui" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -852,35 +580,85 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="idea-modula-support" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="idea-modula-support" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gen" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="parsing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="time" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="idea-modula-support" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="idea-modula-support" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gen" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="parsing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="time" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="psi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="GoToFile.includeJavaFiles" value="false" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="OverrideImplement.combined" value="true" />
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="Repository.Attach.JavaDocs" value="false" />
-    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
+    <property name="Repository.Attach.JavaDocs" value="true" />
+    <property name="options.lastSelected" value="preferences.sourceCode.Java" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../git-test/pom.xml" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/expression-console-sample.jar!/" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="FullScreen" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
-    <property name="Repository.Attach.Sources" value="false" />
+    <property name="Repository.Attach.Sources" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="dynamic.classpath" value="false" />
-    <property name="Downloaded.Files.Path" value="G:\projects\idea-modula-support\lib" />
+    <property name="Downloaded.Files.Path.Enabled" value="true" />
+    <property name="LayoutCode.rearrangeEntriesJava" value="false" />
+    <property name="extract.method.default.visibility" value="private" />
+    <property name="OverrideImplement.overriding.sorted" value="false" />
   </component>
   <component name="PsiViewer.ProjectComponent">
     <option name="HIGHLIGHT" value="false" />
@@ -1074,25 +852,33 @@
       <option name="PROGRAM_PARAMETERS" />
       <method />
     </configuration>
+    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
+      <module name="" />
+      <option name="TESTING_TYPE" value="0" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
+      <method />
+    </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
       <option name="SHMEM_ADDRESS" value="javadebug" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="5005" />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
@@ -1120,6 +906,19 @@
       <envs />
       <properties />
       <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -1154,6 +953,26 @@
       </option>
       <envs />
       <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
       <method />
     </configuration>
     <configuration default="false" name="TutorialParsingTest" type="JUnit" factoryName="JUnit">
@@ -1252,22 +1071,8 @@
     </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
-  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="all">
-    <option name="USER" value="" />
-    <option name="PASSWORD" value="" />
-    <option name="mySSHConnectionTimeout" value="30000" />
-    <option name="mySSHReadTimeout" value="30000" />
-    <option name="LAST_MERGED_REVISION" />
-    <option name="MERGE_DRY_RUN" value="false" />
-    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
-    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
-    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
-    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
-    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
-    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
-    <option name="FORCE_UPDATE" value="false" />
-    <option name="IGNORE_EXTERNALS" value="false" />
-    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+  <component name="SvnConfiguration" myUseAcceleration="nothing">
+    <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -1278,199 +1083,485 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1696" height="1036" extended-state="6" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <editor active="true" />
     <layout>
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.249694" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29738933" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3986637" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39954597" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3291714" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850778" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32986537" sideWeight="0.6708286" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25275397" sideWeight="0.6708286" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3291714" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22068231" sideWeight="0.6708286" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32850778" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="PsiViewer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32986537" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3280363" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.249694" sideWeight="0.7026107" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.249694" sideWeight="0.7026107" order="2" side_tool="false" content_ui="combo" />
     </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
-    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="true" />
-    <option name="CHECK_NEW_TODO" value="true" />
     <option name="myTodoPanelSettings">
-      <value>
-        <are-packages-shown value="false" />
-        <are-modules-shown value="false" />
-        <flatten-packages value="false" />
-        <is-autoscroll-to-source value="false" />
-      </value>
+      <TodoPanelSettings />
     </option>
-    <option name="PERFORM_UPDATE_IN_BACKGROUND" value="true" />
-    <option name="PERFORM_COMMIT_IN_BACKGROUND" value="true" />
-    <option name="PERFORM_EDIT_IN_BACKGROUND" value="true" />
-    <option name="PERFORM_CHECKOUT_IN_BACKGROUND" value="true" />
-    <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
-    <option name="PERFORM_ROLLBACK_IN_BACKGROUND" value="false" />
-    <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="false" />
-    <option name="CHANGED_ON_SERVER_INTERVAL" value="60" />
-    <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
-    <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
-    <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
-    <option name="SHORT_DIFF_HORIZONTALLY" value="true" />
-    <option name="SHORT_DIFF_EXTRA_LINES" value="2" />
-    <option name="SOFT_WRAPS_IN_SHORT_DIFF" value="true" />
-    <option name="INCLUDE_TEXT_INTO_PATCH" value="false" />
-    <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
-    <option name="SHOW_FILE_HISTORY_DETAILS" value="true" />
-    <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
-    <option name="SHOW_DIRTY_RECURSIVELY" value="false" />
-    <option name="LIMIT_HISTORY" value="true" />
-    <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
-    <option name="UPDATE_FILTER_SCOPE_NAME" />
-    <option name="USE_COMMIT_MESSAGE_MARGIN" value="false" />
-    <option name="COMMIT_MESSAGE_MARGIN_SIZE" value="72" />
-    <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
-    <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" />
-    <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
-    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
-    <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
-    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
-    <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
-    <option name="FILE_HISTORY_DIALOG_COMMENTS_SPLITTER_PROPORTION" value="0.8" />
-    <option name="FILE_HISTORY_DIALOG_SPLITTER_PROPORTION" value="0.5" />
-    <option name="ACTIVE_VCS_NAME" />
-    <option name="UPDATE_GROUP_BY_PACKAGES" value="false" />
-    <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
-    <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
-    <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
-    <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/org/modula/helpers/annotators/UnknownModuleAnnotator.java</url>
+          <line>57</line>
+          <properties />
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <condition expression="moduleName.equals(&quot;SYSTEM&quot;)&#13;&#13;JAVA" />
+          <url>file://$PROJECT_DIR$/src/org/modula/helpers/annotators/UnknownModuleAnnotator.java</url>
+          <line>47</line>
+          <properties />
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="15" />
+    </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/index/keys/ModuleIndex.java">
+    <entry file="file://$PROJECT_DIR$/src/org/modula/parsing/grammar/ModuleDefinitionLexer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="13" selection-start="341" selection-end="341" vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.25373134" vertical-offset="0" max-vertical-offset="31331">
+          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/index/keys/SymbolByModule.java">
+    <entry file="file://$PROJECT_DIR$/src/org/modula/files/ModuleDefinitionType.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="69" selection-start="457" selection-end="457" vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.0" vertical-offset="111" max-vertical-offset="663">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/META-INF/plugin.xml">
+    <entry file="file://$PROJECT_DIR$/src/org/modula/files/ModulaFileTypeFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="65" column="76" selection-start="3564" selection-end="3564" vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="459">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/ModulaTypes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="17" selection-start="757" selection-end="757" vertical-scroll-proportion="-5.5625" />
+    <entry file="file://$PROJECT_DIR$/src/org/modula/gui/def.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/modula/parsing/grammar/Def.flex">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="238" column="14" selection-start="12058" selection-end="12058" vertical-scroll-proportion="0.0" />
+    <entry file="file://$PROJECT_DIR$/src/org/modula/gui/mod.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/modula/parsing/utility/DefinitionElementFactory.java">
+    <entry file="file://$PROJECT_DIR$/src/org/modula/gui/Icons.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="0" selection-start="1934" selection-end="1934" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/annotators/UnknownDesignatorAnnotator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="0" selection-start="2050" selection-end="2050" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://G:/idea-src/idea/platform/core-api/src/com/intellij/psi/PsiElement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="298" column="13" selection-start="9805" selection-end="9805" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/fixes/ImportUnknownDesignatorFix.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="75" column="0" selection-start="2379" selection-end="2379" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/index/keys/SymbolIndex.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="17" selection-start="326" selection-end="326" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://G:/idea-src/idea/platform/core-api/src/com/intellij/psi/stubs/IndexSink.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="35" selection-start="800" selection-end="800" vertical-scroll-proportion="0.12200957" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/index/stub/element/types/ConstantStubElementType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="26" selection-start="1955" selection-end="1955" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/index/stub/element/types/TypeStubElementType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="101" selection-start="932" selection-end="932" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionTypeAliasDefinition.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="17" selection-start="219" selection-end="219" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionTypeDefinition.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="19" selection-start="626" selection-end="626" vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="408">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/ModulaCommenter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="20" selection-start="429" selection-end="429" vertical-scroll-proportion="0.53125">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="714">
+          <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/repos/git.jetbrains.org/idea/platform/core-impl/src/com/intellij/psi/stubs/ObjectStubTree.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="402" max-vertical-offset="2108">
+          <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/repos/git.jetbrains.org/idea/platform/lang-impl/src/com/intellij/psi/stubs/StubUpdatingIndex.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3738" max-vertical-offset="6256">
+          <caret line="302" column="0" selection-start-line="302" selection-start-column="0" selection-end-line="302" selection-end-column="0" />
+          <folding>
+            <element signature="e#13549#13578#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/repos/git.jetbrains.org/idea/platform/lang-impl/src/com/intellij/util/indexing/MapReduceIndex.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2939" max-vertical-offset="11152">
+          <caret line="227" column="0" selection-start-line="227" selection-start-column="0" selection-end-line="227" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/repos/git.jetbrains.org/idea/platform/core-api/src/com/intellij/openapi/progress/ProgressManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2839">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#9924#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/repos/git.jetbrains.org/idea/platform/core-api/src/com/intellij/util/indexing/ID.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1426" max-vertical-offset="2006">
+          <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/annotators/WrongEndNameAnnotator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="32" max-vertical-offset="969">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/index/keys/ProcedureByModule.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="391">
+          <caret line="14" column="53" selection-start-line="14" selection-start-column="53" selection-end-line="14" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/completion/SymbolImportCompletionContributor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="233" max-vertical-offset="1530">
+          <caret line="55" column="52" selection-start-line="55" selection-start-column="42" selection-end-line="55" selection-end-column="52" />
+          <folding>
+            <element signature="e#1602#2911#0" expanded="false" />
+            <element signature="e#2904#2905#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/modula/parsing/psi/PsiElementInModulaFileRepairer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="578">
+          <caret line="14" column="53" selection-start-line="14" selection-start-column="53" selection-end-line="14" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/repos/git.jetbrains.org/idea/platform/indexing-api/src/com/intellij/psi/stubs/StubIndexExtension.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="391">
+          <caret line="26" column="35" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#1154#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/modula/parsing/P1CompileTimeParserDefinition.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="457" max-vertical-offset="1037">
+          <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/META-INF/plugin.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="559" max-vertical-offset="1292">
+          <caret line="42" column="47" selection-start-line="42" selection-start-column="47" selection-end-line="42" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/modula/parsing/DefinitionParserDefinition.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="883" max-vertical-offset="1241">
+          <caret line="93" column="0" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
+          <folding>
+            <element signature="e#3011#3012#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/index/keys/SymbolIndex.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="527">
+          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/modula/parsing/utility/ModulaPsiTraversingUtility.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="837" max-vertical-offset="1972">
+          <caret line="60" column="50" selection-start-line="60" selection-start-column="25" selection-end-line="60" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/repos/git.jetbrains.org/idea/platform/core-api/src/com/intellij/psi/stubs/StubIndexKey.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
+          <caret line="30" column="78" selection-start-line="30" selection-start-column="78" selection-end-line="30" selection-end-column="78" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/modula/parsing/psi/ModuleImportStore.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="106" max-vertical-offset="901">
+          <caret line="31" column="18" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/repos/git.jetbrains.org/idea/platform/core-api/src/com/intellij/psi/stubs/IndexSink.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="238">
+          <caret line="25" column="35" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/index/keys/ProcedureByDefinitionFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
+          <caret line="19" column="67" selection-start-line="19" selection-start-column="67" selection-end-line="19" selection-end-column="67" />
+          <folding>
+            <element signature="e#859#860#0" expanded="false" />
+            <element signature="e#876#877#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/index/stub/element/types/ModuleStubElementType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="196" max-vertical-offset="748">
+          <caret line="50" column="29" selection-start-line="50" selection-start-column="29" selection-end-line="50" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/index/keys/ConstantByModule.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="493">
+          <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/index/stub/element/types/ConstantStubElementType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="298" max-vertical-offset="850">
+          <caret line="57" column="43" selection-start-line="57" selection-start-column="43" selection-end-line="57" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/modula/parsing/psi/SymbolImportStore.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="587" max-vertical-offset="1139">
+          <caret line="61" column="44" selection-start-line="61" selection-start-column="44" selection-end-line="61" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/modula/parsing/psi/ImportMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1737" max-vertical-offset="4573">
+          <caret line="117" column="36" selection-start-line="117" selection-start-column="36" selection-end-line="117" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#684#710#0" expanded="true" />
+            <element signature="e#1690#1698#0" expanded="true" />
+            <element signature="e#6188#6206#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/index/stub/element/types/ProcedureStubElementType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="247" max-vertical-offset="799">
+          <caret line="56" column="40" selection-start-line="56" selection-start-column="40" selection-end-line="56" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/index/keys/SymbolByModule.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
+          <caret line="12" column="68" selection-start-line="12" selection-start-column="68" selection-end-line="12" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/index/keys/ModuleIndex.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
+          <caret line="10" column="49" selection-start-line="10" selection-start-column="49" selection-end-line="10" selection-end-column="49" />
+          <folding>
+            <element signature="e#697#698#0" expanded="true" />
+            <element signature="e#714#715#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/repos/git.jetbrains.org/idea/platform/indexing-api/src/com/intellij/psi/stubs/StringStubIndexExtension.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
+          <caret line="26" column="88" selection-start-line="26" selection-start-column="88" selection-end-line="26" selection-end-column="88" />
+          <folding>
+            <element signature="e#0#1184#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#973#974#0" expanded="false" />
+            <element signature="e#991#992#0" expanded="false" />
+            <element signature="e#1055#1056#0" expanded="false" />
+            <element signature="e#1104#1105#0" expanded="false" />
+            <element signature="e#1159#1160#0" expanded="false" />
+            <element signature="e#1181#1182#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/repos/git.jetbrains.org/idea/platform/indexing-api/src/com/intellij/psi/stubs/AbstractStubIndex.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="459">
+          <caret line="28" column="98" selection-start-line="28" selection-start-column="80" selection-end-line="28" selection-end-column="98" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/index/keys/ImplicitEntities.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="294" max-vertical-offset="1122">
+          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding>
+            <element signature="e#1168#1169#0" expanded="true" />
+            <element signature="e#1218#1219#0" expanded="true" />
+            <element signature="e#1491#1492#0" expanded="true" />
+            <element signature="e#1542#1543#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/annotators/UnknownDesignatorAnnotator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="449" max-vertical-offset="1105">
+          <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/annotators/UnknownSymbolAnnotator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="1377">
+          <caret line="37" column="123" selection-start-line="37" selection-start-column="123" selection-end-line="37" selection-end-column="123" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/annotators/UnknownModuleAnnotator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="54" max-vertical-offset="901">
+          <caret line="57" column="22" selection-start-line="57" selection-start-column="22" selection-end-line="57" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/modula/parsing/grammar/CompileTimeConditionLexer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3783" max-vertical-offset="9639">
+          <caret line="268" column="9" selection-start-line="268" selection-start-column="9" selection-end-line="268" selection-end-column="9" />
+          <folding>
+            <element signature="e#8202#8203#0" expanded="true" />
+            <element signature="e#8230#8231#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/index/keys/ModuleDefinitionFileIndex.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="731">
+          <caret line="8" column="40" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test-src/org/modula/parsing/CommentaryDenesterTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1088">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+          <folding>
+            <element signature="e#2219#2220#0" expanded="true" />
+            <element signature="e#2319#2320#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test-src/org/modula/parsing/SerializeBooleanStackTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="791" max-vertical-offset="1853">
+          <caret line="96" column="28" selection-start-line="96" selection-start-column="28" selection-end-line="96" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#635#645#0" expanded="true" />
+            <element signature="e#918#928#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/modula/parsing/grammar/Def.bnf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.214286" vertical-offset="3192" max-vertical-offset="4335">
+          <caret line="211" column="23" selection-start-line="211" selection-start-column="23" selection-end-line="211" selection-end-column="23" />
+          <folding>
+            <marker date="1413070358648" expanded="true" signature="8329:8530" placeholder="{..}" />
+            <marker date="1413070358648" expanded="true" signature="10985:11116" placeholder="{..}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/modula/parsing/grammar/Def.flex">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.53217393" vertical-offset="2312" max-vertical-offset="4828">
+          <caret line="154" column="43" selection-start-line="154" selection-start-column="43" selection-end-line="154" selection-end-column="43" />
           <folding />
         </state>
       </provider>
@@ -1515,7 +1606,7 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
-          <last-edited>IDEA IC-129.451</last-edited>
+          <last-edited>1.7 x64</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1532,7 +1623,6 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>

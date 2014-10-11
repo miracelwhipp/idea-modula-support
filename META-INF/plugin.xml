@@ -2,7 +2,7 @@
     <id>org.modula.intellij.plugin</id>
     <name>intellij modula plugin</name>
     <version>1.0</version>
-    <vendor email="miracelwhipp@gmx.de" url="http://www.yourcompany.com">free</vendor>
+    <vendor email="miracelwhipp@gmx.de" url="https://github.com/miracelwhipp/idea-modula-support">free</vendor>
 
     <description><![CDATA[
       A plugin bringing the modula language to intellij.

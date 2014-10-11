@@ -5,6 +5,7 @@ import com.intellij.lang.annotation.AnnotationHolder;
 import com.intellij.lang.annotation.Annotator;
 import com.intellij.psi.PsiElement;
 import org.jetbrains.annotations.NotNull;
+import org.modula.helpers.index.keys.ImplicitEntities;
 import org.modula.helpers.index.keys.ModuleIndex;
 import org.modula.parsing.definition.psi.DefinitionImportClause;
 import org.modula.parsing.definition.psi.DefinitionModuleImportClause;
@@ -40,15 +41,21 @@ public class UnknownModuleAnnotator implements Annotator {
 			return;
 		}
 
-		DefinitionModuleName moduleName = moduleImportClause.getModuleName();
+		DefinitionModuleName moduleNameElement = moduleImportClause.getModuleName();
 
-		Collection<String> allKeys = ModuleIndex.INSTANCE.getAllKeys(element.getProject());
+		String moduleName = moduleNameElement.getText();
 
-		if (allKeys.contains(moduleName.getText())) {
+		if (ImplicitEntities.isImplicitModule(moduleName)) {
 			return;
 		}
 
-		holder.createErrorAnnotation(moduleName, "module not found : " + moduleName.getText()).setHighlightType(ProblemHighlightType.LIKE_UNKNOWN_SYMBOL);
+		Collection<String> allKeys = ModuleIndex.INSTANCE.getAllKeys(element.getProject());
+
+		if (allKeys.contains(moduleName)) {
+			return;
+		}
+
+		holder.createErrorAnnotation(moduleNameElement, "module not found : " + moduleName).setHighlightType(ProblemHighlightType.LIKE_UNKNOWN_SYMBOL);
 
 	}
 }

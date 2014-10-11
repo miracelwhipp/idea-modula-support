@@ -1,9 +1,9 @@
 package org.modula.parsing;
 
-import junit.framework.Assert;
+import org.testng.Assert;
 import org.modula.parsing.utility.BooleanStackSerializableAsShort;
-//import org.testng.annotations.DataProvider;
-//import org.testng.annotations.Test;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,8 +11,7 @@ import java.util.List;
 public class SerializeBooleanStackTest {
 
 
-
-//	@Test(expectedExceptions = IllegalStateException.class)
+	@Test(expectedExceptions = IllegalStateException.class)
 	public void testToFull() {
 
 		BooleanStackSerializableAsShort candidate = new BooleanStackSerializableAsShort();
@@ -22,7 +21,7 @@ public class SerializeBooleanStackTest {
 		}
 	}
 
-//	@DataProvider
+	@DataProvider
 	public static Object[][] serializedStacks() {
 		List<Object[]> ret = new ArrayList<Object[]>();
 
@@ -36,7 +35,7 @@ public class SerializeBooleanStackTest {
 
 	}
 
-//	@DataProvider
+	@DataProvider
 	public static Object[][] serializableStacks() {
 
 		List<Object[]> ret = new ArrayList<Object[]>();
@@ -50,7 +49,7 @@ public class SerializeBooleanStackTest {
 	}
 
 
-//	@Test(dataProvider = "serializedStacks")
+	@Test(dataProvider = "serializedStacks")
 	public void testReserialization(short serialized) {
 
 		BooleanStackSerializableAsShort deserialized = new BooleanStackSerializableAsShort(serialized);
@@ -59,7 +58,7 @@ public class SerializeBooleanStackTest {
 
 	}
 
-//	@Test(dataProvider = "serializableStacks")
+	@Test(dataProvider = "serializableStacks")
 	public void testSerializeByIteration(BooleanStackSerializableAsShort candidate) {
 
 		short serialized = candidate.serializeAsShort();
@@ -74,7 +73,7 @@ public class SerializeBooleanStackTest {
 
 	}
 
-//	@Test(dataProvider = "serializableStacks")
+	@Test(dataProvider = "serializableStacks")
 	public void testSerializeBySecondSerialization(BooleanStackSerializableAsShort candidate) {
 
 		short serialized = candidate.serializeAsShort();
@@ -87,7 +86,7 @@ public class SerializeBooleanStackTest {
 	}
 
 
-//	@Test(dataProvider = "serializableStacks")
+	@Test(dataProvider = "serializableStacks")
 	public void testSerializeByComparingToString(BooleanStackSerializableAsShort candidate) {
 
 		short serialized = candidate.serializeAsShort();

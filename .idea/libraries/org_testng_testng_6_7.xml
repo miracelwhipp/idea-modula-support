@@ -11,7 +11,11 @@
       <root url="jar://$PROJECT_DIR$/lib/jcommander-1.12.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/snakeyaml-1.6.jar!/" />
     </CLASSES>
-    <JAVADOC />
-    <SOURCES />
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/lib/testng-6.7-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/lib/testng-6.7-sources.jar!/" />
+    </SOURCES>
   </library>
 </component>
