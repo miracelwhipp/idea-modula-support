@@ -1,9 +1,9 @@
 package org.modula.parsing;
 
 import junit.framework.Assert;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Factory;
-import org.testng.annotations.Test;
+//import org.testng.annotations.DataProvider;
+//import org.testng.annotations.Factory;
+//import org.testng.annotations.Test;
 
 /**
  * Created with IntelliJ IDEA.
@@ -21,7 +21,7 @@ public class CommentaryDenesterTest {
 	private final CommentaryDenester candidate;
 
 
-	@Factory(dataProvider = "parameters")
+//	@Factory(dataProvider = "parameters")
 	public CommentaryDenesterTest(String openComment, String closeComment, String code, String result) {
 		this.openComment = openComment;
 		this.closeComment = closeComment;
@@ -31,7 +31,7 @@ public class CommentaryDenesterTest {
 	}
 
 
-	@DataProvider
+//	@DataProvider
 	public static Object[][] parameters() {
 		return new Object[][]{
 				new Object[]{"\\(\\*", "\\*\\)", "abcdefgh", "abcdefgh"},
@@ -50,7 +50,7 @@ public class CommentaryDenesterTest {
 				new Object[]{"/\\*", "\\*/", "/*/**/*/", "/*    */"}};
 	}
 
-	@Test
+//	@Test
 	public void testResult() {
 		Assert.assertEquals(result, candidate.preProcess(code, 0, code.length()).toString());
 	}
