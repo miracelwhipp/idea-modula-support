@@ -17,15 +17,15 @@ public class DefinitionTypeDefinitionsImpl extends ASTWrapperPsiElement implemen
     super(node);
   }
 
+  public void accept(@NotNull PsiElementVisitor visitor) {
+    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitTypeDefinitions(this);
+    else super.accept(visitor);
+  }
+
   @Override
   @NotNull
   public List<DefinitionTypeDefinition> getTypeDefinitionList() {
     return PsiTreeUtil.getChildrenOfTypeAsList(this, DefinitionTypeDefinition.class);
-  }
-
-  public void accept(@NotNull PsiElementVisitor visitor) {
-    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitTypeDefinitions(this);
-    else super.accept(visitor);
   }
 
 }

@@ -17,6 +17,11 @@ public class DefinitionProcedureTypeDefinitionImpl extends ASTWrapperPsiElement 
     super(node);
   }
 
+  public void accept(@NotNull PsiElementVisitor visitor) {
+    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitProcedureTypeDefinition(this);
+    else super.accept(visitor);
+  }
+
   @Override
   @Nullable
   public DefinitionParametersCommaSeparated getParametersCommaSeparated() {
@@ -33,11 +38,6 @@ public class DefinitionProcedureTypeDefinitionImpl extends ASTWrapperPsiElement 
   @Nullable
   public DefinitionTypeSpecification getTypeSpecification() {
     return findChildByClass(DefinitionTypeSpecification.class);
-  }
-
-  public void accept(@NotNull PsiElementVisitor visitor) {
-    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitProcedureTypeDefinition(this);
-    else super.accept(visitor);
   }
 
 }

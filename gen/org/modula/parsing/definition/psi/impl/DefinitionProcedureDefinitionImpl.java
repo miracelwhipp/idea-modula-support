@@ -22,6 +22,11 @@ public class DefinitionProcedureDefinitionImpl extends ProcedureStubBasedPsiElem
     super(stub, nodeType);
   }
 
+  public void accept(@NotNull PsiElementVisitor visitor) {
+    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitProcedureDefinition(this);
+    else super.accept(visitor);
+  }
+
   @Override
   @Nullable
   public DefinitionExportNameDeclaration getExportNameDeclaration() {
@@ -56,11 +61,6 @@ public class DefinitionProcedureDefinitionImpl extends ProcedureStubBasedPsiElem
   @Nullable
   public DefinitionTypeSpecification getTypeSpecification() {
     return findChildByClass(DefinitionTypeSpecification.class);
-  }
-
-  public void accept(@NotNull PsiElementVisitor visitor) {
-    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitProcedureDefinition(this);
-    else super.accept(visitor);
   }
 
 }

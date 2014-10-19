@@ -17,15 +17,15 @@ public class DefinitionComplexLiteralImpl extends ASTWrapperPsiElement implement
     super(node);
   }
 
+  public void accept(@NotNull PsiElementVisitor visitor) {
+    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitComplexLiteral(this);
+    else super.accept(visitor);
+  }
+
   @Override
   @NotNull
   public List<DefinitionRealLiteral> getRealLiteralList() {
     return PsiTreeUtil.getChildrenOfTypeAsList(this, DefinitionRealLiteral.class);
-  }
-
-  public void accept(@NotNull PsiElementVisitor visitor) {
-    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitComplexLiteral(this);
-    else super.accept(visitor);
   }
 
 }

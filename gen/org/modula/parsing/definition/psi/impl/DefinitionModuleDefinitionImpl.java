@@ -23,15 +23,15 @@ public class DefinitionModuleDefinitionImpl extends StubBasedPsiElementBase<Modu
     super(stub, nodeType);
   }
 
+  public void accept(@NotNull PsiElementVisitor visitor) {
+    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitModuleDefinition(this);
+    else super.accept(visitor);
+  }
+
   @Override
   @NotNull
   public DefinitionModuleName getModuleName() {
     return findNotNullChildByClass(DefinitionModuleName.class);
-  }
-
-  public void accept(@NotNull PsiElementVisitor visitor) {
-    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitModuleDefinition(this);
-    else super.accept(visitor);
   }
 
 }

@@ -17,6 +17,11 @@ public class DefinitionParameterImpl extends ASTWrapperPsiElement implements Def
     super(node);
   }
 
+  public void accept(@NotNull PsiElementVisitor visitor) {
+    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitParameter(this);
+    else super.accept(visitor);
+  }
+
   @Override
   @NotNull
   public List<DefinitionParameterName> getParameterNameList() {
@@ -27,11 +32,6 @@ public class DefinitionParameterImpl extends ASTWrapperPsiElement implements Def
   @NotNull
   public DefinitionTypeSpecification getTypeSpecification() {
     return findNotNullChildByClass(DefinitionTypeSpecification.class);
-  }
-
-  public void accept(@NotNull PsiElementVisitor visitor) {
-    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitParameter(this);
-    else super.accept(visitor);
   }
 
 }

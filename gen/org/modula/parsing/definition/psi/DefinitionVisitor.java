@@ -4,6 +4,11 @@ package org.modula.parsing.definition.psi;
 import org.jetbrains.annotations.*;
 import com.intellij.psi.PsiElementVisitor;
 import com.intellij.psi.PsiElement;
+import org.modula.helpers.index.stubs.Constant;
+import org.modula.helpers.index.stubs.SymbolStubPsiElement;
+import org.modula.helpers.index.stubs.Procedure;
+import org.modula.helpers.index.stubs.Type;
+import org.modula.helpers.index.stubs.Variable;
 
 public class DefinitionVisitor extends PsiElementVisitor {
 
@@ -27,15 +32,15 @@ public class DefinitionVisitor extends PsiElementVisitor {
     visitPsiElement(o);
   }
 
+  public void visitAssignment(@NotNull DefinitionAssignment o) {
+    visitPsiElement(o);
+  }
+
   public void visitAttribute(@NotNull DefinitionAttribute o) {
     visitPsiElement(o);
   }
 
   public void visitBasicType(@NotNull DefinitionBasicType o) {
-    visitPsiElement(o);
-  }
-
-  public void visitCallParameter(@NotNull DefinitionCallParameter o) {
     visitPsiElement(o);
   }
 
@@ -48,6 +53,18 @@ public class DefinitionVisitor extends PsiElementVisitor {
   }
 
   public void visitComplexLiteral(@NotNull DefinitionComplexLiteral o) {
+    visitPsiElement(o);
+  }
+
+  public void visitConstExpression(@NotNull DefinitionConstExpression o) {
+    visitPsiElement(o);
+  }
+
+  public void visitConstFactor(@NotNull DefinitionConstFactor o) {
+    visitPsiElement(o);
+  }
+
+  public void visitConstTerm(@NotNull DefinitionConstTerm o) {
     visitPsiElement(o);
   }
 
@@ -69,35 +86,7 @@ public class DefinitionVisitor extends PsiElementVisitor {
     visitPsiElement(o);
   }
 
-  public void visitConstantExpression(@NotNull DefinitionConstantExpression o) {
-    visitPsiElement(o);
-  }
-
-  public void visitConstantExpressionValue(@NotNull DefinitionConstantExpressionValue o) {
-    visitPsiElement(o);
-  }
-
-  public void visitConstantFunctionCall(@NotNull DefinitionConstantFunctionCall o) {
-    visitPsiElement(o);
-  }
-
   public void visitConstantName(@NotNull DefinitionConstantName o) {
-    visitPsiElement(o);
-  }
-
-  public void visitConstantNegation(@NotNull DefinitionConstantNegation o) {
-    visitPsiElement(o);
-  }
-
-  public void visitConstantParameter(@NotNull DefinitionConstantParameter o) {
-    visitPsiElement(o);
-  }
-
-  public void visitConstantProduct(@NotNull DefinitionConstantProduct o) {
-    visitPsiElement(o);
-  }
-
-  public void visitConstantSum(@NotNull DefinitionConstantSum o) {
     visitPsiElement(o);
   }
 
@@ -129,6 +118,10 @@ public class DefinitionVisitor extends PsiElementVisitor {
     visitPsiElement(o);
   }
 
+  public void visitElement(@NotNull DefinitionElement o) {
+    visitPsiElement(o);
+  }
+
   public void visitEnumerationDefinition(@NotNull DefinitionEnumerationDefinition o) {
     visitPsiElement(o);
   }
@@ -153,7 +146,7 @@ public class DefinitionVisitor extends PsiElementVisitor {
     visitPsiElement(o);
   }
 
-  public void visitExpressionValue(@NotNull DefinitionExpressionValue o) {
+  public void visitFactor(@NotNull DefinitionFactor o) {
     visitPsiElement(o);
   }
 
@@ -173,11 +166,11 @@ public class DefinitionVisitor extends PsiElementVisitor {
     visitPsiElement(o);
   }
 
-  public void visitFunctionCall(@NotNull DefinitionFunctionCall o) {
+  public void visitFunctionDesignator(@NotNull DefinitionFunctionDesignator o) {
     visitPsiElement(o);
   }
 
-  public void visitFunctionDesignator(@NotNull DefinitionFunctionDesignator o) {
+  public void visitGenericDesignator(@NotNull DefinitionGenericDesignator o) {
     visitPsiElement(o);
   }
 
@@ -186,6 +179,10 @@ public class DefinitionVisitor extends PsiElementVisitor {
   }
 
   public void visitHeader(@NotNull DefinitionHeader o) {
+    visitPsiElement(o);
+  }
+
+  public void visitIdent(@NotNull DefinitionIdent o) {
     visitPsiElement(o);
   }
 
@@ -214,6 +211,10 @@ public class DefinitionVisitor extends PsiElementVisitor {
   }
 
   public void visitIntegerLiteral(@NotNull DefinitionIntegerLiteral o) {
+    visitPsiElement(o);
+  }
+
+  public void visitLValue(@NotNull DefinitionLValue o) {
     visitPsiElement(o);
   }
 
@@ -289,7 +290,7 @@ public class DefinitionVisitor extends PsiElementVisitor {
     visitPsiElement(o);
   }
 
-  public void visitNegation(@NotNull DefinitionNegation o) {
+  public void visitNumber(@NotNull DefinitionNumber o) {
     visitPsiElement(o);
   }
 
@@ -343,7 +344,7 @@ public class DefinitionVisitor extends PsiElementVisitor {
     visitPsiElement(o);
   }
 
-  public void visitProduct(@NotNull DefinitionProduct o) {
+  public void visitQualident(@NotNull DefinitionQualident o) {
     visitPsiElement(o);
   }
 
@@ -363,6 +364,14 @@ public class DefinitionVisitor extends PsiElementVisitor {
     visitPsiElement(o);
   }
 
+  public void visitRecoverEndOfStatement(@NotNull DefinitionRecoverEndOfStatement o) {
+    visitPsiElement(o);
+  }
+
+  public void visitRecoverWhileStatement(@NotNull DefinitionRecoverWhileStatement o) {
+    visitPsiElement(o);
+  }
+
   public void visitSelector(@NotNull DefinitionSelector o) {
     visitPsiElement(o);
   }
@@ -375,7 +384,19 @@ public class DefinitionVisitor extends PsiElementVisitor {
     visitPsiElement(o);
   }
 
+  public void visitSetExpression(@NotNull DefinitionSetExpression o) {
+    visitPsiElement(o);
+  }
+
   public void visitSetLiteral(@NotNull DefinitionSetLiteral o) {
+    visitPsiElement(o);
+  }
+
+  public void visitSimpleConstExpression(@NotNull DefinitionSimpleConstExpression o) {
+    visitPsiElement(o);
+  }
+
+  public void visitSimpleExpression(@NotNull DefinitionSimpleExpression o) {
     visitPsiElement(o);
   }
 
@@ -395,7 +416,7 @@ public class DefinitionVisitor extends PsiElementVisitor {
     visitPsiElement(o);
   }
 
-  public void visitSum(@NotNull DefinitionSum o) {
+  public void visitString(@NotNull DefinitionString o) {
     visitPsiElement(o);
   }
 
@@ -404,6 +425,10 @@ public class DefinitionVisitor extends PsiElementVisitor {
   }
 
   public void visitSymbolName(@NotNull DefinitionSymbolName o) {
+    visitPsiElement(o);
+  }
+
+  public void visitTerm(@NotNull DefinitionTerm o) {
     visitPsiElement(o);
   }
 

@@ -17,6 +17,11 @@ public class DefinitionArrayDefinitionImpl extends ASTWrapperPsiElement implemen
     super(node);
   }
 
+  public void accept(@NotNull PsiElementVisitor visitor) {
+    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitArrayDefinition(this);
+    else super.accept(visitor);
+  }
+
   @Override
   @NotNull
   public List<DefinitionIndexType> getIndexTypeList() {
@@ -27,11 +32,6 @@ public class DefinitionArrayDefinitionImpl extends ASTWrapperPsiElement implemen
   @NotNull
   public DefinitionTypeSpecification getTypeSpecification() {
     return findNotNullChildByClass(DefinitionTypeSpecification.class);
-  }
-
-  public void accept(@NotNull PsiElementVisitor visitor) {
-    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitArrayDefinition(this);
-    else super.accept(visitor);
   }
 
 }

@@ -17,6 +17,11 @@ public class DefinitionCaseRangeImpl extends ASTWrapperPsiElement implements Def
     super(node);
   }
 
+  public void accept(@NotNull PsiElementVisitor visitor) {
+    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitCaseRange(this);
+    else super.accept(visitor);
+  }
+
   @Override
   @Nullable
   public DefinitionInnerRange getInnerRange() {
@@ -27,11 +32,6 @@ public class DefinitionCaseRangeImpl extends ASTWrapperPsiElement implements Def
   @Nullable
   public DefinitionLiteral getLiteral() {
     return findChildByClass(DefinitionLiteral.class);
-  }
-
-  public void accept(@NotNull PsiElementVisitor visitor) {
-    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitCaseRange(this);
-    else super.accept(visitor);
   }
 
 }

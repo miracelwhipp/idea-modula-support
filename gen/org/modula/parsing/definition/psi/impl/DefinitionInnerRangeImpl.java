@@ -17,15 +17,15 @@ public class DefinitionInnerRangeImpl extends ASTWrapperPsiElement implements De
     super(node);
   }
 
-  @Override
-  @NotNull
-  public List<DefinitionConstantExpression> getConstantExpressionList() {
-    return PsiTreeUtil.getChildrenOfTypeAsList(this, DefinitionConstantExpression.class);
-  }
-
   public void accept(@NotNull PsiElementVisitor visitor) {
     if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitInnerRange(this);
     else super.accept(visitor);
+  }
+
+  @Override
+  @NotNull
+  public List<DefinitionConstExpression> getConstExpressionList() {
+    return PsiTreeUtil.getChildrenOfTypeAsList(this, DefinitionConstExpression.class);
   }
 
 }

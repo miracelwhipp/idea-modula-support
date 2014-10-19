@@ -17,6 +17,11 @@ public class DefinitionPredefinedTypeImpl extends ASTWrapperPsiElement implement
     super(node);
   }
 
+  public void accept(@NotNull PsiElementVisitor visitor) {
+    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitPredefinedType(this);
+    else super.accept(visitor);
+  }
+
   @Override
   @Nullable
   public DefinitionBasicType getBasicType() {
@@ -27,11 +32,6 @@ public class DefinitionPredefinedTypeImpl extends ASTWrapperPsiElement implement
   @Nullable
   public DefinitionStonyBrookType getStonyBrookType() {
     return findChildByClass(DefinitionStonyBrookType.class);
-  }
-
-  public void accept(@NotNull PsiElementVisitor visitor) {
-    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitPredefinedType(this);
-    else super.accept(visitor);
   }
 
 }

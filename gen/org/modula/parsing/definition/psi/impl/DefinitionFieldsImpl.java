@@ -17,15 +17,15 @@ public class DefinitionFieldsImpl extends ASTWrapperPsiElement implements Defini
     super(node);
   }
 
+  public void accept(@NotNull PsiElementVisitor visitor) {
+    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitFields(this);
+    else super.accept(visitor);
+  }
+
   @Override
   @NotNull
   public List<DefinitionField> getFieldList() {
     return PsiTreeUtil.getChildrenOfTypeAsList(this, DefinitionField.class);
-  }
-
-  public void accept(@NotNull PsiElementVisitor visitor) {
-    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitFields(this);
-    else super.accept(visitor);
   }
 
 }

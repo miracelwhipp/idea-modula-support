@@ -17,6 +17,11 @@ public class DefinitionArrayConstantTypeImpl extends ASTWrapperPsiElement implem
     super(node);
   }
 
+  public void accept(@NotNull PsiElementVisitor visitor) {
+    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitArrayConstantType(this);
+    else super.accept(visitor);
+  }
+
   @Override
   @Nullable
   public DefinitionArrayDeclaration getArrayDeclaration() {
@@ -27,11 +32,6 @@ public class DefinitionArrayConstantTypeImpl extends ASTWrapperPsiElement implem
   @Nullable
   public DefinitionConstantType getConstantType() {
     return findChildByClass(DefinitionConstantType.class);
-  }
-
-  public void accept(@NotNull PsiElementVisitor visitor) {
-    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitArrayConstantType(this);
-    else super.accept(visitor);
   }
 
 }

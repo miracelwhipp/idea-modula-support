@@ -17,21 +17,15 @@ public class DefinitionExpressionImpl extends ASTWrapperPsiElement implements De
     super(node);
   }
 
-  @Override
-  @Nullable
-  public DefinitionExpression getExpression() {
-    return findChildByClass(DefinitionExpression.class);
+  public void accept(@NotNull PsiElementVisitor visitor) {
+    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitExpression(this);
+    else super.accept(visitor);
   }
 
   @Override
   @NotNull
-  public DefinitionSum getSum() {
-    return findNotNullChildByClass(DefinitionSum.class);
-  }
-
-  public void accept(@NotNull PsiElementVisitor visitor) {
-    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitExpression(this);
-    else super.accept(visitor);
+  public List<DefinitionSimpleExpression> getSimpleExpressionList() {
+    return PsiTreeUtil.getChildrenOfTypeAsList(this, DefinitionSimpleExpression.class);
   }
 
 }

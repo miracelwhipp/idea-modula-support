@@ -123,8 +123,8 @@ CT_END                       = {SB_END}|{END_DIRECTIVE}
 <YYINITIAL> REM /[^a-zA-Z_0-9]  { return ModulaTypes.REMAINDER; }
 <YYINITIAL> DIV /[^a-zA-Z_0-9]  { return ModulaTypes.DIVISION; }
 <YYINITIAL> MOD /[^a-zA-Z_0-9]  { return ModulaTypes.MODULO; }
-<YYINITIAL> AND /[^a-zA-Z_0-9]  { return ModulaTypes.MODULO; }
-<YYINITIAL> &                   { return ModulaTypes.MODULO; }
+<YYINITIAL> AND /[^a-zA-Z_0-9]  { return ModulaTypes.AND; }
+<YYINITIAL> &                   { return ModulaTypes.AND; }
 <YYINITIAL> BAND /[^a-zA-Z_0-9] { return ModulaTypes.BITWISE_AND; }
 <YYINITIAL> SHL /[^a-zA-Z_0-9]  { return ModulaTypes.SHIFT_LEFT; }
 <YYINITIAL> SHR /[^a-zA-Z_0-9]  { return ModulaTypes.SHIFT_RIGHT; }
@@ -135,6 +135,7 @@ CT_END                       = {SB_END}|{END_DIRECTIVE}
 <YYINITIAL> \~                  { return ModulaTypes.NOT; }
 <YYINITIAL> BNOT /[^a-zA-Z_0-9] { return ModulaTypes.BITWISE_NOT; }
 <YYINITIAL> BY /[^a-zA-Z_0-9]   { return ModulaTypes.ARRAY_ELEMENT_RANGE_OPERATOR; }
+<YYINITIAL> \^                  { return ModulaTypes.POINTER_DEREFERENCE_OPERATOR; }
 
 <YYINITIAL> {CHAR_CONST}                  { return ModulaTypes.CHAR_CONST; }
 <YYINITIAL> {INT_CONST_BASE_16}           { return ModulaTypes.INT_CONST_BASE_16; }

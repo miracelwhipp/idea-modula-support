@@ -17,6 +17,11 @@ public class DefinitionConstantValueModuleParameterImpl extends ASTWrapperPsiEle
     super(node);
   }
 
+  public void accept(@NotNull PsiElementVisitor visitor) {
+    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitConstantValueModuleParameter(this);
+    else super.accept(visitor);
+  }
+
   @Override
   @NotNull
   public List<DefinitionModuleParameterName> getModuleParameterNameList() {
@@ -27,11 +32,6 @@ public class DefinitionConstantValueModuleParameterImpl extends ASTWrapperPsiEle
   @NotNull
   public DefinitionTypeSpecification getTypeSpecification() {
     return findNotNullChildByClass(DefinitionTypeSpecification.class);
-  }
-
-  public void accept(@NotNull PsiElementVisitor visitor) {
-    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitConstantValueModuleParameter(this);
-    else super.accept(visitor);
   }
 
 }

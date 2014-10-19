@@ -17,15 +17,27 @@ public class DefinitionDesignatorImpl extends ASTWrapperPsiElement implements De
     super(node);
   }
 
-  @Override
-  @NotNull
-  public List<DefinitionSymbolName> getSymbolNameList() {
-    return PsiTreeUtil.getChildrenOfTypeAsList(this, DefinitionSymbolName.class);
-  }
-
   public void accept(@NotNull PsiElementVisitor visitor) {
     if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitDesignator(this);
     else super.accept(visitor);
+  }
+
+  @Override
+  @NotNull
+  public List<DefinitionExpression> getExpressionList() {
+    return PsiTreeUtil.getChildrenOfTypeAsList(this, DefinitionExpression.class);
+  }
+
+  @Override
+  @NotNull
+  public List<DefinitionIdent> getIdentList() {
+    return PsiTreeUtil.getChildrenOfTypeAsList(this, DefinitionIdent.class);
+  }
+
+  @Override
+  @NotNull
+  public DefinitionQualident getQualident() {
+    return findNotNullChildByClass(DefinitionQualident.class);
   }
 
 }

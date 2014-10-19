@@ -17,15 +17,15 @@ public class DefinitionVariableDefinitionsImpl extends ASTWrapperPsiElement impl
     super(node);
   }
 
+  public void accept(@NotNull PsiElementVisitor visitor) {
+    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitVariableDefinitions(this);
+    else super.accept(visitor);
+  }
+
   @Override
   @NotNull
   public List<DefinitionVariableDefinition> getVariableDefinitionList() {
     return PsiTreeUtil.getChildrenOfTypeAsList(this, DefinitionVariableDefinition.class);
-  }
-
-  public void accept(@NotNull PsiElementVisitor visitor) {
-    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitVariableDefinitions(this);
-    else super.accept(visitor);
   }
 
 }

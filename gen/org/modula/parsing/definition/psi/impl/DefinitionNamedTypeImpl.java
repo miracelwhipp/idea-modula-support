@@ -17,6 +17,11 @@ public class DefinitionNamedTypeImpl extends ASTWrapperPsiElement implements Def
     super(node);
   }
 
+  public void accept(@NotNull PsiElementVisitor visitor) {
+    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitNamedType(this);
+    else super.accept(visitor);
+  }
+
   @Override
   @Nullable
   public DefinitionBasicType getBasicType() {
@@ -33,11 +38,6 @@ public class DefinitionNamedTypeImpl extends ASTWrapperPsiElement implements Def
   @Nullable
   public DefinitionTypeDesignator getTypeDesignator() {
     return findChildByClass(DefinitionTypeDesignator.class);
-  }
-
-  public void accept(@NotNull PsiElementVisitor visitor) {
-    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitNamedType(this);
-    else super.accept(visitor);
   }
 
 }

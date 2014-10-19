@@ -5,12 +5,9 @@ import java.util.List;
 import org.jetbrains.annotations.*;
 import com.intellij.psi.PsiElement;
 
-public interface DefinitionConstantExpression extends PsiElement {
-
-  @Nullable
-  DefinitionConstantExpression getConstantExpression();
+public interface DefinitionSimpleExpression extends PsiElement {
 
   @NotNull
-  DefinitionConstantSum getConstantSum();
+  List<DefinitionTerm> getTermList();
 
 }

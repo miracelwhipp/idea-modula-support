@@ -17,6 +17,11 @@ public class DefinitionImportClauseImpl extends ASTWrapperPsiElement implements 
     super(node);
   }
 
+  public void accept(@NotNull PsiElementVisitor visitor) {
+    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitImportClause(this);
+    else super.accept(visitor);
+  }
+
   @Override
   @Nullable
   public DefinitionModuleImportClause getModuleImportClause() {
@@ -27,11 +32,6 @@ public class DefinitionImportClauseImpl extends ASTWrapperPsiElement implements 
   @Nullable
   public DefinitionSymbolImportClause getSymbolImportClause() {
     return findChildByClass(DefinitionSymbolImportClause.class);
-  }
-
-  public void accept(@NotNull PsiElementVisitor visitor) {
-    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitImportClause(this);
-    else super.accept(visitor);
   }
 
 }

@@ -17,15 +17,15 @@ public class DefinitionFooterImpl extends ASTWrapperPsiElement implements Defini
     super(node);
   }
 
+  public void accept(@NotNull PsiElementVisitor visitor) {
+    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitFooter(this);
+    else super.accept(visitor);
+  }
+
   @Override
   @NotNull
   public DefinitionModuleName getModuleName() {
     return findNotNullChildByClass(DefinitionModuleName.class);
-  }
-
-  public void accept(@NotNull PsiElementVisitor visitor) {
-    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitFooter(this);
-    else super.accept(visitor);
   }
 
 }

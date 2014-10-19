@@ -17,6 +17,11 @@ public class DefinitionFieldImpl extends ASTWrapperPsiElement implements Definit
     super(node);
   }
 
+  public void accept(@NotNull PsiElementVisitor visitor) {
+    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitField(this);
+    else super.accept(visitor);
+  }
+
   @Override
   @Nullable
   public DefinitionStaticField getStaticField() {
@@ -27,11 +32,6 @@ public class DefinitionFieldImpl extends ASTWrapperPsiElement implements Definit
   @Nullable
   public DefinitionVariantField getVariantField() {
     return findChildByClass(DefinitionVariantField.class);
-  }
-
-  public void accept(@NotNull PsiElementVisitor visitor) {
-    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitField(this);
-    else super.accept(visitor);
   }
 
 }

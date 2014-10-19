@@ -5,12 +5,9 @@ import java.util.List;
 import org.jetbrains.annotations.*;
 import com.intellij.psi.PsiElement;
 
-public interface DefinitionConstantParameter extends PsiElement {
+public interface DefinitionTerm extends PsiElement {
 
-  @Nullable
-  DefinitionConstantExpression getConstantExpression();
-
-  @Nullable
-  DefinitionTypeSpecification getTypeSpecification();
+  @NotNull
+  List<DefinitionFactor> getFactorList();
 
 }

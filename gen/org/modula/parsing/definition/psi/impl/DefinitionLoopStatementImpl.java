@@ -17,15 +17,15 @@ public class DefinitionLoopStatementImpl extends ASTWrapperPsiElement implements
     super(node);
   }
 
+  public void accept(@NotNull PsiElementVisitor visitor) {
+    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitLoopStatement(this);
+    else super.accept(visitor);
+  }
+
   @Override
   @NotNull
   public DefinitionStatements getStatements() {
     return findNotNullChildByClass(DefinitionStatements.class);
-  }
-
-  public void accept(@NotNull PsiElementVisitor visitor) {
-    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitLoopStatement(this);
-    else super.accept(visitor);
   }
 
 }

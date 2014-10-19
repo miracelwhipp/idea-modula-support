@@ -5,12 +5,9 @@ import java.util.List;
 import org.jetbrains.annotations.*;
 import com.intellij.psi.PsiElement;
 
-public interface DefinitionConstantSum extends PsiElement {
+public interface DefinitionQualident extends PsiElement {
 
   @NotNull
-  DefinitionConstantProduct getConstantProduct();
-
-  @Nullable
-  DefinitionConstantSum getConstantSum();
+  List<DefinitionIdent> getIdentList();
 
 }

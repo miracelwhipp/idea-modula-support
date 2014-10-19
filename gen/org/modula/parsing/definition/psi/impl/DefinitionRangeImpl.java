@@ -17,6 +17,11 @@ public class DefinitionRangeImpl extends ASTWrapperPsiElement implements Definit
     super(node);
   }
 
+  public void accept(@NotNull PsiElementVisitor visitor) {
+    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitRange(this);
+    else super.accept(visitor);
+  }
+
   @Override
   @NotNull
   public DefinitionInnerRange getInnerRange() {
@@ -27,11 +32,6 @@ public class DefinitionRangeImpl extends ASTWrapperPsiElement implements Definit
   @Nullable
   public DefinitionNamedType getNamedType() {
     return findChildByClass(DefinitionNamedType.class);
-  }
-
-  public void accept(@NotNull PsiElementVisitor visitor) {
-    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitRange(this);
-    else super.accept(visitor);
   }
 
 }

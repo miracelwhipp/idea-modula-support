@@ -17,6 +17,11 @@ public class DefinitionArrayConstantImpl extends ASTWrapperPsiElement implements
     super(node);
   }
 
+  public void accept(@NotNull PsiElementVisitor visitor) {
+    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitArrayConstant(this);
+    else super.accept(visitor);
+  }
+
   @Override
   @NotNull
   public DefinitionArrayConstantType getArrayConstantType() {
@@ -27,11 +32,6 @@ public class DefinitionArrayConstantImpl extends ASTWrapperPsiElement implements
   @NotNull
   public List<DefinitionConstantArrayElement> getConstantArrayElementList() {
     return PsiTreeUtil.getChildrenOfTypeAsList(this, DefinitionConstantArrayElement.class);
-  }
-
-  public void accept(@NotNull PsiElementVisitor visitor) {
-    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitArrayConstant(this);
-    else super.accept(visitor);
   }
 
 }

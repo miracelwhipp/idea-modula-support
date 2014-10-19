@@ -17,6 +17,11 @@ public class DefinitionIndexTypeImpl extends ASTWrapperPsiElement implements Def
     super(node);
   }
 
+  public void accept(@NotNull PsiElementVisitor visitor) {
+    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitIndexType(this);
+    else super.accept(visitor);
+  }
+
   @Override
   @Nullable
   public DefinitionRange getRange() {
@@ -27,11 +32,6 @@ public class DefinitionIndexTypeImpl extends ASTWrapperPsiElement implements Def
   @Nullable
   public DefinitionTypeDesignator getTypeDesignator() {
     return findChildByClass(DefinitionTypeDesignator.class);
-  }
-
-  public void accept(@NotNull PsiElementVisitor visitor) {
-    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitIndexType(this);
-    else super.accept(visitor);
   }
 
 }

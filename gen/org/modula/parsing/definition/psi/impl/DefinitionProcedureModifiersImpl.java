@@ -17,15 +17,15 @@ public class DefinitionProcedureModifiersImpl extends ASTWrapperPsiElement imple
     super(node);
   }
 
+  public void accept(@NotNull PsiElementVisitor visitor) {
+    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitProcedureModifiers(this);
+    else super.accept(visitor);
+  }
+
   @Override
   @Nullable
   public DefinitionMacroDeclaration getMacroDeclaration() {
     return findChildByClass(DefinitionMacroDeclaration.class);
-  }
-
-  public void accept(@NotNull PsiElementVisitor visitor) {
-    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitProcedureModifiers(this);
-    else super.accept(visitor);
   }
 
 }

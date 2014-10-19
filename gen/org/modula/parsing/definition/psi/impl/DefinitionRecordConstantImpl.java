@@ -17,6 +17,11 @@ public class DefinitionRecordConstantImpl extends ASTWrapperPsiElement implement
     super(node);
   }
 
+  public void accept(@NotNull PsiElementVisitor visitor) {
+    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitRecordConstant(this);
+    else super.accept(visitor);
+  }
+
   @Override
   @NotNull
   public DefinitionConstantType getConstantType() {
@@ -27,11 +32,6 @@ public class DefinitionRecordConstantImpl extends ASTWrapperPsiElement implement
   @NotNull
   public List<DefinitionConstantValue> getConstantValueList() {
     return PsiTreeUtil.getChildrenOfTypeAsList(this, DefinitionConstantValue.class);
-  }
-
-  public void accept(@NotNull PsiElementVisitor visitor) {
-    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitRecordConstant(this);
-    else super.accept(visitor);
   }
 
 }

@@ -8,6 +8,12 @@ import com.intellij.psi.PsiElement;
 public interface DefinitionDesignator extends PsiElement {
 
   @NotNull
-  List<DefinitionSymbolName> getSymbolNameList();
+  List<DefinitionExpression> getExpressionList();
+
+  @NotNull
+  List<DefinitionIdent> getIdentList();
+
+  @NotNull
+  DefinitionQualident getQualident();
 
 }

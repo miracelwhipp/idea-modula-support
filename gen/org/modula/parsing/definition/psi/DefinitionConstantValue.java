@@ -11,7 +11,7 @@ public interface DefinitionConstantValue extends PsiElement {
   DefinitionArrayConstant getArrayConstant();
 
   @Nullable
-  DefinitionConstantExpression getConstantExpression();
+  DefinitionConstExpression getConstExpression();
 
   @Nullable
   DefinitionRecordConstant getRecordConstant();

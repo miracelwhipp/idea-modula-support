@@ -11,26 +11,14 @@ import static org.modula.parsing.definition.psi.ModulaTypes.*;
 import com.intellij.extapi.psi.ASTWrapperPsiElement;
 import org.modula.parsing.definition.psi.*;
 
-public class DefinitionConstantExpressionImpl extends ASTWrapperPsiElement implements DefinitionConstantExpression {
+public class DefinitionIdentImpl extends ASTWrapperPsiElement implements DefinitionIdent {
 
-  public DefinitionConstantExpressionImpl(ASTNode node) {
+  public DefinitionIdentImpl(ASTNode node) {
     super(node);
   }
 
-  @Override
-  @Nullable
-  public DefinitionConstantExpression getConstantExpression() {
-    return findChildByClass(DefinitionConstantExpression.class);
-  }
-
-  @Override
-  @NotNull
-  public DefinitionConstantSum getConstantSum() {
-    return findNotNullChildByClass(DefinitionConstantSum.class);
-  }
-
   public void accept(@NotNull PsiElementVisitor visitor) {
-    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitConstantExpression(this);
+    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitIdent(this);
     else super.accept(visitor);
   }
 

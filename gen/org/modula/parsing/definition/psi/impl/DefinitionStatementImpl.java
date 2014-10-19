@@ -17,6 +17,17 @@ public class DefinitionStatementImpl extends ASTWrapperPsiElement implements Def
     super(node);
   }
 
+  public void accept(@NotNull PsiElementVisitor visitor) {
+    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitStatement(this);
+    else super.accept(visitor);
+  }
+
+  @Override
+  @Nullable
+  public DefinitionAssignment getAssignment() {
+    return findChildByClass(DefinitionAssignment.class);
+  }
+
   @Override
   @Nullable
   public DefinitionCaseStatement getCaseStatement() {
@@ -39,17 +50,6 @@ public class DefinitionStatementImpl extends ASTWrapperPsiElement implements Def
   @Nullable
   public DefinitionLoopStatement getLoopStatement() {
     return findChildByClass(DefinitionLoopStatement.class);
-  }
-
-  @Override
-  @Nullable
-  public DefinitionWhatever getWhatever() {
-    return findChildByClass(DefinitionWhatever.class);
-  }
-
-  public void accept(@NotNull PsiElementVisitor visitor) {
-    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitStatement(this);
-    else super.accept(visitor);
   }
 
 }

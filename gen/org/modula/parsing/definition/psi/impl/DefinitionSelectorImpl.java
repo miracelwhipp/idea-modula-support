@@ -17,15 +17,15 @@ public class DefinitionSelectorImpl extends ASTWrapperPsiElement implements Defi
     super(node);
   }
 
+  public void accept(@NotNull PsiElementVisitor visitor) {
+    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitSelector(this);
+    else super.accept(visitor);
+  }
+
   @Override
   @NotNull
   public List<DefinitionCaseRange> getCaseRangeList() {
     return PsiTreeUtil.getChildrenOfTypeAsList(this, DefinitionCaseRange.class);
-  }
-
-  public void accept(@NotNull PsiElementVisitor visitor) {
-    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitSelector(this);
-    else super.accept(visitor);
   }
 
 }

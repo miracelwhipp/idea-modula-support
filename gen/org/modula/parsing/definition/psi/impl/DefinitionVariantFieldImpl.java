@@ -17,6 +17,11 @@ public class DefinitionVariantFieldImpl extends ASTWrapperPsiElement implements 
     super(node);
   }
 
+  public void accept(@NotNull PsiElementVisitor visitor) {
+    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitVariantField(this);
+    else super.accept(visitor);
+  }
+
   @Override
   @Nullable
   public DefinitionFieldName getFieldName() {
@@ -33,11 +38,6 @@ public class DefinitionVariantFieldImpl extends ASTWrapperPsiElement implements 
   @NotNull
   public DefinitionVariants getVariants() {
     return findNotNullChildByClass(DefinitionVariants.class);
-  }
-
-  public void accept(@NotNull PsiElementVisitor visitor) {
-    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitVariantField(this);
-    else super.accept(visitor);
   }
 
 }

@@ -17,6 +17,11 @@ public class DefinitionHeaderImpl extends ASTWrapperPsiElement implements Defini
     super(node);
   }
 
+  public void accept(@NotNull PsiElementVisitor visitor) {
+    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitHeader(this);
+    else super.accept(visitor);
+  }
+
   @Override
   @Nullable
   public DefinitionGenericModuleDefinition getGenericModuleDefinition() {
@@ -27,11 +32,6 @@ public class DefinitionHeaderImpl extends ASTWrapperPsiElement implements Defini
   @Nullable
   public DefinitionModuleDefinition getModuleDefinition() {
     return findChildByClass(DefinitionModuleDefinition.class);
-  }
-
-  public void accept(@NotNull PsiElementVisitor visitor) {
-    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitHeader(this);
-    else super.accept(visitor);
   }
 
 }

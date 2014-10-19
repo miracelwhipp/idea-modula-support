@@ -8,6 +8,9 @@ import com.intellij.psi.PsiElement;
 public interface DefinitionStatement extends PsiElement {
 
   @Nullable
+  DefinitionAssignment getAssignment();
+
+  @Nullable
   DefinitionCaseStatement getCaseStatement();
 
   @Nullable
@@ -18,8 +21,5 @@ public interface DefinitionStatement extends PsiElement {
 
   @Nullable
   DefinitionLoopStatement getLoopStatement();
-
-  @Nullable
-  DefinitionWhatever getWhatever();
 
 }

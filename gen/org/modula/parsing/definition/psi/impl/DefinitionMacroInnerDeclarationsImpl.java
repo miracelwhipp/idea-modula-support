@@ -17,6 +17,11 @@ public class DefinitionMacroInnerDeclarationsImpl extends ASTWrapperPsiElement i
     super(node);
   }
 
+  public void accept(@NotNull PsiElementVisitor visitor) {
+    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitMacroInnerDeclarations(this);
+    else super.accept(visitor);
+  }
+
   @Override
   @NotNull
   public List<DefinitionMacroConstantDefinitions> getMacroConstantDefinitionsList() {
@@ -33,11 +38,6 @@ public class DefinitionMacroInnerDeclarationsImpl extends ASTWrapperPsiElement i
   @NotNull
   public List<DefinitionMacroVariableDefinitions> getMacroVariableDefinitionsList() {
     return PsiTreeUtil.getChildrenOfTypeAsList(this, DefinitionMacroVariableDefinitions.class);
-  }
-
-  public void accept(@NotNull PsiElementVisitor visitor) {
-    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitMacroInnerDeclarations(this);
-    else super.accept(visitor);
   }
 
 }

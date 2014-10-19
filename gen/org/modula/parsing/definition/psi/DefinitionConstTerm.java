@@ -5,12 +5,9 @@ import java.util.List;
 import org.jetbrains.annotations.*;
 import com.intellij.psi.PsiElement;
 
-public interface DefinitionProduct extends PsiElement {
+public interface DefinitionConstTerm extends PsiElement {
 
   @NotNull
-  DefinitionNegation getNegation();
-
-  @Nullable
-  DefinitionProduct getProduct();
+  List<DefinitionConstFactor> getConstFactorList();
 
 }

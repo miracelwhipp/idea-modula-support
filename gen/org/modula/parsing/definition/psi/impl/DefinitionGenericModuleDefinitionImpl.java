@@ -17,6 +17,11 @@ public class DefinitionGenericModuleDefinitionImpl extends ASTWrapperPsiElement 
     super(node);
   }
 
+  public void accept(@NotNull PsiElementVisitor visitor) {
+    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitGenericModuleDefinition(this);
+    else super.accept(visitor);
+  }
+
   @Override
   @NotNull
   public DefinitionModuleDefinition getModuleDefinition() {
@@ -27,11 +32,6 @@ public class DefinitionGenericModuleDefinitionImpl extends ASTWrapperPsiElement 
   @NotNull
   public DefinitionModuleParameters getModuleParameters() {
     return findNotNullChildByClass(DefinitionModuleParameters.class);
-  }
-
-  public void accept(@NotNull PsiElementVisitor visitor) {
-    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitGenericModuleDefinition(this);
-    else super.accept(visitor);
   }
 
 }

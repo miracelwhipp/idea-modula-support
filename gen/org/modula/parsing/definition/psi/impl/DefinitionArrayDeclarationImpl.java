@@ -17,6 +17,11 @@ public class DefinitionArrayDeclarationImpl extends ASTWrapperPsiElement impleme
     super(node);
   }
 
+  public void accept(@NotNull PsiElementVisitor visitor) {
+    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitArrayDeclaration(this);
+    else super.accept(visitor);
+  }
+
   @Override
   @NotNull
   public DefinitionConstantType getConstantType() {
@@ -27,11 +32,6 @@ public class DefinitionArrayDeclarationImpl extends ASTWrapperPsiElement impleme
   @Nullable
   public DefinitionRange getRange() {
     return findChildByClass(DefinitionRange.class);
-  }
-
-  public void accept(@NotNull PsiElementVisitor visitor) {
-    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitArrayDeclaration(this);
-    else super.accept(visitor);
   }
 
 }

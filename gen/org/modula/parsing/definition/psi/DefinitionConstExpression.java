@@ -5,12 +5,9 @@ import java.util.List;
 import org.jetbrains.annotations.*;
 import com.intellij.psi.PsiElement;
 
-public interface DefinitionConstantNegation extends PsiElement {
+public interface DefinitionConstExpression extends PsiElement {
 
-  @Nullable
-  DefinitionConstantFunctionCall getConstantFunctionCall();
-
-  @Nullable
-  DefinitionConstantNegation getConstantNegation();
+  @NotNull
+  List<DefinitionSimpleConstExpression> getSimpleConstExpressionList();
 
 }

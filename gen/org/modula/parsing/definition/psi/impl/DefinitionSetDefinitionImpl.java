@@ -17,15 +17,15 @@ public class DefinitionSetDefinitionImpl extends ASTWrapperPsiElement implements
     super(node);
   }
 
+  public void accept(@NotNull PsiElementVisitor visitor) {
+    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitSetDefinition(this);
+    else super.accept(visitor);
+  }
+
   @Override
   @NotNull
   public DefinitionTypeSpecification getTypeSpecification() {
     return findNotNullChildByClass(DefinitionTypeSpecification.class);
-  }
-
-  public void accept(@NotNull PsiElementVisitor visitor) {
-    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitSetDefinition(this);
-    else super.accept(visitor);
   }
 
 }

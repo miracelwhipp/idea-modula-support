@@ -22,6 +22,11 @@ public class DefinitionTypeDefinitionImpl extends TypeStubBasedPsiElement implem
     super(stub, nodeType);
   }
 
+  public void accept(@NotNull PsiElementVisitor visitor) {
+    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitTypeDefinition(this);
+    else super.accept(visitor);
+  }
+
   @Override
   @Nullable
   public DefinitionOpaqueTypeDefinition getOpaqueTypeDefinition() {
@@ -32,11 +37,6 @@ public class DefinitionTypeDefinitionImpl extends TypeStubBasedPsiElement implem
   @Nullable
   public DefinitionTypeAliasDefinition getTypeAliasDefinition() {
     return findChildByClass(DefinitionTypeAliasDefinition.class);
-  }
-
-  public void accept(@NotNull PsiElementVisitor visitor) {
-    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitTypeDefinition(this);
-    else super.accept(visitor);
   }
 
 }

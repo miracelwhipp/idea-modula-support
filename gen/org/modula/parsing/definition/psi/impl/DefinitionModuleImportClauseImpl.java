@@ -17,15 +17,15 @@ public class DefinitionModuleImportClauseImpl extends ASTWrapperPsiElement imple
     super(node);
   }
 
+  public void accept(@NotNull PsiElementVisitor visitor) {
+    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitModuleImportClause(this);
+    else super.accept(visitor);
+  }
+
   @Override
   @NotNull
   public List<DefinitionModuleImport> getModuleImportList() {
     return PsiTreeUtil.getChildrenOfTypeAsList(this, DefinitionModuleImport.class);
-  }
-
-  public void accept(@NotNull PsiElementVisitor visitor) {
-    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitModuleImportClause(this);
-    else super.accept(visitor);
   }
 
 }

@@ -17,15 +17,15 @@ public class DefinitionParametersCommaSeparatedImpl extends ASTWrapperPsiElement
     super(node);
   }
 
+  public void accept(@NotNull PsiElementVisitor visitor) {
+    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitParametersCommaSeparated(this);
+    else super.accept(visitor);
+  }
+
   @Override
   @NotNull
   public List<DefinitionAnonymousParameter> getAnonymousParameterList() {
     return PsiTreeUtil.getChildrenOfTypeAsList(this, DefinitionAnonymousParameter.class);
-  }
-
-  public void accept(@NotNull PsiElementVisitor visitor) {
-    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitParametersCommaSeparated(this);
-    else super.accept(visitor);
   }
 
 }

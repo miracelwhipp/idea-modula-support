@@ -17,15 +17,15 @@ public class DefinitionSetDesignatorImpl extends ASTWrapperPsiElement implements
     super(node);
   }
 
-  @Override
-  @NotNull
-  public DefinitionDesignator getDesignator() {
-    return findNotNullChildByClass(DefinitionDesignator.class);
-  }
-
   public void accept(@NotNull PsiElementVisitor visitor) {
     if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitSetDesignator(this);
     else super.accept(visitor);
+  }
+
+  @Override
+  @NotNull
+  public DefinitionGenericDesignator getGenericDesignator() {
+    return findNotNullChildByClass(DefinitionGenericDesignator.class);
   }
 
 }

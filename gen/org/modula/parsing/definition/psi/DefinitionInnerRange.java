@@ -8,6 +8,6 @@ import com.intellij.psi.PsiElement;
 public interface DefinitionInnerRange extends PsiElement {
 
   @NotNull
-  List<DefinitionConstantExpression> getConstantExpressionList();
+  List<DefinitionConstExpression> getConstExpressionList();
 
 }

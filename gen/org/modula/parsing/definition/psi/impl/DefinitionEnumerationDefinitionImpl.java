@@ -17,15 +17,15 @@ public class DefinitionEnumerationDefinitionImpl extends ASTWrapperPsiElement im
     super(node);
   }
 
+  public void accept(@NotNull PsiElementVisitor visitor) {
+    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitEnumerationDefinition(this);
+    else super.accept(visitor);
+  }
+
   @Override
   @NotNull
   public List<DefinitionEnumerationMemberDefinition> getEnumerationMemberDefinitionList() {
     return PsiTreeUtil.getChildrenOfTypeAsList(this, DefinitionEnumerationMemberDefinition.class);
-  }
-
-  public void accept(@NotNull PsiElementVisitor visitor) {
-    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitEnumerationDefinition(this);
-    else super.accept(visitor);
   }
 
 }

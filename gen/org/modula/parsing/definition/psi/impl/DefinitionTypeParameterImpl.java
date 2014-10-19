@@ -17,15 +17,15 @@ public class DefinitionTypeParameterImpl extends ASTWrapperPsiElement implements
     super(node);
   }
 
+  public void accept(@NotNull PsiElementVisitor visitor) {
+    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitTypeParameter(this);
+    else super.accept(visitor);
+  }
+
   @Override
   @NotNull
   public List<DefinitionModuleParameterName> getModuleParameterNameList() {
     return PsiTreeUtil.getChildrenOfTypeAsList(this, DefinitionModuleParameterName.class);
-  }
-
-  public void accept(@NotNull PsiElementVisitor visitor) {
-    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitTypeParameter(this);
-    else super.accept(visitor);
   }
 
 }

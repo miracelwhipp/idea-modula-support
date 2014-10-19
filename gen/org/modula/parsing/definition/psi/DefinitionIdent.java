@@ -5,12 +5,6 @@ import java.util.List;
 import org.jetbrains.annotations.*;
 import com.intellij.psi.PsiElement;
 
-public interface DefinitionSum extends PsiElement {
-
-  @NotNull
-  DefinitionProduct getProduct();
-
-  @Nullable
-  DefinitionSum getSum();
+public interface DefinitionIdent extends PsiElement {
 
 }

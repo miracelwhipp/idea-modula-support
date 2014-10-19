@@ -17,6 +17,11 @@ public class DefinitionModuleParameterImpl extends ASTWrapperPsiElement implemen
     super(node);
   }
 
+  public void accept(@NotNull PsiElementVisitor visitor) {
+    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitModuleParameter(this);
+    else super.accept(visitor);
+  }
+
   @Override
   @Nullable
   public DefinitionConstantValueModuleParameter getConstantValueModuleParameter() {
@@ -27,11 +32,6 @@ public class DefinitionModuleParameterImpl extends ASTWrapperPsiElement implemen
   @Nullable
   public DefinitionTypeParameter getTypeParameter() {
     return findChildByClass(DefinitionTypeParameter.class);
-  }
-
-  public void accept(@NotNull PsiElementVisitor visitor) {
-    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitModuleParameter(this);
-    else super.accept(visitor);
   }
 
 }

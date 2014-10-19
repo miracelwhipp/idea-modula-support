@@ -2,23 +2,159 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/org/modula/helpers/index/keys/ImplicitEntities.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test-src/org/modula/parsing/CommentaryDenesterTest.java" afterPath="$PROJECT_DIR$/test-src/org/modula/parsing/CommentaryDenesterTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/modula/parsing/grammar/CompileTimeConditionLexer.java" afterPath="$PROJECT_DIR$/src/org/modula/parsing/grammar/CompileTimeConditionLexer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/modula/parsing/psi/ImportMap.java" afterPath="$PROJECT_DIR$/src/org/modula/parsing/psi/ImportMap.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/modula/parsing/utility/ModulaPsiTraversingUtility.java" afterPath="$PROJECT_DIR$/src/org/modula/parsing/utility/ModulaPsiTraversingUtility.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/modula/parsing/psi/ModuleImportStore.java" afterPath="$PROJECT_DIR$/src/org/modula/parsing/psi/ModuleImportStore.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test-src/org/modula/parsing/SerializeBooleanStackTest.java" afterPath="$PROJECT_DIR$/test-src/org/modula/parsing/SerializeBooleanStackTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/modula/parsing/psi/SymbolImportStore.java" afterPath="$PROJECT_DIR$/src/org/modula/parsing/psi/SymbolImportStore.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/modula/helpers/annotators/UnknownDesignatorAnnotator.java" afterPath="$PROJECT_DIR$/src/org/modula/helpers/annotators/UnknownDesignatorAnnotator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/modula/helpers/annotators/UnknownModuleAnnotator.java" afterPath="$PROJECT_DIR$/src/org/modula/helpers/annotators/UnknownModuleAnnotator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/modula/helpers/annotators/UnknownSymbolAnnotator.java" afterPath="$PROJECT_DIR$/src/org/modula/helpers/annotators/UnknownSymbolAnnotator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/expression_console_sample.xml" afterPath="$PROJECT_DIR$/.idea/libraries/expression_console_sample.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/org_testng_testng_6_7.xml" afterPath="$PROJECT_DIR$/.idea/libraries/org_testng_testng_6_7.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionConstFactor.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionConstFactorImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionConstTerm.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionElement.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionElementImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionFactor.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionFactorImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionGenericDesignator.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionGenericDesignatorImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionIdent.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionIdentImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionLValue.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionLValueImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionQualident.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionQualidentImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionRecoverEndOfStatement.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionRecoverEndOfStatementImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionSimpleConstExpression.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionSimpleConstExpressionImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionSimpleExpressionImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionString.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionStringImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionTerm.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionTermImpl.java" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionConstantExpression.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionConstantExpressionValue.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionConstantFunctionCall.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionConstantNegation.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionConstantParameter.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionConstantProduct.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionExpressionValue.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionFunctionCall.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionConstantExpressionImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionConstantExpressionValueImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionConstantFunctionCallImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionConstantNegationImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionConstantParameterImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionConstantProductImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionExpressionValueImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionFunctionCallImpl.java" afterPath="" />
+      <change type="MOVED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionCallParameter.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionAssignment.java" />
+      <change type="MOVED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionConstantSum.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionConstExpression.java" />
+      <change type="MOVED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionNegation.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionNumber.java" />
+      <change type="MOVED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionProduct.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionSetExpression.java" />
+      <change type="MOVED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionSum.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionSimpleExpression.java" />
+      <change type="MOVED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionCallParameterImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionAssignmentImpl.java" />
+      <change type="MOVED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionConstantSumImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionConstTermImpl.java" />
+      <change type="MOVED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionNegationImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionNumberImpl.java" />
+      <change type="MOVED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionProductImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionSetExpressionImpl.java" />
+      <change type="MOVED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionSumImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionConstExpressionImpl.java" />
+      <change type="MOVED" beforePath="C:\projects\idea-modula-support\src\org\modula\helpers\annotators\UnknownDesignatorAnnotator.java" afterPath="$PROJECT_DIR$/src/org/modula/helpers/annotators/UnknownQualidentAnnotator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/modula/parsing/grammar/Def.bnf" afterPath="$PROJECT_DIR$/src/org/modula/parsing/grammar/Def.bnf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/modula/parsing/grammar/Def.flex" afterPath="$PROJECT_DIR$/src/org/modula/parsing/grammar/Def.flex" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionAnonymousParameterImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionAnonymousParameterImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionArrayConstantImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionArrayConstantImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionArrayConstantTypeImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionArrayConstantTypeImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionArrayDeclarationImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionArrayDeclarationImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionArrayDefinitionImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionArrayDefinitionImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionAttributeImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionAttributeImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionCaseRangeImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionCaseRangeImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionCaseStatementImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionCaseStatementImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionComplexLiteralImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionComplexLiteralImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionConstantArrayElementImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionConstantArrayElementImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionConstantDefinitionImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionConstantDefinitionImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionConstantDefinitionsImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionConstantDefinitionsImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionConstantDesignator.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionConstantDesignator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionConstantDesignatorImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionConstantDesignatorImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionConstantValue.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionConstantValue.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionConstantValueImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionConstantValueImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionConstantValueModuleParameterImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionConstantValueModuleParameterImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionDefinitionClauseImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionDefinitionClauseImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionDefinitionFileImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionDefinitionFileImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionDesignator.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionDesignator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionDesignatorImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionDesignatorImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionDoStatementImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionDoStatementImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionEnumerationDefinitionImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionEnumerationDefinitionImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionEnumerationMemberDefinitionImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionEnumerationMemberDefinitionImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionEnumerationMemberDesignator.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionEnumerationMemberDesignator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionEnumerationMemberDesignatorImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionEnumerationMemberDesignatorImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionExpression.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionExpression.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionExpressionImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionExpressionImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionFieldImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionFieldImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionFieldsImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionFieldsImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionFooterImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionFooterImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionFunctionDesignator.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionFunctionDesignator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionFunctionDesignatorImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionFunctionDesignatorImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionGenericModuleDefinitionImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionGenericModuleDefinitionImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionHeaderImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionHeaderImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionIfStatementImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionIfStatementImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionImportClauseImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionImportClauseImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionIndexTypeImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionIndexTypeImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionInnerRange.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionInnerRange.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionInnerRangeImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionInnerRangeImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionLiteralImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionLiteralImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionLoopStatementImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionLoopStatementImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionMacroConstantDefinitionImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionMacroConstantDefinitionImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionMacroConstantDefinitionsImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionMacroConstantDefinitionsImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionMacroDeclarationImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionMacroDeclarationImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionMacroInnerDeclarationsImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionMacroInnerDeclarationsImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionMacroTypeDefinitionImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionMacroTypeDefinitionImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionMacroTypeDefinitionsImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionMacroTypeDefinitionsImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionMacroVariableDefinitionImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionMacroVariableDefinitionImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionMacroVariableDefinitionsImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionMacroVariableDefinitionsImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionModuleDefinitionImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionModuleDefinitionImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionModuleImportClauseImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionModuleImportClauseImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionModuleImportImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionModuleImportImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionModuleParameterImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionModuleParameterImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionModuleParametersImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionModuleParametersImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionNamedTypeImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionNamedTypeImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionParameterImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionParameterImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionParametersCommaSeparatedImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionParametersCommaSeparatedImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionParametersImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionParametersImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/DefinitionParser.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/DefinitionParser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionPointerDefinitionImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionPointerDefinitionImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionPredefinedTypeImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionPredefinedTypeImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionProcedureAttributesImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionProcedureAttributesImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionProcedureDefinitionImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionProcedureDefinitionImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionProcedureModifiersImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionProcedureModifiersImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionProcedureTypeDefinitionImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionProcedureTypeDefinitionImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionRangeImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionRangeImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionRecordConstantImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionRecordConstantImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionRecordDefinitionImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionRecordDefinitionImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionSelectorImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionSelectorImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionSetDefinitionImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionSetDefinitionImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionSetDesignator.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionSetDesignator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionSetDesignatorImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionSetDesignatorImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionSetLiteralImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionSetLiteralImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionStatement.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionStatement.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionStatementImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionStatementImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionStatementsImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionStatementsImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionStaticFieldImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionStaticFieldImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionSymbolImportClauseImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionSymbolImportClauseImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionTypeAliasDefinitionImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionTypeAliasDefinitionImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionTypeDefinitionImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionTypeDefinitionImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionTypeDefinitionsImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionTypeDefinitionsImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionTypeDesignator.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionTypeDesignator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionTypeDesignatorImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionTypeDesignatorImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionTypeParameterImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionTypeParameterImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionTypeSpecificationImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionTypeSpecificationImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionVariableDefinitionImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionVariableDefinitionImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionVariableDefinitionsImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionVariableDefinitionsImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionVariableNameDefinitionImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionVariableNameDefinitionImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionVariantFieldImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionVariantFieldImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionVariantImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionVariantImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionVariantsImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionVariantsImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionVisitor.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionVisitor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionWhateverImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionWhateverImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/modula/helpers/index/keys/ImplicitEntities.java" afterPath="$PROJECT_DIR$/src/org/modula/helpers/index/keys/ImplicitEntities.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/modula/helpers/fixes/ImportUnknownDesignatorFix.java" afterPath="$PROJECT_DIR$/src/org/modula/helpers/fixes/ImportUnknownDesignatorFix.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/ModulaTypes.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/ModulaTypes.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/modula/parsing/grammar/ModuleDefinitionLexer.java" afterPath="$PROJECT_DIR$/src/org/modula/parsing/grammar/ModuleDefinitionLexer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" afterPath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/META-INF/plugin.xml" afterPath="$PROJECT_DIR$/META-INF/plugin.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="idea-modula-support.iws" />
@@ -129,62 +265,107 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Def.bnf" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Def.bnf" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/org/modula/parsing/grammar/Def.bnf">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.214286" vertical-offset="3192" max-vertical-offset="4335">
-              <caret line="211" column="23" selection-start-line="211" selection-start-column="23" selection-end-line="211" selection-end-column="23" />
-              <folding>
-                <marker date="1413070358648" expanded="true" signature="8329:8530" placeholder="{..}" />
-                <marker date="1413070358648" expanded="true" signature="10985:11116" placeholder="{..}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Def.flex" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/org/modula/parsing/grammar/Def.flex">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.53217393" vertical-offset="2312" max-vertical-offset="4828">
-              <caret line="154" column="43" selection-start-line="154" selection-start-column="43" selection-end-line="154" selection-end-column="43" />
+            <state vertical-scroll-proportion="0.29166666" vertical-offset="3273" max-vertical-offset="4896">
+              <caret line="215" column="88" selection-start-line="215" selection-start-column="88" selection-end-line="215" selection-end-column="88" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ModuleDefinitionFileIndex.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/index/keys/ModuleDefinitionFileIndex.java">
+      <file leaf-file-name="UnknownSymbolAnnotator.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/annotators/UnknownSymbolAnnotator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="621" max-vertical-offset="1377">
+              <caret line="50" column="69" selection-start-line="50" selection-start-column="69" selection-end-line="50" selection-end-column="69" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ImplicitEntities.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/index/keys/ImplicitEntities.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="241" max-vertical-offset="1088">
+              <caret line="45" column="19" selection-start-line="45" selection-start-column="19" selection-end-line="45" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ModulaParseException.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/modula/parsing/ModulaParseException.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
+              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MatchIterable.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/modula/parsing/MatchIterable.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="3" max-vertical-offset="1105">
+              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CommentaryDenester.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/modula/parsing/CommentaryDenester.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="717" max-vertical-offset="1751">
+              <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AstTraversingUtility.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/modula/parsing/utility/AstTraversingUtility.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="731">
-              <caret line="8" column="40" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
+              <caret line="13" column="19" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CommentaryDenesterTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test-src/org/modula/parsing/CommentaryDenesterTest.java">
+      <file leaf-file-name="DefinitionParser.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gen/org/modula/parsing/definition/DefinitionParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1088">
-              <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="16987" max-vertical-offset="72267">
+              <caret line="1017" column="0" selection-start-line="1017" selection-start-column="0" selection-end-line="1017" selection-end-column="0" />
               <folding>
-                <element signature="e#2219#2220#0" expanded="true" />
-                <element signature="e#2319#2320#0" expanded="true" />
+                <element signature="imports" expanded="false" />
+                <element signature="e#187533#187678#0" expanded="false" />
+                <element signature="e#187673#187674#0" expanded="false" />
+                <element signature="e#187875#187876#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SerializeBooleanStackTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test-src/org/modula/parsing/SerializeBooleanStackTest.java">
+      <file leaf-file-name="GeneratedParserUtilBase.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://C:/repos/git.jetbrains.org/idea/platform/lang-impl/src/com/intellij/lang/parser/GeneratedParserUtilBase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="791" max-vertical-offset="1853">
-              <caret line="96" column="28" selection-start-line="96" selection-start-column="28" selection-end-line="96" selection-end-column="28" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#635#645#0" expanded="true" />
-                <element signature="e#918#928#0" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.0" vertical-offset="1819" max-vertical-offset="17340">
+              <caret line="177" column="0" selection-start-line="177" selection-start-column="0" selection-end-line="177" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Def.flex" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/modula/parsing/grammar/Def.flex">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1881" max-vertical-offset="4845">
+              <caret line="122" column="62" selection-start-line="122" selection-start-column="53" selection-end-line="122" selection-end-column="62" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -231,13 +412,15 @@
         <option value="$PROJECT_DIR$/src/org/modula/helpers/index/keys/ModuleIndex.java" />
         <option value="$PROJECT_DIR$/src/org/modula/helpers/index/keys/ImplicitModules.java" />
         <option value="$PROJECT_DIR$/src/org/modula/helpers/annotators/UnknownModuleAnnotator.java" />
-        <option value="$PROJECT_DIR$/src/org/modula/helpers/annotators/UnknownDesignatorAnnotator.java" />
-        <option value="$PROJECT_DIR$/src/org/modula/helpers/index/keys/ImplicitEntities.java" />
         <option value="$PROJECT_DIR$/src/org/modula/helpers/annotators/UnknownSymbolAnnotator.java" />
         <option value="$PROJECT_DIR$/test-src/org/modula/parsing/CommentaryDenesterTest.java" />
         <option value="$PROJECT_DIR$/test-src/org/modula/parsing/SerializeBooleanStackTest.java" />
-        <option value="$PROJECT_DIR$/src/org/modula/parsing/grammar/Def.bnf" />
         <option value="$PROJECT_DIR$/src/org/modula/parsing/grammar/Def.flex" />
+        <option value="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionDesignator.java" />
+        <option value="$PROJECT_DIR$/src/org/modula/helpers/annotators/UnknownDesignatorAnnotator.java" />
+        <option value="$PROJECT_DIR$/src/org/modula/helpers/annotators/UnknownQualidentAnnotator.java" />
+        <option value="$PROJECT_DIR$/src/org/modula/helpers/index/keys/ImplicitEntities.java" />
+        <option value="$PROJECT_DIR$/src/org/modula/parsing/grammar/Def.bnf" />
       </list>
     </option>
   </component>
@@ -294,6 +477,7 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -367,32 +551,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="parsing" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="idea-modula-support" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="idea-modula-support" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modula" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="parsing" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="utility" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -602,35 +760,8 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="idea-modula-support" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="idea-modula-support" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gen" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="parsing" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="time" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="psi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -640,7 +771,7 @@
     <property name="OverrideImplement.combined" value="true" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="Repository.Attach.JavaDocs" value="true" />
-    <property name="options.lastSelected" value="preferences.sourceCode.Java" />
+    <property name="options.lastSelected" value="preferences.pluginManager" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="recentsLimit" value="5" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/expression-console-sample.jar!/" />
@@ -1083,8 +1214,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1103,7 +1234,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22068231" sideWeight="0.6708286" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32850778" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850778" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="PsiViewer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32986537" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1133,20 +1264,13 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/org/modula/helpers/annotators/UnknownModuleAnnotator.java</url>
-          <line>57</line>
+          <url>file://$PROJECT_DIR$/gen/org/modula/parsing/definition/DefinitionParser.java</url>
+          <line>1020</line>
           <properties />
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <condition expression="moduleName.equals(&quot;SYSTEM&quot;)&#13;&#13;JAVA" />
-          <url>file://$PROJECT_DIR$/src/org/modula/helpers/annotators/UnknownModuleAnnotator.java</url>
-          <line>47</line>
-          <properties />
-          <option name="timeStamp" value="14" />
+          <option name="timeStamp" value="19" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="15" />
+      <option name="time" value="20" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -1154,35 +1278,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/org/modula/parsing/grammar/ModuleDefinitionLexer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25373134" vertical-offset="0" max-vertical-offset="31331">
-          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/modula/files/ModuleDefinitionType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="111" max-vertical-offset="663">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/modula/files/ModulaFileTypeFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="459">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/modula/gui/def.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/org/modula/gui/mod.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -1192,7 +1287,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="408">
           <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1200,7 +1294,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="714">
           <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1208,7 +1301,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="402" max-vertical-offset="2108">
           <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1216,9 +1308,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="3738" max-vertical-offset="6256">
           <caret line="302" column="0" selection-start-line="302" selection-start-column="0" selection-end-line="302" selection-end-column="0" />
-          <folding>
-            <element signature="e#13549#13578#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1226,7 +1315,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="2939" max-vertical-offset="11152">
           <caret line="227" column="0" selection-start-line="227" selection-start-column="0" selection-end-line="227" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1234,9 +1322,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2839">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#9924#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1244,7 +1329,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1426" max-vertical-offset="2006">
           <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1252,7 +1336,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="32" max-vertical-offset="969">
           <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1260,7 +1343,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="391">
           <caret line="14" column="53" selection-start-line="14" selection-start-column="53" selection-end-line="14" selection-end-column="53" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1268,10 +1350,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="233" max-vertical-offset="1530">
           <caret line="55" column="52" selection-start-line="55" selection-start-column="42" selection-end-line="55" selection-end-column="52" />
-          <folding>
-            <element signature="e#1602#2911#0" expanded="false" />
-            <element signature="e#2904#2905#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1287,10 +1365,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="391">
           <caret line="26" column="35" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#1154#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1298,7 +1372,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="457" max-vertical-offset="1037">
           <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1314,9 +1387,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="883" max-vertical-offset="1241">
           <caret line="93" column="0" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
-          <folding>
-            <element signature="e#3011#3012#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1324,7 +1394,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="527">
           <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1332,7 +1401,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="837" max-vertical-offset="1972">
           <caret line="60" column="50" selection-start-line="60" selection-start-column="25" selection-end-line="60" selection-end-column="50" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1340,7 +1408,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
           <caret line="30" column="78" selection-start-line="30" selection-start-column="78" selection-end-line="30" selection-end-column="78" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1348,7 +1415,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="106" max-vertical-offset="901">
           <caret line="31" column="18" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1356,7 +1422,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="238">
           <caret line="25" column="35" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1364,10 +1429,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
           <caret line="19" column="67" selection-start-line="19" selection-start-column="67" selection-end-line="19" selection-end-column="67" />
-          <folding>
-            <element signature="e#859#860#0" expanded="false" />
-            <element signature="e#876#877#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1375,7 +1436,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="196" max-vertical-offset="748">
           <caret line="50" column="29" selection-start-line="50" selection-start-column="29" selection-end-line="50" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1383,7 +1443,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="493">
           <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1395,32 +1454,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/modula/parsing/psi/SymbolImportStore.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="587" max-vertical-offset="1139">
-          <caret line="61" column="44" selection-start-line="61" selection-start-column="44" selection-end-line="61" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/modula/parsing/psi/ImportMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1737" max-vertical-offset="4573">
-          <caret line="117" column="36" selection-start-line="117" selection-start-column="36" selection-end-line="117" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#684#710#0" expanded="true" />
-            <element signature="e#1690#1698#0" expanded="true" />
-            <element signature="e#6188#6206#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/index/stub/element/types/ProcedureStubElementType.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="247" max-vertical-offset="799">
           <caret line="56" column="40" selection-start-line="56" selection-start-column="40" selection-end-line="56" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1428,7 +1465,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
           <caret line="12" column="68" selection-start-line="12" selection-start-column="68" selection-end-line="12" selection-end-column="68" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1436,10 +1472,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
           <caret line="10" column="49" selection-start-line="10" selection-start-column="49" selection-end-line="10" selection-end-column="49" />
-          <folding>
-            <element signature="e#697#698#0" expanded="true" />
-            <element signature="e#714#715#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1447,16 +1479,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
           <caret line="26" column="88" selection-start-line="26" selection-start-column="88" selection-end-line="26" selection-end-column="88" />
-          <folding>
-            <element signature="e#0#1184#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-            <element signature="e#973#974#0" expanded="false" />
-            <element signature="e#991#992#0" expanded="false" />
-            <element signature="e#1055#1056#0" expanded="false" />
-            <element signature="e#1104#1105#0" expanded="false" />
-            <element signature="e#1159#1160#0" expanded="false" />
-            <element signature="e#1181#1182#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1464,44 +1486,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="459">
           <caret line="28" column="98" selection-start-line="28" selection-start-column="80" selection-end-line="28" selection-end-column="98" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/index/keys/ImplicitEntities.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="294" max-vertical-offset="1122">
-          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-          <folding>
-            <element signature="e#1168#1169#0" expanded="true" />
-            <element signature="e#1218#1219#0" expanded="true" />
-            <element signature="e#1491#1492#0" expanded="true" />
-            <element signature="e#1542#1543#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/annotators/UnknownDesignatorAnnotator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="449" max-vertical-offset="1105">
-          <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/annotators/UnknownSymbolAnnotator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="1377">
-          <caret line="37" column="123" selection-start-line="37" selection-start-column="123" selection-end-line="37" selection-end-column="123" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/annotators/UnknownModuleAnnotator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="54" max-vertical-offset="901">
-          <caret line="57" column="22" selection-start-line="57" selection-start-column="22" selection-end-line="57" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1509,10 +1493,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="3783" max-vertical-offset="9639">
           <caret line="268" column="9" selection-start-line="268" selection-start-column="9" selection-end-line="268" selection-end-column="9" />
-          <folding>
-            <element signature="e#8202#8203#0" expanded="true" />
-            <element signature="e#8230#8231#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1528,10 +1508,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1088">
           <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-          <folding>
-            <element signature="e#2219#2220#0" expanded="true" />
-            <element signature="e#2319#2320#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1539,29 +1516,139 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="791" max-vertical-offset="1853">
           <caret line="96" column="28" selection-start-line="96" selection-start-column="28" selection-end-line="96" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/annotators/UnknownModuleAnnotator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="398" max-vertical-offset="901">
+          <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/modula/parsing/psi/ImportMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4420">
+          <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/modula/parsing/psi/SymbolImportStore.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="587" max-vertical-offset="1139">
+          <caret line="21" column="29" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/annotators/UnknownQualidentAnnotator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1105">
+          <caret line="44" column="38" selection-start-line="44" selection-start-column="38" selection-end-line="44" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/modula/parsing/grammar/NestedCommentaryAwareLexer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
+          <caret line="11" column="54" selection-start-line="11" selection-start-column="54" selection-end-line="11" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionConstantDefinitionImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="561">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/repos/git.jetbrains.org/idea/platform/lang-impl/src/com/intellij/lang/parser/GeneratedParserUtilBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1819" max-vertical-offset="17340">
+          <caret line="177" column="0" selection-start-line="177" selection-start-column="0" selection-end-line="177" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gen/org/modula/parsing/definition/DefinitionParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="16987" max-vertical-offset="72267">
+          <caret line="1017" column="0" selection-start-line="1017" selection-start-column="0" selection-end-line="1017" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#635#645#0" expanded="true" />
-            <element signature="e#918#928#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#187533#187678#0" expanded="false" />
+            <element signature="e#187673#187674#0" expanded="false" />
+            <element signature="e#187875#187876#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/modula/parsing/grammar/Def.bnf">
+    <entry file="file://$PROJECT_DIR$/src/org/modula/parsing/utility/AstTraversingUtility.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.214286" vertical-offset="3192" max-vertical-offset="4335">
-          <caret line="211" column="23" selection-start-line="211" selection-start-column="23" selection-end-line="211" selection-end-column="23" />
-          <folding>
-            <marker date="1413070358648" expanded="true" signature="8329:8530" placeholder="{..}" />
-            <marker date="1413070358648" expanded="true" signature="10985:11116" placeholder="{..}" />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="731">
+          <caret line="13" column="19" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/modula/parsing/ModulaParseException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/modula/parsing/MatchIterable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3" max-vertical-offset="1105">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/modula/parsing/CommentaryDenester.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="717" max-vertical-offset="1751">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/annotators/UnknownSymbolAnnotator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="621" max-vertical-offset="1377">
+          <caret line="50" column="69" selection-start-line="50" selection-start-column="69" selection-end-line="50" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/index/keys/ImplicitEntities.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="241" max-vertical-offset="1088">
+          <caret line="45" column="19" selection-start-line="45" selection-start-column="19" selection-end-line="45" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/modula/parsing/grammar/Def.flex">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.53217393" vertical-offset="2312" max-vertical-offset="4828">
-          <caret line="154" column="43" selection-start-line="154" selection-start-column="43" selection-end-line="154" selection-end-column="43" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1881" max-vertical-offset="4845">
+          <caret line="122" column="62" selection-start-line="122" selection-start-column="53" selection-end-line="122" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/modula/parsing/grammar/Def.bnf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.29166666" vertical-offset="3273" max-vertical-offset="4896">
+          <caret line="215" column="88" selection-start-line="215" selection-start-column="88" selection-end-line="215" selection-end-column="88" />
           <folding />
         </state>
       </provider>

@@ -17,6 +17,11 @@ public class DefinitionSetLiteralImpl extends ASTWrapperPsiElement implements De
     super(node);
   }
 
+  public void accept(@NotNull PsiElementVisitor visitor) {
+    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitSetLiteral(this);
+    else super.accept(visitor);
+  }
+
   @Override
   @NotNull
   public List<DefinitionLiteral> getLiteralList() {
@@ -27,11 +32,6 @@ public class DefinitionSetLiteralImpl extends ASTWrapperPsiElement implements De
   @NotNull
   public DefinitionSetDesignator getSetDesignator() {
     return findNotNullChildByClass(DefinitionSetDesignator.class);
-  }
-
-  public void accept(@NotNull PsiElementVisitor visitor) {
-    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitSetLiteral(this);
-    else super.accept(visitor);
   }
 
 }

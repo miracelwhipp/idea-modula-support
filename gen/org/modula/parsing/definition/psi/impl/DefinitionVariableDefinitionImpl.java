@@ -17,6 +17,11 @@ public class DefinitionVariableDefinitionImpl extends ASTWrapperPsiElement imple
     super(node);
   }
 
+  public void accept(@NotNull PsiElementVisitor visitor) {
+    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitVariableDefinition(this);
+    else super.accept(visitor);
+  }
+
   @Override
   @Nullable
   public DefinitionConstantValue getConstantValue() {
@@ -45,11 +50,6 @@ public class DefinitionVariableDefinitionImpl extends ASTWrapperPsiElement imple
   @NotNull
   public List<DefinitionVariableNameDefinition> getVariableNameDefinitionList() {
     return PsiTreeUtil.getChildrenOfTypeAsList(this, DefinitionVariableNameDefinition.class);
-  }
-
-  public void accept(@NotNull PsiElementVisitor visitor) {
-    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitVariableDefinition(this);
-    else super.accept(visitor);
   }
 
 }

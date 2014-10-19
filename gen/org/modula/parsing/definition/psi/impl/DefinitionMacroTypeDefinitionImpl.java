@@ -17,6 +17,11 @@ public class DefinitionMacroTypeDefinitionImpl extends ASTWrapperPsiElement impl
     super(node);
   }
 
+  public void accept(@NotNull PsiElementVisitor visitor) {
+    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitMacroTypeDefinition(this);
+    else super.accept(visitor);
+  }
+
   @Override
   @Nullable
   public DefinitionOpaqueTypeDefinition getOpaqueTypeDefinition() {
@@ -27,11 +32,6 @@ public class DefinitionMacroTypeDefinitionImpl extends ASTWrapperPsiElement impl
   @Nullable
   public DefinitionTypeAliasDefinition getTypeAliasDefinition() {
     return findChildByClass(DefinitionTypeAliasDefinition.class);
-  }
-
-  public void accept(@NotNull PsiElementVisitor visitor) {
-    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitMacroTypeDefinition(this);
-    else super.accept(visitor);
   }
 
 }

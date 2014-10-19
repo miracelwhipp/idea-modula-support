@@ -17,15 +17,15 @@ public class DefinitionProcedureAttributesImpl extends ASTWrapperPsiElement impl
     super(node);
   }
 
+  public void accept(@NotNull PsiElementVisitor visitor) {
+    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitProcedureAttributes(this);
+    else super.accept(visitor);
+  }
+
   @Override
   @NotNull
   public List<DefinitionAttribute> getAttributeList() {
     return PsiTreeUtil.getChildrenOfTypeAsList(this, DefinitionAttribute.class);
-  }
-
-  public void accept(@NotNull PsiElementVisitor visitor) {
-    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitProcedureAttributes(this);
-    else super.accept(visitor);
   }
 
 }

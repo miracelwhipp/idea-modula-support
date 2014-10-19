@@ -17,15 +17,15 @@ public class DefinitionMacroConstantDefinitionsImpl extends ASTWrapperPsiElement
     super(node);
   }
 
+  public void accept(@NotNull PsiElementVisitor visitor) {
+    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitMacroConstantDefinitions(this);
+    else super.accept(visitor);
+  }
+
   @Override
   @NotNull
   public List<DefinitionMacroConstantDefinition> getMacroConstantDefinitionList() {
     return PsiTreeUtil.getChildrenOfTypeAsList(this, DefinitionMacroConstantDefinition.class);
-  }
-
-  public void accept(@NotNull PsiElementVisitor visitor) {
-    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitMacroConstantDefinitions(this);
-    else super.accept(visitor);
   }
 
 }

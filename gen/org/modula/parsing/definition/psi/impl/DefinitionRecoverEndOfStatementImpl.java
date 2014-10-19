@@ -11,26 +11,14 @@ import static org.modula.parsing.definition.psi.ModulaTypes.*;
 import com.intellij.extapi.psi.ASTWrapperPsiElement;
 import org.modula.parsing.definition.psi.*;
 
-public class DefinitionConstantNegationImpl extends ASTWrapperPsiElement implements DefinitionConstantNegation {
+public class DefinitionRecoverEndOfStatementImpl extends ASTWrapperPsiElement implements DefinitionRecoverEndOfStatement {
 
-  public DefinitionConstantNegationImpl(ASTNode node) {
+  public DefinitionRecoverEndOfStatementImpl(ASTNode node) {
     super(node);
   }
 
-  @Override
-  @Nullable
-  public DefinitionConstantFunctionCall getConstantFunctionCall() {
-    return findChildByClass(DefinitionConstantFunctionCall.class);
-  }
-
-  @Override
-  @Nullable
-  public DefinitionConstantNegation getConstantNegation() {
-    return findChildByClass(DefinitionConstantNegation.class);
-  }
-
   public void accept(@NotNull PsiElementVisitor visitor) {
-    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitConstantNegation(this);
+    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitRecoverEndOfStatement(this);
     else super.accept(visitor);
   }
 

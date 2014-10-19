@@ -17,6 +17,11 @@ public class DefinitionWhateverImpl extends ASTWrapperPsiElement implements Defi
     super(node);
   }
 
+  public void accept(@NotNull PsiElementVisitor visitor) {
+    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitWhatever(this);
+    else super.accept(visitor);
+  }
+
   @Override
   @NotNull
   public List<DefinitionExpression> getExpressionList() {
@@ -27,11 +32,6 @@ public class DefinitionWhateverImpl extends ASTWrapperPsiElement implements Defi
   @NotNull
   public List<DefinitionLiteral> getLiteralList() {
     return PsiTreeUtil.getChildrenOfTypeAsList(this, DefinitionLiteral.class);
-  }
-
-  public void accept(@NotNull PsiElementVisitor visitor) {
-    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitWhatever(this);
-    else super.accept(visitor);
   }
 
 }

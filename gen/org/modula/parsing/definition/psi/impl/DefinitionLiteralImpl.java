@@ -17,6 +17,11 @@ public class DefinitionLiteralImpl extends ASTWrapperPsiElement implements Defin
     super(node);
   }
 
+  public void accept(@NotNull PsiElementVisitor visitor) {
+    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitLiteral(this);
+    else super.accept(visitor);
+  }
+
   @Override
   @Nullable
   public DefinitionComplexLiteral getComplexLiteral() {
@@ -45,11 +50,6 @@ public class DefinitionLiteralImpl extends ASTWrapperPsiElement implements Defin
   @Nullable
   public DefinitionSetLiteral getSetLiteral() {
     return findChildByClass(DefinitionSetLiteral.class);
-  }
-
-  public void accept(@NotNull PsiElementVisitor visitor) {
-    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitLiteral(this);
-    else super.accept(visitor);
   }
 
 }

@@ -17,15 +17,15 @@ public class DefinitionStatementsImpl extends ASTWrapperPsiElement implements De
     super(node);
   }
 
+  public void accept(@NotNull PsiElementVisitor visitor) {
+    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitStatements(this);
+    else super.accept(visitor);
+  }
+
   @Override
   @NotNull
   public List<DefinitionStatement> getStatementList() {
     return PsiTreeUtil.getChildrenOfTypeAsList(this, DefinitionStatement.class);
-  }
-
-  public void accept(@NotNull PsiElementVisitor visitor) {
-    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitStatements(this);
-    else super.accept(visitor);
   }
 
 }

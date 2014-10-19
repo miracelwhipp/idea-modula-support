@@ -36,12 +36,14 @@ public final class ImplicitEntities {
 	public static final String SIZE = "SIZE";
 	public static final String EXCL = "EXCL";
 	public static final String INCL = "INCL";
+	public static final String CHR = "CHR";
 
 	public static final Set<String> IMPLICIT_IMPORTS = Collections.unmodifiableSet(new HashSet<String>() {
 		{
 			add(SIZE);
 			add(EXCL);
 			add(INCL);
+			add(CHR);
 		}
 	});
 

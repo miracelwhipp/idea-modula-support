@@ -17,6 +17,11 @@ public class DefinitionSymbolImportClauseImpl extends ASTWrapperPsiElement imple
     super(node);
   }
 
+  public void accept(@NotNull PsiElementVisitor visitor) {
+    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitSymbolImportClause(this);
+    else super.accept(visitor);
+  }
+
   @Override
   @NotNull
   public List<DefinitionImportSymbol> getImportSymbolList() {
@@ -27,11 +32,6 @@ public class DefinitionSymbolImportClauseImpl extends ASTWrapperPsiElement imple
   @NotNull
   public DefinitionModuleName getModuleName() {
     return findNotNullChildByClass(DefinitionModuleName.class);
-  }
-
-  public void accept(@NotNull PsiElementVisitor visitor) {
-    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitSymbolImportClause(this);
-    else super.accept(visitor);
   }
 
 }

@@ -17,6 +17,11 @@ public class DefinitionDefinitionClauseImpl extends ASTWrapperPsiElement impleme
     super(node);
   }
 
+  public void accept(@NotNull PsiElementVisitor visitor) {
+    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitDefinitionClause(this);
+    else super.accept(visitor);
+  }
+
   @Override
   @Nullable
   public DefinitionConstantDefinitions getConstantDefinitions() {
@@ -39,11 +44,6 @@ public class DefinitionDefinitionClauseImpl extends ASTWrapperPsiElement impleme
   @Nullable
   public DefinitionVariableDefinitions getVariableDefinitions() {
     return findChildByClass(DefinitionVariableDefinitions.class);
-  }
-
-  public void accept(@NotNull PsiElementVisitor visitor) {
-    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitDefinitionClause(this);
-    else super.accept(visitor);
   }
 
 }

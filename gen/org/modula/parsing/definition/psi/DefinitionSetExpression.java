@@ -5,15 +5,12 @@ import java.util.List;
 import org.jetbrains.annotations.*;
 import com.intellij.psi.PsiElement;
 
-public interface DefinitionExpressionValue extends PsiElement {
+public interface DefinitionSetExpression extends PsiElement {
 
   @Nullable
-  DefinitionConstantDesignator getConstantDesignator();
+  DefinitionElement getElement();
 
-  @Nullable
-  DefinitionExpression getExpression();
-
-  @Nullable
-  DefinitionLiteral getLiteral();
+  @NotNull
+  DefinitionQualident getQualident();
 
 }

@@ -5,12 +5,6 @@ import java.util.List;
 import org.jetbrains.annotations.*;
 import com.intellij.psi.PsiElement;
 
-public interface DefinitionNegation extends PsiElement {
-
-  @Nullable
-  DefinitionFunctionCall getFunctionCall();
-
-  @Nullable
-  DefinitionNegation getNegation();
+public interface DefinitionRecoverEndOfStatement extends PsiElement {
 
 }

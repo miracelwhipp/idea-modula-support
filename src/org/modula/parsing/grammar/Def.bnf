@@ -97,7 +97,7 @@ variable_definition ::= variable_name_definition export_name_declaration? (COMMA
 							(EQUALITY_OPERATOR constant_value)? END_OF_STATEMENT
 {
 	pin=1
-	recoverUntil=recover_by_end_of_statement
+	recoverWhile=recover_while_statement
 }
 
 variable_name_definition ::= variable_name
@@ -117,16 +117,18 @@ variable_modifiers ::= (SQUARE_BRACE_OPEN VOLATILE SQUARE_BRACE_CLOSE)?
 
 variable_name ::= IDENTIFIER
 
-designator ::= symbol_name (DOT symbol_name)*
+generic_designator ::= symbol_name ('^'* DOT symbol_name)*
 symbol_name ::= IDENTIFIER
 
-type_designator ::= designator
+type_designator ::= generic_designator
 type_name ::= IDENTIFIER
 
 named_type ::= type_designator | basic_type | stony_brook_type
 
-constant_definitions ::= CONST (constant_definition)* {pin=1 recoverUntil=recover_by_end_of_statement}
-macro_constant_definitions ::= CONST (macro_constant_definition)* {pin=1 recoverUntil=recover_by_end_of_statement}
+constant_definitions ::= CONST (constant_definition)* //{pin=1 recoverWhile=recover_while_statement}
+macro_constant_definitions ::= CONST (macro_constant_definition)* //{pin=1 recoverWhile=recover_while_statement}
+
+recover_while_statement ::= (!(END_OF_STATEMENT))*
 
 constant_definition ::= constant_name EQUALITY_OPERATOR constant_value END_OF_STATEMENT
 {
@@ -142,18 +144,18 @@ macro_constant_definition ::= constant_name EQUALITY_OPERATOR constant_value END
 constant_name ::= IDENTIFIER
 
 integer_literal ::= INT_CONST_BASE_8 | INT_CONST_BASE_16 | INT_CONST_BASE_10
-constant_value ::= array_constant | record_constant | constant_expression
+constant_value ::= array_constant | record_constant | const_expression
 
-constant_expression ::=  constant_sum relational_operator constant_expression | constant_sum
-constant_sum ::= (PLUS | MINUS)? constant_product sum_operator constant_sum | (PLUS | MINUS)? constant_product
-constant_product ::= constant_negation product_operator constant_product | constant_negation
-constant_negation ::= negation_operator constant_negation | constant_function_call
-constant_function_call ::= function_designator OPEN_BRACE (constant_parameter (COMMA constant_parameter)*)? CLOSE_BRACE | constant_expression_value
-constant_parameter ::= constant_expression | type_specification
-constant_expression_value ::= literal | constant_designator | OPEN_BRACE constant_expression CLOSE_BRACE
+//constant_expression ::=  constant_sum relational_operator constant_expression | constant_sum
+//constant_sum ::= (PLUS | MINUS)? constant_product sum_operator constant_sum | (PLUS | MINUS)? constant_product
+//constant_product ::= constant_negation product_operator constant_product | constant_negation
+//constant_negation ::= negation_operator constant_negation | constant_function_call
+//constant_function_call ::= function_designator OPEN_BRACE (constant_parameter (COMMA constant_parameter)*)? CLOSE_BRACE | constant_expression_value
+//constant_parameter ::= constant_expression | type_specification
+//constant_expression_value ::= literal | constant_designator | OPEN_BRACE constant_expression CLOSE_BRACE
 
-function_designator ::= designator
-constant_designator ::= designator
+function_designator ::= generic_designator
+constant_designator ::= generic_designator
 
 private relational_operator ::= LESS_THAN | LESS_EQUALS | EQUALITY_OPERATOR | GREATER_EQUALS | GREATER_THAN | DIFFERENT | CONTAINS
 private sum_operator ::= PLUS | MINUS | OR | BITWISE_OR | BITWISE_XOR
@@ -165,9 +167,9 @@ literal ::= integer_literal | complex_literal | set_literal | enumeration_member
 					STRING_CONST_DOUBLE_UNICODE | STRING_CONST_SINGLE_ANSI | STRING_CONST_DOUBLE_ANSI
 real_literal ::= REAL_CONST
 set_literal ::= set_designator CURLY_BRACE_OPEN (literal (COMMA literal)*)? CURLY_BRACE_CLOSE
-set_designator ::= designator
+set_designator ::= generic_designator
 
-enumeration_member_designator ::= designator
+enumeration_member_designator ::= generic_designator
 
 complex_literal ::= CMPLX OPEN_BRACE real_literal COMMA real_literal CLOSE_BRACE
 array_constant ::= array_constant_type CURLY_BRACE_OPEN (constant_array_element (COMMA constant_array_element)*)? CURLY_BRACE_CLOSE
@@ -178,7 +180,7 @@ constant_type ::= IDENTIFIER
 
 array_declaration ::= ARRAY (range)? OF constant_type
 range ::= (named_type)? SQUARE_BRACE_OPEN inner_range SQUARE_BRACE_CLOSE
-inner_range ::= constant_expression RANGE_OPERATOR constant_expression
+inner_range ::= const_expression RANGE_OPERATOR const_expression
 
 procedure_type_definition ::= PROCEDURE (OPEN_BRACE parameters_comma_separated? CLOSE_BRACE (TYPING_OPERATOR type_specification)? procedure_attributes?)?
 
@@ -211,12 +213,18 @@ parameters_comma_separated ::= anonymous_parameter (COMMA anonymous_parameter)*
 
 statements ::= statement (END_OF_STATEMENT statement)*
 
-statement ::= do_statement | loop_statement | if_statement | case_statement | whatever
+statement ::= do_statement | loop_statement | if_statement | case_statement | assignment {
+	recoverWhile = "recover_end_of_statement"
+}
+
+recover_end_of_statement ::= !(END_OF_STATEMENT | END)
 
 do_statement ::= DO statements END
 loop_statement ::= LOOP statements END
 if_statement ::= IF statements END
 case_statement ::= CASE statements END
+assignment ::= l_value ASSIGNMENT_OPERATOR expression
+l_value ::= generic_designator
 whatever ::= (expression | literal | ASSIGNMENT_OPERATOR | SQUARE_BRACE_OPEN | SQUARE_BRACE_CLOSE | DOT | COMMA |
 				CURLY_BRACE_OPEN | CURLY_BRACE_CLOSE | THEN | ELSE | ELSIF | FOR | TO | BY | CASE |
 				OF | WHILE | REPEAT | UNTIL | WITH | EXIT | RETURN | ANYTHING | OPEN_BRACE | CLOSE_BRACE | IDENTIFIER)*
@@ -252,11 +260,36 @@ enumeration_definition ::= OPEN_BRACE enumeration_member_definition
 enumeration_member_definition ::= enumeration_member_name (EQUALITY_OPERATOR integer_literal)?
 enumeration_member_name ::= IDENTIFIER
 
-expression ::=  sum relational_operator expression | sum
-sum ::= (PLUS | MINUS)? product sum_operator sum | (PLUS | MINUS)? product
-product ::= negation product_operator product | negation
-negation ::= negation_operator negation | function_call
-function_call ::= function_designator OPEN_BRACE (call_parameter (COMMA call_parameter)*)? CLOSE_BRACE | expression_value
-call_parameter ::= expression | type_specification
-expression_value ::= literal | constant_designator | OPEN_BRACE expression CLOSE_BRACE
+//TODO: look at https://github.com/JetBrains/Grammar-Kit/blob/master/HOWTO.md#24-compact-expression-parsing-with-priorities
+
+//expression ::=  sum relational_operator expression | sum
+//sum ::= (PLUS | MINUS)? product sum_operator sum | (PLUS | MINUS)? product
+//product ::= negation product_operator product | negation
+//negation ::= negation_operator negation | function_call
+//function_call ::= call | expression_value
+//call ::= function_designator OPEN_BRACE (call_parameter (COMMA call_parameter)*)? CLOSE_BRACE
+//call_parameter ::= expression | type_specification
+//expression_value ::= literal | constant_designator | OPEN_BRACE expression CLOSE_BRACE
+
+
+expression ::= simple_expression (relational_operator simple_expression)?
+simple_expression ::= (PLUS | MINUS)? term ((PLUS | MINUS | OR) term)*
+term ::= factor ((TIMES | BY | DIVISION | MODULO | REMAINDER | AND) factor)*
+factor ::= number | string | set_expression | NOT factor |
+				designator (OPEN_BRACE (expression (COMMA expression)*)? CLOSE_BRACE)
+number ::= integer_literal | real_literal
+string ::= STRING_CONST_DOUBLE | STRING_CONST_DOUBLE_ANSI | STRING_CONST_DOUBLE_UNICODE | STRING_CONST_SINGLE |
+				STRING_CONST_SINGLE_ANSI | STRING_CONST_SINGLE_UNICODE
+set_expression ::= qualident CURLY_BRACE_OPEN (element (COMMA elemten)*)?  CURLY_BRACE_CLOSE
+qualident ::= ident (DOT ident)*
+ident ::= IDENTIFIER
+element ::= const_expression (RANGE_OPERATOR const_expression)*
+designator ::= qualident ((DOT ident) | (SQUARE_BRACE_OPEN expression (COMMA expression)* SQUARE_BRACE_CLOSE) |
+				POINTER_DEREFERENCE_OPERATOR)*
+
+const_expression ::= simple_const_expression (relational_operator simple_const_expression)?
+simple_const_expression ::= (PLUS | MINUS)? const_term ((PLUS | MINUS | OR) const_term)*
+const_term ::= const_factor ((TIMES | BY | DIVISION | MODULO | REMAINDER | AND) const_factor)*
+const_factor ::= number | string | set_expression | (OPEN_BRACE const_expression CLOSE_BRACE) |
+					(NOT const_factor) | designator (OPEN_BRACE (const_expression (COMMA const_expression)*)? CLOSE_BRACE)?
 

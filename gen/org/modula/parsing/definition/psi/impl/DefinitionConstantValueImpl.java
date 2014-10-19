@@ -17,6 +17,11 @@ public class DefinitionConstantValueImpl extends ASTWrapperPsiElement implements
     super(node);
   }
 
+  public void accept(@NotNull PsiElementVisitor visitor) {
+    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitConstantValue(this);
+    else super.accept(visitor);
+  }
+
   @Override
   @Nullable
   public DefinitionArrayConstant getArrayConstant() {
@@ -25,19 +30,14 @@ public class DefinitionConstantValueImpl extends ASTWrapperPsiElement implements
 
   @Override
   @Nullable
-  public DefinitionConstantExpression getConstantExpression() {
-    return findChildByClass(DefinitionConstantExpression.class);
+  public DefinitionConstExpression getConstExpression() {
+    return findChildByClass(DefinitionConstExpression.class);
   }
 
   @Override
   @Nullable
   public DefinitionRecordConstant getRecordConstant() {
     return findChildByClass(DefinitionRecordConstant.class);
-  }
-
-  public void accept(@NotNull PsiElementVisitor visitor) {
-    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitConstantValue(this);
-    else super.accept(visitor);
   }
 
 }

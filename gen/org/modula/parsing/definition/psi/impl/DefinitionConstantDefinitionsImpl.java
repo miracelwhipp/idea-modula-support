@@ -17,15 +17,15 @@ public class DefinitionConstantDefinitionsImpl extends ASTWrapperPsiElement impl
     super(node);
   }
 
+  public void accept(@NotNull PsiElementVisitor visitor) {
+    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitConstantDefinitions(this);
+    else super.accept(visitor);
+  }
+
   @Override
   @NotNull
   public List<DefinitionConstantDefinition> getConstantDefinitionList() {
     return PsiTreeUtil.getChildrenOfTypeAsList(this, DefinitionConstantDefinition.class);
-  }
-
-  public void accept(@NotNull PsiElementVisitor visitor) {
-    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitConstantDefinitions(this);
-    else super.accept(visitor);
   }
 
 }

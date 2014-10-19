@@ -5,12 +5,9 @@ import java.util.List;
 import org.jetbrains.annotations.*;
 import com.intellij.psi.PsiElement;
 
-public interface DefinitionCallParameter extends PsiElement {
+public interface DefinitionGenericDesignator extends PsiElement {
 
-  @Nullable
-  DefinitionExpression getExpression();
-
-  @Nullable
-  DefinitionTypeSpecification getTypeSpecification();
+  @NotNull
+  List<DefinitionSymbolName> getSymbolNameList();
 
 }

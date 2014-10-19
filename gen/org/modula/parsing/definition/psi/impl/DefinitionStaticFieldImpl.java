@@ -17,6 +17,11 @@ public class DefinitionStaticFieldImpl extends ASTWrapperPsiElement implements D
     super(node);
   }
 
+  public void accept(@NotNull PsiElementVisitor visitor) {
+    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitStaticField(this);
+    else super.accept(visitor);
+  }
+
   @Override
   @NotNull
   public List<DefinitionFieldName> getFieldNameList() {
@@ -27,11 +32,6 @@ public class DefinitionStaticFieldImpl extends ASTWrapperPsiElement implements D
   @NotNull
   public DefinitionTypeSpecification getTypeSpecification() {
     return findNotNullChildByClass(DefinitionTypeSpecification.class);
-  }
-
-  public void accept(@NotNull PsiElementVisitor visitor) {
-    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitStaticField(this);
-    else super.accept(visitor);
   }
 
 }

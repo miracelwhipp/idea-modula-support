@@ -20,7 +20,7 @@ import org.modula.parsing.utility.DefinitionElementFactory;
 import java.util.List;
 
 /**
- * A fix for {@link org.modula.helpers.annotators.UnknownDesignatorAnnotator}. An unknown symbol or module might be imported from
+ * A fix for {@link org.modula.helpers.annotators.UnknownQualidentAnnotator}. An unknown symbol or module might be imported from
  * if it exists in the project. Note that the fix does not check whether the imported symbol or module exists. It plainly creates
  * the import clause.
  */

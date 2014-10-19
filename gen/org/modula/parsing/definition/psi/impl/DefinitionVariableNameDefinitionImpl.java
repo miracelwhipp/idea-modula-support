@@ -22,15 +22,15 @@ public class DefinitionVariableNameDefinitionImpl extends VariableStubBasedPsiEl
     super(stub, nodeType);
   }
 
+  public void accept(@NotNull PsiElementVisitor visitor) {
+    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitVariableNameDefinition(this);
+    else super.accept(visitor);
+  }
+
   @Override
   @NotNull
   public DefinitionVariableName getVariableName() {
     return findNotNullChildByClass(DefinitionVariableName.class);
-  }
-
-  public void accept(@NotNull PsiElementVisitor visitor) {
-    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitVariableNameDefinition(this);
-    else super.accept(visitor);
   }
 
 }

@@ -7,10 +7,7 @@ import com.intellij.psi.PsiElement;
 
 public interface DefinitionExpression extends PsiElement {
 
-  @Nullable
-  DefinitionExpression getExpression();
-
   @NotNull
-  DefinitionSum getSum();
+  List<DefinitionSimpleExpression> getSimpleExpressionList();
 
 }

@@ -17,6 +17,11 @@ public class DefinitionDefinitionFileImpl extends ASTWrapperPsiElement implement
     super(node);
   }
 
+  public void accept(@NotNull PsiElementVisitor visitor) {
+    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitDefinitionFile(this);
+    else super.accept(visitor);
+  }
+
   @Override
   @NotNull
   public List<DefinitionDefinitionClause> getDefinitionClauseList() {
@@ -39,11 +44,6 @@ public class DefinitionDefinitionFileImpl extends ASTWrapperPsiElement implement
   @NotNull
   public List<DefinitionImportClause> getImportClauseList() {
     return PsiTreeUtil.getChildrenOfTypeAsList(this, DefinitionImportClause.class);
-  }
-
-  public void accept(@NotNull PsiElementVisitor visitor) {
-    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitDefinitionFile(this);
-    else super.accept(visitor);
   }
 
 }

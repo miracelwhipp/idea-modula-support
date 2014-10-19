@@ -17,6 +17,11 @@ public class DefinitionTypeSpecificationImpl extends ASTWrapperPsiElement implem
     super(node);
   }
 
+  public void accept(@NotNull PsiElementVisitor visitor) {
+    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitTypeSpecification(this);
+    else super.accept(visitor);
+  }
+
   @Override
   @Nullable
   public DefinitionArrayDefinition getArrayDefinition() {
@@ -69,11 +74,6 @@ public class DefinitionTypeSpecificationImpl extends ASTWrapperPsiElement implem
   @Nullable
   public DefinitionTypeDesignator getTypeDesignator() {
     return findChildByClass(DefinitionTypeDesignator.class);
-  }
-
-  public void accept(@NotNull PsiElementVisitor visitor) {
-    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitTypeSpecification(this);
-    else super.accept(visitor);
   }
 
 }

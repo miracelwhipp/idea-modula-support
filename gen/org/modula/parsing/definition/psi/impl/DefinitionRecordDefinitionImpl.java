@@ -17,15 +17,15 @@ public class DefinitionRecordDefinitionImpl extends ASTWrapperPsiElement impleme
     super(node);
   }
 
+  public void accept(@NotNull PsiElementVisitor visitor) {
+    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitRecordDefinition(this);
+    else super.accept(visitor);
+  }
+
   @Override
   @NotNull
   public DefinitionFields getFields() {
     return findNotNullChildByClass(DefinitionFields.class);
-  }
-
-  public void accept(@NotNull PsiElementVisitor visitor) {
-    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitRecordDefinition(this);
-    else super.accept(visitor);
   }
 
 }

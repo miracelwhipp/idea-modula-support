@@ -11,26 +11,14 @@ import static org.modula.parsing.definition.psi.ModulaTypes.*;
 import com.intellij.extapi.psi.ASTWrapperPsiElement;
 import org.modula.parsing.definition.psi.*;
 
-public class DefinitionConstantParameterImpl extends ASTWrapperPsiElement implements DefinitionConstantParameter {
+public class DefinitionStringImpl extends ASTWrapperPsiElement implements DefinitionString {
 
-  public DefinitionConstantParameterImpl(ASTNode node) {
+  public DefinitionStringImpl(ASTNode node) {
     super(node);
   }
 
-  @Override
-  @Nullable
-  public DefinitionConstantExpression getConstantExpression() {
-    return findChildByClass(DefinitionConstantExpression.class);
-  }
-
-  @Override
-  @Nullable
-  public DefinitionTypeSpecification getTypeSpecification() {
-    return findChildByClass(DefinitionTypeSpecification.class);
-  }
-
   public void accept(@NotNull PsiElementVisitor visitor) {
-    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitConstantParameter(this);
+    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitString(this);
     else super.accept(visitor);
   }
 

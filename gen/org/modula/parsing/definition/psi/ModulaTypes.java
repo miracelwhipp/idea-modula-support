@@ -20,9 +20,9 @@ public interface ModulaTypes {
   IElementType ARRAY_CONSTANT_TYPE = new ModulaElementType("ARRAY_CONSTANT_TYPE");
   IElementType ARRAY_DECLARATION = new ModulaElementType("ARRAY_DECLARATION");
   IElementType ARRAY_DEFINITION = new ModulaElementType("ARRAY_DEFINITION");
+  IElementType ASSIGNMENT = new ModulaElementType("ASSIGNMENT");
   IElementType ATTRIBUTE = new ModulaElementType("ATTRIBUTE");
   IElementType BASIC_TYPE = new ModulaElementType("BASIC_TYPE");
-  IElementType CALL_PARAMETER = new ModulaElementType("CALL_PARAMETER");
   IElementType CASE_RANGE = new ModulaElementType("CASE_RANGE");
   IElementType CASE_STATEMENT = new ModulaElementType("CASE_STATEMENT");
   IElementType COMPLEX_LITERAL = new ModulaElementType("COMPLEX_LITERAL");
@@ -30,36 +30,34 @@ public interface ModulaTypes {
   IElementType CONSTANT_DEFINITION = new ConstantStubElementType("CONSTANT_DEFINITION");
   IElementType CONSTANT_DEFINITIONS = new ModulaElementType("CONSTANT_DEFINITIONS");
   IElementType CONSTANT_DESIGNATOR = new ModulaElementType("CONSTANT_DESIGNATOR");
-  IElementType CONSTANT_EXPRESSION = new ModulaElementType("CONSTANT_EXPRESSION");
-  IElementType CONSTANT_EXPRESSION_VALUE = new ModulaElementType("CONSTANT_EXPRESSION_VALUE");
-  IElementType CONSTANT_FUNCTION_CALL = new ModulaElementType("CONSTANT_FUNCTION_CALL");
   IElementType CONSTANT_NAME = new ModulaElementType("CONSTANT_NAME");
-  IElementType CONSTANT_NEGATION = new ModulaElementType("CONSTANT_NEGATION");
-  IElementType CONSTANT_PARAMETER = new ModulaElementType("CONSTANT_PARAMETER");
-  IElementType CONSTANT_PRODUCT = new ModulaElementType("CONSTANT_PRODUCT");
-  IElementType CONSTANT_SUM = new ModulaElementType("CONSTANT_SUM");
   IElementType CONSTANT_TYPE = new ModulaElementType("CONSTANT_TYPE");
   IElementType CONSTANT_VALUE = new ModulaElementType("CONSTANT_VALUE");
   IElementType CONSTANT_VALUE_MODULE_PARAMETER = new ModulaElementType("CONSTANT_VALUE_MODULE_PARAMETER");
+  IElementType CONST_EXPRESSION = new ModulaElementType("CONST_EXPRESSION");
+  IElementType CONST_FACTOR = new ModulaElementType("CONST_FACTOR");
+  IElementType CONST_TERM = new ModulaElementType("CONST_TERM");
   IElementType DEFINITION_CLAUSE = new ModulaElementType("DEFINITION_CLAUSE");
   IElementType DEFINITION_FILE = new ModulaElementType("DEFINITION_FILE");
   IElementType DESIGNATOR = new ModulaElementType("DESIGNATOR");
   IElementType DO_STATEMENT = new ModulaElementType("DO_STATEMENT");
+  IElementType ELEMENT = new ModulaElementType("ELEMENT");
   IElementType ENUMERATION_DEFINITION = new ModulaElementType("ENUMERATION_DEFINITION");
   IElementType ENUMERATION_MEMBER_DEFINITION = new ModulaElementType("ENUMERATION_MEMBER_DEFINITION");
   IElementType ENUMERATION_MEMBER_DESIGNATOR = new ModulaElementType("ENUMERATION_MEMBER_DESIGNATOR");
   IElementType ENUMERATION_MEMBER_NAME = new ModulaElementType("ENUMERATION_MEMBER_NAME");
   IElementType EXPORT_NAME_DECLARATION = new ModulaElementType("EXPORT_NAME_DECLARATION");
   IElementType EXPRESSION = new ModulaElementType("EXPRESSION");
-  IElementType EXPRESSION_VALUE = new ModulaElementType("EXPRESSION_VALUE");
+  IElementType FACTOR = new ModulaElementType("FACTOR");
   IElementType FIELD = new ModulaElementType("FIELD");
   IElementType FIELDS = new ModulaElementType("FIELDS");
   IElementType FIELD_NAME = new ModulaElementType("FIELD_NAME");
   IElementType FOOTER = new ModulaElementType("FOOTER");
-  IElementType FUNCTION_CALL = new ModulaElementType("FUNCTION_CALL");
   IElementType FUNCTION_DESIGNATOR = new ModulaElementType("FUNCTION_DESIGNATOR");
+  IElementType GENERIC_DESIGNATOR = new ModulaElementType("GENERIC_DESIGNATOR");
   IElementType GENERIC_MODULE_DEFINITION = new ModulaElementType("GENERIC_MODULE_DEFINITION");
   IElementType HEADER = new ModulaElementType("HEADER");
+  IElementType IDENT = new ModulaElementType("IDENT");
   IElementType IF_STATEMENT = new ModulaElementType("IF_STATEMENT");
   IElementType IGNORED = new ModulaElementType("IGNORED");
   IElementType IMPORT_CLAUSE = new ModulaElementType("IMPORT_CLAUSE");
@@ -69,6 +67,7 @@ public interface ModulaTypes {
   IElementType INTEGER_LITERAL = new ModulaElementType("INTEGER_LITERAL");
   IElementType LITERAL = new ModulaElementType("LITERAL");
   IElementType LOOP_STATEMENT = new ModulaElementType("LOOP_STATEMENT");
+  IElementType L_VALUE = new ModulaElementType("L_VALUE");
   IElementType MACRO_CONSTANT_DEFINITION = new ModulaElementType("MACRO_CONSTANT_DEFINITION");
   IElementType MACRO_CONSTANT_DEFINITIONS = new ModulaElementType("MACRO_CONSTANT_DEFINITIONS");
   IElementType MACRO_DECLARATION = new ModulaElementType("MACRO_DECLARATION");
@@ -85,7 +84,7 @@ public interface ModulaTypes {
   IElementType MODULE_PARAMETERS = new ModulaElementType("MODULE_PARAMETERS");
   IElementType MODULE_PARAMETER_NAME = new ModulaElementType("MODULE_PARAMETER_NAME");
   IElementType NAMED_TYPE = new ModulaElementType("NAMED_TYPE");
-  IElementType NEGATION = new ModulaElementType("NEGATION");
+  IElementType NUMBER = new ModulaElementType("NUMBER");
   IElementType OPAQUE_TYPE_DEFINITION = new ModulaElementType("OPAQUE_TYPE_DEFINITION");
   IElementType PARAMETER = new ModulaElementType("PARAMETER");
   IElementType PARAMETERS = new ModulaElementType("PARAMETERS");
@@ -98,22 +97,28 @@ public interface ModulaTypes {
   IElementType PROCEDURE_MODIFIERS = new ModulaElementType("PROCEDURE_MODIFIERS");
   IElementType PROCEDURE_NAME = new ModulaElementType("PROCEDURE_NAME");
   IElementType PROCEDURE_TYPE_DEFINITION = new ModulaElementType("PROCEDURE_TYPE_DEFINITION");
-  IElementType PRODUCT = new ModulaElementType("PRODUCT");
+  IElementType QUALIDENT = new ModulaElementType("QUALIDENT");
   IElementType RANGE = new ModulaElementType("RANGE");
   IElementType REAL_LITERAL = new ModulaElementType("REAL_LITERAL");
   IElementType RECORD_CONSTANT = new ModulaElementType("RECORD_CONSTANT");
   IElementType RECORD_DEFINITION = new ModulaElementType("RECORD_DEFINITION");
+  IElementType RECOVER_END_OF_STATEMENT = new ModulaElementType("RECOVER_END_OF_STATEMENT");
+  IElementType RECOVER_WHILE_STATEMENT = new ModulaElementType("RECOVER_WHILE_STATEMENT");
   IElementType SELECTOR = new ModulaElementType("SELECTOR");
   IElementType SET_DEFINITION = new ModulaElementType("SET_DEFINITION");
   IElementType SET_DESIGNATOR = new ModulaElementType("SET_DESIGNATOR");
+  IElementType SET_EXPRESSION = new ModulaElementType("SET_EXPRESSION");
   IElementType SET_LITERAL = new ModulaElementType("SET_LITERAL");
+  IElementType SIMPLE_CONST_EXPRESSION = new ModulaElementType("SIMPLE_CONST_EXPRESSION");
+  IElementType SIMPLE_EXPRESSION = new ModulaElementType("SIMPLE_EXPRESSION");
   IElementType STATEMENT = new ModulaElementType("STATEMENT");
   IElementType STATEMENTS = new ModulaElementType("STATEMENTS");
   IElementType STATIC_FIELD = new ModulaElementType("STATIC_FIELD");
   IElementType STONY_BROOK_TYPE = new ModulaElementType("STONY_BROOK_TYPE");
-  IElementType SUM = new ModulaElementType("SUM");
+  IElementType STRING = new ModulaElementType("STRING");
   IElementType SYMBOL_IMPORT_CLAUSE = new ModulaElementType("SYMBOL_IMPORT_CLAUSE");
   IElementType SYMBOL_NAME = new ModulaElementType("SYMBOL_NAME");
+  IElementType TERM = new ModulaElementType("TERM");
   IElementType TYPE_ALIAS_DEFINITION = new ModulaElementType("TYPE_ALIAS_DEFINITION");
   IElementType TYPE_DEFINITION = new TypeStubElementType("TYPE_DEFINITION");
   IElementType TYPE_DEFINITIONS = new ModulaElementType("TYPE_DEFINITIONS");
@@ -168,6 +173,7 @@ public interface ModulaTypes {
   IElementType DO = new ModulaTokenType("DO");
   IElementType DOCUMENTATION_COMMENT = new ModulaTokenType("DOCUMENTATION_COMMENT");
   IElementType DOT = new ModulaTokenType("DOT");
+  IElementType ELEMTEN = new ModulaTokenType("elemten");
   IElementType ELSE = new ModulaTokenType("ELSE");
   IElementType ELSIF = new ModulaTokenType("ELSIF");
   IElementType END = new ModulaTokenType("END");
@@ -207,6 +213,7 @@ public interface ModulaTypes {
   IElementType PIPE = new ModulaTokenType("PIPE");
   IElementType PLUS = new ModulaTokenType("PLUS");
   IElementType POINTER = new ModulaTokenType("POINTER");
+  IElementType POINTER_DEREFERENCE_OPERATOR = new ModulaTokenType("POINTER_DEREFERENCE_OPERATOR");
   IElementType PROCEDURE = new ModulaTokenType("PROCEDURE");
   IElementType PUBLIC = new ModulaTokenType("PUBLIC");
   IElementType PUREASM = new ModulaTokenType("PUREASM");
@@ -288,14 +295,14 @@ public interface ModulaTypes {
       else if (type == ARRAY_DEFINITION) {
         return new DefinitionArrayDefinitionImpl(node);
       }
+      else if (type == ASSIGNMENT) {
+        return new DefinitionAssignmentImpl(node);
+      }
       else if (type == ATTRIBUTE) {
         return new DefinitionAttributeImpl(node);
       }
       else if (type == BASIC_TYPE) {
         return new DefinitionBasicTypeImpl(node);
-      }
-      else if (type == CALL_PARAMETER) {
-        return new DefinitionCallParameterImpl(node);
       }
       else if (type == CASE_RANGE) {
         return new DefinitionCaseRangeImpl(node);
@@ -318,29 +325,8 @@ public interface ModulaTypes {
       else if (type == CONSTANT_DESIGNATOR) {
         return new DefinitionConstantDesignatorImpl(node);
       }
-      else if (type == CONSTANT_EXPRESSION) {
-        return new DefinitionConstantExpressionImpl(node);
-      }
-      else if (type == CONSTANT_EXPRESSION_VALUE) {
-        return new DefinitionConstantExpressionValueImpl(node);
-      }
-      else if (type == CONSTANT_FUNCTION_CALL) {
-        return new DefinitionConstantFunctionCallImpl(node);
-      }
       else if (type == CONSTANT_NAME) {
         return new DefinitionConstantNameImpl(node);
-      }
-      else if (type == CONSTANT_NEGATION) {
-        return new DefinitionConstantNegationImpl(node);
-      }
-      else if (type == CONSTANT_PARAMETER) {
-        return new DefinitionConstantParameterImpl(node);
-      }
-      else if (type == CONSTANT_PRODUCT) {
-        return new DefinitionConstantProductImpl(node);
-      }
-      else if (type == CONSTANT_SUM) {
-        return new DefinitionConstantSumImpl(node);
       }
       else if (type == CONSTANT_TYPE) {
         return new DefinitionConstantTypeImpl(node);
@@ -350,6 +336,15 @@ public interface ModulaTypes {
       }
       else if (type == CONSTANT_VALUE_MODULE_PARAMETER) {
         return new DefinitionConstantValueModuleParameterImpl(node);
+      }
+      else if (type == CONST_EXPRESSION) {
+        return new DefinitionConstExpressionImpl(node);
+      }
+      else if (type == CONST_FACTOR) {
+        return new DefinitionConstFactorImpl(node);
+      }
+      else if (type == CONST_TERM) {
+        return new DefinitionConstTermImpl(node);
       }
       else if (type == DEFINITION_CLAUSE) {
         return new DefinitionDefinitionClauseImpl(node);
@@ -362,6 +357,9 @@ public interface ModulaTypes {
       }
       else if (type == DO_STATEMENT) {
         return new DefinitionDoStatementImpl(node);
+      }
+      else if (type == ELEMENT) {
+        return new DefinitionElementImpl(node);
       }
       else if (type == ENUMERATION_DEFINITION) {
         return new DefinitionEnumerationDefinitionImpl(node);
@@ -381,8 +379,8 @@ public interface ModulaTypes {
       else if (type == EXPRESSION) {
         return new DefinitionExpressionImpl(node);
       }
-      else if (type == EXPRESSION_VALUE) {
-        return new DefinitionExpressionValueImpl(node);
+      else if (type == FACTOR) {
+        return new DefinitionFactorImpl(node);
       }
       else if (type == FIELD) {
         return new DefinitionFieldImpl(node);
@@ -396,17 +394,20 @@ public interface ModulaTypes {
       else if (type == FOOTER) {
         return new DefinitionFooterImpl(node);
       }
-      else if (type == FUNCTION_CALL) {
-        return new DefinitionFunctionCallImpl(node);
-      }
       else if (type == FUNCTION_DESIGNATOR) {
         return new DefinitionFunctionDesignatorImpl(node);
+      }
+      else if (type == GENERIC_DESIGNATOR) {
+        return new DefinitionGenericDesignatorImpl(node);
       }
       else if (type == GENERIC_MODULE_DEFINITION) {
         return new DefinitionGenericModuleDefinitionImpl(node);
       }
       else if (type == HEADER) {
         return new DefinitionHeaderImpl(node);
+      }
+      else if (type == IDENT) {
+        return new DefinitionIdentImpl(node);
       }
       else if (type == IF_STATEMENT) {
         return new DefinitionIfStatementImpl(node);
@@ -434,6 +435,9 @@ public interface ModulaTypes {
       }
       else if (type == LOOP_STATEMENT) {
         return new DefinitionLoopStatementImpl(node);
+      }
+      else if (type == L_VALUE) {
+        return new DefinitionLValueImpl(node);
       }
       else if (type == MACRO_CONSTANT_DEFINITION) {
         return new DefinitionMacroConstantDefinitionImpl(node);
@@ -483,8 +487,8 @@ public interface ModulaTypes {
       else if (type == NAMED_TYPE) {
         return new DefinitionNamedTypeImpl(node);
       }
-      else if (type == NEGATION) {
-        return new DefinitionNegationImpl(node);
+      else if (type == NUMBER) {
+        return new DefinitionNumberImpl(node);
       }
       else if (type == OPAQUE_TYPE_DEFINITION) {
         return new DefinitionOpaqueTypeDefinitionImpl(node);
@@ -522,8 +526,8 @@ public interface ModulaTypes {
       else if (type == PROCEDURE_TYPE_DEFINITION) {
         return new DefinitionProcedureTypeDefinitionImpl(node);
       }
-      else if (type == PRODUCT) {
-        return new DefinitionProductImpl(node);
+      else if (type == QUALIDENT) {
+        return new DefinitionQualidentImpl(node);
       }
       else if (type == RANGE) {
         return new DefinitionRangeImpl(node);
@@ -537,6 +541,12 @@ public interface ModulaTypes {
       else if (type == RECORD_DEFINITION) {
         return new DefinitionRecordDefinitionImpl(node);
       }
+      else if (type == RECOVER_END_OF_STATEMENT) {
+        return new DefinitionRecoverEndOfStatementImpl(node);
+      }
+      else if (type == RECOVER_WHILE_STATEMENT) {
+        return new DefinitionRecoverWhileStatementImpl(node);
+      }
       else if (type == SELECTOR) {
         return new DefinitionSelectorImpl(node);
       }
@@ -546,8 +556,17 @@ public interface ModulaTypes {
       else if (type == SET_DESIGNATOR) {
         return new DefinitionSetDesignatorImpl(node);
       }
+      else if (type == SET_EXPRESSION) {
+        return new DefinitionSetExpressionImpl(node);
+      }
       else if (type == SET_LITERAL) {
         return new DefinitionSetLiteralImpl(node);
+      }
+      else if (type == SIMPLE_CONST_EXPRESSION) {
+        return new DefinitionSimpleConstExpressionImpl(node);
+      }
+      else if (type == SIMPLE_EXPRESSION) {
+        return new DefinitionSimpleExpressionImpl(node);
       }
       else if (type == STATEMENT) {
         return new DefinitionStatementImpl(node);
@@ -561,14 +580,17 @@ public interface ModulaTypes {
       else if (type == STONY_BROOK_TYPE) {
         return new DefinitionStonyBrookTypeImpl(node);
       }
-      else if (type == SUM) {
-        return new DefinitionSumImpl(node);
+      else if (type == STRING) {
+        return new DefinitionStringImpl(node);
       }
       else if (type == SYMBOL_IMPORT_CLAUSE) {
         return new DefinitionSymbolImportClauseImpl(node);
       }
       else if (type == SYMBOL_NAME) {
         return new DefinitionSymbolNameImpl(node);
+      }
+      else if (type == TERM) {
+        return new DefinitionTermImpl(node);
       }
       else if (type == TYPE_ALIAS_DEFINITION) {
         return new DefinitionTypeAliasDefinitionImpl(node);

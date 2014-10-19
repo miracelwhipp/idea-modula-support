@@ -48,7 +48,7 @@
         <annotator language="modula-def" implementationClass="org.modula.helpers.annotators.WrongEndNameAnnotator"/>
         <annotator language="modula-def" implementationClass="org.modula.helpers.annotators.UnknownModuleAnnotator"/>
         <annotator language="modula-def" implementationClass="org.modula.helpers.annotators.UnknownSymbolAnnotator"/>
-        <annotator language="modula-def" implementationClass="org.modula.helpers.annotators.UnknownDesignatorAnnotator"/>
+        <annotator language="modula-def" implementationClass="org.modula.helpers.annotators.UnknownQualidentAnnotator"/>
 
         <lang.commenter language="modula-def" implementationClass="org.modula.helpers.ModulaCommenter"/>
 

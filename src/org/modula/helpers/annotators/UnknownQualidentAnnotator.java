@@ -23,24 +23,24 @@ import java.util.List;
 /**
  * Annotates unknown designators.
  */
-public class UnknownDesignatorAnnotator implements Annotator {
+public class UnknownQualidentAnnotator implements Annotator {
 	@Override
 	public void annotate(@NotNull PsiElement element, @NotNull AnnotationHolder holder) {
 
-		if (!(element instanceof DefinitionDesignator)) {
+		if (!(element instanceof DefinitionQualident)) {
 			return;
 		}
 
-		DefinitionDesignator designator = (DefinitionDesignator) element;
+		DefinitionQualident qualident = (DefinitionQualident) element;
 
-		List<DefinitionSymbolName> symbolNameList = designator.getSymbolNameList();
+		List<DefinitionIdent> symbolNameList = qualident.getIdentList();
 
 		if (symbolNameList.size() == 0) {
 			//will never happen in correct definition file
 			return;
 		}
 
-		DefinitionSymbolName definitionSymbolName = symbolNameList.get(0);
+		DefinitionIdent definitionSymbolName = symbolNameList.get(0);
 
 		String symbolName = definitionSymbolName.getText();
 

@@ -22,6 +22,11 @@ public class DefinitionConstantDefinitionImpl extends ConstantStubBasedPsiElemen
     super(stub, nodeType);
   }
 
+  public void accept(@NotNull PsiElementVisitor visitor) {
+    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitConstantDefinition(this);
+    else super.accept(visitor);
+  }
+
   @Override
   @NotNull
   public DefinitionConstantName getConstantName() {
@@ -32,11 +37,6 @@ public class DefinitionConstantDefinitionImpl extends ConstantStubBasedPsiElemen
   @NotNull
   public DefinitionConstantValue getConstantValue() {
     return findNotNullChildByClass(DefinitionConstantValue.class);
-  }
-
-  public void accept(@NotNull PsiElementVisitor visitor) {
-    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitConstantDefinition(this);
-    else super.accept(visitor);
   }
 
 }

@@ -17,6 +17,11 @@ public class DefinitionMacroDeclarationImpl extends ASTWrapperPsiElement impleme
     super(node);
   }
 
+  public void accept(@NotNull PsiElementVisitor visitor) {
+    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitMacroDeclaration(this);
+    else super.accept(visitor);
+  }
+
   @Override
   @NotNull
   public DefinitionMacroInnerDeclarations getMacroInnerDeclarations() {
@@ -33,11 +38,6 @@ public class DefinitionMacroDeclarationImpl extends ASTWrapperPsiElement impleme
   @NotNull
   public DefinitionStatements getStatements() {
     return findNotNullChildByClass(DefinitionStatements.class);
-  }
-
-  public void accept(@NotNull PsiElementVisitor visitor) {
-    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitMacroDeclaration(this);
-    else super.accept(visitor);
   }
 
 }

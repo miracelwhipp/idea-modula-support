@@ -17,6 +17,11 @@ public class DefinitionEnumerationMemberDefinitionImpl extends ASTWrapperPsiElem
     super(node);
   }
 
+  public void accept(@NotNull PsiElementVisitor visitor) {
+    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitEnumerationMemberDefinition(this);
+    else super.accept(visitor);
+  }
+
   @Override
   @NotNull
   public DefinitionEnumerationMemberName getEnumerationMemberName() {
@@ -27,11 +32,6 @@ public class DefinitionEnumerationMemberDefinitionImpl extends ASTWrapperPsiElem
   @Nullable
   public DefinitionIntegerLiteral getIntegerLiteral() {
     return findChildByClass(DefinitionIntegerLiteral.class);
-  }
-
-  public void accept(@NotNull PsiElementVisitor visitor) {
-    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitEnumerationMemberDefinition(this);
-    else super.accept(visitor);
   }
 
 }

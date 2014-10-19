@@ -11,27 +11,21 @@ import static org.modula.parsing.definition.psi.ModulaTypes.*;
 import com.intellij.extapi.psi.ASTWrapperPsiElement;
 import org.modula.parsing.definition.psi.*;
 
-public class DefinitionSumImpl extends ASTWrapperPsiElement implements DefinitionSum {
+public class DefinitionSimpleExpressionImpl extends ASTWrapperPsiElement implements DefinitionSimpleExpression {
 
-  public DefinitionSumImpl(ASTNode node) {
+  public DefinitionSimpleExpressionImpl(ASTNode node) {
     super(node);
+  }
+
+  public void accept(@NotNull PsiElementVisitor visitor) {
+    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitSimpleExpression(this);
+    else super.accept(visitor);
   }
 
   @Override
   @NotNull
-  public DefinitionProduct getProduct() {
-    return findNotNullChildByClass(DefinitionProduct.class);
-  }
-
-  @Override
-  @Nullable
-  public DefinitionSum getSum() {
-    return findChildByClass(DefinitionSum.class);
-  }
-
-  public void accept(@NotNull PsiElementVisitor visitor) {
-    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitSum(this);
-    else super.accept(visitor);
+  public List<DefinitionTerm> getTermList() {
+    return PsiTreeUtil.getChildrenOfTypeAsList(this, DefinitionTerm.class);
   }
 
 }

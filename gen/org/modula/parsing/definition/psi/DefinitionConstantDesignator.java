@@ -8,6 +8,6 @@ import com.intellij.psi.PsiElement;
 public interface DefinitionConstantDesignator extends PsiElement {
 
   @NotNull
-  DefinitionDesignator getDesignator();
+  DefinitionGenericDesignator getGenericDesignator();
 
 }

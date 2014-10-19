@@ -17,6 +17,11 @@ public class DefinitionTypeAliasDefinitionImpl extends ASTWrapperPsiElement impl
     super(node);
   }
 
+  public void accept(@NotNull PsiElementVisitor visitor) {
+    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitTypeAliasDefinition(this);
+    else super.accept(visitor);
+  }
+
   @Override
   @NotNull
   public DefinitionTypeName getTypeName() {
@@ -27,11 +32,6 @@ public class DefinitionTypeAliasDefinitionImpl extends ASTWrapperPsiElement impl
   @NotNull
   public DefinitionTypeSpecification getTypeSpecification() {
     return findNotNullChildByClass(DefinitionTypeSpecification.class);
-  }
-
-  public void accept(@NotNull PsiElementVisitor visitor) {
-    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitTypeAliasDefinition(this);
-    else super.accept(visitor);
   }
 
 }

@@ -17,15 +17,15 @@ public class DefinitionCaseStatementImpl extends ASTWrapperPsiElement implements
     super(node);
   }
 
+  public void accept(@NotNull PsiElementVisitor visitor) {
+    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitCaseStatement(this);
+    else super.accept(visitor);
+  }
+
   @Override
   @NotNull
   public DefinitionStatements getStatements() {
     return findNotNullChildByClass(DefinitionStatements.class);
-  }
-
-  public void accept(@NotNull PsiElementVisitor visitor) {
-    if (visitor instanceof DefinitionVisitor) ((DefinitionVisitor)visitor).visitCaseStatement(this);
-    else super.accept(visitor);
   }
 
 }
