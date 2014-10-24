@@ -6,22 +6,21 @@ import com.intellij.psi.stubs.PsiFileStub;
 import com.intellij.psi.stubs.StringStubIndexExtension;
 import com.intellij.psi.stubs.StubIndexKey;
 import org.jetbrains.annotations.NotNull;
-import org.modula.parsing.definition.psi.DefinitionDefinitionFile;
-import org.modula.parsing.definition.psi.DefinitionModuleDefinition;
+import org.modula.parsing.definition.psi.DefinitionModuleHeader;
 
 /**
  * An index holding every modula .def file that is parsed correctly and thus defines a module.
  */
-public class ModuleDefinitionFileIndex extends StringStubIndexExtension<DefinitionModuleDefinition> {
+public class ModuleDefinitionFileIndex extends StringStubIndexExtension<DefinitionModuleHeader> {
 
-	public static final StubIndexKey<String, DefinitionModuleDefinition> KEY = StubIndexKey.createIndexKey("modula.module.definition.file.index");
+	public static final StubIndexKey<String, DefinitionModuleHeader> KEY = StubIndexKey.createIndexKey("modula.module.definition.file.index");
 
 	public static final ModuleDefinitionFileIndex INSTANCE = new ModuleDefinitionFileIndex();
 
 
 	@NotNull
 	@Override
-	public StubIndexKey<String, DefinitionModuleDefinition> getKey() {
+	public StubIndexKey<String, DefinitionModuleHeader> getKey() {
 		return KEY;
 	}
 

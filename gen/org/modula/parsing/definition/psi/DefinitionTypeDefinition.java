@@ -11,10 +11,10 @@ import org.modula.helpers.index.stubs.TypeStub;
 
 public interface DefinitionTypeDefinition extends PsiElement, Type, SymbolStubPsiElement, StubBasedPsiElement<TypeStub> {
 
-  @Nullable
-  DefinitionOpaqueTypeDefinition getOpaqueTypeDefinition();
+  @NotNull
+  DefinitionIdent getIdent();
 
   @Nullable
-  DefinitionTypeAliasDefinition getTypeAliasDefinition();
+  DefinitionTypes getTypes();
 
 }

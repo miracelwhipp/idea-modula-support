@@ -24,8 +24,8 @@ public class DefinitionLoopStatementImpl extends ASTWrapperPsiElement implements
 
   @Override
   @NotNull
-  public DefinitionStatements getStatements() {
-    return findNotNullChildByClass(DefinitionStatements.class);
+  public DefinitionStatementSequence getStatementSequence() {
+    return findNotNullChildByClass(DefinitionStatementSequence.class);
   }
 
 }

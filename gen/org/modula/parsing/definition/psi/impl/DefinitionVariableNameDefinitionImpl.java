@@ -29,8 +29,8 @@ public class DefinitionVariableNameDefinitionImpl extends VariableStubBasedPsiEl
 
   @Override
   @NotNull
-  public DefinitionVariableName getVariableName() {
-    return findNotNullChildByClass(DefinitionVariableName.class);
+  public DefinitionIdent getIdent() {
+    return findNotNullChildByClass(DefinitionIdent.class);
   }
 
 }

@@ -49,16 +49,13 @@ public class ChangeModuleNameFix implements IntentionAction {
 			@Override
 			public void run() {
 				ASTNode defFile =
-						AstTraversingUtility.findChildRecursivelyByType(file.getNode(), ModulaTypes.DEFINITION_FILE);
-				ASTNode footer = defFile.findChildByType(ModulaTypes.FOOTER);
-				ASTNode correctName = footer.findChildByType(ModulaTypes.MODULE_NAME).copyElement();
+						AstTraversingUtility.findChildRecursivelyByType(file.getNode(), ModulaTypes.DEFINITION_MODULE);
+				ASTNode correctName = defFile.findChildByType(ModulaTypes.IDENT);
 
-				ASTNode header = defFile.findChildByType(ModulaTypes.HEADER);
-				ASTNode moduleDefinition =
-						AstTraversingUtility.findChildRecursivelyByType(header, ModulaTypes.MODULE_DEFINITION);
-				ASTNode moduleName = moduleDefinition.findChildByType(ModulaTypes.MODULE_NAME);
+				ASTNode header = defFile.findChildByType(ModulaTypes.MODULE_HEADER);
+				ASTNode moduleName = header.findChildByType(ModulaTypes.IDENT);
 
-				moduleDefinition.replaceChild(moduleName, correctName);
+				header.replaceChild(moduleName, correctName);
 			}
 		});
 	}

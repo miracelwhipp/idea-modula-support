@@ -24,20 +24,14 @@ public class DefinitionMacroDeclarationImpl extends ASTWrapperPsiElement impleme
 
   @Override
   @NotNull
-  public DefinitionMacroInnerDeclarations getMacroInnerDeclarations() {
-    return findNotNullChildByClass(DefinitionMacroInnerDeclarations.class);
+  public DefinitionBlock getBlock() {
+    return findNotNullChildByClass(DefinitionBlock.class);
   }
 
   @Override
   @NotNull
-  public DefinitionProcedureName getProcedureName() {
-    return findNotNullChildByClass(DefinitionProcedureName.class);
-  }
-
-  @Override
-  @NotNull
-  public DefinitionStatements getStatements() {
-    return findNotNullChildByClass(DefinitionStatements.class);
+  public DefinitionIdent getIdent() {
+    return findNotNullChildByClass(DefinitionIdent.class);
   }
 
 }

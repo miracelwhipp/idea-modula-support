@@ -28,15 +28,15 @@ public class DefinitionTypeDefinitionImpl extends TypeStubBasedPsiElement implem
   }
 
   @Override
-  @Nullable
-  public DefinitionOpaqueTypeDefinition getOpaqueTypeDefinition() {
-    return findChildByClass(DefinitionOpaqueTypeDefinition.class);
+  @NotNull
+  public DefinitionIdent getIdent() {
+    return findNotNullChildByClass(DefinitionIdent.class);
   }
 
   @Override
   @Nullable
-  public DefinitionTypeAliasDefinition getTypeAliasDefinition() {
-    return findChildByClass(DefinitionTypeAliasDefinition.class);
+  public DefinitionTypes getTypes() {
+    return findChildByClass(DefinitionTypes.class);
   }
 
 }

@@ -23,15 +23,15 @@ public class DefinitionVariantImpl extends ASTWrapperPsiElement implements Defin
   }
 
   @Override
-  @NotNull
-  public DefinitionFields getFields() {
-    return findNotNullChildByClass(DefinitionFields.class);
+  @Nullable
+  public DefinitionCaseLabelList getCaseLabelList() {
+    return findChildByClass(DefinitionCaseLabelList.class);
   }
 
   @Override
-  @NotNull
-  public DefinitionSelector getSelector() {
-    return findNotNullChildByClass(DefinitionSelector.class);
+  @Nullable
+  public DefinitionFieldListSequence getFieldListSequence() {
+    return findChildByClass(DefinitionFieldListSequence.class);
   }
 
 }

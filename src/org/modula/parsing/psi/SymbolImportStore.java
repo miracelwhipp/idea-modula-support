@@ -7,8 +7,7 @@ import com.intellij.psi.PsiElement;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.modula.helpers.index.keys.SymbolByModule;
-import org.modula.helpers.index.stubs.SymbolStubPsiElement;
-import org.modula.parsing.definition.psi.DefinitionDefinitionFile;
+import org.modula.parsing.definition.psi.DefinitionDefinitionModule;
 import org.modula.parsing.utility.ModulaPsiTraversingUtility;
 
 import java.util.Collection;
@@ -40,7 +39,7 @@ public class SymbolImportStore extends ASTWrapperPsiElement {
 	@Nullable
 	public static ImportMap<PsiElement> getSymbolImportMap(PsiElement psi) {
 
-        DefinitionDefinitionFile definitionFile = ModulaPsiTraversingUtility.getDefRootElement(psi);
+        DefinitionDefinitionModule definitionFile = ModulaPsiTraversingUtility.getDefRootElement(psi);
 
 		if (null == definitionFile) {
 			return null;
@@ -50,14 +49,7 @@ public class SymbolImportStore extends ASTWrapperPsiElement {
 			ImportMap<PsiElement> symbolImportMap = definitionFile.getUserData(KEY);
 			if (null == symbolImportMap) {
 
-                String moduleName;
-                if (definitionFile.getHeader().getModuleDefinition() != null) {
-                    moduleName = definitionFile.getHeader().getModuleDefinition().getModuleName().getText();
-                } else if (definitionFile.getHeader().getGenericModuleDefinition() != null) {
-                    moduleName = definitionFile.getHeader().getGenericModuleDefinition().getModuleDefinition().getModuleName().getText();
-                } else {
-                    return null;
-                }
+                String moduleName = definitionFile.getModuleHeader().getIdent().getText();
 
                 symbolImportMap = new ImportMap<PsiElement>(new PsiElementInModulaFileRepairer(), moduleName, SymbolByModule.INSTANCE, psi.getProject());
 				definitionFile.putUserData(KEY, symbolImportMap);

@@ -8,6 +8,6 @@ import com.intellij.psi.PsiElement;
 public interface DefinitionElement extends PsiElement {
 
   @NotNull
-  List<DefinitionConstExpression> getConstExpressionList();
+  List<DefinitionExpression> getExpressionList();
 
 }

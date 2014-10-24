@@ -7,8 +7,8 @@ import com.intellij.psi.PsiElement;
 
 public interface DefinitionSetExpression extends PsiElement {
 
-  @Nullable
-  DefinitionElement getElement();
+  @NotNull
+  List<DefinitionElement> getElementList();
 
   @NotNull
   DefinitionQualident getQualident();

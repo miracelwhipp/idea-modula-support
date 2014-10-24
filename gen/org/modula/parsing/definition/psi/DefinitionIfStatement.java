@@ -8,6 +8,9 @@ import com.intellij.psi.PsiElement;
 public interface DefinitionIfStatement extends PsiElement {
 
   @NotNull
-  DefinitionStatements getStatements();
+  List<DefinitionStatementSequence> getStatementSequenceList();
+
+  @NotNull
+  List<DefinitionExpression> getExpressionList();
 
 }

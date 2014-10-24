@@ -23,9 +23,21 @@ public class DefinitionCaseStatementImpl extends ASTWrapperPsiElement implements
   }
 
   @Override
+  @Nullable
+  public DefinitionStatementSequence getStatementSequence() {
+    return findChildByClass(DefinitionStatementSequence.class);
+  }
+
+  @Override
   @NotNull
-  public DefinitionStatements getStatements() {
-    return findNotNullChildByClass(DefinitionStatements.class);
+  public List<DefinitionCaseStatements> getCaseStatementsList() {
+    return PsiTreeUtil.getChildrenOfTypeAsList(this, DefinitionCaseStatements.class);
+  }
+
+  @Override
+  @NotNull
+  public DefinitionExpression getExpression() {
+    return findNotNullChildByClass(DefinitionExpression.class);
   }
 
 }

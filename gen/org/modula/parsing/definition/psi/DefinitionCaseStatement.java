@@ -7,7 +7,13 @@ import com.intellij.psi.PsiElement;
 
 public interface DefinitionCaseStatement extends PsiElement {
 
+  @Nullable
+  DefinitionStatementSequence getStatementSequence();
+
   @NotNull
-  DefinitionStatements getStatements();
+  List<DefinitionCaseStatements> getCaseStatementsList();
+
+  @NotNull
+  DefinitionExpression getExpression();
 
 }

@@ -8,10 +8,13 @@ import com.intellij.psi.PsiElement;
 public interface DefinitionFactor extends PsiElement {
 
   @Nullable
+  DefinitionActualParameters getActualParameters();
+
+  @Nullable
   DefinitionDesignator getDesignator();
 
-  @NotNull
-  List<DefinitionExpression> getExpressionList();
+  @Nullable
+  DefinitionExpression getExpression();
 
   @Nullable
   DefinitionFactor getFactor();

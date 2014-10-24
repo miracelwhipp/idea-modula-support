@@ -7,47 +7,50 @@ import org.modula.helpers.index.stubs.ModuleStub;
 import org.modula.helpers.index.stubs.ModuleStubImpl;
 import org.modula.helpers.index.keys.ModuleDefinitionFileIndex;
 import org.modula.helpers.index.keys.ModuleIndex;
-import org.modula.parsing.definition.psi.DefinitionModuleDefinition;
-import org.modula.parsing.definition.psi.impl.DefinitionModuleDefinitionImpl;
+import org.modula.parsing.definition.psi.DefinitionModuleHeader;
+import org.modula.parsing.definition.psi.impl.DefinitionModuleHeaderImpl;
 
 import java.io.IOException;
 
 /**
- * Implementation of {@link IStubElementType} for generating {@link org.modula.helpers.index.stubs.ModuleStub}s from {@link DefinitionModuleDefinition}s
+ * Implementation of {@link IStubElementType} for generating {@link org.modula.helpers.index.stubs.ModuleStub}s from {@link DefinitionModuleHeader}s
  */
-public class ModuleStubElementType extends AbstractDefinitionStubElementType<ModuleStub, DefinitionModuleDefinition> {
+public class ModuleStubElementType extends AbstractDefinitionStubElementType<ModuleStub, DefinitionModuleHeader> {
 
 	public ModuleStubElementType(@NotNull @NonNls final String debugName) {
 		super(debugName);
 	}
 
 	@Override
-	public DefinitionModuleDefinition createPsi(@NotNull ModuleStub stub) {
-		return new DefinitionModuleDefinitionImpl(stub, this);
+	public DefinitionModuleHeader createPsi(@NotNull ModuleStub stub) {
+		return new DefinitionModuleHeaderImpl(stub, this);
 	}
 
 	@Override
-	public ModuleStub createStub(@NotNull DefinitionModuleDefinition psi, StubElement parentStub) {
-		return new ModuleStubImpl(parentStub, this, psi.getModuleName().getText(), ModuleDefinitionFileIndex.getContainingFile(psi));
+	public ModuleStub createStub(@NotNull DefinitionModuleHeader psi, StubElement parentStub) {
+		return new ModuleStubImpl(parentStub, this, psi.getIdent().getText(), ModuleDefinitionFileIndex.getContainingFile(psi));
 	}
 
 	@Override
+	@NotNull
+	@NonNls
 	public String getExternalId() {
 		return "modula.module";
 	}
 
 	@Override
-	public void serialize(ModuleStub stub, StubOutputStream dataStream) throws IOException {
+	public void serialize(@NotNull ModuleStub stub, @NotNull StubOutputStream dataStream) throws IOException {
 		stub.serialize(dataStream);
 	}
 
 	@Override
-	public ModuleStub deserialize(StubInputStream dataStream, StubElement parentStub) throws IOException {
+	@NotNull
+	public ModuleStub deserialize(@NotNull StubInputStream dataStream, final StubElement parentStub) throws IOException {
 		return new ModuleStubImpl(parentStub, this, dataStream);
 	}
 
 	@Override
-	public void indexStub(ModuleStub stub, IndexSink sink) {
+	public void indexStub(@NotNull ModuleStub stub, @NotNull IndexSink sink) {
 		sink.occurrence(ModuleIndex.KEY, stub.getStubName());
 		sink.occurrence(ModuleDefinitionFileIndex.KEY, stub.getFileName());
 	}

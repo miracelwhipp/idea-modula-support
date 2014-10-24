@@ -8,9 +8,9 @@ import com.intellij.psi.PsiElement;
 public interface DefinitionAssignment extends PsiElement {
 
   @NotNull
-  DefinitionExpression getExpression();
+  DefinitionDesignator getDesignator();
 
   @NotNull
-  DefinitionLValue getLValue();
+  DefinitionExpression getExpression();
 
 }

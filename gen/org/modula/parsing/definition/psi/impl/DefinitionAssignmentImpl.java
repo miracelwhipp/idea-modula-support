@@ -24,14 +24,14 @@ public class DefinitionAssignmentImpl extends ASTWrapperPsiElement implements De
 
   @Override
   @NotNull
-  public DefinitionExpression getExpression() {
-    return findNotNullChildByClass(DefinitionExpression.class);
+  public DefinitionDesignator getDesignator() {
+    return findNotNullChildByClass(DefinitionDesignator.class);
   }
 
   @Override
   @NotNull
-  public DefinitionLValue getLValue() {
-    return findNotNullChildByClass(DefinitionLValue.class);
+  public DefinitionExpression getExpression() {
+    return findNotNullChildByClass(DefinitionExpression.class);
   }
 
 }

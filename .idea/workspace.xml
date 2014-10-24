@@ -2,159 +2,277 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3a6ae771-7e97-4fe1-8b18-218ba7ba9d98" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionConstFactor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionConstFactorImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionConstTerm.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionElement.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionElementImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionFactor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionFactorImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionGenericDesignator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionGenericDesignatorImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionIdent.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionIdentImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionLValue.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionLValueImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionQualident.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionQualidentImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionRecoverEndOfStatement.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionRecoverEndOfStatementImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionSimpleConstExpression.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionSimpleConstExpressionImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionSimpleExpressionImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionString.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionStringImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionTerm.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionTermImpl.java" />
-      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionConstantExpression.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionConstantExpressionValue.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionConstantFunctionCall.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionConstantNegation.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionConstantParameter.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionConstantProduct.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionExpressionValue.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionFunctionCall.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionConstantExpressionImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionConstantExpressionValueImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionConstantFunctionCallImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionConstantNegationImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionConstantParameterImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionConstantProductImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionExpressionValueImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionFunctionCallImpl.java" afterPath="" />
-      <change type="MOVED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionCallParameter.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionAssignment.java" />
-      <change type="MOVED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionConstantSum.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionConstExpression.java" />
-      <change type="MOVED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionNegation.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionNumber.java" />
-      <change type="MOVED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionProduct.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionSetExpression.java" />
-      <change type="MOVED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionSum.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionSimpleExpression.java" />
-      <change type="MOVED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionCallParameterImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionAssignmentImpl.java" />
-      <change type="MOVED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionConstantSumImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionConstTermImpl.java" />
-      <change type="MOVED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionNegationImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionNumberImpl.java" />
-      <change type="MOVED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionProductImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionSetExpressionImpl.java" />
-      <change type="MOVED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionSumImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionConstExpressionImpl.java" />
-      <change type="MOVED" beforePath="C:\projects\idea-modula-support\src\org\modula\helpers\annotators\UnknownDesignatorAnnotator.java" afterPath="$PROJECT_DIR$/src/org/modula/helpers/annotators/UnknownQualidentAnnotator.java" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\DefinitionParser.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionAnonymousParameter.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionArrayConstant.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionArrayConstantType.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionArrayDeclaration.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionArrayDefinition.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionAssignment.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionAttribute.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionBasicType.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionCaseRange.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionCaseStatement.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionComplexLiteral.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionConstExpression.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionConstFactor.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionConstTerm.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionConstantArrayElement.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionConstantDefinition.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionConstantDefinitions.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionConstantDesignator.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionConstantName.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionConstantType.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionConstantValue.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionConstantValueModuleParameter.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionDefinitionClause.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionDefinitionFile.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionDesignator.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionDoStatement.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionElement.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionEnumerationDefinition.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionEnumerationMemberDefinition.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionEnumerationMemberDesignator.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionEnumerationMemberName.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionExportNameDeclaration.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionExpression.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionFactor.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionField.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionFieldName.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionFields.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionFooter.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionFunctionDesignator.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionGenericDesignator.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionGenericModuleDefinition.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionHeader.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionIdent.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionIfStatement.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionIgnored.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionImportClause.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionImportSymbol.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionIndexType.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionInnerRange.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionIntegerLiteral.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionLValue.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionLiteral.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionLoopStatement.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionMacroConstantDefinition.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionMacroConstantDefinitions.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionMacroDeclaration.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionMacroInnerDeclarations.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionMacroTypeDefinition.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionMacroTypeDefinitions.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionMacroVariableDefinition.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionMacroVariableDefinitions.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionModuleDefinition.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionModuleImport.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionModuleImportClause.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionModuleName.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionModuleParameter.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionModuleParameterName.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionModuleParameters.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionNamedType.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionNumber.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionOpaqueTypeDefinition.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionParameter.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionParameterName.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionParameters.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionParametersCommaSeparated.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionPointerDefinition.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionPredefinedType.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionProcedureAttributes.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionProcedureDefinition.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionProcedureModifiers.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionProcedureName.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionProcedureTypeDefinition.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionQualident.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionRange.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionRealLiteral.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionRecordConstant.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionRecordDefinition.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionRecoverEndOfStatement.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionSelector.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionSetDefinition.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionSetDesignator.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionSetExpression.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionSetLiteral.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionSimpleConstExpression.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionSimpleExpression.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionStatement.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionStatements.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionStaticField.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionStonyBrookType.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionString.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionSymbolImportClause.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionSymbolName.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionTerm.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionTypeAliasDefinition.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionTypeDefinition.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionTypeDefinitions.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionTypeDesignator.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionTypeName.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionTypeParameter.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionTypeSpecification.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionVariableDefinition.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionVariableDefinitions.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionVariableModifiers.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionVariableName.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionVariableNameDefinition.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionVariant.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionVariantField.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionVariants.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionVisitor.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\DefinitionWhatever.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\ModulaTypes.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionAnonymousParameterImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionArrayConstantImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionArrayConstantTypeImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionArrayDeclarationImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionArrayDefinitionImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionAssignmentImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionAttributeImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionBasicTypeImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionCaseRangeImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionCaseStatementImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionComplexLiteralImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionConstExpressionImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionConstFactorImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionConstTermImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionConstantArrayElementImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionConstantDefinitionImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionConstantDefinitionsImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionConstantDesignatorImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionConstantNameImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionConstantTypeImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionConstantValueImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionConstantValueModuleParameterImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionDefinitionClauseImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionDefinitionFileImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionDesignatorImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionDoStatementImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionElementImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionEnumerationDefinitionImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionEnumerationMemberDefinitionImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionEnumerationMemberDesignatorImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionEnumerationMemberNameImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionExportNameDeclarationImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionExpressionImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionFactorImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionFieldImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionFieldNameImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionFieldsImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionFooterImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionFunctionDesignatorImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionGenericDesignatorImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionGenericModuleDefinitionImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionHeaderImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionIdentImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionIfStatementImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionIgnoredImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionImportClauseImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionImportSymbolImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionIndexTypeImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionInnerRangeImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionIntegerLiteralImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionLValueImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionLiteralImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionLoopStatementImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionMacroConstantDefinitionImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionMacroConstantDefinitionsImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionMacroDeclarationImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionMacroInnerDeclarationsImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionMacroTypeDefinitionImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionMacroTypeDefinitionsImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionMacroVariableDefinitionImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionMacroVariableDefinitionsImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionModuleDefinitionImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionModuleImportClauseImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionModuleImportImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionModuleNameImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionModuleParameterImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionModuleParameterNameImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionModuleParametersImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionNamedTypeImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionNumberImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionOpaqueTypeDefinitionImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionParameterImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionParameterNameImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionParametersCommaSeparatedImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionParametersImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionPointerDefinitionImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionPredefinedTypeImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionProcedureAttributesImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionProcedureDefinitionImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionProcedureModifiersImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionProcedureNameImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionProcedureTypeDefinitionImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionQualidentImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionRangeImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionRealLiteralImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionRecordConstantImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionRecordDefinitionImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionRecoverEndOfStatementImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionSelectorImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionSetDefinitionImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionSetDesignatorImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionSetExpressionImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionSetLiteralImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionSimpleConstExpressionImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionSimpleExpressionImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionStatementImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionStatementsImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionStaticFieldImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionStonyBrookTypeImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionStringImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionSymbolImportClauseImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionSymbolNameImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionTermImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionTypeAliasDefinitionImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionTypeDefinitionImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionTypeDefinitionsImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionTypeDesignatorImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionTypeNameImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionTypeParameterImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionTypeSpecificationImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionVariableDefinitionImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionVariableDefinitionsImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionVariableModifiersImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionVariableNameDefinitionImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionVariableNameImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionVariantFieldImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionVariantImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionVariantsImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\projects\idea-modula-support\gen\org\modula\parsing\definition\psi\impl\DefinitionWhateverImpl.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/modula/helpers/fixes/ChangeFooterNameFix.java" afterPath="$PROJECT_DIR$/src/org/modula/helpers/fixes/ChangeFooterNameFix.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/modula/helpers/fixes/ChangeModuleNameFix.java" afterPath="$PROJECT_DIR$/src/org/modula/helpers/fixes/ChangeModuleNameFix.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/modula/helpers/index/keys/ConstantByDefinitionFile.java" afterPath="$PROJECT_DIR$/src/org/modula/helpers/index/keys/ConstantByDefinitionFile.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/modula/helpers/index/keys/ConstantByModule.java" afterPath="$PROJECT_DIR$/src/org/modula/helpers/index/keys/ConstantByModule.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/modula/helpers/index/stubs/ConstantStub.java" afterPath="$PROJECT_DIR$/src/org/modula/helpers/index/stubs/ConstantStub.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/modula/helpers/index/stub/delegators/ConstantStubBasedPsiElement.java" afterPath="$PROJECT_DIR$/src/org/modula/helpers/index/stub/delegators/ConstantStubBasedPsiElement.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/modula/helpers/index/stub/element/types/ConstantStubElementType.java" afterPath="$PROJECT_DIR$/src/org/modula/helpers/index/stub/element/types/ConstantStubElementType.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/modula/helpers/index/stubs/ConstantStubImpl.java" afterPath="$PROJECT_DIR$/src/org/modula/helpers/index/stubs/ConstantStubImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/modula/parsing/grammar/Def.bnf" afterPath="$PROJECT_DIR$/src/org/modula/parsing/grammar/Def.bnf" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/modula/parsing/grammar/Def.flex" afterPath="$PROJECT_DIR$/src/org/modula/parsing/grammar/Def.flex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionAnonymousParameterImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionAnonymousParameterImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionArrayConstantImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionArrayConstantImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionArrayConstantTypeImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionArrayConstantTypeImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionArrayDeclarationImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionArrayDeclarationImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionArrayDefinitionImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionArrayDefinitionImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionAttributeImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionAttributeImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionCaseRangeImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionCaseRangeImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionCaseStatementImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionCaseStatementImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionComplexLiteralImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionComplexLiteralImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionConstantArrayElementImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionConstantArrayElementImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionConstantDefinitionImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionConstantDefinitionImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionConstantDefinitionsImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionConstantDefinitionsImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionConstantDesignator.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionConstantDesignator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionConstantDesignatorImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionConstantDesignatorImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionConstantValue.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionConstantValue.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionConstantValueImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionConstantValueImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionConstantValueModuleParameterImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionConstantValueModuleParameterImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionDefinitionClauseImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionDefinitionClauseImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionDefinitionFileImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionDefinitionFileImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionDesignator.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionDesignator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionDesignatorImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionDesignatorImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionDoStatementImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionDoStatementImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionEnumerationDefinitionImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionEnumerationDefinitionImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionEnumerationMemberDefinitionImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionEnumerationMemberDefinitionImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionEnumerationMemberDesignator.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionEnumerationMemberDesignator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionEnumerationMemberDesignatorImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionEnumerationMemberDesignatorImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionExpression.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionExpression.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionExpressionImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionExpressionImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionFieldImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionFieldImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionFieldsImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionFieldsImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionFooterImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionFooterImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionFunctionDesignator.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionFunctionDesignator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionFunctionDesignatorImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionFunctionDesignatorImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionGenericModuleDefinitionImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionGenericModuleDefinitionImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionHeaderImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionHeaderImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionIfStatementImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionIfStatementImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionImportClauseImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionImportClauseImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionIndexTypeImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionIndexTypeImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionInnerRange.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionInnerRange.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionInnerRangeImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionInnerRangeImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionLiteralImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionLiteralImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionLoopStatementImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionLoopStatementImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionMacroConstantDefinitionImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionMacroConstantDefinitionImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionMacroConstantDefinitionsImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionMacroConstantDefinitionsImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionMacroDeclarationImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionMacroDeclarationImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionMacroInnerDeclarationsImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionMacroInnerDeclarationsImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionMacroTypeDefinitionImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionMacroTypeDefinitionImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionMacroTypeDefinitionsImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionMacroTypeDefinitionsImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionMacroVariableDefinitionImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionMacroVariableDefinitionImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionMacroVariableDefinitionsImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionMacroVariableDefinitionsImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionModuleDefinitionImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionModuleDefinitionImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionModuleImportClauseImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionModuleImportClauseImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionModuleImportImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionModuleImportImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionModuleParameterImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionModuleParameterImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionModuleParametersImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionModuleParametersImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionNamedTypeImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionNamedTypeImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionParameterImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionParameterImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionParametersCommaSeparatedImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionParametersCommaSeparatedImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionParametersImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionParametersImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/DefinitionParser.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/DefinitionParser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionPointerDefinitionImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionPointerDefinitionImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionPredefinedTypeImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionPredefinedTypeImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionProcedureAttributesImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionProcedureAttributesImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionProcedureDefinitionImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionProcedureDefinitionImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionProcedureModifiersImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionProcedureModifiersImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionProcedureTypeDefinitionImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionProcedureTypeDefinitionImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionRangeImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionRangeImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionRecordConstantImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionRecordConstantImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionRecordDefinitionImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionRecordDefinitionImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionSelectorImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionSelectorImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionSetDefinitionImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionSetDefinitionImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionSetDesignator.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionSetDesignator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionSetDesignatorImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionSetDesignatorImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionSetLiteralImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionSetLiteralImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionStatement.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionStatement.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionStatementImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionStatementImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionStatementsImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionStatementsImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionStaticFieldImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionStaticFieldImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionSymbolImportClauseImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionSymbolImportClauseImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionTypeAliasDefinitionImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionTypeAliasDefinitionImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionTypeDefinitionImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionTypeDefinitionImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionTypeDefinitionsImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionTypeDefinitionsImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionTypeDesignator.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionTypeDesignator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionTypeDesignatorImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionTypeDesignatorImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionTypeParameterImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionTypeParameterImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionTypeSpecificationImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionTypeSpecificationImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionVariableDefinitionImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionVariableDefinitionImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionVariableDefinitionsImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionVariableDefinitionsImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionVariableNameDefinitionImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionVariableNameDefinitionImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionVariantFieldImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionVariantFieldImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionVariantImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionVariantImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionVariantsImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionVariantsImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionVisitor.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionVisitor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionWhateverImpl.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionWhateverImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/modula/helpers/index/keys/ImplicitEntities.java" afterPath="$PROJECT_DIR$/src/org/modula/helpers/index/keys/ImplicitEntities.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/modula/parsing/utility/DefinitionElementFactory.java" afterPath="$PROJECT_DIR$/src/org/modula/parsing/utility/DefinitionElementFactory.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/modula/helpers/fixes/ImportUnknownDesignatorFix.java" afterPath="$PROJECT_DIR$/src/org/modula/helpers/fixes/ImportUnknownDesignatorFix.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/ModulaTypes.java" afterPath="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/ModulaTypes.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/modula/parsing/utility/ModulaPsiTraversingUtility.java" afterPath="$PROJECT_DIR$/src/org/modula/parsing/utility/ModulaPsiTraversingUtility.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/modula/helpers/index/keys/ModuleDefinitionFileIndex.java" afterPath="$PROJECT_DIR$/src/org/modula/helpers/index/keys/ModuleDefinitionFileIndex.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/modula/parsing/grammar/ModuleDefinitionLexer.java" afterPath="$PROJECT_DIR$/src/org/modula/parsing/grammar/ModuleDefinitionLexer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" afterPath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/META-INF/plugin.xml" afterPath="$PROJECT_DIR$/META-INF/plugin.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/modula/parsing/psi/ModuleImportStore.java" afterPath="$PROJECT_DIR$/src/org/modula/parsing/psi/ModuleImportStore.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/modula/helpers/index/keys/ModuleIndex.java" afterPath="$PROJECT_DIR$/src/org/modula/helpers/index/keys/ModuleIndex.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/modula/helpers/index/stubs/ModuleStub.java" afterPath="$PROJECT_DIR$/src/org/modula/helpers/index/stubs/ModuleStub.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/modula/helpers/index/stub/element/types/ModuleStubElementType.java" afterPath="$PROJECT_DIR$/src/org/modula/helpers/index/stub/element/types/ModuleStubElementType.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/modula/helpers/index/stubs/ModuleStubImpl.java" afterPath="$PROJECT_DIR$/src/org/modula/helpers/index/stubs/ModuleStubImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/modula/helpers/index/keys/ProcedureByDefinitionFile.java" afterPath="$PROJECT_DIR$/src/org/modula/helpers/index/keys/ProcedureByDefinitionFile.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/modula/helpers/index/keys/ProcedureByModule.java" afterPath="$PROJECT_DIR$/src/org/modula/helpers/index/keys/ProcedureByModule.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/modula/helpers/index/stubs/ProcedureStub.java" afterPath="$PROJECT_DIR$/src/org/modula/helpers/index/stubs/ProcedureStub.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/modula/helpers/index/stub/delegators/ProcedureStubBasedPsiElement.java" afterPath="$PROJECT_DIR$/src/org/modula/helpers/index/stub/delegators/ProcedureStubBasedPsiElement.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/modula/helpers/index/stub/element/types/ProcedureStubElementType.java" afterPath="$PROJECT_DIR$/src/org/modula/helpers/index/stub/element/types/ProcedureStubElementType.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/modula/helpers/index/stubs/ProcedureStubImpl.java" afterPath="$PROJECT_DIR$/src/org/modula/helpers/index/stubs/ProcedureStubImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/modula/parsing/psi/SymbolImportStore.java" afterPath="$PROJECT_DIR$/src/org/modula/parsing/psi/SymbolImportStore.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/modula/helpers/annotators/UnknownQualidentAnnotator.java" afterPath="$PROJECT_DIR$/src/org/modula/helpers/annotators/UnknownQualidentAnnotator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/modula/helpers/index/stub/delegators/VariableStubBasedPsiElement.java" afterPath="$PROJECT_DIR$/src/org/modula/helpers/index/stub/delegators/VariableStubBasedPsiElement.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/modula/helpers/annotators/WrongEndNameAnnotator.java" afterPath="$PROJECT_DIR$/src/org/modula/helpers/annotators/WrongEndNameAnnotator.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="idea-modula-support.iws" />
@@ -256,121 +374,15 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
-    <breakpoint_rules converted="true" />
     <ui_properties converted="true" />
+    <breakpoint_rules converted="true" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="idea-modula-support" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="Def.bnf" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/org/modula/parsing/grammar/Def.bnf">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.29166666" vertical-offset="3273" max-vertical-offset="4896">
-              <caret line="215" column="88" selection-start-line="215" selection-start-column="88" selection-end-line="215" selection-end-column="88" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UnknownSymbolAnnotator.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/annotators/UnknownSymbolAnnotator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="621" max-vertical-offset="1377">
-              <caret line="50" column="69" selection-start-line="50" selection-start-column="69" selection-end-line="50" selection-end-column="69" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ImplicitEntities.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/index/keys/ImplicitEntities.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="241" max-vertical-offset="1088">
-              <caret line="45" column="19" selection-start-line="45" selection-start-column="19" selection-end-line="45" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ModulaParseException.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/modula/parsing/ModulaParseException.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
-              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MatchIterable.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/modula/parsing/MatchIterable.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="3" max-vertical-offset="1105">
-              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CommentaryDenester.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/modula/parsing/CommentaryDenester.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="717" max-vertical-offset="1751">
-              <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AstTraversingUtility.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/modula/parsing/utility/AstTraversingUtility.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="731">
-              <caret line="13" column="19" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DefinitionParser.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gen/org/modula/parsing/definition/DefinitionParser.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="16987" max-vertical-offset="72267">
-              <caret line="1017" column="0" selection-start-line="1017" selection-start-column="0" selection-end-line="1017" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#187533#187678#0" expanded="false" />
-                <element signature="e#187673#187674#0" expanded="false" />
-                <element signature="e#187875#187876#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GeneratedParserUtilBase.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://C:/repos/git.jetbrains.org/idea/platform/lang-impl/src/com/intellij/lang/parser/GeneratedParserUtilBase.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1819" max-vertical-offset="17340">
-              <caret line="177" column="0" selection-start-line="177" selection-start-column="0" selection-end-line="177" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Def.flex" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/modula/parsing/grammar/Def.flex">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1881" max-vertical-offset="4845">
-              <caret line="122" column="62" selection-start-line="122" selection-start-column="53" selection-end-line="122" selection-end-column="62" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -389,37 +401,54 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/src/org/modula/parsing/utility/AstTraversingUtility.java" />
-        <option value="$PROJECT_DIR$/src/org/modula/helpers/fixes/ChangeFooterNameFix.java" />
         <option value="$PROJECT_DIR$/src/org/modula/helpers/index/keys/SymbolIndex.java" />
         <option value="$PROJECT_DIR$/src/org/modula/helpers/index/keys/SymbolByModule.java" />
-        <option value="$PROJECT_DIR$/src/org/modula/helpers/index/stub/element/types/ConstantStubElementType.java" />
-        <option value="$PROJECT_DIR$/src/org/modula/helpers/index/stub/element/types/ProcedureStubElementType.java" />
         <option value="$PROJECT_DIR$/src/org/modula/helpers/index/stub/element/types/TypeStubElementType.java" />
         <option value="$PROJECT_DIR$/src/org/modula/helpers/index/stub/element/types/VariableStubElementType.java" />
         <option value="$PROJECT_DIR$/src/org/modula/helpers/fixes/ImportModuleFix.java" />
-        <option value="$PROJECT_DIR$/src/org/modula/parsing/utility/DefinitionElementFactory.java" />
         <option value="$PROJECT_DIR$/src/org/modula/helpers/fixes/ImportSymbolFix.java" />
-        <option value="$PROJECT_DIR$/src/org/modula/helpers/fixes/ImportUnknownDesignatorFix.java" />
         <option value="$PROJECT_DIR$/test-src/org/modula/parsing/DefitionParsingTest.java" />
-        <option value="$PROJECT_DIR$/src/org/modula/parsing/psi/SymbolImportStore.java" />
-        <option value="$PROJECT_DIR$/src/org/modula/parsing/psi/ModuleImportStore.java" />
         <option value="$PROJECT_DIR$/META-INF/plugin.xml" />
-        <option value="$PROJECT_DIR$/src/org/modula/parsing/utility/ModulaPsiTraversingUtility.java" />
         <option value="$PROJECT_DIR$/src/org/modula/parsing/psi/ImportMap.java" />
         <option value="$PROJECT_DIR$/src/org/modula/helpers/index/keys/PreFilledIndex.java" />
-        <option value="$PROJECT_DIR$/src/org/modula/helpers/index/stub/element/types/ModuleStubElementType.java" />
-        <option value="$PROJECT_DIR$/src/org/modula/helpers/index/keys/ConstantByModule.java" />
-        <option value="$PROJECT_DIR$/src/org/modula/helpers/index/keys/ModuleIndex.java" />
         <option value="$PROJECT_DIR$/src/org/modula/helpers/index/keys/ImplicitModules.java" />
         <option value="$PROJECT_DIR$/src/org/modula/helpers/annotators/UnknownModuleAnnotator.java" />
         <option value="$PROJECT_DIR$/src/org/modula/helpers/annotators/UnknownSymbolAnnotator.java" />
         <option value="$PROJECT_DIR$/test-src/org/modula/parsing/CommentaryDenesterTest.java" />
         <option value="$PROJECT_DIR$/test-src/org/modula/parsing/SerializeBooleanStackTest.java" />
-        <option value="$PROJECT_DIR$/src/org/modula/parsing/grammar/Def.flex" />
         <option value="$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionDesignator.java" />
         <option value="$PROJECT_DIR$/src/org/modula/helpers/annotators/UnknownDesignatorAnnotator.java" />
-        <option value="$PROJECT_DIR$/src/org/modula/helpers/annotators/UnknownQualidentAnnotator.java" />
         <option value="$PROJECT_DIR$/src/org/modula/helpers/index/keys/ImplicitEntities.java" />
+        <option value="$PROJECT_DIR$/src/org/modula/helpers/index/keys/ConstantByDefinitionFile.java" />
+        <option value="$PROJECT_DIR$/src/org/modula/helpers/index/stubs/ProcedureStub.java" />
+        <option value="$PROJECT_DIR$/src/org/modula/parsing/psi/ModuleImportStore.java" />
+        <option value="$PROJECT_DIR$/src/org/modula/helpers/index/keys/ModuleIndex.java" />
+        <option value="$PROJECT_DIR$/src/org/modula/helpers/index/stubs/ProcedureStubImpl.java" />
+        <option value="$PROJECT_DIR$/src/org/modula/helpers/index/stubs/ModuleStub.java" />
+        <option value="$PROJECT_DIR$/src/org/modula/helpers/index/keys/ConstantByModule.java" />
+        <option value="$PROJECT_DIR$/src/org/modula/helpers/index/stub/element/types/ConstantStubElementType.java" />
+        <option value="$PROJECT_DIR$/src/org/modula/helpers/index/stubs/ConstantStub.java" />
+        <option value="$PROJECT_DIR$/src/org/modula/helpers/index/stub/element/types/ModuleStubElementType.java" />
+        <option value="$PROJECT_DIR$/src/org/modula/helpers/index/keys/ModuleDefinitionFileIndex.java" />
+        <option value="$PROJECT_DIR$/src/org/modula/helpers/index/stub/delegators/ConstantStubBasedPsiElement.java" />
+        <option value="$PROJECT_DIR$/src/org/modula/helpers/index/stubs/ModuleStubImpl.java" />
+        <option value="$PROJECT_DIR$/src/org/modula/helpers/fixes/ImportUnknownDesignatorFix.java" />
+        <option value="$PROJECT_DIR$/src/org/modula/helpers/index/stub/delegators/VariableStubBasedPsiElement.java" />
+        <option value="$PROJECT_DIR$/src/org/modula/helpers/index/keys/ProcedureByDefinitionFile.java" />
+        <option value="$PROJECT_DIR$/src/org/modula/parsing/psi/SymbolImportStore.java" />
+        <option value="$PROJECT_DIR$/src/org/modula/helpers/index/stubs/ConstantStubImpl.java" />
+        <option value="$PROJECT_DIR$/src/org/modula/helpers/fixes/ChangeFooterNameFix.java" />
+        <option value="$PROJECT_DIR$/src/org/modula/helpers/index/keys/ProcedureByModule.java" />
+        <option value="$PROJECT_DIR$/src/org/modula/parsing/utility/DefinitionElementFactory.java" />
+        <option value="$PROJECT_DIR$/src/org/modula/helpers/fixes/ChangeModuleNameFix.java" />
+        <option value="$PROJECT_DIR$/src/org/modula/helpers/index/stub/delegators/ProcedureStubBasedPsiElement.java" />
+        <option value="$PROJECT_DIR$/src/org/modula/parsing/utility/ModulaPsiTraversingUtility.java" />
+        <option value="$PROJECT_DIR$/src/org/modula/parsing/grammar/ModuleDefinitionLexer.java" />
+        <option value="$PROJECT_DIR$/src/org/modula/parsing/grammar/ModuleDefinitionLexerAdapter.java" />
+        <option value="$PROJECT_DIR$/src/org/modula/parsing/grammar/Def.flex" />
+        <option value="$PROJECT_DIR$/src/org/modula/helpers/annotators/UnknownQualidentAnnotator.java" />
+        <option value="$PROJECT_DIR$/src/org/modula/helpers/annotators/WrongEndNameAnnotator.java" />
+        <option value="$PROJECT_DIR$/src/org/modula/helpers/index/stub/element/types/ProcedureStubElementType.java" />
         <option value="$PROJECT_DIR$/src/org/modula/parsing/grammar/Def.bnf" />
       </list>
     </option>
@@ -476,8 +505,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -733,39 +760,15 @@
               <option name="myItemId" value="gen" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="parsing" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="idea-modula-support" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="idea-modula-support" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gen" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="parsing" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="time" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="OverrideImplement.combined" value="true" />
@@ -1012,6 +1015,19 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -1037,19 +1053,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -1214,7 +1217,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1227,21 +1230,21 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39954597" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850778" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32986537" sideWeight="0.6708286" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22068231" sideWeight="0.6708286" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22068231" sideWeight="0.6708286" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850778" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="PsiViewer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32986537" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3280363" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32739422" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.249694" sideWeight="0.7026107" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1270,7 +1273,7 @@
           <option name="timeStamp" value="19" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="20" />
+      <option name="time" value="21" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -1278,217 +1281,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/org/modula/gui/mod.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/modula/gui/Icons.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="408">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/ModulaCommenter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="714">
-          <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/repos/git.jetbrains.org/idea/platform/core-impl/src/com/intellij/psi/stubs/ObjectStubTree.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="402" max-vertical-offset="2108">
-          <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/repos/git.jetbrains.org/idea/platform/lang-impl/src/com/intellij/psi/stubs/StubUpdatingIndex.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3738" max-vertical-offset="6256">
-          <caret line="302" column="0" selection-start-line="302" selection-start-column="0" selection-end-line="302" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/repos/git.jetbrains.org/idea/platform/lang-impl/src/com/intellij/util/indexing/MapReduceIndex.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2939" max-vertical-offset="11152">
-          <caret line="227" column="0" selection-start-line="227" selection-start-column="0" selection-end-line="227" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/repos/git.jetbrains.org/idea/platform/core-api/src/com/intellij/openapi/progress/ProgressManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2839">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/repos/git.jetbrains.org/idea/platform/core-api/src/com/intellij/util/indexing/ID.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1426" max-vertical-offset="2006">
-          <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/annotators/WrongEndNameAnnotator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="32" max-vertical-offset="969">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/index/keys/ProcedureByModule.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="391">
-          <caret line="14" column="53" selection-start-line="14" selection-start-column="53" selection-end-line="14" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/completion/SymbolImportCompletionContributor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="233" max-vertical-offset="1530">
-          <caret line="55" column="52" selection-start-line="55" selection-start-column="42" selection-end-line="55" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/modula/parsing/psi/PsiElementInModulaFileRepairer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="578">
-          <caret line="14" column="53" selection-start-line="14" selection-start-column="53" selection-end-line="14" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/repos/git.jetbrains.org/idea/platform/indexing-api/src/com/intellij/psi/stubs/StubIndexExtension.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="391">
-          <caret line="26" column="35" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/modula/parsing/P1CompileTimeParserDefinition.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="457" max-vertical-offset="1037">
-          <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/META-INF/plugin.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="559" max-vertical-offset="1292">
-          <caret line="42" column="47" selection-start-line="42" selection-start-column="47" selection-end-line="42" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/modula/parsing/DefinitionParserDefinition.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="883" max-vertical-offset="1241">
-          <caret line="93" column="0" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/index/keys/SymbolIndex.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="527">
-          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/modula/parsing/utility/ModulaPsiTraversingUtility.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="837" max-vertical-offset="1972">
-          <caret line="60" column="50" selection-start-line="60" selection-start-column="25" selection-end-line="60" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/repos/git.jetbrains.org/idea/platform/core-api/src/com/intellij/psi/stubs/StubIndexKey.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
-          <caret line="30" column="78" selection-start-line="30" selection-start-column="78" selection-end-line="30" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/modula/parsing/psi/ModuleImportStore.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="106" max-vertical-offset="901">
-          <caret line="31" column="18" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/repos/git.jetbrains.org/idea/platform/core-api/src/com/intellij/psi/stubs/IndexSink.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="238">
-          <caret line="25" column="35" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/index/keys/ProcedureByDefinitionFile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
-          <caret line="19" column="67" selection-start-line="19" selection-start-column="67" selection-end-line="19" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/index/stub/element/types/ModuleStubElementType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="196" max-vertical-offset="748">
-          <caret line="50" column="29" selection-start-line="50" selection-start-column="29" selection-end-line="50" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/index/keys/ConstantByModule.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="493">
-          <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/index/stub/element/types/ConstantStubElementType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="298" max-vertical-offset="850">
-          <caret line="57" column="43" selection-start-line="57" selection-start-column="43" selection-end-line="57" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/index/stub/element/types/ProcedureStubElementType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="247" max-vertical-offset="799">
-          <caret line="56" column="40" selection-start-line="56" selection-start-column="40" selection-end-line="56" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/index/keys/SymbolByModule.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
-          <caret line="12" column="68" selection-start-line="12" selection-start-column="68" selection-end-line="12" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/index/keys/ModuleIndex.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
-          <caret line="10" column="49" selection-start-line="10" selection-start-column="49" selection-end-line="10" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/repos/git.jetbrains.org/idea/platform/indexing-api/src/com/intellij/psi/stubs/StringStubIndexExtension.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
-          <caret line="26" column="88" selection-start-line="26" selection-start-column="88" selection-end-line="26" selection-end-column="88" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/repos/git.jetbrains.org/idea/platform/indexing-api/src/com/intellij/psi/stubs/AbstractStubIndex.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="459">
-          <caret line="28" column="98" selection-start-line="28" selection-start-column="80" selection-end-line="28" selection-end-column="98" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/org/modula/parsing/grammar/CompileTimeConditionLexer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="3783" max-vertical-offset="9639">
@@ -1496,19 +1288,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/index/keys/ModuleDefinitionFileIndex.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="731">
-          <caret line="8" column="40" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test-src/org/modula/parsing/CommentaryDenesterTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1088">
           <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1516,7 +1299,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="791" max-vertical-offset="1853">
           <caret line="96" column="28" selection-start-line="96" selection-start-column="28" selection-end-line="96" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1524,7 +1306,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="398" max-vertical-offset="901">
           <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1532,23 +1313,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4420">
           <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/modula/parsing/psi/SymbolImportStore.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="587" max-vertical-offset="1139">
-          <caret line="21" column="29" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/annotators/UnknownQualidentAnnotator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1105">
-          <caret line="44" column="38" selection-start-line="44" selection-start-column="38" selection-end-line="44" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1556,15 +1320,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
           <caret line="11" column="54" selection-start-line="11" selection-start-column="54" selection-end-line="11" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/impl/DefinitionConstantDefinitionImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="561">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1572,20 +1327,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1819" max-vertical-offset="17340">
           <caret line="177" column="0" selection-start-line="177" selection-start-column="0" selection-end-line="177" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gen/org/modula/parsing/definition/DefinitionParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="16987" max-vertical-offset="72267">
-          <caret line="1017" column="0" selection-start-line="1017" selection-start-column="0" selection-end-line="1017" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#187533#187678#0" expanded="false" />
-            <element signature="e#187673#187674#0" expanded="false" />
-            <element signature="e#187875#187876#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1593,7 +1334,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="731">
           <caret line="13" column="19" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1601,7 +1341,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
           <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1609,7 +1348,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="3" max-vertical-offset="1105">
           <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1617,7 +1355,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="717" max-vertical-offset="1751">
           <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1625,7 +1362,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="621" max-vertical-offset="1377">
           <caret line="50" column="69" selection-start-line="50" selection-start-column="69" selection-end-line="50" selection-end-column="69" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1633,22 +1369,285 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="241" max-vertical-offset="1088">
           <caret line="45" column="19" selection-start-line="45" selection-start-column="19" selection-end-line="45" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/index/keys/ConstantByDefinitionFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="476">
+          <caret line="20" column="61" selection-start-line="20" selection-start-column="61" selection-end-line="20" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/index/stubs/ProcedureStub.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="272">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/modula/parsing/psi/ModuleImportStore.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1020">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/index/stubs/ProcedureStubImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="476">
+          <caret line="12" column="84" selection-start-line="12" selection-start-column="84" selection-end-line="12" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/index/stubs/ModuleStub.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="289">
+          <caret line="8" column="70" selection-start-line="8" selection-start-column="70" selection-end-line="8" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/index/keys/ConstantByModule.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="459">
+          <caret line="19" column="61" selection-start-line="19" selection-start-column="61" selection-end-line="19" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/index/stubs/ConstantStub.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="289">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/index/stub/element/types/ConstantStubElementType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="224" max-vertical-offset="1020">
+          <caret line="26" column="42" selection-start-line="26" selection-start-column="42" selection-end-line="26" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/repos/git.jetbrains.org/idea/platform/annotations/src/org/jetbrains/annotations/NonNls.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="799">
+          <caret line="52" column="18" selection-start-line="52" selection-start-column="18" selection-end-line="52" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/repos/git.jetbrains.org/idea/platform/core-api/src/com/intellij/psi/stubs/StubSerializer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="476">
+          <caret line="32" column="25" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/index/stub/element/types/ModuleStubElementType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="969">
+          <caret line="9" column="40" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/index/stub/delegators/ConstantStubBasedPsiElement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="128" max-vertical-offset="680">
+          <caret line="33" column="25" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/index/stubs/ModuleStubImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="476">
+          <caret line="12" column="76" selection-start-line="12" selection-start-column="76" selection-end-line="12" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/index/keys/ModuleDefinitionFileIndex.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="714">
+          <caret line="8" column="40" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/index/stub/delegators/VariableStubBasedPsiElement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="162" max-vertical-offset="714">
+          <caret line="35" column="25" selection-start-line="35" selection-start-column="25" selection-end-line="35" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/index/keys/ProcedureByDefinitionFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
+          <caret line="19" column="58" selection-start-line="19" selection-start-column="58" selection-end-line="19" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/modula/parsing/psi/SymbolImportStore.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="527" max-vertical-offset="1190">
+          <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/index/stubs/ConstantStubImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="476">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/repos/git.jetbrains.org/idea/platform/core-api/src/com/intellij/lang/ASTNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3692" max-vertical-offset="4760">
+          <caret line="249" column="10" selection-start-line="249" selection-start-column="10" selection-end-line="249" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/fixes/ChangeFooterNameFix.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="853" max-vertical-offset="1700">
+          <caret line="94" column="29" selection-start-line="94" selection-start-column="29" selection-end-line="94" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/index/keys/ProcedureByModule.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
+          <caret line="18" column="58" selection-start-line="18" selection-start-column="58" selection-end-line="18" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/modula/parsing/utility/DefinitionElementFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="26" max-vertical-offset="884">
+          <caret line="24" column="42" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/fixes/ChangeModuleNameFix.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="20" max-vertical-offset="867">
+          <caret line="57" column="22" selection-start-line="57" selection-start-column="22" selection-end-line="57" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/index/stub/delegators/ProcedureStubBasedPsiElement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="612">
+          <caret line="29" column="25" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/modula/parsing/grammar/ModuleDefinitionLexer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="33099">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/repos/git.jetbrains.org/idea/platform/indexing-api/src/com/intellij/psi/stubs/AbstractStubIndex.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="459">
+          <caret line="37" column="25" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/index/keys/ModuleIndex.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
+          <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/annotators/UnknownQualidentAnnotator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="399" max-vertical-offset="1105">
+          <caret line="59" column="45" selection-start-line="59" selection-start-column="45" selection-end-line="59" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/repos/git.jetbrains.org/idea/platform/analysis-api/src/com/intellij/lang/annotation/AnnotationHolder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="139" max-vertical-offset="2737">
+          <caret line="37" column="13" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/index/stub/element/types/ProcedureStubElementType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.27784157" vertical-offset="285" max-vertical-offset="1156">
+          <caret line="31" column="27" selection-start-line="31" selection-start-column="27" selection-end-line="31" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/modula/parsing/grammar/Def.flex">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1881" max-vertical-offset="4845">
-          <caret line="122" column="62" selection-start-line="122" selection-start-column="53" selection-end-line="122" selection-end-column="62" />
+        <state vertical-scroll-proportion="0.17336395" vertical-offset="2195" max-vertical-offset="4845">
+          <caret line="138" column="0" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/fixes/ImportUnknownDesignatorFix.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.43398392" vertical-offset="914" max-vertical-offset="1785">
+          <caret line="76" column="34" selection-start-line="76" selection-start-column="34" selection-end-line="76" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/annotators/WrongEndNameAnnotator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5074627" vertical-offset="0" max-vertical-offset="871">
+          <caret line="26" column="61" selection-start-line="26" selection-start-column="61" selection-end-line="26" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/modula/parsing/utility/ModulaPsiTraversingUtility.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21125144" vertical-offset="326" max-vertical-offset="1564">
+          <caret line="30" column="52" selection-start-line="30" selection-start-column="52" selection-end-line="30" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/modula/helpers/highlight/ModuleDefinitionSyntaxHighlighter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="462" max-vertical-offset="1717">
+          <caret line="55" column="49" selection-start-line="55" selection-start-column="49" selection-end-line="55" selection-end-column="49" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/modula/parsing/grammar/Def.bnf">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.29166666" vertical-offset="3273" max-vertical-offset="4896">
-          <caret line="215" column="88" selection-start-line="215" selection-start-column="88" selection-end-line="215" selection-end-column="88" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1366" max-vertical-offset="6579">
+          <caret line="105" column="37" selection-start-line="105" selection-start-column="37" selection-end-line="105" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gen/org/modula/parsing/definition/psi/DefinitionActualParameters.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2606132" vertical-offset="0" max-vertical-offset="848">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gen/org/modula/parsing/definition/DefinitionParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="59092">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>

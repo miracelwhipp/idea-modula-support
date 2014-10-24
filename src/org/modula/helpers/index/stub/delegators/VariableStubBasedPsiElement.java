@@ -9,12 +9,12 @@ import org.modula.helpers.index.stubs.Constant;
 import org.modula.helpers.index.stubs.ConstantStub;
 import org.modula.helpers.index.stubs.Variable;
 import org.modula.helpers.index.stubs.VariableStub;
-import org.modula.parsing.definition.psi.DefinitionConstantDefinition;
+import org.modula.parsing.definition.psi.DefinitionConstantDeclaration;
 import org.modula.parsing.definition.psi.DefinitionVariableNameDefinition;
 import org.modula.parsing.utility.ModulaPsiTraversingUtility;
 
 /**
- * Abstract superclass for generated {@link org.modula.parsing.definition.psi.impl.DefinitionConstantDefinitionImpl}
+ * Abstract superclass for generated {@link org.modula.parsing.definition.psi.impl.DefinitionConstantDeclarationImpl}
  * knowing how to obtain {@link org.modula.helpers.index.stubs.Constant} from PSI
  */
 public abstract class VariableStubBasedPsiElement extends SymbolStubBasedPsiElement<VariableStub> implements Variable, DefinitionVariableNameDefinition {
@@ -33,6 +33,6 @@ public abstract class VariableStubBasedPsiElement extends SymbolStubBasedPsiElem
 		if (null != stub) {
 			return stub.getStubName();
 		}
-		return getVariableName().getText();
+		return getIdent().getText();
 	}
 }

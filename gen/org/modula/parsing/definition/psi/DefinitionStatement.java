@@ -8,18 +8,33 @@ import com.intellij.psi.PsiElement;
 public interface DefinitionStatement extends PsiElement {
 
   @Nullable
-  DefinitionAssignment getAssignment();
-
-  @Nullable
   DefinitionCaseStatement getCaseStatement();
 
   @Nullable
-  DefinitionDoStatement getDoStatement();
+  DefinitionForStatement getForStatement();
 
   @Nullable
   DefinitionIfStatement getIfStatement();
 
   @Nullable
   DefinitionLoopStatement getLoopStatement();
+
+  @Nullable
+  DefinitionProcedureCall getProcedureCall();
+
+  @Nullable
+  DefinitionRepeatStatement getRepeatStatement();
+
+  @Nullable
+  DefinitionWhileStatement getWhileStatement();
+
+  @Nullable
+  DefinitionWithStatement getWithStatement();
+
+  @Nullable
+  DefinitionAssignment getAssignment();
+
+  @Nullable
+  DefinitionExpression getExpression();
 
 }

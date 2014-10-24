@@ -11,7 +11,7 @@ import com.intellij.psi.TokenType;
 import com.intellij.util.IncorrectOperationException;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.modula.parsing.definition.psi.DefinitionDefinitionFile;
+import org.modula.parsing.definition.psi.DefinitionDefinitionModule;
 import org.modula.parsing.definition.psi.DefinitionImportClause;
 import org.modula.parsing.definition.psi.ModulaTypes;
 import org.modula.parsing.utility.AstTraversingUtility;
@@ -66,13 +66,13 @@ public class ImportUnknownDesignatorFix implements IntentionAction {
 			public void run() {
 
 				ASTNode defFile =
-						AstTraversingUtility.findChildRecursivelyByType(file.getNode(), ModulaTypes.DEFINITION_FILE);
+						AstTraversingUtility.findChildRecursivelyByType(file.getNode(), ModulaTypes.DEFINITION_MODULE);
 
 				if (null == defFile) {
 					return;
 				}
 
-				DefinitionDefinitionFile file = (DefinitionDefinitionFile) defFile.getPsi();
+				DefinitionDefinitionModule file = (DefinitionDefinitionModule) defFile.getPsi();
 
 				PsiElement anchor;
 
@@ -81,7 +81,7 @@ public class ImportUnknownDesignatorFix implements IntentionAction {
 				if (size > 0) {
 					anchor = importClauseList.get(size - 1);
 				} else {
-					anchor = file.getHeader();
+					anchor = file.getModuleHeader();
 				}
 
 				PsiElement importClause = DefinitionElementFactory.createImportClause(project, moduleName, symbolName);

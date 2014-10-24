@@ -24,20 +24,14 @@ public class DefinitionStatementImpl extends ASTWrapperPsiElement implements Def
 
   @Override
   @Nullable
-  public DefinitionAssignment getAssignment() {
-    return findChildByClass(DefinitionAssignment.class);
-  }
-
-  @Override
-  @Nullable
   public DefinitionCaseStatement getCaseStatement() {
     return findChildByClass(DefinitionCaseStatement.class);
   }
 
   @Override
   @Nullable
-  public DefinitionDoStatement getDoStatement() {
-    return findChildByClass(DefinitionDoStatement.class);
+  public DefinitionForStatement getForStatement() {
+    return findChildByClass(DefinitionForStatement.class);
   }
 
   @Override
@@ -50,6 +44,42 @@ public class DefinitionStatementImpl extends ASTWrapperPsiElement implements Def
   @Nullable
   public DefinitionLoopStatement getLoopStatement() {
     return findChildByClass(DefinitionLoopStatement.class);
+  }
+
+  @Override
+  @Nullable
+  public DefinitionProcedureCall getProcedureCall() {
+    return findChildByClass(DefinitionProcedureCall.class);
+  }
+
+  @Override
+  @Nullable
+  public DefinitionRepeatStatement getRepeatStatement() {
+    return findChildByClass(DefinitionRepeatStatement.class);
+  }
+
+  @Override
+  @Nullable
+  public DefinitionWhileStatement getWhileStatement() {
+    return findChildByClass(DefinitionWhileStatement.class);
+  }
+
+  @Override
+  @Nullable
+  public DefinitionWithStatement getWithStatement() {
+    return findChildByClass(DefinitionWithStatement.class);
+  }
+
+  @Override
+  @Nullable
+  public DefinitionAssignment getAssignment() {
+    return findChildByClass(DefinitionAssignment.class);
+  }
+
+  @Override
+  @Nullable
+  public DefinitionExpression getExpression() {
+    return findChildByClass(DefinitionExpression.class);
   }
 
 }

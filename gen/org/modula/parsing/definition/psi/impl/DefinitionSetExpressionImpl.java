@@ -23,9 +23,9 @@ public class DefinitionSetExpressionImpl extends ASTWrapperPsiElement implements
   }
 
   @Override
-  @Nullable
-  public DefinitionElement getElement() {
-    return findChildByClass(DefinitionElement.class);
+  @NotNull
+  public List<DefinitionElement> getElementList() {
+    return PsiTreeUtil.getChildrenOfTypeAsList(this, DefinitionElement.class);
   }
 
   @Override

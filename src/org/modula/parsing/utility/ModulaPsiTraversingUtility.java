@@ -10,104 +10,77 @@ import org.modula.parsing.definition.psi.*;
  */
 public final class ModulaPsiTraversingUtility {
 
-    private ModulaPsiTraversingUtility() {
-    }
+	private ModulaPsiTraversingUtility() {
+	}
 
-    @Nullable
-    public static String getModuleName(PsiElement psi) {
+	@Nullable
+	public static String getModuleName(PsiElement psi) {
 
-        if (null == psi) {
-            return null;
-        }
+		if (null == psi) {
+			return null;
+		}
 
-        PsiElement parent = getDefRootElement(psi);
+		PsiElement parent = getDefRootElement(psi);
 
-        if (parent == null) {
-            return null;
-        }
+		if (parent == null) {
+			return null;
+		}
 
-        DefinitionDefinitionFile file = (DefinitionDefinitionFile) parent;
+		DefinitionDefinitionModule file = (DefinitionDefinitionModule) parent;
 
-        DefinitionHeader header = file.getHeader();
-
-        DefinitionModuleDefinition moduleDefinition;
-
-        DefinitionGenericModuleDefinition genericModuleDefinition = header.getGenericModuleDefinition();
-        if (null != genericModuleDefinition) {
-            moduleDefinition = genericModuleDefinition.getModuleDefinition();
-        } else {
-            moduleDefinition = header.getModuleDefinition();
-        }
-
-        if (null == moduleDefinition) {
-            return null;
-        }
-
-        return moduleDefinition.getModuleName().getText();
-    }
-
-    @Nullable
-    public static DefinitionDefinitionFile getDefRootElement(PsiElement psi) {
-        PsiElement parent = psi;
-        while (!((parent = parent.getParent()) instanceof DefinitionDefinitionFile)) {
-            if (null == parent) {
-                return null;
-            }
-        }
-        return (DefinitionDefinitionFile) parent;
-    }
+		DefinitionModuleHeader header = file.getModuleHeader();
 
 
-    public static String getFirstDefinedIdentifier(PsiElement element) {
+		return header.getIdent().getText();
+	}
 
-        if (element instanceof DefinitionConstantDefinition) {
-            return ((DefinitionConstantDefinition) element).getConstantName().getText();
-        }
-
-        if (element instanceof DefinitionOpaqueTypeDefinition) {
-            return element.getText();
-        }
-
-        if (element instanceof DefinitionTypeAliasDefinition) {
-            return ((DefinitionTypeAliasDefinition) element).getTypeName().getText();
-        }
-
-        if (element instanceof DefinitionProcedureDefinition) {
-            return ((DefinitionProcedureDefinition) element).getProcedureName().getText();
-        }
-
-        if (element instanceof DefinitionVariableName) {
-            return element.getText();
-        }
-
-        for (PsiElement child : element.getChildren()) {
-            String firstIdentifier = getFirstDefinedIdentifier(child);
-            if (firstIdentifier != null) {
-                return firstIdentifier;
-            }
-        }
-
-        return null;
-
-    }
-
-    @Nullable
-    public static String getTypeName(DefinitionTypeDefinition psi) {
-
-        DefinitionOpaqueTypeDefinition opaqueTypeDefinition = psi.getOpaqueTypeDefinition();
-
-        if (null != opaqueTypeDefinition) {
-            return opaqueTypeDefinition.getText();
-        }
-
-        DefinitionTypeAliasDefinition typeAliasDefinition = psi.getTypeAliasDefinition();
-        if (null == typeAliasDefinition) {
-            return null;
-        }
-
-        return typeAliasDefinition.getTypeName().getText();
+	@Nullable
+	public static DefinitionDefinitionModule getDefRootElement(PsiElement psi) {
+		PsiElement parent = psi;
+		while (!((parent = parent.getParent()) instanceof DefinitionDefinitionModule)) {
+			if (null == parent) {
+				return null;
+			}
+		}
+		return (DefinitionDefinitionModule) parent;
+	}
 
 
-    }
+	public static String getFirstDefinedIdentifier(PsiElement element) {
+
+		if (element instanceof DefinitionConstantDeclaration) {
+			return ((DefinitionConstantDeclaration) element).getIdent().getText();
+		}
+
+		if (element instanceof DefinitionTypeDefinition) {
+			return ((DefinitionTypeDefinition) element).getIdent().getText();
+		}
+
+		if (element instanceof DefinitionProcedureHeading) {
+			return ((DefinitionProcedureHeading) element).getIdent().getText();
+		}
+
+		if (element instanceof DefinitionVariableNameDefinition) {
+			return element.getText();
+		}
+
+		for (PsiElement child : element.getChildren()) {
+			String firstIdentifier = getFirstDefinedIdentifier(child);
+			if (firstIdentifier != null) {
+				return firstIdentifier;
+			}
+		}
+
+		return null;
+
+	}
+
+	@Nullable
+	public static String getTypeName(DefinitionTypeDefinition psi) {
+
+		return psi.getIdent().getText();
+
+
+	}
 
 }

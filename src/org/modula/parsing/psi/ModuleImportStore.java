@@ -6,7 +6,7 @@ import com.intellij.openapi.util.Key;
 import com.intellij.psi.PsiElement;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.modula.parsing.definition.psi.DefinitionDefinitionFile;
+import org.modula.parsing.definition.psi.DefinitionDefinitionModule;
 import org.modula.parsing.utility.ModulaPsiTraversingUtility;
 
 /**
@@ -15,40 +15,40 @@ import org.modula.parsing.utility.ModulaPsiTraversingUtility;
  */
 public class ModuleImportStore extends ASTWrapperPsiElement {
 
-    private static final Key<ImportMap<PsiElement>> KEY = Key.create("modula.module.import.map");
+	private static final Key<ImportMap<PsiElement>> KEY = Key.create("modula.module.import.map");
 
-    public ModuleImportStore(@NotNull ASTNode node) {
-        super(node);
-        storeModule();
-    }
+	public ModuleImportStore(@NotNull ASTNode node) {
+		super(node);
+		storeModule();
+	}
 
-    private void storeModule() {
-        ImportMap<PsiElement> moduleImportMap = getModuleImportMap(this);
+	private void storeModule() {
+		ImportMap<PsiElement> moduleImportMap = getModuleImportMap(this);
 
-        if (null == moduleImportMap) {
-            return;
-        }
+		if (null == moduleImportMap) {
+			return;
+		}
 
-        moduleImportMap.put(getNode().getText(), this);
-    }
+		moduleImportMap.put(getNode().getText(), this);
+	}
 
-    @Nullable
-    public static ImportMap<PsiElement> getModuleImportMap(PsiElement psi) {
+	@Nullable
+	public static ImportMap<PsiElement> getModuleImportMap(PsiElement psi) {
 
-        DefinitionDefinitionFile definitionFile = ModulaPsiTraversingUtility.getDefRootElement(psi);
+		DefinitionDefinitionModule definitionFile = ModulaPsiTraversingUtility.getDefRootElement(psi);
 
-        if (null == definitionFile) {
-            return null;
-        }
+		if (null == definitionFile) {
+			return null;
+		}
 
-        synchronized (KEY) {
-            ImportMap<PsiElement> moduleImportMap = definitionFile.getUserData(KEY);
-            if (null == moduleImportMap) {
-                moduleImportMap = new ImportMap<PsiElement>(new PsiElementInModulaFileRepairer());
-                definitionFile.putUserData(KEY, moduleImportMap);
-            }
-            return moduleImportMap;
-        }
-    }
+		synchronized (KEY) {
+			ImportMap<PsiElement> moduleImportMap = definitionFile.getUserData(KEY);
+			if (null == moduleImportMap) {
+				moduleImportMap = new ImportMap<PsiElement>(new PsiElementInModulaFileRepairer());
+				definitionFile.putUserData(KEY, moduleImportMap);
+			}
+			return moduleImportMap;
+		}
+	}
 
 }

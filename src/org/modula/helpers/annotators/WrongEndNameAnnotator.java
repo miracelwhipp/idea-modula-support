@@ -16,42 +16,25 @@ public class WrongEndNameAnnotator implements Annotator {
 
 	@Override
 	public void annotate(@NotNull PsiElement element, @NotNull AnnotationHolder holder) {
-		if (!(element instanceof DefinitionFooter)) {
+		if (!(element instanceof DefinitionDefinitionModule)) {
 			return;
 		}
 
-		DefinitionFooter footer = (DefinitionFooter) element;
-		PsiElement parentElement = footer.getParent();
+		DefinitionDefinitionModule module = (DefinitionDefinitionModule) element;
+		DefinitionModuleHeader header = module.getModuleHeader();
 
-		if (!(parentElement instanceof DefinitionDefinitionFile)) {
+
+		if (header.getIdent().getText().equals(module.getIdent().getText())) {
 			return;
 		}
 
-		DefinitionDefinitionFile definitionFile = (DefinitionDefinitionFile) parentElement;
-		DefinitionHeader header = definitionFile.getHeader();
-		DefinitionModuleDefinition moduleDefinition = header.getModuleDefinition();
+		Annotation footerErrorAnnotation = holder.createErrorAnnotation(module.getIdent(), "wrong module name in Module footer.");
+		footerErrorAnnotation.registerFix(new ChangeFooterNameFix(module.getIdent().getText()));
+		footerErrorAnnotation.registerFix(new ChangeModuleNameFix(header.getIdent().getText()));
 
-		if (null == moduleDefinition) {
-
-			DefinitionGenericModuleDefinition genericModuleDefinition = header.getGenericModuleDefinition();
-			if (null == genericModuleDefinition) {
-				return;
-			}
-
-			moduleDefinition = genericModuleDefinition.getModuleDefinition();
-		}
-
-		if (moduleDefinition.getModuleName().getText().equals(footer.getModuleName().getText())) {
-			return;
-		}
-
-		Annotation footerErrorAnnotation = holder.createErrorAnnotation(footer.getModuleName(), "wrong module name in Module footer.");
-		footerErrorAnnotation.registerFix(new ChangeFooterNameFix(moduleDefinition.getModuleName().getText()));
-		footerErrorAnnotation.registerFix(new ChangeModuleNameFix(footer.getModuleName().getText()));
-
-		Annotation headerErrorAnnotation = holder.createErrorAnnotation(moduleDefinition.getModuleName(), "wrong module name in Module footer.");
-		headerErrorAnnotation.registerFix(new ChangeFooterNameFix(moduleDefinition.getModuleName().getText()));
-		headerErrorAnnotation.registerFix(new ChangeModuleNameFix(footer.getModuleName().getText()));
+		Annotation headerErrorAnnotation = holder.createErrorAnnotation(header.getIdent(), "wrong module name in Module footer.");
+		headerErrorAnnotation.registerFix(new ChangeFooterNameFix(module.getIdent().getText()));
+		headerErrorAnnotation.registerFix(new ChangeModuleNameFix(header.getIdent().getText()));
 
 
 	}

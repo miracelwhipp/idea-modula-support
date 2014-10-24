@@ -24,8 +24,14 @@ public class DefinitionIfStatementImpl extends ASTWrapperPsiElement implements D
 
   @Override
   @NotNull
-  public DefinitionStatements getStatements() {
-    return findNotNullChildByClass(DefinitionStatements.class);
+  public List<DefinitionStatementSequence> getStatementSequenceList() {
+    return PsiTreeUtil.getChildrenOfTypeAsList(this, DefinitionStatementSequence.class);
+  }
+
+  @Override
+  @NotNull
+  public List<DefinitionExpression> getExpressionList() {
+    return PsiTreeUtil.getChildrenOfTypeAsList(this, DefinitionExpression.class);
   }
 
 }

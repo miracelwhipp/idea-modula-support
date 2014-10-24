@@ -57,7 +57,7 @@ public class UnknownQualidentAnnotator implements Annotator {
 
 		final GlobalSearchScope global = GlobalSearchScope.allScope(element.getProject());
 
-		Collection<DefinitionModuleDefinition> definitionModuleDefinitions = ModuleIndex.INSTANCE.get(symbolName, element.getProject(), global);
+		Collection<DefinitionDefinitionModule> definitionModuleDefinitions = ModuleIndex.INSTANCE.get(symbolName, element.getProject(), global);
 
 		if (!definitionModuleDefinitions.isEmpty()) {
 			errorAnnotation.registerFix(new ImportUnknownDesignatorFix(symbolName));

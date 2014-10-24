@@ -134,7 +134,7 @@ CT_END                       = {SB_END}|{END_DIRECTIVE}
 <YYINITIAL> NOT /[^a-zA-Z_0-9]  { return ModulaTypes.NOT; }
 <YYINITIAL> \~                  { return ModulaTypes.NOT; }
 <YYINITIAL> BNOT /[^a-zA-Z_0-9] { return ModulaTypes.BITWISE_NOT; }
-<YYINITIAL> BY /[^a-zA-Z_0-9]   { return ModulaTypes.ARRAY_ELEMENT_RANGE_OPERATOR; }
+<YYINITIAL> BY /[^a-zA-Z_0-9]   { return ModulaTypes.FOR_LOOP_INCREMENT; }
 <YYINITIAL> \^                  { return ModulaTypes.POINTER_DEREFERENCE_OPERATOR; }
 
 <YYINITIAL> {CHAR_CONST}                  { return ModulaTypes.CHAR_CONST; }
@@ -155,7 +155,6 @@ CT_END                       = {SB_END}|{END_DIRECTIVE}
 <YYINITIAL> ASSEMBLER { return ModulaTypes.ASSEMBLER; }
 <YYINITIAL> BIG { return ModulaTypes.BIG; }
 <YYINITIAL> BEGIN { return ModulaTypes.BEGIN; }
-<YYINITIAL> BY { return ModulaTypes.BY; }
 <YYINITIAL> CASE { return ModulaTypes.CASE; }
 <YYINITIAL> CMPLX { return ModulaTypes.CMPLX; }
 <YYINITIAL> CONST { return ModulaTypes.CONST; }
@@ -184,6 +183,7 @@ CT_END                       = {SB_END}|{END_DIRECTIVE}
 <YYINITIAL> PROCEDURE { return ModulaTypes.PROCEDURE; }
 <YYINITIAL> PUBLIC { return ModulaTypes.PUBLIC; }
 <YYINITIAL> PUREASM { return ModulaTypes.PUREASM; }
+<YYINITIAL> QUALIFIED { return ModulaTypes.QUALIFIED; }
 <YYINITIAL> RECORD { return ModulaTypes.RECORD; }
 <YYINITIAL> REPEAT { return ModulaTypes.REPEAT; }
 <YYINITIAL> RETURN { return ModulaTypes.RETURN; }

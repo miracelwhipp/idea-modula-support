@@ -8,6 +8,9 @@ import com.intellij.psi.PsiElement;
 public interface DefinitionNumber extends PsiElement {
 
   @Nullable
+  DefinitionComplexLiteral getComplexLiteral();
+
+  @Nullable
   DefinitionIntegerLiteral getIntegerLiteral();
 
   @Nullable

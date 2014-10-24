@@ -12,6 +12,6 @@ import org.modula.helpers.index.stubs.VariableStub;
 public interface DefinitionVariableNameDefinition extends PsiElement, Variable, SymbolStubPsiElement, StubBasedPsiElement<VariableStub> {
 
   @NotNull
-  DefinitionVariableName getVariableName();
+  DefinitionIdent getIdent();
 
 }

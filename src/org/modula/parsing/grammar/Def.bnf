@@ -15,9 +15,22 @@
 	tokenTypeClass="org.modula.parsing.psi.ModulaTokenType"
 }
 
-root ::= definitionFile
+root ::= DefinitionModule
 
-definitionFile ::= header import_clause* definition_clause* footer
+DefinitionModule ::= module_header END_OF_STATEMENT (import_clause)* (definitions)* END ident DOT
+
+module_header ::= (UNSAFEGUARDED)? DEFINITION MODULE ident
+{
+	stubClass = "org.modula.helpers.index.stubs.ModuleStub"
+	elementTypeClass = "org.modula.helpers.index.stub.element.types.ModuleStubElementType"
+}
+
+//module_definition ::= (UNSAFEGUARDED)? DEFINITION MODULE module_name
+//{
+//	stubClass = "org.modula.helpers.index.stubs.ModuleStub"
+//	elementTypeClass = "org.modula.helpers.index.stub.element.types.ModuleStubElementType"
+//}
+//definitionFile ::= header import_clause* definition_clause* footer
 
 import_clause ::= module_import_clause | symbol_import_clause
 
@@ -34,27 +47,120 @@ import_symbol ::= IDENTIFIER
 	extends = "org.modula.parsing.psi.SymbolImportStore"
 }
 
-private recover_by_end_of_statement ::= END_OF_STATEMENT
+definitions ::=  CONST (ConstantDeclaration END_OF_STATEMENT)* |
+				TYPE (type_definition)* |
+				VAR (VariableDeclaration END_OF_STATEMENT)* |
+				ProcedureHeading END_OF_STATEMENT
+//definition_clause ::= procedure_definition | type_definitions | constant_definitions | variable_definitions
 
-header ::= (generic_module_definition | module_definition) END_OF_STATEMENT
-
-module_definition ::= (UNSAFEGUARDED)? DEFINITION MODULE module_name
-{
-	stubClass = "org.modula.helpers.index.stubs.ModuleStub"
-	elementTypeClass = "org.modula.helpers.index.stub.element.types.ModuleStubElementType"
+ConstantDeclaration ::= ident EQUALITY_OPERATOR expression {
+	implements = ["com.intellij.psi.PsiElement" "org.modula.helpers.index.stubs.Constant" "org.modula.helpers.index.stubs.SymbolStubPsiElement"]
+	extends = "org.modula.helpers.index.stub.delegators.ConstantStubBasedPsiElement"
+	stubClass = "org.modula.helpers.index.stubs.ConstantStub"
+	elementTypeClass = "org.modula.helpers.index.stub.element.types.ConstantStubElementType"
+//	pin = 1
+//	recoverWhile="recover_while_statement"
 }
 
-generic_module_definition ::= GENERIC module_definition module_parameters
+//constant_definition ::= constant_name EQUALITY_OPERATOR constant_value END_OF_STATEMENT
+//{
+//	implements = ["com.intellij.psi.PsiElement" "org.modula.helpers.index.stubs.Constant" "org.modula.helpers.index.stubs.SymbolStubPsiElement"]
+//	extends = "org.modula.helpers.index.stub.delegators.ConstantStubBasedPsiElement"
+//	stubClass = "org.modula.helpers.index.stubs.ConstantStub"
+//	elementTypeClass = "org.modula.helpers.index.stub.element.types.ConstantStubElementType"
+//}
 
-module_parameters ::= module_parameter (END_OF_STATEMENT module_parameter)*
-module_parameter ::= constant_value_module_parameter | type_parameter
 
-constant_value_module_parameter ::= module_parameter_name (COMMA module_parameter_name)* TYPING_OPERATOR type_specification
-type_parameter ::= module_parameter_name (COMMA module_parameter_name)* TYPING_OPERATOR TYPE
-module_parameter_name ::= IDENTIFIER
+types ::= SimpleType | ArrayType | RecordType | SetType | PointerType | ProcedureType
+
+type_definition ::= ident (EQUALITY_OPERATOR types)? END_OF_STATEMENT
+{
+	implements = ["com.intellij.psi.PsiElement" "org.modula.helpers.index.stubs.Type" "org.modula.helpers.index.stubs.SymbolStubPsiElement"]
+	extends = "org.modula.helpers.index.stub.delegators.TypeStubBasedPsiElement"
+	stubClass = "org.modula.helpers.index.stubs.TypeStub"
+	elementTypeClass = "org.modula.helpers.index.stub.element.types.TypeStubElementType"
+}
 
 
-footer ::= END module_name DOT
+
+VariableDeclaration ::= variable_name_definition export_name_declaration? (COMMA variable_name_definition export_name_declaration?)*
+							variable_modifiers TYPING_OPERATOR types (EQUALITY_OPERATOR expression)?
+//{
+//	pin=1
+//	recoverWhile=recover_while_statement
+//}
+
+variable_name_definition ::= ident
+{
+	implements = ["com.intellij.psi.PsiElement" "org.modula.helpers.index.stubs.Variable" "org.modula.helpers.index.stubs.SymbolStubPsiElement"]
+	extends = "org.modula.helpers.index.stub.delegators.VariableStubBasedPsiElement"
+	stubClass = "org.modula.helpers.index.stubs.VariableStub"
+	elementTypeClass = "org.modula.helpers.index.stub.element.types.VariableStubElementType"
+}
+
+
+
+
+ProcedureHeading ::= PROCEDURE ident export_name_declaration? FormalParameters?
+                                 procedure_attributes?
+                                 (END_OF_STATEMENT macro_declaration)?
+ {
+    implements = ["com.intellij.psi.PsiElement" "org.modula.helpers.index.stubs.Procedure" "org.modula.helpers.index.stubs.SymbolStubPsiElement"]
+    extends = "org.modula.helpers.index.stub.delegators.ProcedureStubBasedPsiElement"
+    stubClass = "org.modula.helpers.index.stubs.ProcedureStub"
+    elementTypeClass = "org.modula.helpers.index.stub.element.types.ProcedureStubElementType"
+ }
+
+FormalParameters ::=  OPEN_BRACE (FPSection (END_OF_STATEMENT FPSection)*)? CLOSE_BRACE (TYPING_OPERATOR qualident)?
+FPSection ::= (parameter_modifier)? IdentList TYPING_OPERATOR (parameter_value_modifier)? (ARRAY OF)* FormalType
+parameter_modifier ::= (VAR (INOUT | OUT)?)| CONST
+IdentList ::= ident (COMMA ident)*
+FormalType ::= (ARRAY OF)? qualident
+
+SimpleType ::= qualident | enumeration_definition | SubRangeType
+SubRangeType ::= (qualident)? SQUARE_BRACE_OPEN expression RANGE_OPERATOR expression SQUARE_BRACE_CLOSE
+
+ArrayType ::= ARRAY array_range_type (COMMA array_range_type)* OF types
+array_range_type ::= qualident | enumeration_definition | SubRangeType | TOKEN_CHAR | TOKEN_BOOLEAN
+
+RecordType ::= RECORD FieldListSequence END
+FieldListSequence ::= FieldList (END_OF_STATEMENT FieldList)*
+FieldList ::= (IdentList TYPING_OPERATOR types | CASE ident TYPING_OPERATOR qualident OF variant (PIPE variant)* (ELSE FieldListSequence)? END)?
+variant ::= (CaseLabelList TYPING_OPERATOR FieldListSequence)?
+CaseLabelList ::= CaseLabels (COMMA CaseLabels)*
+CaseLabels ::= expression (RANGE_OPERATOR expression)*
+
+SetType ::= (SET|PACKEDSET) OF SimpleType (BIG|SMALL)?
+//set_definition ::= (SET|PACKEDSET) OF type_specification (BIG|SMALL)?
+
+PointerType ::= POINTER TO types
+ProcedureType ::= PROCEDURE (FormalTypeList)? procedure_attributes?
+FormalTypeList ::= OPEN_BRACE (parameter_modifier? (parameter_value_modifier)? FormalType (COMMA parameter_modifier? (parameter_value_modifier)? FormalType)*)? CLOSE_BRACE (TYPING_OPERATOR qualident)?
+
+parameter_value_modifier ::= NEAR|FAR|VALUE|NOHIGH
+
+//anonymous_parameter ::= (parameter_modifier)? (parameter_value_modifier)? (ARRAY OF)* type_specification
+
+//procedure_type_definition ::= PROCEDURE (OPEN_BRACE parameters_comma_separated? CLOSE_BRACE (TYPING_OPERATOR type_specification)? procedure_attributes?)?
+
+
+//private recover_by_end_of_statement ::= END_OF_STATEMENT
+
+//header ::= (generic_module_definition | module_definition) END_OF_STATEMENT
+
+
+
+//generic_module_definition ::= GENERIC module_definition module_parameters
+
+//module_parameters ::= module_parameter (END_OF_STATEMENT module_parameter)*
+//module_parameter ::= constant_value_module_parameter | type_parameter
+
+//constant_value_module_parameter ::= module_parameter_name (COMMA module_parameter_name)* TYPING_OPERATOR type_specification
+//type_parameter ::= module_parameter_name (COMMA module_parameter_name)* TYPING_OPERATOR TYPE
+//module_parameter_name ::= IDENTIFIER
+
+
+//footer ::= END module_name DOT
 
 module_name ::= IDENTIFIER
 
@@ -64,135 +170,109 @@ stony_brook_type ::= TOKEN_SHORTINT | TOKEN_SHORTCARD | TOKEN_INTEGER16 | TOKEN_
 					TOKEN_CARDINAL32 | TOKEN_LONGINT | TOKEN_LONGCARD | TOKEN_INTEGER64 | TOKEN_CARDINAL64 |
 					TOKEN_ACHAR | TOKEN_UCHAR | TOKEN_BYTEBOOL | TOKEN_WORDBOOL | TOKEN_DWORDBOOL |
 					TOKEN_BITSET16 | TOKEN_BITSET32
-predefined_type ::= basic_type | stony_brook_type
-type_specification ::= predefined_type | pointer_definition | set_definition | array_definition | record_definition
-                         | enumeration_definition | procedure_type_definition | range | type_designator
+//predefined_type ::= basic_type | stony_brook_type
+//type_specification ::= predefined_type | pointer_definition | set_definition | array_definition | record_definition
+//                         | enumeration_definition | procedure_type_definition | range | type_designator
 
-pointer_definition ::= POINTER TO type_specification
-
-set_definition ::= (SET|PACKEDSET) OF type_specification (BIG|SMALL)?
-
-array_definition ::= ARRAY index_type (COMMA index_type)* OF type_specification
-index_type ::= TOKEN_BOOLEAN | TOKEN_CHAR | range | type_designator
-
-record_definition ::= RECORD fields END
-fields ::= (field (END_OF_STATEMENT field)*)? END_OF_STATEMENT?
-field ::= variant_field | static_field
-static_field ::= field_name (COMMA field_name)* TYPING_OPERATOR type_specification
-field_name ::= IDENTIFIER
-variant_field ::= CASE (field_name)? TYPING_OPERATOR type_specification OF variants END
-variants ::= variant (PIPE variant)* (ELSE fields?)?
-variant ::= selector TYPING_OPERATOR fields
-selector ::= case_range (COMMA case_range)*
-case_range ::= inner_range | literal
+//pointer_definition ::= POINTER TO type_specification
 
 
-definition_clause ::= procedure_definition | type_definitions | constant_definitions | variable_definitions
+//array_definition ::= ARRAY index_type (COMMA index_type)* OF type_specification
+//index_type ::= TOKEN_BOOLEAN | TOKEN_CHAR | range | type_designator
 
-variable_definitions ::= VAR (variable_definition)*
-macro_variable_definitions ::= VAR (macro_variable_definition)*
+//record_definition ::= RECORD fields END
+//fields ::= (field (END_OF_STATEMENT field)*)? END_OF_STATEMENT?
+//field ::= variant_field | static_field
+//static_field ::= field_name (COMMA field_name)* TYPING_OPERATOR type_specification
+//field_name ::= IDENTIFIER
+//variant_field ::= CASE (field_name)? TYPING_OPERATOR type_specification OF variants END
+//variants ::= variant_old (PIPE variant_old)* (ELSE fields?)?
+//variant_old ::= selector TYPING_OPERATOR fields
+//selector ::= case_range (COMMA case_range)*
+//case_range ::= inner_range | literal
 
-variable_definition ::= variable_name_definition export_name_declaration? (COMMA variable_name_definition export_name_declaration?)*
-							variable_modifiers TYPING_OPERATOR type_specification
-							(EQUALITY_OPERATOR constant_value)? END_OF_STATEMENT
-{
-	pin=1
-	recoverWhile=recover_while_statement
-}
 
-variable_name_definition ::= variable_name
-{
-	implements = ["com.intellij.psi.PsiElement" "org.modula.helpers.index.stubs.Variable" "org.modula.helpers.index.stubs.SymbolStubPsiElement"]
-	extends = "org.modula.helpers.index.stub.delegators.VariableStubBasedPsiElement"
-	stubClass = "org.modula.helpers.index.stubs.VariableStub"
-	elementTypeClass = "org.modula.helpers.index.stub.element.types.VariableStubElementType"
-}
 
-macro_variable_definition ::= variable_name (COMMA variable_name)* variable_modifiers TYPING_OPERATOR
-									type_specification (EQUALITY_OPERATOR constant_value)? END_OF_STATEMENT {pin=1 recoverUntil=recover_by_end_of_statement}
+
+//variable_definitions ::= VAR (variable_definition)*
+//macro_variable_definitions ::= VAR (macro_variable_definition)*
+
+//variable_definition ::= variable_name_definition export_name_declaration? (COMMA variable_name_definition export_name_declaration?)*
+//							variable_modifiers TYPING_OPERATOR type_specification
+//							(EQUALITY_OPERATOR constant_value)? END_OF_STATEMENT
+//{
+//	pin=1
+//	recoverWhile=recover_while_statement
+//}
+
+
+//macro_variable_definition ::= variable_name (COMMA variable_name)* variable_modifiers TYPING_OPERATOR
+//									type_specification (EQUALITY_OPERATOR constant_value)? END_OF_STATEMENT {pin=1 recoverUntil=recover_by_end_of_statement}
 
 variable_modifiers ::= (SQUARE_BRACE_OPEN VOLATILE SQUARE_BRACE_CLOSE)?
 							(SQUARE_BRACE_OPEN (SQUARE_BRACE_OPEN (NEAR | FAR) SQUARE_BRACE_CLOSE)? STRING_CONST_SINGLE (PUBLIC | EXTERNAL)? SQUARE_BRACE_CLOSE)?
 							(SQUARE_BRACE_OPEN DLLACCESS (STRING_CONST_SINGLE)? SQUARE_BRACE_CLOSE)?
 
-variable_name ::= IDENTIFIER
+//variable_name ::= IDENTIFIER
 
-generic_designator ::= symbol_name ('^'* DOT symbol_name)*
-symbol_name ::= IDENTIFIER
+//generic_designator ::= symbol_name ('^'* DOT symbol_name)*
+//symbol_name ::= IDENTIFIER
 
-type_designator ::= generic_designator
-type_name ::= IDENTIFIER
+//type_designator ::= generic_designator
+//type_name ::= IDENTIFIER
 
-named_type ::= type_designator | basic_type | stony_brook_type
+//named_type ::= type_designator | basic_type | stony_brook_type
 
-constant_definitions ::= CONST (constant_definition)* //{pin=1 recoverWhile=recover_while_statement}
-macro_constant_definitions ::= CONST (macro_constant_definition)* //{pin=1 recoverWhile=recover_while_statement}
+//constant_definitions ::= CONST (constant_definition)* //{pin=1 recoverWhile=recover_while_statement}
+//macro_constant_definitions ::= CONST (macro_constant_definition)* //{pin=1 recoverWhile=recover_while_statement}
 
 recover_while_statement ::= (!(END_OF_STATEMENT))*
 
-constant_definition ::= constant_name EQUALITY_OPERATOR constant_value END_OF_STATEMENT
-{
-	implements = ["com.intellij.psi.PsiElement" "org.modula.helpers.index.stubs.Constant" "org.modula.helpers.index.stubs.SymbolStubPsiElement"]
-	extends = "org.modula.helpers.index.stub.delegators.ConstantStubBasedPsiElement"
-	stubClass = "org.modula.helpers.index.stubs.ConstantStub"
-	elementTypeClass = "org.modula.helpers.index.stub.element.types.ConstantStubElementType"
-}
 
 
-macro_constant_definition ::= constant_name EQUALITY_OPERATOR constant_value END_OF_STATEMENT
+//macro_constant_definition ::= constant_name EQUALITY_OPERATOR constant_value END_OF_STATEMENT
 
-constant_name ::= IDENTIFIER
+//constant_name ::= IDENTIFIER
 
 integer_literal ::= INT_CONST_BASE_8 | INT_CONST_BASE_16 | INT_CONST_BASE_10
-constant_value ::= array_constant | record_constant | const_expression
 
-//constant_expression ::=  constant_sum relational_operator constant_expression | constant_sum
-//constant_sum ::= (PLUS | MINUS)? constant_product sum_operator constant_sum | (PLUS | MINUS)? constant_product
-//constant_product ::= constant_negation product_operator constant_product | constant_negation
-//constant_negation ::= negation_operator constant_negation | constant_function_call
-//constant_function_call ::= function_designator OPEN_BRACE (constant_parameter (COMMA constant_parameter)*)? CLOSE_BRACE | constant_expression_value
-//constant_parameter ::= constant_expression | type_specification
-//constant_expression_value ::= literal | constant_designator | OPEN_BRACE constant_expression CLOSE_BRACE
+//constant_value ::= array_constant | record_constant | const_expression
 
-function_designator ::= generic_designator
-constant_designator ::= generic_designator
 
-private relational_operator ::= LESS_THAN | LESS_EQUALS | EQUALITY_OPERATOR | GREATER_EQUALS | GREATER_THAN | DIFFERENT | CONTAINS
-private sum_operator ::= PLUS | MINUS | OR | BITWISE_OR | BITWISE_XOR
-private product_operator ::= TIMES | BY | REMAINDER | DIVISION | MODULO | AND | BITWISE_AND | SHIFT_LEFT | SHIFT_RIGHT | SHIFT_ARITHMETIC_RIGHT | ROTATE_LEFT | ROTATE_RIGHT
-private negation_operator ::= NOT | BITWISE_NOT
+//function_designator ::= generic_designator
+//constant_designator ::= generic_designator
 
-literal ::= integer_literal | complex_literal | set_literal | enumeration_member_designator |
-					CHAR_CONST | real_literal | STRING_CONST_SINGLE | STRING_CONST_DOUBLE | STRING_CONST_SINGLE_UNICODE |
-					STRING_CONST_DOUBLE_UNICODE | STRING_CONST_SINGLE_ANSI | STRING_CONST_DOUBLE_ANSI
+
+//literal ::= integer_literal | complex_literal | set_literal | enumeration_member_designator |
+//					CHAR_CONST | real_literal | STRING_CONST_SINGLE | STRING_CONST_DOUBLE | STRING_CONST_SINGLE_UNICODE |
+//					STRING_CONST_DOUBLE_UNICODE | STRING_CONST_SINGLE_ANSI | STRING_CONST_DOUBLE_ANSI
 real_literal ::= REAL_CONST
-set_literal ::= set_designator CURLY_BRACE_OPEN (literal (COMMA literal)*)? CURLY_BRACE_CLOSE
-set_designator ::= generic_designator
+//set_literal ::= set_designator CURLY_BRACE_OPEN (literal (COMMA literal)*)? CURLY_BRACE_CLOSE
+//set_designator ::= generic_designator
 
-enumeration_member_designator ::= generic_designator
+//enumeration_member_designator ::= generic_designator
 
 complex_literal ::= CMPLX OPEN_BRACE real_literal COMMA real_literal CLOSE_BRACE
-array_constant ::= array_constant_type CURLY_BRACE_OPEN (constant_array_element (COMMA constant_array_element)*)? CURLY_BRACE_CLOSE
-array_constant_type ::= constant_type | array_declaration
-constant_array_element ::= inner_range | integer_literal ARRAY_ELEMENT_RANGE_OPERATOR integer_literal | constant_value
-record_constant ::= constant_type CURLY_BRACE_OPEN constant_value (COMMA constant_value)* CURLY_BRACE_CLOSE
-constant_type ::= IDENTIFIER
+//array_constant ::= array_constant_type CURLY_BRACE_OPEN (constant_array_element (COMMA constant_array_element)*)? CURLY_BRACE_CLOSE
+//array_constant_type ::= constant_type | array_declaration
+//constant_array_element ::= inner_range | integer_literal ARRAY_ELEMENT_RANGE_OPERATOR integer_literal | constant_value
+//record_constant ::= constant_type CURLY_BRACE_OPEN constant_value (COMMA constant_value)* CURLY_BRACE_CLOSE
+//constant_type ::= IDENTIFIER
 
-array_declaration ::= ARRAY (range)? OF constant_type
-range ::= (named_type)? SQUARE_BRACE_OPEN inner_range SQUARE_BRACE_CLOSE
-inner_range ::= const_expression RANGE_OPERATOR const_expression
+//array_declaration ::= ARRAY (range)? OF constant_type
+//range ::= (named_type)? SQUARE_BRACE_OPEN inner_range SQUARE_BRACE_CLOSE
+//inner_range ::= const_expression RANGE_OPERATOR const_expression
 
-procedure_type_definition ::= PROCEDURE (OPEN_BRACE parameters_comma_separated? CLOSE_BRACE (TYPING_OPERATOR type_specification)? procedure_attributes?)?
 
-procedure_definition ::= PROCEDURE procedure_name export_name_declaration? parameters?
-								(TYPING_OPERATOR type_specification)? procedure_attributes? END_OF_STATEMENT
-								(procedure_modifiers)?
-{
-	implements = ["com.intellij.psi.PsiElement" "org.modula.helpers.index.stubs.Procedure" "org.modula.helpers.index.stubs.SymbolStubPsiElement"]
-	extends = "org.modula.helpers.index.stub.delegators.ProcedureStubBasedPsiElement"
-	stubClass = "org.modula.helpers.index.stubs.ProcedureStub"
-	elementTypeClass = "org.modula.helpers.index.stub.element.types.ProcedureStubElementType"
-}
+//procedure_definition ::= PROCEDURE procedure_name export_name_declaration? parameters?
+//								(TYPING_OPERATOR type_specification)? procedure_attributes? END_OF_STATEMENT
+//								(procedure_modifiers)?
+//{
+//	implements = ["com.intellij.psi.PsiElement" "org.modula.helpers.index.stubs.Procedure" "org.modula.helpers.index.stubs.SymbolStubPsiElement"]
+//	extends = "org.modula.helpers.index.stub.delegators.ProcedureStubBasedPsiElement"
+//	stubClass = "org.modula.helpers.index.stubs.ProcedureStub"
+//	elementTypeClass = "org.modula.helpers.index.stub.element.types.ProcedureStubElementType"
+//}
 
 
 
@@ -202,94 +282,113 @@ procedure_attributes ::= SQUARE_BRACE_OPEN attribute (COMMA attribute)* SQUARE_B
 //TODO: identify procedure attributes
 attribute ::= IDENTIFIER OPEN_BRACE (attribute? (COMMA attribute?)* )? CLOSE_BRACE | IDENTIFIER
 
-macro_declaration ::= MACRO END_OF_STATEMENT macro_inner_declarations BEGIN statements END procedure_name
-macro_inner_declarations ::= (macro_type_definitions | macro_variable_definitions | macro_constant_definitions)*
+macro_declaration ::= MACRO END_OF_STATEMENT block ident
 
-procedure_modifiers ::= (FORWARD | macro_declaration | ASSEMBLER | PUREASM) END_OF_STATEMENT
+block ::= (declaration)* (BEGIN StatementSequence)? END
 
-parameters ::= OPEN_BRACE (parameter (END_OF_STATEMENT parameter)*)? CLOSE_BRACE
+declaration ::= CONST (ConstantDeclaration END_OF_STATEMENT)* |
+				TYPE (TypeDeclaration END_OF_STATEMENT)* |
+				VAR (VariableDeclaration END_OF_STATEMENT)* |
+				ProcedureDeclaration END_OF_STATEMENT |
+				ModuleDeclaration END_OF_STATEMENT
 
-parameters_comma_separated ::= anonymous_parameter (COMMA anonymous_parameter)*
+TypeDeclaration ::= ident EQUALITY_OPERATOR types
+ProcedureDeclaration ::= ProcedureHeading END_OF_STATEMENT block ident
+ModuleDeclaration ::= MODULE ident END_OF_STATEMENT (import_clause)* (export_clause)? block ident
+export_clause ::= EXPORT (QUALIFIED)? IdentList END_OF_STATEMENT
 
-statements ::= statement (END_OF_STATEMENT statement)*
 
-statement ::= do_statement | loop_statement | if_statement | case_statement | assignment {
+StatementSequence ::= statement (END_OF_STATEMENT statement)*
+statement ::= (assignment | ProcedureCall | IfStatement | CaseStatement | WhileStatement |
+				RepeatStatement | LoopStatement | ForStatement | WithStatement | EXIT | RETURN (expression)?)? {
+	pin = 1
 	recoverWhile = "recover_end_of_statement"
 }
 
+assignment ::= designator ASSIGNMENT_OPERATOR expression
+
+ProcedureCall ::= designator (ActualParameters)?
+ActualParameters ::= OPEN_BRACE (ExpList)? CLOSE_BRACE
+ExpList ::= expression (COMMA expression)*
+
+IfStatement ::= IF expression THEN StatementSequence (ELSIF expression THEN StatementSequence)* (ELSE StatementSequence)? END
+CaseStatement ::= CASE expression OF caseStatements (PIPE caseStatements)* (ELSE StatementSequence)? END
+caseStatements ::= CaseLabelList TYPING_OPERATOR StatementSequence
+WhileStatement ::= WHILE expression DO StatementSequence END
+RepeatStatement ::= REPEAT StatementSequence UNTIL expression
+LoopStatement ::= LOOP StatementSequence END
+ForStatement ::= FOR ident ASSIGNMENT_OPERATOR expression TO expression (FOR_LOOP_INCREMENT expression)? DO StatementSequence END
+WithStatement ::= WITH designator DO StatementSequence END
+
+
+//macro_inner_declarations ::= (macro_type_definitions | macro_variable_definitions | macro_constant_definitions)*
+
+procedure_modifiers ::= (FORWARD | macro_declaration | ASSEMBLER | PUREASM) END_OF_STATEMENT
+
+//parameters ::= OPEN_BRACE (parameter (END_OF_STATEMENT parameter)*)? CLOSE_BRACE
+
+//parameters_comma_separated ::= anonymous_parameter (COMMA anonymous_parameter)*
+
+//statements ::= statement (END_OF_STATEMENT statement)*
+
+
 recover_end_of_statement ::= !(END_OF_STATEMENT | END)
 
-do_statement ::= DO statements END
-loop_statement ::= LOOP statements END
-if_statement ::= IF statements END
-case_statement ::= CASE statements END
-assignment ::= l_value ASSIGNMENT_OPERATOR expression
-l_value ::= generic_designator
-whatever ::= (expression | literal | ASSIGNMENT_OPERATOR | SQUARE_BRACE_OPEN | SQUARE_BRACE_CLOSE | DOT | COMMA |
-				CURLY_BRACE_OPEN | CURLY_BRACE_CLOSE | THEN | ELSE | ELSIF | FOR | TO | BY | CASE |
-				OF | WHILE | REPEAT | UNTIL | WITH | EXIT | RETURN | ANYTHING | OPEN_BRACE | CLOSE_BRACE | IDENTIFIER)*
+//whatever ::= (expression | literal | ASSIGNMENT_OPERATOR | SQUARE_BRACE_OPEN | SQUARE_BRACE_CLOSE | DOT | COMMA |
+//				CURLY_BRACE_OPEN | CURLY_BRACE_CLOSE | THEN | ELSE | ELSIF | FOR | TO | BY | CASE |
+//				OF | WHILE | REPEAT | UNTIL | WITH | EXIT | RETURN | ANYTHING | OPEN_BRACE | CLOSE_BRACE | IDENTIFIER)*
 
-parameter ::= ((VAR (INOUT | OUT)?)| CONST)? parameter_name (COMMA parameter_name)* TYPING_OPERATOR (NEAR|FAR|VALUE|NOHIGH)? (ARRAY OF)* type_specification
-anonymous_parameter ::= ((VAR (INOUT | OUT)?)| CONST)? (NEAR|FAR|VALUE|NOHIGH)? (ARRAY OF)* type_specification
+//parameter ::= (parameter_modifier)? parameter_name (COMMA parameter_name)* TYPING_OPERATOR (parameter_value_modifier)? (ARRAY OF)* type_specification
 
-parameter_name ::= IDENTIFIER
-procedure_name ::= IDENTIFIER
+//parameter_name ::= IDENTIFIER
+//procedure_name ::= IDENTIFIER
 
-type_definitions ::= TYPE type_definition*
-macro_type_definitions ::= TYPE macro_type_definition*
+//type_definitions ::= TYPE type_definition*
+//macro_type_definitions ::= TYPE macro_type_definition*
 
-type_definition ::= (type_alias_definition | opaque_type_definition) END_OF_STATEMENT
-{
-	implements = ["com.intellij.psi.PsiElement" "org.modula.helpers.index.stubs.Type" "org.modula.helpers.index.stubs.SymbolStubPsiElement"]
-	extends = "org.modula.helpers.index.stub.delegators.TypeStubBasedPsiElement"
-	stubClass = "org.modula.helpers.index.stubs.TypeStub"
-	elementTypeClass = "org.modula.helpers.index.stub.element.types.TypeStubElementType"
-}
 
-macro_type_definition ::= (type_alias_definition | opaque_type_definition) END_OF_STATEMENT
+//macro_type_definition ::= (type_alias_definition | opaque_type_definition) END_OF_STATEMENT
 
-opaque_type_definition ::= IDENTIFIER
+//opaque_type_definition ::= IDENTIFIER
 
-ignored ::= DOCUMENTATION_COMMENT COMMENT COMPILE_TIME_IF COMPILE_TIME_CONDITION
+ignored ::= DOCUMENTATION_COMMENT COMMENT COMPILE_TIME_IF COMPILE_TIME_CONDITION GENERIC ANYTHING UNSAFEGUARDED DEFINITION
 				COMPILE_TIME_THEN COMPILE_TIME_ELSE COMPILE_TIME_INVALID_CODE COMPILE_TIME_END COMPILER_DIRECTIVE
 
-type_alias_definition ::= type_name EQUALITY_OPERATOR type_specification
+//type_alias_definition ::= type_name EQUALITY_OPERATOR type_specification
 
 enumeration_definition ::= OPEN_BRACE enumeration_member_definition
 								(COMMA enumeration_member_definition)* CLOSE_BRACE (BIG | SMALL)?
 enumeration_member_definition ::= enumeration_member_name (EQUALITY_OPERATOR integer_literal)?
 enumeration_member_name ::= IDENTIFIER
 
-//TODO: look at https://github.com/JetBrains/Grammar-Kit/blob/master/HOWTO.md#24-compact-expression-parsing-with-priorities
 
-//expression ::=  sum relational_operator expression | sum
-//sum ::= (PLUS | MINUS)? product sum_operator sum | (PLUS | MINUS)? product
-//product ::= negation product_operator product | negation
-//negation ::= negation_operator negation | function_call
-//function_call ::= call | expression_value
-//call ::= function_designator OPEN_BRACE (call_parameter (COMMA call_parameter)*)? CLOSE_BRACE
-//call_parameter ::= expression | type_specification
-//expression_value ::= literal | constant_designator | OPEN_BRACE expression CLOSE_BRACE
+private relational_operator ::= LESS_THAN | LESS_EQUALS | EQUALITY_OPERATOR | GREATER_EQUALS | GREATER_THAN | DIFFERENT | CONTAINS
+private sum_operator ::= PLUS | MINUS | OR | BITWISE_OR | BITWISE_XOR
+private product_operator ::= TIMES | BY | REMAINDER | DIVISION | MODULO | AND | BITWISE_AND | SHIFT_LEFT | SHIFT_RIGHT | SHIFT_ARITHMETIC_RIGHT | ROTATE_LEFT | ROTATE_RIGHT
+private negation_operator ::= NOT | BITWISE_NOT
 
 
 expression ::= simple_expression (relational_operator simple_expression)?
-simple_expression ::= (PLUS | MINUS)? term ((PLUS | MINUS | OR) term)*
-term ::= factor ((TIMES | BY | DIVISION | MODULO | REMAINDER | AND) factor)*
-factor ::= number | string | set_expression | NOT factor |
-				designator (OPEN_BRACE (expression (COMMA expression)*)? CLOSE_BRACE)
-number ::= integer_literal | real_literal
+simple_expression ::= (PLUS | MINUS)? term (sum_operator term)*
+term ::= factor (product_operator factor)*
+factor ::= number | string | CHAR_CONST | set_expression | negation_operator factor |
+				designator (ActualParameters)? | OPEN_BRACE expression CLOSE_BRACE
+number ::= integer_literal | real_literal | complex_literal
 string ::= STRING_CONST_DOUBLE | STRING_CONST_DOUBLE_ANSI | STRING_CONST_DOUBLE_UNICODE | STRING_CONST_SINGLE |
 				STRING_CONST_SINGLE_ANSI | STRING_CONST_SINGLE_UNICODE
-set_expression ::= qualident CURLY_BRACE_OPEN (element (COMMA elemten)*)?  CURLY_BRACE_CLOSE
-qualident ::= ident (DOT ident)*
+set_expression ::= qualident CURLY_BRACE_OPEN (element (COMMA element)*)?  CURLY_BRACE_CLOSE
+
+qualident ::= ident (DOT ident)* | basic_type | stony_brook_type
 ident ::= IDENTIFIER
-element ::= const_expression (RANGE_OPERATOR const_expression)*
+
+element ::= expression (RANGE_OPERATOR expression)*
 designator ::= qualident ((DOT ident) | (SQUARE_BRACE_OPEN expression (COMMA expression)* SQUARE_BRACE_CLOSE) |
 				POINTER_DEREFERENCE_OPERATOR)*
 
-const_expression ::= simple_const_expression (relational_operator simple_const_expression)?
-simple_const_expression ::= (PLUS | MINUS)? const_term ((PLUS | MINUS | OR) const_term)*
-const_term ::= const_factor ((TIMES | BY | DIVISION | MODULO | REMAINDER | AND) const_factor)*
-const_factor ::= number | string | set_expression | (OPEN_BRACE const_expression CLOSE_BRACE) |
-					(NOT const_factor) | designator (OPEN_BRACE (const_expression (COMMA const_expression)*)? CLOSE_BRACE)?
+//const_expression ::= IDENTIFIER
+//const_expression ::= simple_const_expression (relational_operator simple_const_expression)?
+//simple_const_expression ::= (PLUS | MINUS)? const_term ((PLUS | MINUS | OR) const_term)*
+//const_term ::= const_factor ((TIMES | BY | DIVISION | MODULO | REMAINDER | AND) const_factor)*
+//const_factor ::= number | string | set_expression | (OPEN_BRACE const_expression CLOSE_BRACE) |
+//					(NOT const_factor) | designator (OPEN_BRACE (const_expression (COMMA const_expression)*)? CLOSE_BRACE)?
 

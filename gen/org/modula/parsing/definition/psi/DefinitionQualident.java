@@ -7,7 +7,13 @@ import com.intellij.psi.PsiElement;
 
 public interface DefinitionQualident extends PsiElement {
 
+  @Nullable
+  DefinitionBasicType getBasicType();
+
   @NotNull
   List<DefinitionIdent> getIdentList();
+
+  @Nullable
+  DefinitionStonyBrookType getStonyBrookType();
 
 }

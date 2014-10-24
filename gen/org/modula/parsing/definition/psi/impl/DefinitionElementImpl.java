@@ -24,8 +24,8 @@ public class DefinitionElementImpl extends ASTWrapperPsiElement implements Defin
 
   @Override
   @NotNull
-  public List<DefinitionConstExpression> getConstExpressionList() {
-    return PsiTreeUtil.getChildrenOfTypeAsList(this, DefinitionConstExpression.class);
+  public List<DefinitionExpression> getExpressionList() {
+    return PsiTreeUtil.getChildrenOfTypeAsList(this, DefinitionExpression.class);
   }
 
 }

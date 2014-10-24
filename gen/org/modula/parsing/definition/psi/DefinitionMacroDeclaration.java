@@ -8,12 +8,9 @@ import com.intellij.psi.PsiElement;
 public interface DefinitionMacroDeclaration extends PsiElement {
 
   @NotNull
-  DefinitionMacroInnerDeclarations getMacroInnerDeclarations();
+  DefinitionBlock getBlock();
 
   @NotNull
-  DefinitionProcedureName getProcedureName();
-
-  @NotNull
-  DefinitionStatements getStatements();
+  DefinitionIdent getIdent();
 
 }

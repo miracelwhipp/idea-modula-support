@@ -24,6 +24,12 @@ public class DefinitionNumberImpl extends ASTWrapperPsiElement implements Defini
 
   @Override
   @Nullable
+  public DefinitionComplexLiteral getComplexLiteral() {
+    return findChildByClass(DefinitionComplexLiteral.class);
+  }
+
+  @Override
+  @Nullable
   public DefinitionIntegerLiteral getIntegerLiteral() {
     return findChildByClass(DefinitionIntegerLiteral.class);
   }

@@ -24,14 +24,20 @@ public class DefinitionFactorImpl extends ASTWrapperPsiElement implements Defini
 
   @Override
   @Nullable
+  public DefinitionActualParameters getActualParameters() {
+    return findChildByClass(DefinitionActualParameters.class);
+  }
+
+  @Override
+  @Nullable
   public DefinitionDesignator getDesignator() {
     return findChildByClass(DefinitionDesignator.class);
   }
 
   @Override
-  @NotNull
-  public List<DefinitionExpression> getExpressionList() {
-    return PsiTreeUtil.getChildrenOfTypeAsList(this, DefinitionExpression.class);
+  @Nullable
+  public DefinitionExpression getExpression() {
+    return findChildByClass(DefinitionExpression.class);
   }
 
   @Override

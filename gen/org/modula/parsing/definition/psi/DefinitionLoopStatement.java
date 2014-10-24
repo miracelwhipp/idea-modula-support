@@ -8,6 +8,6 @@ import com.intellij.psi.PsiElement;
 public interface DefinitionLoopStatement extends PsiElement {
 
   @NotNull
-  DefinitionStatements getStatements();
+  DefinitionStatementSequence getStatementSequence();
 
 }

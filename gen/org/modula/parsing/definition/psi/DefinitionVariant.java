@@ -7,10 +7,10 @@ import com.intellij.psi.PsiElement;
 
 public interface DefinitionVariant extends PsiElement {
 
-  @NotNull
-  DefinitionFields getFields();
+  @Nullable
+  DefinitionCaseLabelList getCaseLabelList();
 
-  @NotNull
-  DefinitionSelector getSelector();
+  @Nullable
+  DefinitionFieldListSequence getFieldListSequence();
 
 }

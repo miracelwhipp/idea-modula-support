@@ -12,23 +12,147 @@ import org.modula.helpers.index.stubs.Variable;
 
 public class DefinitionVisitor extends PsiElementVisitor {
 
-  public void visitAnonymousParameter(@NotNull DefinitionAnonymousParameter o) {
+  public void visitActualParameters(@NotNull DefinitionActualParameters o) {
     visitPsiElement(o);
   }
 
-  public void visitArrayConstant(@NotNull DefinitionArrayConstant o) {
+  public void visitArrayType(@NotNull DefinitionArrayType o) {
     visitPsiElement(o);
   }
 
-  public void visitArrayConstantType(@NotNull DefinitionArrayConstantType o) {
+  public void visitCaseLabelList(@NotNull DefinitionCaseLabelList o) {
     visitPsiElement(o);
   }
 
-  public void visitArrayDeclaration(@NotNull DefinitionArrayDeclaration o) {
+  public void visitCaseLabels(@NotNull DefinitionCaseLabels o) {
     visitPsiElement(o);
   }
 
-  public void visitArrayDefinition(@NotNull DefinitionArrayDefinition o) {
+  public void visitCaseStatement(@NotNull DefinitionCaseStatement o) {
+    visitPsiElement(o);
+  }
+
+  public void visitConstantDeclaration(@NotNull DefinitionConstantDeclaration o) {
+    visitPsiElement(o);
+    // visitConstant(o);
+    // visitSymbolStubPsiElement(o);
+  }
+
+  public void visitDefinitionModule(@NotNull DefinitionDefinitionModule o) {
+    visitPsiElement(o);
+  }
+
+  public void visitExpList(@NotNull DefinitionExpList o) {
+    visitPsiElement(o);
+  }
+
+  public void visitFPSection(@NotNull DefinitionFPSection o) {
+    visitPsiElement(o);
+  }
+
+  public void visitFieldList(@NotNull DefinitionFieldList o) {
+    visitPsiElement(o);
+  }
+
+  public void visitFieldListSequence(@NotNull DefinitionFieldListSequence o) {
+    visitPsiElement(o);
+  }
+
+  public void visitForStatement(@NotNull DefinitionForStatement o) {
+    visitPsiElement(o);
+  }
+
+  public void visitFormalParameters(@NotNull DefinitionFormalParameters o) {
+    visitPsiElement(o);
+  }
+
+  public void visitFormalType(@NotNull DefinitionFormalType o) {
+    visitPsiElement(o);
+  }
+
+  public void visitFormalTypeList(@NotNull DefinitionFormalTypeList o) {
+    visitPsiElement(o);
+  }
+
+  public void visitIdentList(@NotNull DefinitionIdentList o) {
+    visitPsiElement(o);
+  }
+
+  public void visitIfStatement(@NotNull DefinitionIfStatement o) {
+    visitPsiElement(o);
+  }
+
+  public void visitLoopStatement(@NotNull DefinitionLoopStatement o) {
+    visitPsiElement(o);
+  }
+
+  public void visitModuleDeclaration(@NotNull DefinitionModuleDeclaration o) {
+    visitPsiElement(o);
+  }
+
+  public void visitPointerType(@NotNull DefinitionPointerType o) {
+    visitPsiElement(o);
+  }
+
+  public void visitProcedureCall(@NotNull DefinitionProcedureCall o) {
+    visitPsiElement(o);
+  }
+
+  public void visitProcedureDeclaration(@NotNull DefinitionProcedureDeclaration o) {
+    visitPsiElement(o);
+  }
+
+  public void visitProcedureHeading(@NotNull DefinitionProcedureHeading o) {
+    visitPsiElement(o);
+    // visitProcedure(o);
+    // visitSymbolStubPsiElement(o);
+  }
+
+  public void visitProcedureType(@NotNull DefinitionProcedureType o) {
+    visitPsiElement(o);
+  }
+
+  public void visitRecordType(@NotNull DefinitionRecordType o) {
+    visitPsiElement(o);
+  }
+
+  public void visitRepeatStatement(@NotNull DefinitionRepeatStatement o) {
+    visitPsiElement(o);
+  }
+
+  public void visitSetType(@NotNull DefinitionSetType o) {
+    visitPsiElement(o);
+  }
+
+  public void visitSimpleType(@NotNull DefinitionSimpleType o) {
+    visitPsiElement(o);
+  }
+
+  public void visitStatementSequence(@NotNull DefinitionStatementSequence o) {
+    visitPsiElement(o);
+  }
+
+  public void visitSubRangeType(@NotNull DefinitionSubRangeType o) {
+    visitPsiElement(o);
+  }
+
+  public void visitTypeDeclaration(@NotNull DefinitionTypeDeclaration o) {
+    visitPsiElement(o);
+  }
+
+  public void visitVariableDeclaration(@NotNull DefinitionVariableDeclaration o) {
+    visitPsiElement(o);
+  }
+
+  public void visitWhileStatement(@NotNull DefinitionWhileStatement o) {
+    visitPsiElement(o);
+  }
+
+  public void visitWithStatement(@NotNull DefinitionWithStatement o) {
+    visitPsiElement(o);
+  }
+
+  public void visitArrayRangeType(@NotNull DefinitionArrayRangeType o) {
     visitPsiElement(o);
   }
 
@@ -44,11 +168,11 @@ public class DefinitionVisitor extends PsiElementVisitor {
     visitPsiElement(o);
   }
 
-  public void visitCaseRange(@NotNull DefinitionCaseRange o) {
+  public void visitBlock(@NotNull DefinitionBlock o) {
     visitPsiElement(o);
   }
 
-  public void visitCaseStatement(@NotNull DefinitionCaseStatement o) {
+  public void visitCaseStatements(@NotNull DefinitionCaseStatements o) {
     visitPsiElement(o);
   }
 
@@ -56,65 +180,15 @@ public class DefinitionVisitor extends PsiElementVisitor {
     visitPsiElement(o);
   }
 
-  public void visitConstExpression(@NotNull DefinitionConstExpression o) {
+  public void visitDeclaration(@NotNull DefinitionDeclaration o) {
     visitPsiElement(o);
   }
 
-  public void visitConstFactor(@NotNull DefinitionConstFactor o) {
-    visitPsiElement(o);
-  }
-
-  public void visitConstTerm(@NotNull DefinitionConstTerm o) {
-    visitPsiElement(o);
-  }
-
-  public void visitConstantArrayElement(@NotNull DefinitionConstantArrayElement o) {
-    visitPsiElement(o);
-  }
-
-  public void visitConstantDefinition(@NotNull DefinitionConstantDefinition o) {
-    visitPsiElement(o);
-    // visitConstant(o);
-    // visitSymbolStubPsiElement(o);
-  }
-
-  public void visitConstantDefinitions(@NotNull DefinitionConstantDefinitions o) {
-    visitPsiElement(o);
-  }
-
-  public void visitConstantDesignator(@NotNull DefinitionConstantDesignator o) {
-    visitPsiElement(o);
-  }
-
-  public void visitConstantName(@NotNull DefinitionConstantName o) {
-    visitPsiElement(o);
-  }
-
-  public void visitConstantType(@NotNull DefinitionConstantType o) {
-    visitPsiElement(o);
-  }
-
-  public void visitConstantValue(@NotNull DefinitionConstantValue o) {
-    visitPsiElement(o);
-  }
-
-  public void visitConstantValueModuleParameter(@NotNull DefinitionConstantValueModuleParameter o) {
-    visitPsiElement(o);
-  }
-
-  public void visitDefinitionFile(@NotNull DefinitionDefinitionFile o) {
-    visitPsiElement(o);
-  }
-
-  public void visitDefinitionClause(@NotNull DefinitionDefinitionClause o) {
+  public void visitDefinitions(@NotNull DefinitionDefinitions o) {
     visitPsiElement(o);
   }
 
   public void visitDesignator(@NotNull DefinitionDesignator o) {
-    visitPsiElement(o);
-  }
-
-  public void visitDoStatement(@NotNull DefinitionDoStatement o) {
     visitPsiElement(o);
   }
 
@@ -130,11 +204,11 @@ public class DefinitionVisitor extends PsiElementVisitor {
     visitPsiElement(o);
   }
 
-  public void visitEnumerationMemberDesignator(@NotNull DefinitionEnumerationMemberDesignator o) {
+  public void visitEnumerationMemberName(@NotNull DefinitionEnumerationMemberName o) {
     visitPsiElement(o);
   }
 
-  public void visitEnumerationMemberName(@NotNull DefinitionEnumerationMemberName o) {
+  public void visitExportClause(@NotNull DefinitionExportClause o) {
     visitPsiElement(o);
   }
 
@@ -150,43 +224,7 @@ public class DefinitionVisitor extends PsiElementVisitor {
     visitPsiElement(o);
   }
 
-  public void visitField(@NotNull DefinitionField o) {
-    visitPsiElement(o);
-  }
-
-  public void visitFieldName(@NotNull DefinitionFieldName o) {
-    visitPsiElement(o);
-  }
-
-  public void visitFields(@NotNull DefinitionFields o) {
-    visitPsiElement(o);
-  }
-
-  public void visitFooter(@NotNull DefinitionFooter o) {
-    visitPsiElement(o);
-  }
-
-  public void visitFunctionDesignator(@NotNull DefinitionFunctionDesignator o) {
-    visitPsiElement(o);
-  }
-
-  public void visitGenericDesignator(@NotNull DefinitionGenericDesignator o) {
-    visitPsiElement(o);
-  }
-
-  public void visitGenericModuleDefinition(@NotNull DefinitionGenericModuleDefinition o) {
-    visitPsiElement(o);
-  }
-
-  public void visitHeader(@NotNull DefinitionHeader o) {
-    visitPsiElement(o);
-  }
-
   public void visitIdent(@NotNull DefinitionIdent o) {
-    visitPsiElement(o);
-  }
-
-  public void visitIfStatement(@NotNull DefinitionIfStatement o) {
     visitPsiElement(o);
   }
 
@@ -202,35 +240,7 @@ public class DefinitionVisitor extends PsiElementVisitor {
     visitPsiElement(o);
   }
 
-  public void visitIndexType(@NotNull DefinitionIndexType o) {
-    visitPsiElement(o);
-  }
-
-  public void visitInnerRange(@NotNull DefinitionInnerRange o) {
-    visitPsiElement(o);
-  }
-
   public void visitIntegerLiteral(@NotNull DefinitionIntegerLiteral o) {
-    visitPsiElement(o);
-  }
-
-  public void visitLValue(@NotNull DefinitionLValue o) {
-    visitPsiElement(o);
-  }
-
-  public void visitLiteral(@NotNull DefinitionLiteral o) {
-    visitPsiElement(o);
-  }
-
-  public void visitLoopStatement(@NotNull DefinitionLoopStatement o) {
-    visitPsiElement(o);
-  }
-
-  public void visitMacroConstantDefinition(@NotNull DefinitionMacroConstantDefinition o) {
-    visitPsiElement(o);
-  }
-
-  public void visitMacroConstantDefinitions(@NotNull DefinitionMacroConstantDefinitions o) {
     visitPsiElement(o);
   }
 
@@ -238,27 +248,7 @@ public class DefinitionVisitor extends PsiElementVisitor {
     visitPsiElement(o);
   }
 
-  public void visitMacroInnerDeclarations(@NotNull DefinitionMacroInnerDeclarations o) {
-    visitPsiElement(o);
-  }
-
-  public void visitMacroTypeDefinition(@NotNull DefinitionMacroTypeDefinition o) {
-    visitPsiElement(o);
-  }
-
-  public void visitMacroTypeDefinitions(@NotNull DefinitionMacroTypeDefinitions o) {
-    visitPsiElement(o);
-  }
-
-  public void visitMacroVariableDefinition(@NotNull DefinitionMacroVariableDefinition o) {
-    visitPsiElement(o);
-  }
-
-  public void visitMacroVariableDefinitions(@NotNull DefinitionMacroVariableDefinitions o) {
-    visitPsiElement(o);
-  }
-
-  public void visitModuleDefinition(@NotNull DefinitionModuleDefinition o) {
+  public void visitModuleHeader(@NotNull DefinitionModuleHeader o) {
     visitPsiElement(o);
   }
 
@@ -274,51 +264,15 @@ public class DefinitionVisitor extends PsiElementVisitor {
     visitPsiElement(o);
   }
 
-  public void visitModuleParameter(@NotNull DefinitionModuleParameter o) {
-    visitPsiElement(o);
-  }
-
-  public void visitModuleParameterName(@NotNull DefinitionModuleParameterName o) {
-    visitPsiElement(o);
-  }
-
-  public void visitModuleParameters(@NotNull DefinitionModuleParameters o) {
-    visitPsiElement(o);
-  }
-
-  public void visitNamedType(@NotNull DefinitionNamedType o) {
-    visitPsiElement(o);
-  }
-
   public void visitNumber(@NotNull DefinitionNumber o) {
     visitPsiElement(o);
   }
 
-  public void visitOpaqueTypeDefinition(@NotNull DefinitionOpaqueTypeDefinition o) {
+  public void visitParameterModifier(@NotNull DefinitionParameterModifier o) {
     visitPsiElement(o);
   }
 
-  public void visitParameter(@NotNull DefinitionParameter o) {
-    visitPsiElement(o);
-  }
-
-  public void visitParameterName(@NotNull DefinitionParameterName o) {
-    visitPsiElement(o);
-  }
-
-  public void visitParameters(@NotNull DefinitionParameters o) {
-    visitPsiElement(o);
-  }
-
-  public void visitParametersCommaSeparated(@NotNull DefinitionParametersCommaSeparated o) {
-    visitPsiElement(o);
-  }
-
-  public void visitPointerDefinition(@NotNull DefinitionPointerDefinition o) {
-    visitPsiElement(o);
-  }
-
-  public void visitPredefinedType(@NotNull DefinitionPredefinedType o) {
+  public void visitParameterValueModifier(@NotNull DefinitionParameterValueModifier o) {
     visitPsiElement(o);
   }
 
@@ -326,21 +280,7 @@ public class DefinitionVisitor extends PsiElementVisitor {
     visitPsiElement(o);
   }
 
-  public void visitProcedureDefinition(@NotNull DefinitionProcedureDefinition o) {
-    visitPsiElement(o);
-    // visitProcedure(o);
-    // visitSymbolStubPsiElement(o);
-  }
-
   public void visitProcedureModifiers(@NotNull DefinitionProcedureModifiers o) {
-    visitPsiElement(o);
-  }
-
-  public void visitProcedureName(@NotNull DefinitionProcedureName o) {
-    visitPsiElement(o);
-  }
-
-  public void visitProcedureTypeDefinition(@NotNull DefinitionProcedureTypeDefinition o) {
     visitPsiElement(o);
   }
 
@@ -348,19 +288,7 @@ public class DefinitionVisitor extends PsiElementVisitor {
     visitPsiElement(o);
   }
 
-  public void visitRange(@NotNull DefinitionRange o) {
-    visitPsiElement(o);
-  }
-
   public void visitRealLiteral(@NotNull DefinitionRealLiteral o) {
-    visitPsiElement(o);
-  }
-
-  public void visitRecordConstant(@NotNull DefinitionRecordConstant o) {
-    visitPsiElement(o);
-  }
-
-  public void visitRecordDefinition(@NotNull DefinitionRecordDefinition o) {
     visitPsiElement(o);
   }
 
@@ -372,27 +300,7 @@ public class DefinitionVisitor extends PsiElementVisitor {
     visitPsiElement(o);
   }
 
-  public void visitSelector(@NotNull DefinitionSelector o) {
-    visitPsiElement(o);
-  }
-
-  public void visitSetDefinition(@NotNull DefinitionSetDefinition o) {
-    visitPsiElement(o);
-  }
-
-  public void visitSetDesignator(@NotNull DefinitionSetDesignator o) {
-    visitPsiElement(o);
-  }
-
   public void visitSetExpression(@NotNull DefinitionSetExpression o) {
-    visitPsiElement(o);
-  }
-
-  public void visitSetLiteral(@NotNull DefinitionSetLiteral o) {
-    visitPsiElement(o);
-  }
-
-  public void visitSimpleConstExpression(@NotNull DefinitionSimpleConstExpression o) {
     visitPsiElement(o);
   }
 
@@ -401,14 +309,6 @@ public class DefinitionVisitor extends PsiElementVisitor {
   }
 
   public void visitStatement(@NotNull DefinitionStatement o) {
-    visitPsiElement(o);
-  }
-
-  public void visitStatements(@NotNull DefinitionStatements o) {
-    visitPsiElement(o);
-  }
-
-  public void visitStaticField(@NotNull DefinitionStaticField o) {
     visitPsiElement(o);
   }
 
@@ -424,15 +324,7 @@ public class DefinitionVisitor extends PsiElementVisitor {
     visitPsiElement(o);
   }
 
-  public void visitSymbolName(@NotNull DefinitionSymbolName o) {
-    visitPsiElement(o);
-  }
-
   public void visitTerm(@NotNull DefinitionTerm o) {
-    visitPsiElement(o);
-  }
-
-  public void visitTypeAliasDefinition(@NotNull DefinitionTypeAliasDefinition o) {
     visitPsiElement(o);
   }
 
@@ -442,39 +334,11 @@ public class DefinitionVisitor extends PsiElementVisitor {
     // visitSymbolStubPsiElement(o);
   }
 
-  public void visitTypeDefinitions(@NotNull DefinitionTypeDefinitions o) {
-    visitPsiElement(o);
-  }
-
-  public void visitTypeDesignator(@NotNull DefinitionTypeDesignator o) {
-    visitPsiElement(o);
-  }
-
-  public void visitTypeName(@NotNull DefinitionTypeName o) {
-    visitPsiElement(o);
-  }
-
-  public void visitTypeParameter(@NotNull DefinitionTypeParameter o) {
-    visitPsiElement(o);
-  }
-
-  public void visitTypeSpecification(@NotNull DefinitionTypeSpecification o) {
-    visitPsiElement(o);
-  }
-
-  public void visitVariableDefinition(@NotNull DefinitionVariableDefinition o) {
-    visitPsiElement(o);
-  }
-
-  public void visitVariableDefinitions(@NotNull DefinitionVariableDefinitions o) {
+  public void visitTypes(@NotNull DefinitionTypes o) {
     visitPsiElement(o);
   }
 
   public void visitVariableModifiers(@NotNull DefinitionVariableModifiers o) {
-    visitPsiElement(o);
-  }
-
-  public void visitVariableName(@NotNull DefinitionVariableName o) {
     visitPsiElement(o);
   }
 
@@ -485,18 +349,6 @@ public class DefinitionVisitor extends PsiElementVisitor {
   }
 
   public void visitVariant(@NotNull DefinitionVariant o) {
-    visitPsiElement(o);
-  }
-
-  public void visitVariantField(@NotNull DefinitionVariantField o) {
-    visitPsiElement(o);
-  }
-
-  public void visitVariants(@NotNull DefinitionVariants o) {
-    visitPsiElement(o);
-  }
-
-  public void visitWhatever(@NotNull DefinitionWhatever o) {
     visitPsiElement(o);
   }
 

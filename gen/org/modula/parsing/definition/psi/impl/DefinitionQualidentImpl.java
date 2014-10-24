@@ -23,9 +23,21 @@ public class DefinitionQualidentImpl extends ASTWrapperPsiElement implements Def
   }
 
   @Override
+  @Nullable
+  public DefinitionBasicType getBasicType() {
+    return findChildByClass(DefinitionBasicType.class);
+  }
+
+  @Override
   @NotNull
   public List<DefinitionIdent> getIdentList() {
     return PsiTreeUtil.getChildrenOfTypeAsList(this, DefinitionIdent.class);
+  }
+
+  @Override
+  @Nullable
+  public DefinitionStonyBrookType getStonyBrookType() {
+    return findChildByClass(DefinitionStonyBrookType.class);
   }
 
 }

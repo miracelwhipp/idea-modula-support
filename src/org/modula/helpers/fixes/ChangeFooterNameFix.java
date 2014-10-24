@@ -10,7 +10,6 @@ import com.intellij.psi.PsiManager;
 import com.intellij.psi.impl.source.tree.CompositeElement;
 import com.intellij.util.IncorrectOperationException;
 import org.jetbrains.annotations.NotNull;
-import org.modula.parsing.definition.psi.DefinitionFooter;
 import org.modula.parsing.definition.psi.ModulaTypes;
 import org.modula.parsing.utility.AstTraversingUtility;
 
@@ -54,31 +53,37 @@ public class ChangeFooterNameFix implements IntentionAction {
 			@Override
 			public void run() {
 				ASTNode defFile =
-						AstTraversingUtility.findChildRecursivelyByType(file.getNode(), ModulaTypes.DEFINITION_FILE);
+						AstTraversingUtility.findChildRecursivelyByType(file.getNode(), ModulaTypes.DEFINITION_MODULE);
 
 				if (null == defFile) {
 					return;
 				}
 
-				ASTNode footer = defFile.findChildByType(ModulaTypes.FOOTER);
+				ASTNode footer = defFile.findChildByType(ModulaTypes.IDENT);
 
 				if (null == footer) {
 					return;
 				}
 
-				ASTNode moduleName = footer.findChildByType(ModulaTypes.MODULE_NAME);
+				ASTNode moduleName = footer.findChildByType(ModulaTypes.IDENTIFIER);
 
 				if (null == moduleName) {
 					return;
 				}
 
-				ASTNode header = defFile.findChildByType(ModulaTypes.HEADER);
+				ASTNode header = defFile.findChildByType(ModulaTypes.MODULE_HEADER);
 
 				if (null == header) {
 					return;
 				}
 
-				ASTNode childRecursivelyByType = AstTraversingUtility.findChildRecursivelyByType(header, ModulaTypes.MODULE_NAME);
+				ASTNode childByType = header.findChildByType(ModulaTypes.IDENT);
+
+				if (childByType == null) {
+					return;
+				}
+
+				ASTNode childRecursivelyByType = childByType.findChildByType(ModulaTypes.IDENTIFIER);
 
 				if (null == childRecursivelyByType) {
 					return;
