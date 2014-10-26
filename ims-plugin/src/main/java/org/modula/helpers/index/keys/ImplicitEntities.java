@@ -22,12 +22,14 @@ public final class ImplicitEntities {
 	});
 
 	public static final String ADRCARD = "ADRCARD";
+	public static final String LOC = "LOC";
 	public static final Map<String, Set<String>> IMPLICIT_SYMBOLS_PER_MODULE = Collections.unmodifiableMap(new HashMap<String, Set<String>>() {
 		{
 			put(SYSTEM_MODULE_NAME, Collections.unmodifiableSet(new HashSet<String>() {
 				{
 					add(CAST);
 					add(ADRCARD);
+					add(LOC);
 				}
 			}));
 		}
