@@ -37,7 +37,7 @@
                                implementationClass="org.modula.parsing.DefinitionParserDefinition"/>
         <lang.parserDefinition language="modula-compile-time-condition"
                                implementationClass="org.modula.parsing.CompileTimeParserDefinition"/>
-        <lang.parserDefinition language="modula-p1-compile-time-condition"
+        <lang.parserDefinition language="modula-p1-macintosh-compile-time-condition"
                                implementationClass="org.modula.parsing.P1CompileTimeParserDefinition"/>
         <lang.syntaxHighlighterFactory key="modula-def"
                                        implementationClass="org.modula.helpers.highlight.ModulaSyntaxHighlighterFactory"/>
@@ -45,7 +45,8 @@
         <annotator language="modula-def" implementationClass="org.modula.helpers.annotators.WrongEndNameAnnotator"/>
         <annotator language="modula-def" implementationClass="org.modula.helpers.annotators.UnknownModuleAnnotator"/>
         <annotator language="modula-def" implementationClass="org.modula.helpers.annotators.UnknownSymbolAnnotator"/>
-        <annotator language="modula-def" implementationClass="org.modula.helpers.annotators.UnknownQualidentAnnotator"/>
+        <annotator language="modula-def"
+                   implementationClass="org.modula.helpers.annotators.UnknownQualifiedIdentifierAnnotator"/>
 
         <lang.commenter language="modula-def" implementationClass="org.modula.helpers.ModulaCommenter"/>
 
@@ -62,7 +63,9 @@
         <stubIndex implementation="org.modula.helpers.index.keys.SymbolByModule"/>
         <stubIndex implementation="org.modula.helpers.index.keys.SymbolIndex"/>
 
-        <completion.contributor language="modula-def" implementationClass="org.modula.helpers.completion.ModuleNameCompletionContributor"/>
-        <completion.contributor language="modula-def" implementationClass="org.modula.helpers.completion.SymbolImportCompletionContributor"/>
+        <completion.contributor language="modula-def"
+                                implementationClass="org.modula.helpers.completion.ModuleNameCompletionContributor"/>
+        <completion.contributor language="modula-def"
+                                implementationClass="org.modula.helpers.completion.SymbolImportCompletionContributor"/>
     </extensions>
 </idea-plugin>
