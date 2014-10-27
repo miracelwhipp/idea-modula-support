@@ -30,8 +30,8 @@ public class ModulaFPSectionImpl extends ASTWrapperPsiElement implements ModulaF
 
   @Override
   @NotNull
-  public ModulaIdentList getIdentList() {
-    return findNotNullChildByClass(ModulaIdentList.class);
+  public ModulaParameterIdentList getParameterIdentList() {
+    return findNotNullChildByClass(ModulaParameterIdentList.class);
   }
 
   @Override

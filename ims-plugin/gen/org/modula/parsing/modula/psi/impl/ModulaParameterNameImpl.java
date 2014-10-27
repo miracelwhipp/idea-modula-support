@@ -8,22 +8,22 @@ import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiElementVisitor;
 import com.intellij.psi.util.PsiTreeUtil;
 import static org.modula.parsing.modula.psi.TokenModulaTypes.*;
-import org.modula.helpers.index.stub.delegators.EnumerationMemberStubBasedPsiElement;
+import org.modula.helpers.index.stub.delegators.ParameterStubBasedPsiElement;
 import org.modula.parsing.modula.psi.*;
 import com.intellij.psi.stubs.IStubElementType;
 
-public class ModulaEnumerationMemberDefinitionImpl extends EnumerationMemberStubBasedPsiElement implements ModulaEnumerationMemberDefinition {
+public class ModulaParameterNameImpl extends ParameterStubBasedPsiElement implements ModulaParameterName {
 
-  public ModulaEnumerationMemberDefinitionImpl(ASTNode node) {
+  public ModulaParameterNameImpl(ASTNode node) {
     super(node);
   }
 
-  public ModulaEnumerationMemberDefinitionImpl(org.modula.helpers.index.stubs.EnumerationMemberStub stub, IStubElementType nodeType) {
+  public ModulaParameterNameImpl(org.modula.helpers.index.stubs.ParameterStub stub, IStubElementType nodeType) {
     super(stub, nodeType);
   }
 
   public void accept(@NotNull PsiElementVisitor visitor) {
-    if (visitor instanceof ModulaVisitor) ((ModulaVisitor)visitor).visitEnumerationMemberDefinition(this);
+    if (visitor instanceof ModulaVisitor) ((ModulaVisitor)visitor).visitParameterName(this);
     else super.accept(visitor);
   }
 
@@ -31,12 +31,6 @@ public class ModulaEnumerationMemberDefinitionImpl extends EnumerationMemberStub
   @NotNull
   public ModulaIdent getIdent() {
     return findNotNullChildByClass(ModulaIdent.class);
-  }
-
-  @Override
-  @Nullable
-  public ModulaIntegerLiteral getIntegerLiteral() {
-    return findChildByClass(ModulaIntegerLiteral.class);
   }
 
 }

@@ -11,7 +11,7 @@ public interface ModulaFPSection extends PsiElement {
   ModulaFormalType getFormalType();
 
   @NotNull
-  ModulaIdentList getIdentList();
+  ModulaParameterIdentList getParameterIdentList();
 
   @Nullable
   ModulaParameterModifier getParameterModifier();

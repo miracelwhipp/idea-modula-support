@@ -80,6 +80,9 @@ public class ModulaParser implements PsiParser {
     else if (root_ == MODULE_DECLARATION) {
       result_ = ModuleDeclaration(builder_, 0);
     }
+    else if (root_ == PARAMETER_IDENT_LIST) {
+      result_ = ParameterIdentList(builder_, 0);
+    }
     else if (root_ == POINTER_TYPE) {
       result_ = PointerType(builder_, 0);
     }
@@ -167,9 +170,6 @@ public class ModulaParser implements PsiParser {
     else if (root_ == ENUMERATION_MEMBER_DEFINITION) {
       result_ = enumeration_member_definition(builder_, 0);
     }
-    else if (root_ == ENUMERATION_MEMBER_NAME) {
-      result_ = enumeration_member_name(builder_, 0);
-    }
     else if (root_ == EXPORT_CLAUSE) {
       result_ = export_clause(builder_, 0);
     }
@@ -214,6 +214,9 @@ public class ModulaParser implements PsiParser {
     }
     else if (root_ == NUMBER) {
       result_ = number(builder_, 0);
+    }
+    else if (root_ == PARAMETER_NAME) {
+      result_ = parameterName(builder_, 0);
     }
     else if (root_ == PARAMETER_MODIFIER) {
       result_ = parameter_modifier(builder_, 0);
@@ -633,13 +636,13 @@ public class ModulaParser implements PsiParser {
   }
 
   /* ********************************************************** */
-  // (parameter_modifier)? IdentList TYPING_OPERATOR (parameter_value_modifier)? (ARRAY OF)* FormalType
+  // (parameter_modifier)? ParameterIdentList TYPING_OPERATOR (parameter_value_modifier)? (ARRAY OF)* FormalType
   public static boolean FPSection(PsiBuilder builder_, int level_) {
     if (!recursion_guard_(builder_, level_, "FPSection")) return false;
     boolean result_;
     Marker marker_ = enter_section_(builder_, level_, _NONE_, "<fp section>");
     result_ = FPSection_0(builder_, level_ + 1);
-    result_ = result_ && IdentList(builder_, level_ + 1);
+    result_ = result_ && ParameterIdentList(builder_, level_ + 1);
     result_ = result_ && consumeToken(builder_, TYPING_OPERATOR);
     result_ = result_ && FPSection_3(builder_, level_ + 1);
     result_ = result_ && FPSection_4(builder_, level_ + 1);
@@ -705,7 +708,10 @@ public class ModulaParser implements PsiParser {
   }
 
   /* ********************************************************** */
-  // (IdentList TYPING_OPERATOR types | CASE ident TYPING_OPERATOR qualident OF variant (PIPE variant)* (ELSE FieldListSequence)? END)?
+  // (
+  // 	IdentList TYPING_OPERATOR types | 
+  // 	CASE (ident)? TYPING_OPERATOR qualident OF variant (PIPE variant)* (ELSE FieldListSequence)? END
+  // 	)?
   public static boolean FieldList(PsiBuilder builder_, int level_) {
     if (!recursion_guard_(builder_, level_, "FieldList")) return false;
     Marker marker_ = enter_section_(builder_, level_, _NONE_, "<field list>");
@@ -714,7 +720,8 @@ public class ModulaParser implements PsiParser {
     return true;
   }
 
-  // IdentList TYPING_OPERATOR types | CASE ident TYPING_OPERATOR qualident OF variant (PIPE variant)* (ELSE FieldListSequence)? END
+  // IdentList TYPING_OPERATOR types | 
+  // 	CASE (ident)? TYPING_OPERATOR qualident OF variant (PIPE variant)* (ELSE FieldListSequence)? END
   private static boolean FieldList_0(PsiBuilder builder_, int level_) {
     if (!recursion_guard_(builder_, level_, "FieldList_0")) return false;
     boolean result_;
@@ -737,13 +744,13 @@ public class ModulaParser implements PsiParser {
     return result_;
   }
 
-  // CASE ident TYPING_OPERATOR qualident OF variant (PIPE variant)* (ELSE FieldListSequence)? END
+  // CASE (ident)? TYPING_OPERATOR qualident OF variant (PIPE variant)* (ELSE FieldListSequence)? END
   private static boolean FieldList_0_1(PsiBuilder builder_, int level_) {
     if (!recursion_guard_(builder_, level_, "FieldList_0_1")) return false;
     boolean result_;
     Marker marker_ = enter_section_(builder_);
     result_ = consumeToken(builder_, CASE);
-    result_ = result_ && ident(builder_, level_ + 1);
+    result_ = result_ && FieldList_0_1_1(builder_, level_ + 1);
     result_ = result_ && consumeToken(builder_, TYPING_OPERATOR);
     result_ = result_ && qualident(builder_, level_ + 1);
     result_ = result_ && consumeToken(builder_, OF);
@@ -751,6 +758,23 @@ public class ModulaParser implements PsiParser {
     result_ = result_ && FieldList_0_1_6(builder_, level_ + 1);
     result_ = result_ && FieldList_0_1_7(builder_, level_ + 1);
     result_ = result_ && consumeToken(builder_, END);
+    exit_section_(builder_, marker_, null, result_);
+    return result_;
+  }
+
+  // (ident)?
+  private static boolean FieldList_0_1_1(PsiBuilder builder_, int level_) {
+    if (!recursion_guard_(builder_, level_, "FieldList_0_1_1")) return false;
+    FieldList_0_1_1_0(builder_, level_ + 1);
+    return true;
+  }
+
+  // (ident)
+  private static boolean FieldList_0_1_1_0(PsiBuilder builder_, int level_) {
+    if (!recursion_guard_(builder_, level_, "FieldList_0_1_1_0")) return false;
+    boolean result_;
+    Marker marker_ = enter_section_(builder_);
+    result_ = ident(builder_, level_ + 1);
     exit_section_(builder_, marker_, null, result_);
     return result_;
   }
@@ -1263,6 +1287,42 @@ public class ModulaParser implements PsiParser {
     boolean result_;
     Marker marker_ = enter_section_(builder_);
     result_ = export_clause(builder_, level_ + 1);
+    exit_section_(builder_, marker_, null, result_);
+    return result_;
+  }
+
+  /* ********************************************************** */
+  // parameterName (COMMA parameterName)*
+  public static boolean ParameterIdentList(PsiBuilder builder_, int level_) {
+    if (!recursion_guard_(builder_, level_, "ParameterIdentList")) return false;
+    if (!nextTokenIs(builder_, IDENTIFIER)) return false;
+    boolean result_;
+    Marker marker_ = enter_section_(builder_);
+    result_ = parameterName(builder_, level_ + 1);
+    result_ = result_ && ParameterIdentList_1(builder_, level_ + 1);
+    exit_section_(builder_, marker_, PARAMETER_IDENT_LIST, result_);
+    return result_;
+  }
+
+  // (COMMA parameterName)*
+  private static boolean ParameterIdentList_1(PsiBuilder builder_, int level_) {
+    if (!recursion_guard_(builder_, level_, "ParameterIdentList_1")) return false;
+    int pos_ = current_position_(builder_);
+    while (true) {
+      if (!ParameterIdentList_1_0(builder_, level_ + 1)) break;
+      if (!empty_element_parsed_guard_(builder_, "ParameterIdentList_1", pos_)) break;
+      pos_ = current_position_(builder_);
+    }
+    return true;
+  }
+
+  // COMMA parameterName
+  private static boolean ParameterIdentList_1_0(PsiBuilder builder_, int level_) {
+    if (!recursion_guard_(builder_, level_, "ParameterIdentList_1_0")) return false;
+    boolean result_;
+    Marker marker_ = enter_section_(builder_);
+    result_ = consumeToken(builder_, COMMA);
+    result_ = result_ && parameterName(builder_, level_ + 1);
     exit_section_(builder_, marker_, null, result_);
     return result_;
   }
@@ -2384,13 +2444,13 @@ public class ModulaParser implements PsiParser {
   }
 
   /* ********************************************************** */
-  // enumeration_member_name (EQUALITY_OPERATOR integer_literal)?
+  // ident (EQUALITY_OPERATOR integer_literal)?
   public static boolean enumeration_member_definition(PsiBuilder builder_, int level_) {
     if (!recursion_guard_(builder_, level_, "enumeration_member_definition")) return false;
     if (!nextTokenIs(builder_, IDENTIFIER)) return false;
     boolean result_;
     Marker marker_ = enter_section_(builder_);
-    result_ = enumeration_member_name(builder_, level_ + 1);
+    result_ = ident(builder_, level_ + 1);
     result_ = result_ && enumeration_member_definition_1(builder_, level_ + 1);
     exit_section_(builder_, marker_, ENUMERATION_MEMBER_DEFINITION, result_);
     return result_;
@@ -2411,18 +2471,6 @@ public class ModulaParser implements PsiParser {
     result_ = consumeToken(builder_, EQUALITY_OPERATOR);
     result_ = result_ && integer_literal(builder_, level_ + 1);
     exit_section_(builder_, marker_, null, result_);
-    return result_;
-  }
-
-  /* ********************************************************** */
-  // IDENTIFIER
-  public static boolean enumeration_member_name(PsiBuilder builder_, int level_) {
-    if (!recursion_guard_(builder_, level_, "enumeration_member_name")) return false;
-    if (!nextTokenIs(builder_, IDENTIFIER)) return false;
-    boolean result_;
-    Marker marker_ = enter_section_(builder_);
-    result_ = consumeToken(builder_, IDENTIFIER);
-    exit_section_(builder_, marker_, ENUMERATION_MEMBER_NAME, result_);
     return result_;
   }
 
@@ -2755,6 +2803,18 @@ public class ModulaParser implements PsiParser {
     if (!result_) result_ = real_literal(builder_, level_ + 1);
     if (!result_) result_ = complex_literal(builder_, level_ + 1);
     exit_section_(builder_, level_, marker_, NUMBER, result_, false, null);
+    return result_;
+  }
+
+  /* ********************************************************** */
+  // ident
+  public static boolean parameterName(PsiBuilder builder_, int level_) {
+    if (!recursion_guard_(builder_, level_, "parameterName")) return false;
+    if (!nextTokenIs(builder_, IDENTIFIER)) return false;
+    boolean result_;
+    Marker marker_ = enter_section_(builder_);
+    result_ = ident(builder_, level_ + 1);
+    exit_section_(builder_, marker_, PARAMETER_NAME, result_);
     return result_;
   }
 

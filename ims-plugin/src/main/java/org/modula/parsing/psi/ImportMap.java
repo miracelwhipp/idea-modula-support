@@ -70,7 +70,13 @@ public class ImportMap<T extends PsiElement> implements Map<String, T> {
         Collection<? extends T> implicitImports = getImplicitImports();
 
         for (T implicitImport : implicitImports) {
-            if (getKeyFromValue(implicitImport).equals(key)) {
+	        String keyFromValue = getKeyFromValue(implicitImport);
+
+	        if (keyFromValue == null) {
+		        continue;
+	        }
+
+	        if (keyFromValue.equals(key)) {
                 return implicitImport;
             }
         }

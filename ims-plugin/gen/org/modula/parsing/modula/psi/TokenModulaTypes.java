@@ -6,7 +6,9 @@ import com.intellij.psi.PsiElement;
 import com.intellij.lang.ASTNode;
 import org.modula.parsing.psi.ModulaElementType;
 import org.modula.helpers.index.stub.element.types.ConstantStubElementType;
+import org.modula.helpers.index.stub.element.types.EnumerationMemberStubElementType;
 import org.modula.helpers.index.stub.element.types.ModuleStubElementType;
+import org.modula.helpers.index.stub.element.types.ParameterStubElementType;
 import org.modula.helpers.index.stub.element.types.ProcedureStubElementType;
 import org.modula.helpers.index.stub.element.types.TypeStubElementType;
 import org.modula.helpers.index.stub.element.types.VariableStubElementType;
@@ -35,8 +37,7 @@ public interface TokenModulaTypes {
   IElementType DESIGNATOR = new ModulaElementType("DESIGNATOR");
   IElementType ELEMENT = new ModulaElementType("ELEMENT");
   IElementType ENUMERATION_DEFINITION = new ModulaElementType("ENUMERATION_DEFINITION");
-  IElementType ENUMERATION_MEMBER_DEFINITION = new ModulaElementType("ENUMERATION_MEMBER_DEFINITION");
-  IElementType ENUMERATION_MEMBER_NAME = new ModulaElementType("ENUMERATION_MEMBER_NAME");
+  IElementType ENUMERATION_MEMBER_DEFINITION = new EnumerationMemberStubElementType("ENUMERATION_MEMBER_DEFINITION");
   IElementType EXPORT_CLAUSE = new ModulaElementType("EXPORT_CLAUSE");
   IElementType EXPORT_NAME_DECLARATION = new ModulaElementType("EXPORT_NAME_DECLARATION");
   IElementType EXPRESSION = new ModulaElementType("EXPRESSION");
@@ -64,7 +65,9 @@ public interface TokenModulaTypes {
   IElementType MODULE_IMPORT_CLAUSE = new ModulaElementType("MODULE_IMPORT_CLAUSE");
   IElementType MODULE_NAME = new ModulaElementType("MODULE_NAME");
   IElementType NUMBER = new ModulaElementType("NUMBER");
+  IElementType PARAMETER_IDENT_LIST = new ModulaElementType("PARAMETER_IDENT_LIST");
   IElementType PARAMETER_MODIFIER = new ModulaElementType("PARAMETER_MODIFIER");
+  IElementType PARAMETER_NAME = new ParameterStubElementType("PARAMETER_NAME");
   IElementType PARAMETER_VALUE_MODIFIER = new ModulaElementType("PARAMETER_VALUE_MODIFIER");
   IElementType POINTER_TYPE = new ModulaElementType("POINTER_TYPE");
   IElementType PRIORITY = new ModulaElementType("PRIORITY");
@@ -312,9 +315,6 @@ public interface TokenModulaTypes {
       else if (type == ENUMERATION_MEMBER_DEFINITION) {
         return new ModulaEnumerationMemberDefinitionImpl(node);
       }
-      else if (type == ENUMERATION_MEMBER_NAME) {
-        return new ModulaEnumerationMemberNameImpl(node);
-      }
       else if (type == EXPORT_CLAUSE) {
         return new ModulaExportClauseImpl(node);
       }
@@ -396,8 +396,14 @@ public interface TokenModulaTypes {
       else if (type == NUMBER) {
         return new ModulaNumberImpl(node);
       }
+      else if (type == PARAMETER_IDENT_LIST) {
+        return new ModulaParameterIdentListImpl(node);
+      }
       else if (type == PARAMETER_MODIFIER) {
         return new ModulaParameterModifierImpl(node);
+      }
+      else if (type == PARAMETER_NAME) {
+        return new ModulaParameterNameImpl(node);
       }
       else if (type == PARAMETER_VALUE_MODIFIER) {
         return new ModulaParameterValueModifierImpl(node);

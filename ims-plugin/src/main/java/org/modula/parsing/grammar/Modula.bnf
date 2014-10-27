@@ -120,9 +120,16 @@ ProcedureHeading ::= PROCEDURE ident export_name_declaration? FormalParameters?
  }
 
 FormalParameters ::=  OPEN_BRACE (FPSection (END_OF_STATEMENT FPSection)*)? CLOSE_BRACE (TYPING_OPERATOR qualident)?
-FPSection ::= (parameter_modifier)? IdentList TYPING_OPERATOR (parameter_value_modifier)? (ARRAY OF)* FormalType
+FPSection ::= (parameter_modifier)? ParameterIdentList TYPING_OPERATOR (parameter_value_modifier)? (ARRAY OF)* FormalType
 parameter_modifier ::= (VAR (INOUT | OUT)?)| CONST
 IdentList ::= ident (COMMA ident)*
+ParameterIdentList ::= parameterName (COMMA parameterName)*
+parameterName ::= ident {
+    implements = ["com.intellij.psi.PsiElement" "org.modula.helpers.index.stubs.Parameter" "org.modula.helpers.index.stubs.SymbolStubPsiElement"]
+    extends = "org.modula.helpers.index.stub.delegators.ParameterStubBasedPsiElement"
+    stubClass = "org.modula.helpers.index.stubs.ParameterStub"
+    elementTypeClass = "org.modula.helpers.index.stub.element.types.ParameterStubElementType"
+}
 FormalType ::= (ARRAY OF)? qualident
 
 SimpleType ::= qualident | enumeration_definition | SubRangeType
@@ -133,7 +140,10 @@ array_range_type ::= qualident | enumeration_definition | SubRangeType | TOKEN_C
 
 RecordType ::= RECORD FieldListSequence END
 FieldListSequence ::= FieldList (END_OF_STATEMENT FieldList)*
-FieldList ::= (IdentList TYPING_OPERATOR types | CASE ident TYPING_OPERATOR qualident OF variant (PIPE variant)* (ELSE FieldListSequence)? END)?
+FieldList ::= (
+	IdentList TYPING_OPERATOR types |
+	CASE (ident)? TYPING_OPERATOR qualident OF variant (PIPE variant)* (ELSE FieldListSequence)? END
+	)?
 variant ::= (CaseLabelList TYPING_OPERATOR FieldListSequence)?
 CaseLabelList ::= CaseLabels (COMMA CaseLabels)*
 CaseLabels ::= expression (RANGE_OPERATOR expression)*
@@ -366,8 +376,12 @@ ignored ::= DOCUMENTATION_COMMENT COMMENT COMPILE_TIME_IF COMPILE_TIME_CONDITION
 
 enumeration_definition ::= OPEN_BRACE enumeration_member_definition
 								(COMMA enumeration_member_definition)* CLOSE_BRACE (BIG | SMALL)?
-enumeration_member_definition ::= enumeration_member_name (EQUALITY_OPERATOR integer_literal)?
-enumeration_member_name ::= IDENTIFIER
+enumeration_member_definition ::= ident (EQUALITY_OPERATOR integer_literal)? {
+    implements = ["com.intellij.psi.PsiElement" "org.modula.helpers.index.stubs.EnumerationMember" "org.modula.helpers.index.stubs.SymbolStubPsiElement"]
+    extends = "org.modula.helpers.index.stub.delegators.EnumerationMemberStubBasedPsiElement"
+    stubClass = "org.modula.helpers.index.stubs.EnumerationMemberStub"
+    elementTypeClass = "org.modula.helpers.index.stub.element.types.EnumerationMemberStubElementType"
+}
 
 
 private relational_operator ::= LESS_THAN | LESS_EQUALS | EQUALITY_OPERATOR | GREATER_EQUALS | GREATER_THAN | DIFFERENT | CONTAINS

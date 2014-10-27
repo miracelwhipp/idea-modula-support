@@ -6,7 +6,7 @@ import org.jetbrains.annotations.NotNull;
 import org.modula.helpers.index.stubs.SymbolStubPsiElement;
 
 /**
- * An index that holds every modules imported symbols
+ * An index that holds every modules valid symbols (imports and definitions)
  */
 public class SymbolByModule extends StringStubIndexExtension<SymbolStubPsiElement> {
 

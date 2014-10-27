@@ -11,15 +11,21 @@ import static org.modula.parsing.modula.psi.TokenModulaTypes.*;
 import com.intellij.extapi.psi.ASTWrapperPsiElement;
 import org.modula.parsing.modula.psi.*;
 
-public class ModulaEnumerationMemberNameImpl extends ASTWrapperPsiElement implements ModulaEnumerationMemberName {
+public class ModulaParameterIdentListImpl extends ASTWrapperPsiElement implements ModulaParameterIdentList {
 
-  public ModulaEnumerationMemberNameImpl(ASTNode node) {
+  public ModulaParameterIdentListImpl(ASTNode node) {
     super(node);
   }
 
   public void accept(@NotNull PsiElementVisitor visitor) {
-    if (visitor instanceof ModulaVisitor) ((ModulaVisitor)visitor).visitEnumerationMemberName(this);
+    if (visitor instanceof ModulaVisitor) ((ModulaVisitor)visitor).visitParameterIdentList(this);
     else super.accept(visitor);
+  }
+
+  @Override
+  @NotNull
+  public List<ModulaParameterName> getParameterNameList() {
+    return PsiTreeUtil.getChildrenOfTypeAsList(this, ModulaParameterName.class);
   }
 
 }

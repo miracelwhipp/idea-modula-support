@@ -7,6 +7,8 @@ import com.intellij.psi.PsiElement;
 import org.modula.helpers.index.stubs.Constant;
 import org.modula.helpers.index.stubs.SymbolStubPsiElement;
 import org.modula.helpers.index.stubs.Procedure;
+import org.modula.helpers.index.stubs.EnumerationMember;
+import org.modula.helpers.index.stubs.Parameter;
 import org.modula.helpers.index.stubs.Type;
 import org.modula.helpers.index.stubs.Variable;
 
@@ -91,6 +93,10 @@ public class ModulaVisitor extends PsiElementVisitor {
   }
 
   public void visitModuleDeclaration(@NotNull ModulaModuleDeclaration o) {
+    visitPsiElement(o);
+  }
+
+  public void visitParameterIdentList(@NotNull ModulaParameterIdentList o) {
     visitPsiElement(o);
   }
 
@@ -210,10 +216,8 @@ public class ModulaVisitor extends PsiElementVisitor {
 
   public void visitEnumerationMemberDefinition(@NotNull ModulaEnumerationMemberDefinition o) {
     visitPsiElement(o);
-  }
-
-  public void visitEnumerationMemberName(@NotNull ModulaEnumerationMemberName o) {
-    visitPsiElement(o);
+    // visitEnumerationMember(o);
+    // visitSymbolStubPsiElement(o);
   }
 
   public void visitExportClause(@NotNull ModulaExportClause o) {
@@ -274,6 +278,12 @@ public class ModulaVisitor extends PsiElementVisitor {
 
   public void visitNumber(@NotNull ModulaNumber o) {
     visitPsiElement(o);
+  }
+
+  public void visitParameterName(@NotNull ModulaParameterName o) {
+    visitPsiElement(o);
+    // visitParameter(o);
+    // visitSymbolStubPsiElement(o);
   }
 
   public void visitParameterModifier(@NotNull ModulaParameterModifier o) {
