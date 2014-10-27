@@ -12,7 +12,7 @@ import com.intellij.openapi.project.ex.ProjectManagerEx;
 import com.intellij.psi.tree.IElementType;
 import org.jetbrains.annotations.NotNull;
 import org.modula.parsing.grammar.ModulaSpecialtyAwareLexerAdapter;
-import org.modula.parsing.grammar.ModuleDefinitionLexer;
+import org.modula.parsing.grammar.ModulaLexer;
 import org.modula.parsing.definition.psi.ModulaTypes;
 
 import java.io.Reader;
@@ -87,7 +87,7 @@ public class ModuleDefinitionSyntaxHighlighter extends SyntaxHighlighterBase {
 	@Override
 	public Lexer getHighlightingLexer() {
 		return new FlexAdapter(new ModulaSpecialtyAwareLexerAdapter(
-				new ModuleDefinitionLexer((Reader) null, ProjectManagerEx.getInstanceEx().getOpenProjects()[0])));
+				new ModulaLexer((Reader) null, ProjectManagerEx.getInstanceEx().getOpenProjects()[0])));
 	}
 
 	@NotNull

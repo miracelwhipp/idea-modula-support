@@ -7,7 +7,7 @@ import org.modula.parsing.definition.psi.ModulaTypes;
 import com.intellij.psi.TokenType;
 import org.modula.parsing.psi.ModulaTokenType;
 import org.modula.parsing.grammar.ModulaSpecialtyAwareLexer;
-import org.modula.parsing.grammar.DefinitionLexerBase;
+import org.modula.parsing.grammar.ModulaLexerBase;
 import org.modula.parsing.ModulaParseException;
 import org.modula.CompileTimeConditionLanguage;
 import org.modula.P1CompileTimeConditionLanguage;
@@ -15,8 +15,8 @@ import org.modula.parsing.utility.BooleanStackSerializableAsShort;
 
 %%
 
-%public %class ModuleDefinitionLexer
-%extends DefinitionLexerBase
+%public %class ModulaLexer
+%extends ModulaLexerBase
 %implements ModulaSpecialtyAwareLexer
 %ctorarg Project project
 %unicode

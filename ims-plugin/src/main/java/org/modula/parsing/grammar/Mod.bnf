@@ -1,0 +1,15 @@
+
+{
+    parserClass="org.modula.parsing.implementation.ImplementationParser"
+
+    extends="com.intellij.extapi.psi.ASTWrapperPsiElement"
+
+	psiClassPrefix="Implementation"
+	psiImplClassSuffix="Impl"
+	psiPackage="org.modula.parsing.implementation.psi"
+	psiImplPackage="org.modula.parsing.implementation.psi.impl"
+
+	elementTypeHolderClass="org.modula.parsing.definition.psi.ModulaTypes"
+	elementTypeClass="org.modula.parsing.psi.ModulaElementType"
+	tokenTypeClass="org.modula.parsing.psi.ModulaTokenType"
+}

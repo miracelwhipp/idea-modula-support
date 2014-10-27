@@ -17,7 +17,7 @@ import org.jetbrains.annotations.NotNull;
 import org.modula.ModulaDefinitionModule;
 import org.modula.parsing.definition.DefinitionParser;
 import org.modula.parsing.grammar.ModulaSpecialtyAwareLexerAdapter;
-import org.modula.parsing.grammar.ModuleDefinitionLexer;
+import org.modula.parsing.grammar.ModulaLexer;
 import org.modula.parsing.psi.DefinitionFile;
 import org.modula.parsing.definition.psi.ModulaTypes;
 
@@ -57,7 +57,7 @@ public class DefinitionParserDefinition extends IStubFileElementType implements 
 	@NotNull
 	@Override
 	public Lexer createLexer(Project project) {
-		return new FlexAdapter(new ModulaSpecialtyAwareLexerAdapter(new ModuleDefinitionLexer((Reader) null, project)));
+		return new FlexAdapter(new ModulaSpecialtyAwareLexerAdapter(new ModulaLexer((Reader) null, project)));
 	}
 
 	@Override

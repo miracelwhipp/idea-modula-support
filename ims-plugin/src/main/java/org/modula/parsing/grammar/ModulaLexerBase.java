@@ -22,7 +22,7 @@ import org.modula.parsing.utility.BooleanStackSerializableAsShort;
  * Time: 19:08
  * To change this template use File | Settings | File Templates.
  */
-public abstract class DefinitionLexerBase implements ModulaSpecialtyAwareLexer {
+public abstract class ModulaLexerBase implements ModulaSpecialtyAwareLexer {
 
 	private int commentaryDepth = 0;
 	private int falseDepth = 0;
@@ -37,8 +37,8 @@ public abstract class DefinitionLexerBase implements ModulaSpecialtyAwareLexer {
 	private final int comment;
 
 
-	protected DefinitionLexerBase(Project project, int initial, int invalidConditionalCode,
-	                              int erroneousConditionalCode, int compileTimeCondition, int p1CompileTimeCondition, int comment) {
+	protected ModulaLexerBase(Project project, int initial, int invalidConditionalCode,
+	                          int erroneousConditionalCode, int compileTimeCondition, int p1CompileTimeCondition, int comment) {
 		this.project = project;
 		this.initial = initial;
 		this.invalidConditionalCode = invalidConditionalCode;
