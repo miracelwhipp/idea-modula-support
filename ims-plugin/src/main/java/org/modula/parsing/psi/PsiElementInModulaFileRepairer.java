@@ -12,7 +12,7 @@ public class PsiElementInModulaFileRepairer implements ImportMap.ConsistencyRepa
 	@Override
 	public boolean check(@NotNull ImportMap<PsiElement> imports, @NotNull String key, @NotNull PsiElement value) {
 
-		if (null == ModulaPsiTraversingUtility.getDefRootElement(value)) {
+		if (null == ModulaPsiTraversingUtility.getModuleRootElement(value)) {
 			imports.remove(key);
 			return false;
 		}

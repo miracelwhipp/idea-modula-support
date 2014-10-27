@@ -47,17 +47,16 @@ public class UnknownQualifiedIdentifierAnnotator implements Annotator {
 		String symbolName = definitionSymbolName.getText();
 
 
-		ModulaDefinitionModule defRootElement = ModulaPsiTraversingUtility.getDefRootElement(element);
+		String moduleName = ModulaPsiTraversingUtility.getModuleName(element);
 
-		if (defRootElement == null) {
+		if (moduleName == null) {
 			return;
 		}
 
-		ModulaIdent ident = defRootElement.getIdent();
 
 		final GlobalSearchScope global = GlobalSearchScope.allScope(element.getProject());
 
-		Collection<SymbolStubPsiElement> definesOfCurrentModule = SymbolByModule.INSTANCE.get(ident.getText(), element.getProject(), global);
+		Collection<SymbolStubPsiElement> definesOfCurrentModule = SymbolByModule.INSTANCE.get(moduleName, element.getProject(), global);
 
 		for (SymbolStubPsiElement symbol : definesOfCurrentModule) {
 			if (symbol.getText().equals(symbolName)) {

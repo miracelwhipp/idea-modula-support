@@ -13,47 +13,50 @@ public final class ModulaPsiTraversingUtility {
 	}
 
 	@Nullable
-	public static String getModuleName(PsiElement psi) {
+	public static String getModuleName(@Nullable PsiElement psi) {
 
 		if (null == psi) {
 			return null;
 		}
 
-		ModulaDefinitionModule parent = getDefRootElement(psi);
+		ModulaCompilationUnit parent = getModuleRootElement(psi);
 
+		return getModuleNameFromCompilationUnit(parent);
+
+	}
+
+	@Nullable
+	public static String getModuleNameFromCompilationUnit(@Nullable ModulaCompilationUnit parent) {
 		if (parent == null) {
 			return null;
 		}
 
 
-//		if (parent.getDefinitionModule() != null) {
-//			ModulaModuleHeader header = parent.getDefinitionModule().getModuleHeader();
-//			return header.getIdent().getText();
-//		}
-//
-//
-//		ModulaProgramModule programModule = parent.getProgramModule();
-//
-//		if (programModule != null) {
-//			ModulaProgramHeader header = programModule.getProgramHeader();
-//			return header.getIdent().getText();
-//		}
+		if (parent.getDefinitionModule() != null) {
+			ModulaModuleHeader header = parent.getDefinitionModule().getModuleHeader();
+			return header.getIdent().getText();
+		}
 
-//		return null;
-//
 
-		return parent.getModuleHeader().getIdent().getText();
+		ModulaProgramModule programModule = parent.getProgramModule();
+
+		if (programModule != null) {
+			ModulaProgramHeader header = programModule.getProgramHeader();
+			return header.getIdent().getText();
+		}
+
+		return null;
 	}
 
 	@Nullable
-	public static ModulaDefinitionModule getDefRootElement(PsiElement psi) {
+	public static ModulaCompilationUnit getModuleRootElement(PsiElement psi) {
 		PsiElement parent = psi;
-		while (!((parent = parent.getParent()) instanceof ModulaDefinitionModule)) {
+		while (!((parent = parent.getParent()) instanceof ModulaCompilationUnit)) {
 			if (null == parent) {
 				return null;
 			}
 		}
-		return (ModulaDefinitionModule) parent;
+		return (ModulaCompilationUnit) parent;
 	}
 
 

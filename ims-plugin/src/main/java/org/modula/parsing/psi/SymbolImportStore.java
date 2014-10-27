@@ -7,7 +7,7 @@ import com.intellij.psi.PsiElement;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.modula.helpers.index.keys.SymbolByModule;
-import org.modula.parsing.modula.psi.ModulaDefinitionModule;
+import org.modula.parsing.modula.psi.ModulaCompilationUnit;
 import org.modula.parsing.utility.ModulaPsiTraversingUtility;
 
 /**
@@ -37,20 +37,20 @@ public class SymbolImportStore extends ASTWrapperPsiElement {
 	@Nullable
 	public static ImportMap<PsiElement> getSymbolImportMap(PsiElement psi) {
 
-		ModulaDefinitionModule definitionFile = ModulaPsiTraversingUtility.getDefRootElement(psi);
+		ModulaCompilationUnit modulaFile = ModulaPsiTraversingUtility.getModuleRootElement(psi);
 
-		if (null == definitionFile) {
+		if (null == modulaFile) {
 			return null;
 		}
 
 		synchronized (KEY) {
-			ImportMap<PsiElement> symbolImportMap = definitionFile.getUserData(KEY);
+			ImportMap<PsiElement> symbolImportMap = modulaFile.getUserData(KEY);
 			if (null == symbolImportMap) {
 
-                String moduleName = definitionFile.getModuleHeader().getIdent().getText();
+                String moduleName = ModulaPsiTraversingUtility.getModuleNameFromCompilationUnit(modulaFile);
 
                 symbolImportMap = new ImportMap<PsiElement>(new PsiElementInModulaFileRepairer(), moduleName, SymbolByModule.INSTANCE, psi.getProject());
-				definitionFile.putUserData(KEY, symbolImportMap);
+				modulaFile.putUserData(KEY, symbolImportMap);
 			}
 			return symbolImportMap;
 		}
