@@ -2,7 +2,7 @@ package org.modula.parsing.grammar;
 
 import com.intellij.lexer.FlexLexer;
 import com.intellij.psi.tree.IElementType;
-import org.modula.parsing.definition.psi.ModulaTypes;
+import org.modula.parsing.modula.psi.ModulaTypes;
 import com.intellij.psi.TokenType;
 import org.modula.parsing.psi.ModulaTokenType;
 import org.modula.parsing.grammar.NestedCommentaryAwareLexer;

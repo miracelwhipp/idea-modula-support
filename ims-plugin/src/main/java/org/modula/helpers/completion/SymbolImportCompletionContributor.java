@@ -5,7 +5,6 @@ import com.intellij.codeInsight.lookup.LookupElementBuilder;
 import com.intellij.openapi.project.Project;
 import com.intellij.patterns.PlatformPatterns;
 import com.intellij.psi.PsiElement;
-import com.intellij.psi.StubBasedPsiElement;
 import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.psi.stubs.StringStubIndexExtension;
 import com.intellij.util.ProcessingContext;
@@ -16,7 +15,7 @@ import org.modula.helpers.index.keys.VariableByModule;
 import org.modula.helpers.index.stubs.SymbolStub;
 import org.modula.helpers.index.keys.ConstantByModule;
 import org.modula.helpers.index.keys.TypeByModule;
-import org.modula.parsing.definition.psi.*;
+import org.modula.parsing.modula.psi.*;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -35,8 +34,8 @@ public class SymbolImportCompletionContributor extends CompletionContributor {
 		extend(
 			CompletionType.BASIC,
 			PlatformPatterns.psiElement(
-				ModulaTypes.IDENTIFIER).
-				inside(PlatformPatterns.psiElement(ModulaTypes.IMPORT_SYMBOL)).
+				TokenModulaTypes.IDENTIFIER).
+				inside(PlatformPatterns.psiElement(TokenModulaTypes.IMPORT_SYMBOL)).
 				withLanguage(ModulaDefinitionModule.INSTANCE
 				),
 				new CompletionProvider<CompletionParameters>() {
@@ -45,12 +44,12 @@ public class SymbolImportCompletionContributor extends CompletionContributor {
 					protected void addCompletions(@NotNull CompletionParameters parameters, ProcessingContext context, @NotNull CompletionResultSet result) {
 
 						PsiElement parent = parameters.getPosition().getParent().getParent();
-						if (!(parent instanceof DefinitionSymbolImportClause)) {
+						if (!(parent instanceof ModulaSymbolImportClause)) {
 							return;
 						}
 
-						DefinitionSymbolImportClause clause = (DefinitionSymbolImportClause) parent;
-						DefinitionModuleName moduleName = clause.getModuleName();
+						ModulaSymbolImportClause clause = (ModulaSymbolImportClause) parent;
+						ModulaModuleName moduleName = clause.getModuleName();
 
 						String moduleKey = moduleName.getText();
 						Project project = parameters.getOriginalFile().getProject();

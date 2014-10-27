@@ -1,0 +1,19 @@
+// This is a generated file. Not intended for manual editing.
+package org.modula.parsing.modula.psi;
+
+import java.util.List;
+import org.jetbrains.annotations.*;
+import com.intellij.psi.PsiElement;
+
+public interface ModulaArrayRangeType extends PsiElement {
+
+  @Nullable
+  ModulaSubRangeType getSubRangeType();
+
+  @Nullable
+  ModulaEnumerationDefinition getEnumerationDefinition();
+
+  @Nullable
+  ModulaQualident getQualident();
+
+}

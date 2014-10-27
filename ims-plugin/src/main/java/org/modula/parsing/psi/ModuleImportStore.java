@@ -6,11 +6,11 @@ import com.intellij.openapi.util.Key;
 import com.intellij.psi.PsiElement;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.modula.parsing.definition.psi.DefinitionDefinitionModule;
+import org.modula.parsing.modula.psi.ModulaDefinitionModule;
 import org.modula.parsing.utility.ModulaPsiTraversingUtility;
 
 /**
- * As superclass of {@link org.modula.parsing.definition.psi.DefinitionModuleImport} it stores the imported
+ * As superclass of {@link org.modula.parsing.modula.psi.ModulaDefinitionModule} it stores the imported
  * modules of a file.
  */
 public class ModuleImportStore extends ASTWrapperPsiElement {
@@ -35,7 +35,7 @@ public class ModuleImportStore extends ASTWrapperPsiElement {
 	@Nullable
 	public static ImportMap<PsiElement> getModuleImportMap(PsiElement psi) {
 
-		DefinitionDefinitionModule definitionFile = ModulaPsiTraversingUtility.getDefRootElement(psi);
+		ModulaDefinitionModule definitionFile = ModulaPsiTraversingUtility.getDefRootElement(psi);
 
 		if (null == definitionFile) {
 			return null;

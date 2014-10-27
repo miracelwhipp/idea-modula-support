@@ -3,14 +3,14 @@ package org.modula.helpers.index.stubs;
 import com.intellij.psi.stubs.IStubElementType;
 import com.intellij.psi.stubs.StubElement;
 import com.intellij.psi.stubs.StubInputStream;
-import org.modula.parsing.definition.psi.DefinitionProcedureHeading;
+import org.modula.parsing.modula.psi.ModulaProcedureHeading;
 
 import java.io.IOException;
 
 /**
  * Default implementation for {@link ProcedureStub}
  */
-public class ProcedureStubImpl extends AbstractSymbolStub<DefinitionProcedureHeading> implements ProcedureStub {
+public class ProcedureStubImpl extends AbstractSymbolStub<ModulaProcedureHeading> implements ProcedureStub {
 
 	public ProcedureStubImpl(StubElement parent, IStubElementType elementType, String name, String filename, String module) {
 		super(parent, elementType, name, filename, module);

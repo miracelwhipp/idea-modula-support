@@ -5,13 +5,12 @@ import com.intellij.lang.annotation.AnnotationHolder;
 import com.intellij.lang.annotation.Annotator;
 import com.intellij.openapi.project.Project;
 import com.intellij.psi.PsiElement;
-import com.intellij.psi.StubBasedPsiElement;
 import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.psi.stubs.StringStubIndexExtension;
 import org.jetbrains.annotations.NotNull;
 import org.modula.helpers.index.keys.*;
 import org.modula.helpers.index.stubs.SymbolStub;
-import org.modula.parsing.definition.psi.*;
+import org.modula.parsing.modula.psi.*;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -25,11 +24,11 @@ public class UnknownSymbolAnnotator implements Annotator {
 	@Override
 	public void annotate(@NotNull PsiElement element, @NotNull AnnotationHolder holder) {
 
-		if (!(element instanceof DefinitionSymbolImportClause)) {
+		if (!(element instanceof ModulaSymbolImportClause)) {
 			return;
 		}
 
-		DefinitionSymbolImportClause importClause = (DefinitionSymbolImportClause) element;
+		ModulaSymbolImportClause importClause = (ModulaSymbolImportClause) element;
 
 		String moduleName = importClause.getModuleName().getText();
 
@@ -48,9 +47,9 @@ public class UnknownSymbolAnnotator implements Annotator {
 		addSymbolsFromIndex(moduleName, symbolsDefined, ProcedureByModule.INSTANCE, project);
 
 
-		List<DefinitionImportSymbol> importSymbols = importClause.getImportSymbolList();
+		List<ModulaImportSymbol> importSymbols = importClause.getImportSymbolList();
 
-		for (DefinitionImportSymbol symbol : importSymbols) {
+		for (ModulaImportSymbol symbol : importSymbols) {
 
 			String symbolName = symbol.getText();
 

@@ -1,9 +1,8 @@
 package org.modula.parsing.utility;
 
 import com.intellij.psi.PsiElement;
-import com.intellij.psi.PsiFile;
 import org.jetbrains.annotations.Nullable;
-import org.modula.parsing.definition.psi.*;
+import org.modula.parsing.modula.psi.*;
 
 /**
  * Holds utility functions to obtain information from a Modula Psi Tree
@@ -20,47 +19,59 @@ public final class ModulaPsiTraversingUtility {
 			return null;
 		}
 
-		PsiElement parent = getDefRootElement(psi);
+		ModulaDefinitionModule parent = getDefRootElement(psi);
 
 		if (parent == null) {
 			return null;
 		}
 
-		DefinitionDefinitionModule file = (DefinitionDefinitionModule) parent;
 
-		DefinitionModuleHeader header = file.getModuleHeader();
+//		if (parent.getDefinitionModule() != null) {
+//			ModulaModuleHeader header = parent.getDefinitionModule().getModuleHeader();
+//			return header.getIdent().getText();
+//		}
+//
+//
+//		ModulaProgramModule programModule = parent.getProgramModule();
+//
+//		if (programModule != null) {
+//			ModulaProgramHeader header = programModule.getProgramHeader();
+//			return header.getIdent().getText();
+//		}
 
+//		return null;
+//
 
-		return header.getIdent().getText();
+		return parent.getModuleHeader().getIdent().getText();
 	}
 
 	@Nullable
-	public static DefinitionDefinitionModule getDefRootElement(PsiElement psi) {
+	public static ModulaDefinitionModule getDefRootElement(PsiElement psi) {
 		PsiElement parent = psi;
-		while (!((parent = parent.getParent()) instanceof DefinitionDefinitionModule)) {
+		while (!((parent = parent.getParent()) instanceof ModulaDefinitionModule)) {
 			if (null == parent) {
 				return null;
 			}
 		}
-		return (DefinitionDefinitionModule) parent;
+		return (ModulaDefinitionModule) parent;
 	}
 
 
 	public static String getFirstDefinedIdentifier(PsiElement element) {
 
-		if (element instanceof DefinitionConstantDeclaration) {
-			return ((DefinitionConstantDeclaration) element).getIdent().getText();
+		if (element instanceof ModulaConstantDeclaration) {
+			return ((ModulaConstantDeclaration) element).getIdent().getText();
 		}
 
-		if (element instanceof DefinitionTypeDefinition) {
-			return ((DefinitionTypeDefinition) element).getIdent().getText();
+		if (element instanceof ModulaTypeDefinition) {
+			return ((ModulaTypeDefinition) element).getIdent().getText();
 		}
 
-		if (element instanceof DefinitionProcedureHeading) {
-			return ((DefinitionProcedureHeading) element).getIdent().getText();
+		if (element instanceof ModulaProcedureHeading) {
+			return ((ModulaProcedureHeading) element).getIdent().getText();
 		}
 
-		if (element instanceof DefinitionVariableNameDefinition) {
+		if (element instanceof ModulaVariableNameDefinition) {
 			return element.getText();
 		}
 
@@ -76,7 +87,7 @@ public final class ModulaPsiTraversingUtility {
 	}
 
 	@Nullable
-	public static String getTypeName(DefinitionTypeDefinition psi) {
+	public static String getTypeName(ModulaTypeDefinition psi) {
 
 		return psi.getIdent().getText();
 

@@ -7,13 +7,11 @@ import com.intellij.psi.PsiElement;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.modula.helpers.index.keys.SymbolByModule;
-import org.modula.parsing.definition.psi.DefinitionDefinitionModule;
+import org.modula.parsing.modula.psi.ModulaDefinitionModule;
 import org.modula.parsing.utility.ModulaPsiTraversingUtility;
 
-import java.util.Collection;
-
 /**
- * As superclass of {@link org.modula.parsing.definition.psi.DefinitionModuleImport} it stores the imported
+ * As superclass of {@link org.modula.parsing.modula.psi.ModulaDefinitionModule} it stores the imported
  * symbols of a file.
  */
 public class SymbolImportStore extends ASTWrapperPsiElement {
@@ -39,7 +37,7 @@ public class SymbolImportStore extends ASTWrapperPsiElement {
 	@Nullable
 	public static ImportMap<PsiElement> getSymbolImportMap(PsiElement psi) {
 
-        DefinitionDefinitionModule definitionFile = ModulaPsiTraversingUtility.getDefRootElement(psi);
+		ModulaDefinitionModule definitionFile = ModulaPsiTraversingUtility.getDefRootElement(psi);
 
 		if (null == definitionFile) {
 			return null;

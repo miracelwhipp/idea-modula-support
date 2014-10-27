@@ -7,27 +7,27 @@ import org.modula.helpers.index.stubs.ModuleStub;
 import org.modula.helpers.index.stubs.ModuleStubImpl;
 import org.modula.helpers.index.keys.ModuleDefinitionFileIndex;
 import org.modula.helpers.index.keys.ModuleIndex;
-import org.modula.parsing.definition.psi.DefinitionModuleHeader;
-import org.modula.parsing.definition.psi.impl.DefinitionModuleHeaderImpl;
+import org.modula.parsing.modula.psi.ModulaModuleHeader;
+import org.modula.parsing.modula.psi.impl.ModulaModuleHeaderImpl;
 
 import java.io.IOException;
 
 /**
- * Implementation of {@link IStubElementType} for generating {@link org.modula.helpers.index.stubs.ModuleStub}s from {@link DefinitionModuleHeader}s
+ * Implementation of {@link IStubElementType} for generating {@link org.modula.helpers.index.stubs.ModuleStub}s from {@link ModulaModuleHeader}s
  */
-public class ModuleStubElementType extends AbstractDefinitionStubElementType<ModuleStub, DefinitionModuleHeader> {
+public class ModuleStubElementType extends AbstractDefinitionStubElementType<ModuleStub, ModulaModuleHeader> {
 
 	public ModuleStubElementType(@NotNull @NonNls final String debugName) {
 		super(debugName);
 	}
 
 	@Override
-	public DefinitionModuleHeader createPsi(@NotNull ModuleStub stub) {
-		return new DefinitionModuleHeaderImpl(stub, this);
+	public ModulaModuleHeader createPsi(@NotNull ModuleStub stub) {
+		return new ModulaModuleHeaderImpl(stub, this);
 	}
 
 	@Override
-	public ModuleStub createStub(@NotNull DefinitionModuleHeader psi, StubElement parentStub) {
+	public ModuleStub createStub(@NotNull ModulaModuleHeader psi, StubElement parentStub) {
 		return new ModuleStubImpl(parentStub, this, psi.getIdent().getText(), ModuleDefinitionFileIndex.getContainingFile(psi));
 	}
 

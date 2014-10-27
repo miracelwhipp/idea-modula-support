@@ -18,7 +18,7 @@ import org.modula.parsing.compile.time.ConditionParser;
 import org.modula.parsing.compile.time.psi.CompileTimeConditionTypes;
 import org.modula.parsing.grammar.CompileTimeConditionLexer;
 import org.modula.parsing.grammar.ModulaSpecialtyAwareLexerAdapter;
-import org.modula.parsing.definition.psi.ModulaTypes;
+import org.modula.parsing.modula.psi.TokenModulaTypes;
 import org.modula.parsing.psi.PreprocessingInMemoryFile;
 
 import java.io.Reader;
@@ -33,7 +33,7 @@ import java.io.Reader;
 public class P1CompileTimeParserDefinition implements ParserDefinition {
 
 	public static final TokenSet WHITE_SPACES = TokenSet.create(TokenType.WHITE_SPACE);
-	public static final TokenSet COMMENTS = TokenSet.create(ModulaTypes.COMMENT);
+	public static final TokenSet COMMENTS = TokenSet.create(TokenModulaTypes.COMMENT);
 
 
 	public static final IFileElementType FILE =

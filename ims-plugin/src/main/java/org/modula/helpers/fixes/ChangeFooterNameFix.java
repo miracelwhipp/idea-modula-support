@@ -6,14 +6,10 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.project.Project;
 import com.intellij.psi.PsiFile;
-import com.intellij.psi.PsiManager;
-import com.intellij.psi.impl.source.tree.CompositeElement;
 import com.intellij.util.IncorrectOperationException;
 import org.jetbrains.annotations.NotNull;
-import org.modula.parsing.definition.psi.ModulaTypes;
+import org.modula.parsing.modula.psi.TokenModulaTypes;
 import org.modula.parsing.utility.AstTraversingUtility;
-
-import java.awt.*;
 
 /**
  * Created with IntelliJ IDEA.
@@ -53,37 +49,37 @@ public class ChangeFooterNameFix implements IntentionAction {
 			@Override
 			public void run() {
 				ASTNode defFile =
-						AstTraversingUtility.findChildRecursivelyByType(file.getNode(), ModulaTypes.DEFINITION_MODULE);
+						AstTraversingUtility.findChildRecursivelyByType(file.getNode(), TokenModulaTypes.DEFINITION_MODULE);
 
 				if (null == defFile) {
 					return;
 				}
 
-				ASTNode footer = defFile.findChildByType(ModulaTypes.IDENT);
+				ASTNode footer = defFile.findChildByType(TokenModulaTypes.IDENT);
 
 				if (null == footer) {
 					return;
 				}
 
-				ASTNode moduleName = footer.findChildByType(ModulaTypes.IDENTIFIER);
+				ASTNode moduleName = footer.findChildByType(TokenModulaTypes.IDENTIFIER);
 
 				if (null == moduleName) {
 					return;
 				}
 
-				ASTNode header = defFile.findChildByType(ModulaTypes.MODULE_HEADER);
+				ASTNode header = defFile.findChildByType(TokenModulaTypes.MODULE_HEADER);
 
 				if (null == header) {
 					return;
 				}
 
-				ASTNode childByType = header.findChildByType(ModulaTypes.IDENT);
+				ASTNode childByType = header.findChildByType(TokenModulaTypes.IDENT);
 
 				if (childByType == null) {
 					return;
 				}
 
-				ASTNode childRecursivelyByType = childByType.findChildByType(ModulaTypes.IDENTIFIER);
+				ASTNode childRecursivelyByType = childByType.findChildByType(TokenModulaTypes.IDENTIFIER);
 
 				if (null == childRecursivelyByType) {
 					return;

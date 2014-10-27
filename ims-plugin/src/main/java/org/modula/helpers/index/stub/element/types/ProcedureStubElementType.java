@@ -12,48 +12,51 @@ import org.modula.helpers.index.keys.SymbolByModule;
 import org.modula.helpers.index.keys.SymbolIndex;
 import org.modula.helpers.index.stubs.ProcedureStub;
 import org.modula.helpers.index.stubs.ProcedureStubImpl;
-import org.modula.parsing.definition.psi.DefinitionProcedureHeading;
-import org.modula.parsing.definition.psi.impl.DefinitionProcedureHeadingImpl;
+import org.modula.parsing.modula.psi.ModulaProcedureHeading;
+import org.modula.parsing.modula.psi.impl.ModulaProcedureHeadingImpl;
 
 import java.io.IOException;
 
 /**
  * Implementation of {@link com.intellij.psi.stubs.IStubElementType} for generating {@link ProcedureStub}s from
- * {@link org.modula.parsing.definition.psi.DefinitionProcedureHeading}s and vice versa
+ * {@link org.modula.parsing.modula.psi.ModulaProcedureHeading}s and vice versa
  */
-public class ProcedureStubElementType extends AbstractDefinitionStubElementType<ProcedureStub, DefinitionProcedureHeading> {
+public class ProcedureStubElementType extends AbstractDefinitionStubElementType<ProcedureStub, ModulaProcedureHeading> {
 
 	public ProcedureStubElementType(@NotNull @NonNls String debugName) {
 		super(debugName);
 	}
 
 	@Override
-	public DefinitionProcedureHeading createPsi(@NotNull ProcedureStub stub) {
-		return new DefinitionProcedureHeadingImpl(stub, this);
+	public ModulaProcedureHeading createPsi(@NotNull ProcedureStub stub) {
+		return new ModulaProcedureHeadingImpl(stub, this);
 	}
 
 	@Override
-	public ProcedureStub createStub(@NotNull DefinitionProcedureHeading psi, StubElement parentStub) {
+	public ProcedureStub createStub(@NotNull ModulaProcedureHeading psi, StubElement parentStub) {
 		return new ProcedureStubImpl(parentStub, this, psi.getStubName(), psi.getFileName(), psi.getModule());
 	}
 
 	@Override
+	@NotNull
+	@NonNls
 	public String getExternalId() {
 		return "modula.procedure";
 	}
 
 	@Override
-	public void serialize(ProcedureStub stub, StubOutputStream dataStream) throws IOException {
+	public void serialize(@NotNull ProcedureStub stub, @NotNull StubOutputStream dataStream) throws IOException {
 		stub.serialize(dataStream);
 	}
 
 	@Override
-	public ProcedureStub deserialize(StubInputStream dataStream, StubElement parentStub) throws IOException {
+	@NotNull
+	public ProcedureStub deserialize(@NotNull StubInputStream dataStream, StubElement parentStub) throws IOException {
 		return new ProcedureStubImpl(parentStub, this, dataStream);
 	}
 
 	@Override
-	public void indexStub(ProcedureStub stub, IndexSink sink) {
+	public void indexStub(@NotNull ProcedureStub stub, @NotNull IndexSink sink) {
 		sink.occurrence(SymbolByModule.KEY, stub.getModule());
 		sink.occurrence(SymbolIndex.KEY, stub.getStubName());
 		sink.occurrence(ProcedureByDefinitionFile.INSTANCE.getKey(), stub.getFileName());

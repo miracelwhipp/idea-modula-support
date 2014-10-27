@@ -9,8 +9,8 @@ import org.jetbrains.annotations.NotNull;
 import org.modula.ModulaDefinitionModule;
 
 /**
- * Abstract super class for modula definition {@link IStubElementType}s. Mainly it signals the language to be
- * modula definition module and adds a compile check for the generic parameters.
+ * Abstract super class for modula modula {@link IStubElementType}s. Mainly it signals the language to be
+ * modula modula module and adds a compile check for the generic parameters.
  */
 public abstract class AbstractDefinitionStubElementType<
 		Stub extends StubElement<Psi>,

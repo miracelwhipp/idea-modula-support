@@ -5,13 +5,13 @@ import com.intellij.psi.stubs.IStubElementType;
 import org.jetbrains.annotations.NotNull;
 import org.modula.helpers.index.stubs.Procedure;
 import org.modula.helpers.index.stubs.ProcedureStub;
-import org.modula.parsing.definition.psi.DefinitionProcedureHeading;
+import org.modula.parsing.modula.psi.ModulaProcedureHeading;
 
 /**
- * Abstract superclass for generated {@link org.modula.parsing.definition.psi.impl.DefinitionProcedureHeadingImpl}
+ * Abstract superclass for generated {@link org.modula.parsing.modula.psi.impl.ModulaProcedureHeadingImpl}
  * knowing how to obtain {@link Procedure}s members from PSI
  */
-public abstract class ProcedureStubBasedPsiElement extends SymbolStubBasedPsiElement<ProcedureStub> implements Procedure, DefinitionProcedureHeading {
+public abstract class ProcedureStubBasedPsiElement extends SymbolStubBasedPsiElement<ProcedureStub> implements Procedure, ModulaProcedureHeading {
 
 	public ProcedureStubBasedPsiElement(@NotNull ProcedureStub stub, @NotNull IStubElementType nodeType) {
 		super(stub, nodeType);

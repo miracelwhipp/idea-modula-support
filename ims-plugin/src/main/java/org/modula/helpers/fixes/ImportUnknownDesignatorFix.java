@@ -11,9 +11,9 @@ import com.intellij.psi.TokenType;
 import com.intellij.util.IncorrectOperationException;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.modula.parsing.definition.psi.DefinitionDefinitionModule;
-import org.modula.parsing.definition.psi.DefinitionImportClause;
-import org.modula.parsing.definition.psi.ModulaTypes;
+import org.modula.parsing.modula.psi.ModulaDefinitionModule;
+import org.modula.parsing.modula.psi.ModulaImportClause;
+import org.modula.parsing.modula.psi.TokenModulaTypes;
 import org.modula.parsing.utility.AstTraversingUtility;
 import org.modula.parsing.utility.DefinitionElementFactory;
 
@@ -66,17 +66,17 @@ public class ImportUnknownDesignatorFix implements IntentionAction {
 			public void run() {
 
 				ASTNode defFile =
-						AstTraversingUtility.findChildRecursivelyByType(file.getNode(), ModulaTypes.DEFINITION_MODULE);
+						AstTraversingUtility.findChildRecursivelyByType(file.getNode(), TokenModulaTypes.DEFINITION_MODULE);
 
 				if (null == defFile) {
 					return;
 				}
 
-				DefinitionDefinitionModule file = (DefinitionDefinitionModule) defFile.getPsi();
+				ModulaDefinitionModule file = (ModulaDefinitionModule) defFile.getPsi();
 
 				PsiElement anchor;
 
-				List<DefinitionImportClause> importClauseList = file.getImportClauseList();
+				List<ModulaImportClause> importClauseList = file.getImportClauseList();
 				int size = importClauseList.size();
 				if (size > 0) {
 					anchor = importClauseList.get(size - 1);

@@ -4,14 +4,14 @@ import com.intellij.psi.stubs.IStubElementType;
 import com.intellij.psi.stubs.StubElement;
 import com.intellij.psi.stubs.StubInputStream;
 import org.modula.helpers.index.stub.element.types.TypeStubElementType;
-import org.modula.parsing.definition.psi.DefinitionTypeDefinition;
+import org.modula.parsing.modula.psi.ModulaTypeDefinition;
 
 import java.io.IOException;
 
 /**
  * Default implementation for {@link TypeStub}
  */
-public class TypeStubImpl extends AbstractSymbolStub<DefinitionTypeDefinition> implements TypeStub {
+public class TypeStubImpl extends AbstractSymbolStub<ModulaTypeDefinition> implements TypeStub {
 
 
 	public TypeStubImpl(

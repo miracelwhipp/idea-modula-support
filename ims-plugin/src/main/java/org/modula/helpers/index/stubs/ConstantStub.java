@@ -1,11 +1,11 @@
 package org.modula.helpers.index.stubs;
 
 import com.intellij.psi.stubs.StubElement;
-import org.modula.parsing.definition.psi.DefinitionConstantDeclaration;
+import org.modula.parsing.modula.psi.ModulaConstantDeclaration;
 
 /**
  * Aggregates the interfaces for a constant stub
  */
-public interface ConstantStub extends StubElement<DefinitionConstantDeclaration>, Constant, SerializableStub {
+public interface ConstantStub extends StubElement<ModulaConstantDeclaration>, Constant, SerializableStub {
 
 }

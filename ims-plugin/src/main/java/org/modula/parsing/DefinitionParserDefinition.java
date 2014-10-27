@@ -15,11 +15,11 @@ import com.intellij.psi.tree.TokenSet;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.modula.ModulaDefinitionModule;
-import org.modula.parsing.definition.DefinitionParser;
+import org.modula.parsing.modula.ModulaParser;
 import org.modula.parsing.grammar.ModulaSpecialtyAwareLexerAdapter;
 import org.modula.parsing.grammar.ModulaLexer;
+import org.modula.parsing.modula.psi.TokenModulaTypes;
 import org.modula.parsing.psi.DefinitionFile;
-import org.modula.parsing.definition.psi.ModulaTypes;
 
 import java.io.Reader;
 
@@ -34,15 +34,15 @@ public class DefinitionParserDefinition extends IStubFileElementType implements 
 
 	public static final TokenSet WHITE_SPACES = TokenSet.create(TokenType.WHITE_SPACE);
 
-	public static final TokenSet COMMENTS = TokenSet.create(ModulaTypes.COMMENT, ModulaTypes.DOCUMENTATION_COMMENT,
-			ModulaTypes.COMPILE_TIME_CONDITION, ModulaTypes.COMPILE_TIME_ELSE, ModulaTypes.COMPILE_TIME_END,
-			ModulaTypes.COMPILE_TIME_IF, ModulaTypes.COMPILE_TIME_INVALID_CODE, ModulaTypes.COMPILE_TIME_THEN,
-			ModulaTypes.COMPILER_DIRECTIVE);
+	public static final TokenSet COMMENTS = TokenSet.create(TokenModulaTypes.COMMENT, TokenModulaTypes.DOCUMENTATION_COMMENT,
+			TokenModulaTypes.COMPILE_TIME_CONDITION, TokenModulaTypes.COMPILE_TIME_ELSE, TokenModulaTypes.COMPILE_TIME_END,
+			TokenModulaTypes.COMPILE_TIME_IF, TokenModulaTypes.COMPILE_TIME_INVALID_CODE, TokenModulaTypes.COMPILE_TIME_THEN,
+			TokenModulaTypes.COMPILER_DIRECTIVE);
 
 	public static final TokenSet STRING_LITERALS =
-			TokenSet.create(ModulaTypes.STRING_CONST_DOUBLE, ModulaTypes.STRING_CONST_DOUBLE_ANSI,
-					ModulaTypes.STRING_CONST_DOUBLE_UNICODE, ModulaTypes.STRING_CONST_SINGLE,
-					ModulaTypes.STRING_CONST_SINGLE_ANSI, ModulaTypes.STRING_CONST_SINGLE_UNICODE);
+			TokenSet.create(TokenModulaTypes.STRING_CONST_DOUBLE, TokenModulaTypes.STRING_CONST_DOUBLE_ANSI,
+					TokenModulaTypes.STRING_CONST_DOUBLE_UNICODE, TokenModulaTypes.STRING_CONST_SINGLE,
+					TokenModulaTypes.STRING_CONST_SINGLE_ANSI, TokenModulaTypes.STRING_CONST_SINGLE_UNICODE);
 
 	public static final IFileElementType FILE = new IStubFileElementType<PsiFileStub>(Language.findInstance(ModulaDefinitionModule.class));
 
@@ -62,7 +62,7 @@ public class DefinitionParserDefinition extends IStubFileElementType implements 
 
 	@Override
 	public PsiParser createParser(Project project) {
-		return new DefinitionParser();
+		return new ModulaParser();
 	}
 
 	@Override
@@ -91,7 +91,7 @@ public class DefinitionParserDefinition extends IStubFileElementType implements 
 	@NotNull
 	@Override
 	public PsiElement createElement(ASTNode node) {
-		return ModulaTypes.Factory.createElement(node);
+		return TokenModulaTypes.Factory.createElement(node);
 	}
 
 	@Override

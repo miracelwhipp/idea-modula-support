@@ -32,7 +32,7 @@ public class ModuleDefinitionType extends LanguageFileType {
 	@NotNull
 	@Override
 	public String getDescription() {
-		return "modula module definition";
+		return "modula module modula";
 	}
 
 	@NotNull

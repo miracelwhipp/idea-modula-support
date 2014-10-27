@@ -7,7 +7,7 @@ import com.intellij.psi.PsiElement;
 import org.jetbrains.annotations.NotNull;
 import org.modula.helpers.fixes.ChangeFooterNameFix;
 import org.modula.helpers.fixes.ChangeModuleNameFix;
-import org.modula.parsing.definition.psi.*;
+import org.modula.parsing.modula.psi.*;
 
 /**
  * Annotates Def file footers whose module name does not match the one in the header.
@@ -16,12 +16,12 @@ public class WrongEndNameAnnotator implements Annotator {
 
 	@Override
 	public void annotate(@NotNull PsiElement element, @NotNull AnnotationHolder holder) {
-		if (!(element instanceof DefinitionDefinitionModule)) {
+		if (!(element instanceof ModulaDefinitionModule)) {
 			return;
 		}
 
-		DefinitionDefinitionModule module = (DefinitionDefinitionModule) element;
-		DefinitionModuleHeader header = module.getModuleHeader();
+		ModulaDefinitionModule module = (ModulaDefinitionModule) element;
+		ModulaModuleHeader header = module.getModuleHeader();
 
 
 		if (header.getIdent().getText().equals(module.getIdent().getText())) {

@@ -2,12 +2,9 @@
 
 package org.modula.parsing.grammar;
 
-import com.intellij.lexer.FlexLexer;
 import com.intellij.psi.tree.IElementType;
-import org.modula.parsing.definition.psi.ModulaTypes;
+import org.modula.parsing.modula.psi.TokenModulaTypes;
 import com.intellij.psi.TokenType;
-import org.modula.parsing.psi.ModulaTokenType;
-import org.modula.parsing.grammar.NestedCommentaryAwareLexer;
 import org.modula.parsing.compile.time.psi.CompileTimeConditionTypes;
 import org.modula.parsing.utility.BooleanStackSerializableAsShort;
 
@@ -525,16 +522,16 @@ public class CompileTimeConditionLexer implements ModulaSpecialtyAwareLexer {
 		yybegin(YYINITIAL);
 	}
 
-	return ModulaTypes.COMMENT;
+	return TokenModulaTypes.COMMENT;
           }
         case 17: break;
         case 9: 
           { commentaryDepth++;
-	return ModulaTypes.COMMENT;
+	return TokenModulaTypes.COMMENT;
           }
         case 18: break;
         case 2: 
-          { return ModulaTypes.COMMENT;
+          { return TokenModulaTypes.COMMENT;
           }
         case 19: break;
         case 8: 
@@ -544,11 +541,11 @@ public class CompileTimeConditionLexer implements ModulaSpecialtyAwareLexer {
         case 7: 
           { yybegin(COMMENT);
 	commentaryDepth++;
-	return ModulaTypes.COMMENT;
+	return TokenModulaTypes.COMMENT;
           }
         case 21: break;
         case 3: 
-          { return ModulaTypes.ANYTHING;
+          { return TokenModulaTypes.ANYTHING;
           }
         case 22: break;
         case 5: 

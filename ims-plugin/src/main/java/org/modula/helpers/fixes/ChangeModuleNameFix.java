@@ -8,7 +8,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.psi.PsiFile;
 import com.intellij.util.IncorrectOperationException;
 import org.jetbrains.annotations.NotNull;
-import org.modula.parsing.definition.psi.ModulaTypes;
+import org.modula.parsing.modula.psi.TokenModulaTypes;
 import org.modula.parsing.utility.AstTraversingUtility;
 
 /**
@@ -49,11 +49,11 @@ public class ChangeModuleNameFix implements IntentionAction {
 			@Override
 			public void run() {
 				ASTNode defFile =
-						AstTraversingUtility.findChildRecursivelyByType(file.getNode(), ModulaTypes.DEFINITION_MODULE);
-				ASTNode correctName = defFile.findChildByType(ModulaTypes.IDENT);
+						AstTraversingUtility.findChildRecursivelyByType(file.getNode(), TokenModulaTypes.DEFINITION_MODULE);
+				ASTNode correctName = defFile.findChildByType(TokenModulaTypes.IDENT);
 
-				ASTNode header = defFile.findChildByType(ModulaTypes.MODULE_HEADER);
-				ASTNode moduleName = header.findChildByType(ModulaTypes.IDENT);
+				ASTNode header = defFile.findChildByType(TokenModulaTypes.MODULE_HEADER);
+				ASTNode moduleName = header.findChildByType(TokenModulaTypes.IDENT);
 
 				header.replaceChild(moduleName, correctName);
 			}

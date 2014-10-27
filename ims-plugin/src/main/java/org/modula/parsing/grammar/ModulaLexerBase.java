@@ -2,17 +2,9 @@ package org.modula.parsing.grammar;
 
 import com.intellij.lang.Language;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.roots.ContentEntry;
-import com.intellij.openapi.roots.ModuleRootManager;
-import com.intellij.openapi.roots.ModuleRootModel;
-import com.intellij.openapi.roots.SourceFolder;
-import com.intellij.psi.PsiManager;
-import com.intellij.psi.impl.PsiManagerEx;
-import com.intellij.psi.search.GlobalSearchScope;
-import com.intellij.psi.search.searches.ClassInheritorsSearch;
 import com.intellij.psi.tree.IElementType;
 import org.modula.parsing.ModulaParseException;
-import org.modula.parsing.definition.psi.ModulaTypes;
+import org.modula.parsing.modula.psi.TokenModulaTypes;
 import org.modula.parsing.utility.BooleanStackSerializableAsShort;
 
 /**
@@ -52,32 +44,32 @@ public abstract class ModulaLexerBase implements ModulaSpecialtyAwareLexer {
 
 	private IElementType pushInvalidContext() {
 		falseDepth++;
-		return ModulaTypes.COMPILE_TIME_INVALID_CODE;
+		return TokenModulaTypes.COMPILE_TIME_INVALID_CODE;
 	}
 
 	private IElementType popInvalidContext() {
 
 		if (falseDepth-- > 0) {
-			return ModulaTypes.COMPILE_TIME_INVALID_CODE;
+			return TokenModulaTypes.COMPILE_TIME_INVALID_CODE;
 		}
 
 		constantConditionStates.pop();
 		falseDepth = 0;
 		yybegin(initial);
-		return ModulaTypes.COMPILE_TIME_END;
+		return TokenModulaTypes.COMPILE_TIME_END;
 	}
 
 	private IElementType startInvalidContext(int state) {
 		yybegin(state);
 		falseDepth = 0;
-		return ModulaTypes.COMPILE_TIME_INVALID_CODE;
+		return TokenModulaTypes.COMPILE_TIME_INVALID_CODE;
 	}
 
 
 	public IElementType validIf(boolean p1) {
 		constantConditionStates.push(false);
 		yybegin(p1 ? p1CompileTimeCondition : compileTimeCondition);
-		return ModulaTypes.COMPILE_TIME_IF;
+		return TokenModulaTypes.COMPILE_TIME_IF;
 	}
 
 	public IElementType invalidIf() {
@@ -86,23 +78,23 @@ public abstract class ModulaLexerBase implements ModulaSpecialtyAwareLexer {
 
 	public IElementType validElse() {
 		startInvalidContext(invalidConditionalCode);
-		return ModulaTypes.COMPILE_TIME_ELSE;
+		return TokenModulaTypes.COMPILE_TIME_ELSE;
 	}
 
 	public IElementType invalidElse() {
 
 		if (falseDepth > 0 || constantConditionStates.size() == 0) {
-			return ModulaTypes.COMPILE_TIME_INVALID_CODE;
+			return TokenModulaTypes.COMPILE_TIME_INVALID_CODE;
 		}
 
 		if (constantConditionStates.top()) {
 			startInvalidContext(invalidConditionalCode);
-			return ModulaTypes.COMPILE_TIME_ELSE;
+			return TokenModulaTypes.COMPILE_TIME_ELSE;
 		}
 
 		constantConditionStates.top(true);
 		yybegin(initial);
-		return ModulaTypes.COMPILE_TIME_END;
+		return TokenModulaTypes.COMPILE_TIME_END;
 
 	}
 
@@ -110,16 +102,16 @@ public abstract class ModulaLexerBase implements ModulaSpecialtyAwareLexer {
 	public IElementType invalidElsif(boolean p1) {
 
 		if (falseDepth > 0 || constantConditionStates.size() == 0) {
-			return ModulaTypes.COMPILE_TIME_INVALID_CODE;
+			return TokenModulaTypes.COMPILE_TIME_INVALID_CODE;
 		}
 
 		if (constantConditionStates.top()) {
 			startInvalidContext(invalidConditionalCode);
-			return ModulaTypes.COMPILE_TIME_ELSE;
+			return TokenModulaTypes.COMPILE_TIME_ELSE;
 		}
 
 		yybegin(p1 ? p1CompileTimeCondition : compileTimeCondition);
-		return ModulaTypes.COMPILE_TIME_IF;
+		return TokenModulaTypes.COMPILE_TIME_IF;
 
 	}
 
@@ -136,7 +128,7 @@ public abstract class ModulaLexerBase implements ModulaSpecialtyAwareLexer {
 			startInvalidContext(erroneousConditionalCode);
 		}
 
-		return ModulaTypes.COMPILE_TIME_CONDITION;
+		return TokenModulaTypes.COMPILE_TIME_CONDITION;
 
 	}
 
@@ -148,19 +140,19 @@ public abstract class ModulaLexerBase implements ModulaSpecialtyAwareLexer {
 
 		// invalid end. no matching IF
 		if (constantConditionStates.size() == 0) {
-			return ModulaTypes.COMPILE_TIME_END;
+			return TokenModulaTypes.COMPILE_TIME_END;
 		}
 
 		constantConditionStates.pop();
 
-		return ModulaTypes.COMPILE_TIME_END;
+		return TokenModulaTypes.COMPILE_TIME_END;
 	}
 
 	public IElementType openComment() {
 		if (commentaryDepth++ == 0) {
 			yybegin(comment);
 		}
-		return ModulaTypes.COMMENT;
+		return TokenModulaTypes.COMMENT;
 	}
 
 	public IElementType closeComment() {
@@ -172,7 +164,7 @@ public abstract class ModulaLexerBase implements ModulaSpecialtyAwareLexer {
 			commentaryDepth = 0;
 		}
 
-		return ModulaTypes.COMMENT;
+		return TokenModulaTypes.COMMENT;
 	}
 
 	@Override

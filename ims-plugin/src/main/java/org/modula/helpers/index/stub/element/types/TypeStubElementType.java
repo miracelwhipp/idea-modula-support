@@ -9,28 +9,28 @@ import org.modula.helpers.index.keys.TypeByDefinitionFile;
 import org.modula.helpers.index.keys.TypeByModule;
 import org.modula.helpers.index.stubs.TypeStub;
 import org.modula.helpers.index.stubs.TypeStubImpl;
-import org.modula.parsing.definition.psi.DefinitionTypeDefinition;
-import org.modula.parsing.definition.psi.impl.DefinitionTypeDefinitionImpl;
+import org.modula.parsing.modula.psi.ModulaTypeDefinition;
+import org.modula.parsing.modula.psi.impl.ModulaTypeDefinitionImpl;
 
 import java.io.IOException;
 
 /**
  * Implementation of {@link IStubElementType} for generating {@link org.modula.helpers.index.stubs.TypeStub}s from
- * {@link DefinitionTypeDefinition}s and vice versa
+ * {@link ModulaTypeDefinition}s and vice versa
  */
-public class TypeStubElementType extends AbstractDefinitionStubElementType<TypeStub, DefinitionTypeDefinition> {
+public class TypeStubElementType extends AbstractDefinitionStubElementType<TypeStub, ModulaTypeDefinition> {
 
 	public TypeStubElementType(@NotNull @NonNls String debugName) {
 		super(debugName);
 	}
 
 	@Override
-	public DefinitionTypeDefinition createPsi(@NotNull TypeStub stub) {
-		return new DefinitionTypeDefinitionImpl(stub, this);
+	public ModulaTypeDefinition createPsi(@NotNull TypeStub stub) {
+		return new ModulaTypeDefinitionImpl(stub, this);
 	}
 
 	@Override
-	public TypeStub createStub(@NotNull DefinitionTypeDefinition psi, StubElement parentStub) {
+	public TypeStub createStub(@NotNull ModulaTypeDefinition psi, StubElement parentStub) {
 
 		String typeName = psi.getStubName();
 		String module = psi.getModule();
@@ -39,22 +39,25 @@ public class TypeStubElementType extends AbstractDefinitionStubElementType<TypeS
 	}
 
 	@Override
+	@NotNull
+	@NonNls
 	public String getExternalId() {
 		return "modula.type";
 	}
 
 	@Override
-	public void serialize(TypeStub stub, StubOutputStream dataStream) throws IOException {
+	public void serialize(@NotNull TypeStub stub, @NotNull StubOutputStream dataStream) throws IOException {
 		stub.serialize(dataStream);
 	}
 
 	@Override
-	public TypeStub deserialize(StubInputStream dataStream, StubElement parentStub) throws IOException {
+	@NotNull
+	public TypeStub deserialize(@NotNull StubInputStream dataStream, StubElement parentStub) throws IOException {
 		return new TypeStubImpl(parentStub, this, dataStream);
 	}
 
 	@Override
-	public void indexStub(TypeStub stub, IndexSink sink) {
+	public void indexStub(@NotNull TypeStub stub, @NotNull IndexSink sink) {
 		sink.occurrence(SymbolByModule.KEY, stub.getModule());
 		sink.occurrence(SymbolIndex.KEY, stub.getStubName());
 		sink.occurrence(TypeByDefinitionFile.KEY, stub.getFileName());

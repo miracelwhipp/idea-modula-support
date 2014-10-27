@@ -1,7 +1,6 @@
 package org.modula.parsing;
 
 import com.intellij.lang.ASTNode;
-import com.intellij.lang.Language;
 import com.intellij.lang.ParserDefinition;
 import com.intellij.lang.PsiParser;
 import com.intellij.lexer.FlexAdapter;
@@ -15,12 +14,11 @@ import com.intellij.psi.tree.IFileElementType;
 import com.intellij.psi.tree.TokenSet;
 import org.jetbrains.annotations.NotNull;
 import org.modula.CompileTimeConditionLanguage;
-import org.modula.ModulaDefinitionModule;
 import org.modula.parsing.compile.time.ConditionParser;
 import org.modula.parsing.compile.time.psi.CompileTimeConditionTypes;
 import org.modula.parsing.grammar.CompileTimeConditionLexer;
 import org.modula.parsing.grammar.ModulaSpecialtyAwareLexerAdapter;
-import org.modula.parsing.definition.psi.ModulaTypes;
+import org.modula.parsing.modula.psi.TokenModulaTypes;
 import org.modula.parsing.psi.PreprocessingInMemoryFile;
 
 import java.io.Reader;
@@ -35,7 +33,7 @@ import java.io.Reader;
 public class CompileTimeParserDefinition implements ParserDefinition {
 
 	public static final TokenSet WHITE_SPACES = TokenSet.create(TokenType.WHITE_SPACE);
-	public static final TokenSet COMMENTS = TokenSet.create(ModulaTypes.COMMENT);
+	public static final TokenSet COMMENTS = TokenSet.create(TokenModulaTypes.COMMENT);
 
 
 	public static final IFileElementType FILE =

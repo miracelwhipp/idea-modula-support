@@ -7,14 +7,11 @@ import com.intellij.psi.PsiElement;
 import org.jetbrains.annotations.NotNull;
 import org.modula.helpers.index.keys.ImplicitEntities;
 import org.modula.helpers.index.keys.ModuleIndex;
-import org.modula.parsing.definition.psi.DefinitionImportClause;
-import org.modula.parsing.definition.psi.DefinitionModuleImportClause;
-import org.modula.parsing.definition.psi.DefinitionModuleName;
-import org.modula.parsing.definition.psi.DefinitionSymbolImportClause;
+import org.modula.parsing.modula.psi.ModulaImportClause;
+import org.modula.parsing.modula.psi.ModulaModuleName;
+import org.modula.parsing.modula.psi.ModulaSymbolImportClause;
 
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
 
 /**
  * Annotates unknown imported modules.
@@ -24,11 +21,11 @@ public class UnknownModuleAnnotator implements Annotator {
 	@Override
 	public void annotate(@NotNull PsiElement element, @NotNull AnnotationHolder holder) {
 
-		if (!(element instanceof DefinitionImportClause)) {
+		if (!(element instanceof ModulaImportClause)) {
 			return;
 		}
 
-		DefinitionImportClause importClause = (DefinitionImportClause) element;
+		ModulaImportClause importClause = (ModulaImportClause) element;
 
 		if (null != importClause.getModuleImportClause()) {
 			//will be done by org.modula.helpers.annotators.UnknownSymbolAnnotator
@@ -36,12 +33,12 @@ public class UnknownModuleAnnotator implements Annotator {
 		}
 
 
-		DefinitionSymbolImportClause moduleImportClause = importClause.getSymbolImportClause();
+		ModulaSymbolImportClause moduleImportClause = importClause.getSymbolImportClause();
 		if (null == moduleImportClause) {
 			return;
 		}
 
-		DefinitionModuleName moduleNameElement = moduleImportClause.getModuleName();
+		ModulaModuleName moduleNameElement = moduleImportClause.getModuleName();
 
 		String moduleName = moduleNameElement.getText();
 

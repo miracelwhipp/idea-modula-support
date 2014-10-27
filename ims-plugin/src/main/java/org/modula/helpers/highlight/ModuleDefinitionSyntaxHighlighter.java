@@ -2,18 +2,15 @@ package org.modula.helpers.highlight;
 
 import com.intellij.lexer.FlexAdapter;
 import com.intellij.lexer.Lexer;
-import com.intellij.openapi.actionSystem.DataKeys;
-import com.intellij.openapi.command.impl.DummyProject;
 import com.intellij.openapi.editor.DefaultLanguageHighlighterColors;
 import com.intellij.openapi.editor.colors.TextAttributesKey;
 import com.intellij.openapi.fileTypes.SyntaxHighlighterBase;
-import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
 import com.intellij.psi.tree.IElementType;
 import org.jetbrains.annotations.NotNull;
 import org.modula.parsing.grammar.ModulaSpecialtyAwareLexerAdapter;
 import org.modula.parsing.grammar.ModulaLexer;
-import org.modula.parsing.definition.psi.ModulaTypes;
+import org.modula.parsing.modula.psi.TokenModulaTypes;
 
 import java.io.Reader;
 import java.util.Arrays;
@@ -53,31 +50,31 @@ public class ModuleDefinitionSyntaxHighlighter extends SyntaxHighlighterBase {
 	};
 
 	public static final Collection<IElementType> KEYWORDS =
-			Arrays.asList(ModulaTypes.DEFINITION, ModulaTypes.MODULE, ModulaTypes.ARRAY, ModulaTypes.GENERIC,
-					ModulaTypes.UNSAFEGUARDED, ModulaTypes.END, ModulaTypes.TYPE, ModulaTypes.FROM, ModulaTypes.IMPORT,
-					ModulaTypes.PROCEDURE, ModulaTypes.FORWARD, ModulaTypes.MACRO, ModulaTypes.ASSEMBLER,
-					ModulaTypes.PUREASM, ModulaTypes.VAR, ModulaTypes.INOUT, ModulaTypes.OUT, ModulaTypes.CONST,
-					ModulaTypes.FAR, ModulaTypes.VALUE, ModulaTypes.NOHIGH, ModulaTypes.ARRAY, ModulaTypes.OF,
-					ModulaTypes.BY, ModulaTypes.CMPLX, ModulaTypes.VOLATILE, ModulaTypes.PUBLIC, ModulaTypes.EXTERNAL,
-					ModulaTypes.DLLACCESS, ModulaTypes.POINTER, ModulaTypes.TO, ModulaTypes.SET, ModulaTypes.BIG,
-					ModulaTypes.SMALL, ModulaTypes.PACKEDSET, ModulaTypes.RECORD, ModulaTypes.CASE, ModulaTypes.ELSE,
-					ModulaTypes.COMPILE_TIME_IF, ModulaTypes.COMPILE_TIME_THEN, ModulaTypes.COMPILE_TIME_CONDITION,
-					ModulaTypes.COMPILE_TIME_ELSE, ModulaTypes.COMPILE_TIME_END, ModulaTypes.IF, ModulaTypes.THEN,
-					ModulaTypes.ELSIF, ModulaTypes.FOR, ModulaTypes.WHILE, ModulaTypes.REPEAT, ModulaTypes.UNTIL,
-					ModulaTypes.RETURN, ModulaTypes.WITH, ModulaTypes.EXIT, ModulaTypes.LOOP, ModulaTypes.DO,
-					ModulaTypes.BEGIN
+			Arrays.asList(TokenModulaTypes.DEFINITION, TokenModulaTypes.MODULE, TokenModulaTypes.ARRAY, TokenModulaTypes.GENERIC,
+					TokenModulaTypes.UNSAFEGUARDED, TokenModulaTypes.END, TokenModulaTypes.TYPE, TokenModulaTypes.FROM, TokenModulaTypes.IMPORT,
+					TokenModulaTypes.PROCEDURE, TokenModulaTypes.FORWARD, TokenModulaTypes.MACRO, TokenModulaTypes.ASSEMBLER,
+					TokenModulaTypes.PUREASM, TokenModulaTypes.VAR, TokenModulaTypes.INOUT, TokenModulaTypes.OUT, TokenModulaTypes.CONST,
+					TokenModulaTypes.FAR, TokenModulaTypes.VALUE, TokenModulaTypes.NOHIGH, TokenModulaTypes.ARRAY, TokenModulaTypes.OF,
+					TokenModulaTypes.BY, TokenModulaTypes.CMPLX, TokenModulaTypes.VOLATILE, TokenModulaTypes.PUBLIC, TokenModulaTypes.EXTERNAL,
+					TokenModulaTypes.DLLACCESS, TokenModulaTypes.POINTER, TokenModulaTypes.TO, TokenModulaTypes.SET, TokenModulaTypes.BIG,
+					TokenModulaTypes.SMALL, TokenModulaTypes.PACKEDSET, TokenModulaTypes.RECORD, TokenModulaTypes.CASE, TokenModulaTypes.ELSE,
+					TokenModulaTypes.COMPILE_TIME_IF, TokenModulaTypes.COMPILE_TIME_THEN, TokenModulaTypes.COMPILE_TIME_CONDITION,
+					TokenModulaTypes.COMPILE_TIME_ELSE, TokenModulaTypes.COMPILE_TIME_END, TokenModulaTypes.IF, TokenModulaTypes.THEN,
+					TokenModulaTypes.ELSIF, TokenModulaTypes.FOR, TokenModulaTypes.WHILE, TokenModulaTypes.REPEAT, TokenModulaTypes.UNTIL,
+					TokenModulaTypes.RETURN, TokenModulaTypes.WITH, TokenModulaTypes.EXIT, TokenModulaTypes.LOOP, TokenModulaTypes.DO,
+					TokenModulaTypes.BEGIN
 			);
 
 	public static final Collection<IElementType> PREDEFINED_SYMBOLS =
-			Arrays.asList(ModulaTypes.TOKEN_INTEGER, ModulaTypes.TOKEN_CARDINAL, ModulaTypes.TOKEN_REAL,
-					ModulaTypes.TOKEN_LONGREAL, ModulaTypes.TOKEN_COMPLEX, ModulaTypes.TOKEN_LONGCOMPLEX,
-					ModulaTypes.TOKEN_BOOLEAN, ModulaTypes.TOKEN_CHAR, ModulaTypes.TOKEN_BITSET,
-					ModulaTypes.TOKEN_SHORTINT, ModulaTypes.TOKEN_SHORTCARD, ModulaTypes.TOKEN_INTEGER16,
-					ModulaTypes.TOKEN_CARDINAL16, ModulaTypes.TOKEN_INTEGER32, ModulaTypes.TOKEN_CARDINAL32,
-					ModulaTypes.TOKEN_INTEGER64, ModulaTypes.TOKEN_CARDINAL64, ModulaTypes.TOKEN_LONGINT,
-					ModulaTypes.TOKEN_LONGCARD, ModulaTypes.TOKEN_ACHAR, ModulaTypes.TOKEN_UCHAR,
-					ModulaTypes.TOKEN_BYTEBOOL, ModulaTypes.TOKEN_WORDBOOL, ModulaTypes.TOKEN_DWORDBOOL,
-					ModulaTypes.TOKEN_BITSET16, ModulaTypes.TOKEN_BITSET32
+			Arrays.asList(TokenModulaTypes.TOKEN_INTEGER, TokenModulaTypes.TOKEN_CARDINAL, TokenModulaTypes.TOKEN_REAL,
+					TokenModulaTypes.TOKEN_LONGREAL, TokenModulaTypes.TOKEN_COMPLEX, TokenModulaTypes.TOKEN_LONGCOMPLEX,
+					TokenModulaTypes.TOKEN_BOOLEAN, TokenModulaTypes.TOKEN_CHAR, TokenModulaTypes.TOKEN_BITSET,
+					TokenModulaTypes.TOKEN_SHORTINT, TokenModulaTypes.TOKEN_SHORTCARD, TokenModulaTypes.TOKEN_INTEGER16,
+					TokenModulaTypes.TOKEN_CARDINAL16, TokenModulaTypes.TOKEN_INTEGER32, TokenModulaTypes.TOKEN_CARDINAL32,
+					TokenModulaTypes.TOKEN_INTEGER64, TokenModulaTypes.TOKEN_CARDINAL64, TokenModulaTypes.TOKEN_LONGINT,
+					TokenModulaTypes.TOKEN_LONGCARD, TokenModulaTypes.TOKEN_ACHAR, TokenModulaTypes.TOKEN_UCHAR,
+					TokenModulaTypes.TOKEN_BYTEBOOL, TokenModulaTypes.TOKEN_WORDBOOL, TokenModulaTypes.TOKEN_DWORDBOOL,
+					TokenModulaTypes.TOKEN_BITSET16, TokenModulaTypes.TOKEN_BITSET32
 			);
 
 
@@ -93,17 +90,17 @@ public class ModuleDefinitionSyntaxHighlighter extends SyntaxHighlighterBase {
 	@NotNull
 	@Override
 	public TextAttributesKey[] getTokenHighlights(IElementType tokenType) {
-		if (tokenType.equals(ModulaTypes.COMMENT)) {
+		if (tokenType.equals(TokenModulaTypes.COMMENT)) {
 			return COMMENT;
-		} else if (tokenType.equals(ModulaTypes.DOCUMENTATION_COMMENT)) {
+		} else if (tokenType.equals(TokenModulaTypes.DOCUMENTATION_COMMENT)) {
 			return DOCUMENTATION_COMMENT;
 		} else if (KEYWORDS.contains(tokenType)) {
 			return KEYWORD;
 		} else if (PREDEFINED_SYMBOLS.contains(tokenType)) {
 			return PREDEFINED_SYMBOL;
-		} else if (tokenType.equals(ModulaTypes.IDENTIFIER)) {
+		} else if (tokenType.equals(TokenModulaTypes.IDENTIFIER)) {
 			return IDENTIFIER;
-		} else if (tokenType.equals(ModulaTypes.COMPILE_TIME_INVALID_CODE)) {
+		} else if (tokenType.equals(TokenModulaTypes.COMPILE_TIME_INVALID_CODE)) {
 			return INVALID_COMPILE_CONDITIONAL;
 		} else {
 			return EMPTY;
