@@ -58,7 +58,7 @@ public class TypeStubElementType extends AbstractDefinitionStubElementType<TypeS
 
 	@Override
 	public void indexStub(@NotNull TypeStub stub, @NotNull IndexSink sink) {
-		sink.occurrence(SymbolByModule.KEY, stub.getModule());
+		SymbolByModule.INSTANCE.occurrence(stub, sink);
 		sink.occurrence(SymbolIndex.KEY, stub.getStubName());
 		sink.occurrence(TypeByDefinitionFile.KEY, stub.getFileName());
 		sink.occurrence(TypeByModule.KEY, stub.getModule());

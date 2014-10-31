@@ -58,7 +58,7 @@ public class EnumerationMemberStubElementType extends AbstractDefinitionStubElem
 
 	@Override
 	public void indexStub(@NotNull EnumerationMemberStub stub, @NotNull IndexSink sink) {
-		sink.occurrence(SymbolByModule.KEY, stub.getModule());
+		SymbolByModule.INSTANCE.occurrence(stub, sink);
 		sink.occurrence(SymbolIndex.KEY, stub.getStubName());
 	}
 }

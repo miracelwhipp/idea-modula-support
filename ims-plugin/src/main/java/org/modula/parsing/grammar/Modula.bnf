@@ -17,15 +17,21 @@
 
 root ::= CompilationUnit
 
-CompilationUnit ::= DefinitionModule | [IMPLEMENTATION] ProgramModule
+CompilationUnit ::= DefinitionModule | (IMPLEMENTATION)? ProgramModule {
+	extends = "org.modula.parsing.psi.context.AbstractCompilationUnit"
+}
 
-ProgramModule ::= program_header END_OF_STATEMENT {import_clause} block ident DOT
+ProgramModule ::= program_header END_OF_STATEMENT (import_clause)* block ident DOT {
+	extends = "org.modula.parsing.psi.context.AbstractProgramModule"
+}
 
-program_header ::= MODULE ident [priority]
+program_header ::= MODULE ident (priority)?
 
 priority ::= SQUARE_BRACE_OPEN expression SQUARE_BRACE_CLOSE
 
-DefinitionModule ::= module_header END_OF_STATEMENT (import_clause)* (definitions)* END ident DOT
+DefinitionModule ::= module_header END_OF_STATEMENT (import_clause)* (definitions)* END ident DOT {
+	extends = "org.modula.parsing.psi.context.AbstractDefinitionModule"
+}
 
 module_header ::= (UNSAFEGUARDED)? DEFINITION MODULE ident
 {
@@ -311,7 +317,9 @@ declaration ::= CONST (ConstantDeclaration END_OF_STATEMENT)* |
 				ModuleDeclaration END_OF_STATEMENT
 
 TypeDeclaration ::= ident EQUALITY_OPERATOR types
-ProcedureDeclaration ::= ProcedureHeading END_OF_STATEMENT block ident
+ProcedureDeclaration ::= ProcedureHeading END_OF_STATEMENT block ident {
+	extends = "org.modula.parsing.psi.context.AbstractProcedureDeclaration"
+}
 ModuleDeclaration ::= MODULE ident END_OF_STATEMENT (import_clause)* (export_clause)? block ident
 export_clause ::= EXPORT (QUALIFIED)? IdentList END_OF_STATEMENT
 

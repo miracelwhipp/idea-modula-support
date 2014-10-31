@@ -60,7 +60,7 @@ public class VariableStubElementType extends AbstractDefinitionStubElementType<V
 
 	@Override
 	public void indexStub(VariableStub stub, IndexSink sink) {
-		sink.occurrence(SymbolByModule.KEY, stub.getModule());
+		SymbolByModule.INSTANCE.occurrence(stub, sink);
 		sink.occurrence(SymbolIndex.KEY, stub.getStubName());
 		sink.occurrence(VariableByModule.KEY, stub.getModule());
 		sink.occurrence(VariableByDefinitionFile.KEY, stub.getFileName());

@@ -8,10 +8,10 @@ import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiElementVisitor;
 import com.intellij.psi.util.PsiTreeUtil;
 import static org.modula.parsing.modula.psi.TokenModulaTypes.*;
-import com.intellij.extapi.psi.ASTWrapperPsiElement;
+import org.modula.parsing.psi.context.AbstractDefinitionModule;
 import org.modula.parsing.modula.psi.*;
 
-public class ModulaDefinitionModuleImpl extends ASTWrapperPsiElement implements ModulaDefinitionModule {
+public class ModulaDefinitionModuleImpl extends AbstractDefinitionModule implements ModulaDefinitionModule {
 
   public ModulaDefinitionModuleImpl(ASTNode node) {
     super(node);

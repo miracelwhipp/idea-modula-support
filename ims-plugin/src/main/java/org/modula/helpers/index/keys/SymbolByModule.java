@@ -8,7 +8,7 @@ import org.modula.helpers.index.stubs.SymbolStubPsiElement;
 /**
  * An index that holds every modules valid symbols (imports and definitions)
  */
-public class SymbolByModule extends StringStubIndexExtension<SymbolStubPsiElement> {
+public class SymbolByModule extends CascadingStringStubIndexExtension<SymbolStubPsiElement> {
 
 	public static final StubIndexKey<String, SymbolStubPsiElement> KEY =
 			StubIndexKey.createIndexKey("modula.symbol.by.module.index");

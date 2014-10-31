@@ -23,7 +23,7 @@ import java.util.Collection;
  * Time: 16:20
  * To change this template use File | Settings | File Templates.
  */
-public class ModuleDefinitionSyntaxHighlighter extends SyntaxHighlighterBase {
+public class ModulaSyntaxHighlighter extends SyntaxHighlighterBase {
 
 	public static final TextAttributesKey[] COMMENT = new TextAttributesKey[]{
 			TextAttributesKey.createTextAttributesKey("COMMENT", DefaultLanguageHighlighterColors.BLOCK_COMMENT)
@@ -50,7 +50,7 @@ public class ModuleDefinitionSyntaxHighlighter extends SyntaxHighlighterBase {
 	};
 
 	public static final Collection<IElementType> KEYWORDS =
-			Arrays.asList(TokenModulaTypes.DEFINITION, TokenModulaTypes.MODULE, TokenModulaTypes.ARRAY, TokenModulaTypes.GENERIC,
+			Arrays.asList(TokenModulaTypes.DEFINITION, TokenModulaTypes.IMPLEMENTATION, TokenModulaTypes.MODULE, TokenModulaTypes.ARRAY, TokenModulaTypes.GENERIC,
 					TokenModulaTypes.UNSAFEGUARDED, TokenModulaTypes.END, TokenModulaTypes.TYPE, TokenModulaTypes.FROM, TokenModulaTypes.IMPORT,
 					TokenModulaTypes.PROCEDURE, TokenModulaTypes.FORWARD, TokenModulaTypes.MACRO, TokenModulaTypes.ASSEMBLER,
 					TokenModulaTypes.PUREASM, TokenModulaTypes.VAR, TokenModulaTypes.INOUT, TokenModulaTypes.OUT, TokenModulaTypes.CONST,

@@ -8,10 +8,10 @@ import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiElementVisitor;
 import com.intellij.psi.util.PsiTreeUtil;
 import static org.modula.parsing.modula.psi.TokenModulaTypes.*;
-import com.intellij.extapi.psi.ASTWrapperPsiElement;
+import org.modula.parsing.psi.context.AbstractProgramModule;
 import org.modula.parsing.modula.psi.*;
 
-public class ModulaProgramModuleImpl extends ASTWrapperPsiElement implements ModulaProgramModule {
+public class ModulaProgramModuleImpl extends AbstractProgramModule implements ModulaProgramModule {
 
   public ModulaProgramModuleImpl(ASTNode node) {
     super(node);
@@ -36,8 +36,8 @@ public class ModulaProgramModuleImpl extends ASTWrapperPsiElement implements Mod
 
   @Override
   @NotNull
-  public ModulaImportClause getImportClause() {
-    return findNotNullChildByClass(ModulaImportClause.class);
+  public List<ModulaImportClause> getImportClauseList() {
+    return PsiTreeUtil.getChildrenOfTypeAsList(this, ModulaImportClause.class);
   }
 
   @Override

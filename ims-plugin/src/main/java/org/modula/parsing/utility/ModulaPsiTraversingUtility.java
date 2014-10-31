@@ -2,7 +2,11 @@ package org.modula.parsing.utility;
 
 import com.intellij.psi.PsiElement;
 import org.jetbrains.annotations.Nullable;
+import org.modula.helpers.index.stubs.ContextDefinition;
+import org.modula.lang.ModulaContextKey;
 import org.modula.parsing.modula.psi.*;
+
+import java.util.Stack;
 
 /**
  * Holds utility functions to obtain information from a Modula Psi Tree
@@ -97,4 +101,16 @@ public final class ModulaPsiTraversingUtility {
 
 	}
 
+	public static ModulaContextKey getContextKey(PsiElement element) {
+
+		Stack<String> contexts = new Stack<String>();
+
+		do {
+			if (element instanceof ContextDefinition) {
+				contexts.push(((ContextDefinition) element).getContextName());
+			}
+		} while ((element = element.getParent()) != null);
+
+		return new ModulaContextKey(contexts.toArray(new String[contexts.size()]));
+	}
 }

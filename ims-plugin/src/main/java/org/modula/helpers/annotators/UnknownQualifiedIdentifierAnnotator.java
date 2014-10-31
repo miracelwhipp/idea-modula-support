@@ -56,7 +56,7 @@ public class UnknownQualifiedIdentifierAnnotator implements Annotator {
 
 		final GlobalSearchScope global = GlobalSearchScope.allScope(element.getProject());
 
-		Collection<SymbolStubPsiElement> definesOfCurrentModule = SymbolByModule.INSTANCE.get(moduleName, element.getProject(), global);
+		Collection<SymbolStubPsiElement> definesOfCurrentModule = SymbolByModule.INSTANCE.get(element, element.getProject(), global);
 
 		for (SymbolStubPsiElement symbol : definesOfCurrentModule) {
 			if (symbol.getText().equals(symbolName)) {

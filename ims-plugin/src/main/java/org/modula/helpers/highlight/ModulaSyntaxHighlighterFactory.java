@@ -19,6 +19,6 @@ public class ModulaSyntaxHighlighterFactory extends SyntaxHighlighterFactory {
 	@NotNull
 	@Override
 	public SyntaxHighlighter getSyntaxHighlighter(@Nullable Project project, @Nullable VirtualFile virtualFile) {
-		return new ModuleDefinitionSyntaxHighlighter();
+		return new ModulaSyntaxHighlighter();
 	}
 }

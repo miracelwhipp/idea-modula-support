@@ -14,7 +14,7 @@ public interface ModulaProgramModule extends PsiElement {
   ModulaIdent getIdent();
 
   @NotNull
-  ModulaImportClause getImportClause();
+  List<ModulaImportClause> getImportClauseList();
 
   @NotNull
   ModulaProgramHeader getProgramHeader();

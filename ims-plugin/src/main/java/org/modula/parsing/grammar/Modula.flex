@@ -171,6 +171,7 @@ CT_END                       = {SB_END}|{END_DIRECTIVE}
 <YYINITIAL> FROM { return TokenModulaTypes.FROM; }
 <YYINITIAL> GENERIC { return TokenModulaTypes.GENERIC; }
 <YYINITIAL> IF { return TokenModulaTypes.IF; }
+<YYINITIAL> IMPLEMENTATION { return TokenModulaTypes.IMPLEMENTATION; }
 <YYINITIAL> IMPORT { return TokenModulaTypes.IMPORT; }
 <YYINITIAL> INOUT { return TokenModulaTypes.INOUT; }
 <YYINITIAL> MACRO { return TokenModulaTypes.MACRO; }

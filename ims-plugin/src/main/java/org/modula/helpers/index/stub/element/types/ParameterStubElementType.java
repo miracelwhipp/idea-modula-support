@@ -58,8 +58,7 @@ public class ParameterStubElementType extends AbstractDefinitionStubElementType<
 
 	@Override
 	public void indexStub(@NotNull ParameterStub stub, @NotNull IndexSink sink) {
-		//TODO: make symbol index aware of cascading contexts
-		sink.occurrence(SymbolByModule.KEY, stub.getModule());
+		SymbolByModule.INSTANCE.occurrence(stub, sink);
 		sink.occurrence(SymbolIndex.KEY, stub.getStubName());
 	}
 }

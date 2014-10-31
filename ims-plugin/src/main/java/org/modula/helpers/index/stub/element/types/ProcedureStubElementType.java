@@ -57,7 +57,7 @@ public class ProcedureStubElementType extends AbstractDefinitionStubElementType<
 
 	@Override
 	public void indexStub(@NotNull ProcedureStub stub, @NotNull IndexSink sink) {
-		sink.occurrence(SymbolByModule.KEY, stub.getModule());
+		SymbolByModule.INSTANCE.occurrence(stub, sink);
 		sink.occurrence(SymbolIndex.KEY, stub.getStubName());
 		sink.occurrence(ProcedureByDefinitionFile.INSTANCE.getKey(), stub.getFileName());
 		sink.occurrence(ProcedureByModule.INSTANCE.getKey(), stub.getModule());

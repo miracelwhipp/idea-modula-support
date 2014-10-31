@@ -51,7 +51,7 @@ public class ConstantStubElementType extends AbstractDefinitionStubElementType<C
 
 	@Override
 	public void indexStub(ConstantStub stub, IndexSink sink) {
-		sink.occurrence(SymbolByModule.KEY, stub.getModule());
+		SymbolByModule.INSTANCE.occurrence(stub, sink);
 		sink.occurrence(SymbolIndex.KEY, stub.getStubName());
 		sink.occurrence(ConstantByDefinitionFile.KEY, stub.getFileName());
 		sink.occurrence(ConstantByModule.KEY, stub.getModule());
