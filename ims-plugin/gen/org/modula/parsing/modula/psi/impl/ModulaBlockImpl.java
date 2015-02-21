@@ -23,15 +23,15 @@ public class ModulaBlockImpl extends ASTWrapperPsiElement implements ModulaBlock
   }
 
   @Override
-  @Nullable
-  public ModulaStatementSequence getStatementSequence() {
-    return findChildByClass(ModulaStatementSequence.class);
+  @NotNull
+  public List<ModulaDeclaration> getDeclarationList() {
+    return PsiTreeUtil.getChildrenOfTypeAsList(this, ModulaDeclaration.class);
   }
 
   @Override
   @NotNull
-  public List<ModulaDeclaration> getDeclarationList() {
-    return PsiTreeUtil.getChildrenOfTypeAsList(this, ModulaDeclaration.class);
+  public List<ModulaStatement> getStatementList() {
+    return PsiTreeUtil.getChildrenOfTypeAsList(this, ModulaStatement.class);
   }
 
 }

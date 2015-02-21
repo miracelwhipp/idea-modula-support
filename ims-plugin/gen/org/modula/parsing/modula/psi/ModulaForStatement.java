@@ -8,12 +8,12 @@ import com.intellij.psi.PsiElement;
 public interface ModulaForStatement extends PsiElement {
 
   @NotNull
-  ModulaStatementSequence getStatementSequence();
-
-  @NotNull
   List<ModulaExpression> getExpressionList();
 
   @NotNull
   ModulaIdent getIdent();
+
+  @NotNull
+  List<ModulaStatement> getStatementList();
 
 }

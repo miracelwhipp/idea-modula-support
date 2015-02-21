@@ -5,12 +5,12 @@ import java.util.List;
 import org.jetbrains.annotations.*;
 import com.intellij.psi.PsiElement;
 
-public interface ModulaBlock extends PsiElement {
+public interface ModulaArraysRangeExpression extends PsiElement {
 
   @NotNull
-  List<ModulaDeclaration> getDeclarationList();
+  List<ModulaElement> getElementList();
 
   @NotNull
-  List<ModulaStatement> getStatementList();
+  ModulaQualident getQualident();
 
 }

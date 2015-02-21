@@ -11,21 +11,21 @@ import static org.modula.parsing.modula.psi.TokenModulaTypes.*;
 import com.intellij.extapi.psi.ASTWrapperPsiElement;
 import org.modula.parsing.modula.psi.*;
 
-public class ModulaStatementSequenceImpl extends ASTWrapperPsiElement implements ModulaStatementSequence {
+public class ModulaArrayExpressionImpl extends ASTWrapperPsiElement implements ModulaArrayExpression {
 
-  public ModulaStatementSequenceImpl(ASTNode node) {
+  public ModulaArrayExpressionImpl(ASTNode node) {
     super(node);
   }
 
   public void accept(@NotNull PsiElementVisitor visitor) {
-    if (visitor instanceof ModulaVisitor) ((ModulaVisitor)visitor).visitStatementSequence(this);
+    if (visitor instanceof ModulaVisitor) ((ModulaVisitor)visitor).visitArrayExpression(this);
     else super.accept(visitor);
   }
 
   @Override
   @NotNull
-  public List<ModulaStatement> getStatementList() {
-    return PsiTreeUtil.getChildrenOfTypeAsList(this, ModulaStatement.class);
+  public ModulaExpList getExpList() {
+    return findNotNullChildByClass(ModulaExpList.class);
   }
 
 }

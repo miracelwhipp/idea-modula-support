@@ -39,4 +39,10 @@ public class ModulaConstantDeclarationImpl extends ConstantStubBasedPsiElement i
     return findNotNullChildByClass(ModulaIdent.class);
   }
 
+  @Override
+  @Nullable
+  public ModulaTypes getTypes() {
+    return findChildByClass(ModulaTypes.class);
+  }
+
 }

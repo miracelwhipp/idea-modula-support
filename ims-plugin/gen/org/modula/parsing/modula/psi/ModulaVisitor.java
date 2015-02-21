@@ -142,10 +142,6 @@ public class ModulaVisitor extends PsiElementVisitor {
     visitPsiElement(o);
   }
 
-  public void visitStatementSequence(@NotNull ModulaStatementSequence o) {
-    visitPsiElement(o);
-  }
-
   public void visitSubRangeType(@NotNull ModulaSubRangeType o) {
     visitPsiElement(o);
   }
@@ -166,7 +162,15 @@ public class ModulaVisitor extends PsiElementVisitor {
     visitPsiElement(o);
   }
 
+  public void visitArrayExpression(@NotNull ModulaArrayExpression o) {
+    visitPsiElement(o);
+  }
+
   public void visitArrayRangeType(@NotNull ModulaArrayRangeType o) {
+    visitPsiElement(o);
+  }
+
+  public void visitArraysRangeExpression(@NotNull ModulaArraysRangeExpression o) {
     visitPsiElement(o);
   }
 

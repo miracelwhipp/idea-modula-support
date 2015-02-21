@@ -18,6 +18,8 @@ import org.modula.parsing.modula.psi.impl.*;
 public interface TokenModulaTypes {
 
   IElementType ACTUAL_PARAMETERS = new ModulaElementType("ACTUAL_PARAMETERS");
+  IElementType ARRAYS_RANGE_EXPRESSION = new ModulaElementType("ARRAYS_RANGE_EXPRESSION");
+  IElementType ARRAY_EXPRESSION = new ModulaElementType("ARRAY_EXPRESSION");
   IElementType ARRAY_RANGE_TYPE = new ModulaElementType("ARRAY_RANGE_TYPE");
   IElementType ARRAY_TYPE = new ModulaElementType("ARRAY_TYPE");
   IElementType ASSIGNMENT = new ModulaElementType("ASSIGNMENT");
@@ -90,7 +92,6 @@ public interface TokenModulaTypes {
   IElementType SIMPLE_EXPRESSION = new ModulaElementType("SIMPLE_EXPRESSION");
   IElementType SIMPLE_TYPE = new ModulaElementType("SIMPLE_TYPE");
   IElementType STATEMENT = new ModulaElementType("STATEMENT");
-  IElementType STATEMENT_SEQUENCE = new ModulaElementType("STATEMENT_SEQUENCE");
   IElementType STONY_BROOK_TYPE = new ModulaElementType("STONY_BROOK_TYPE");
   IElementType STRING = new ModulaElementType("STRING");
   IElementType SUB_RANGE_TYPE = new ModulaElementType("SUB_RANGE_TYPE");
@@ -254,6 +255,12 @@ public interface TokenModulaTypes {
       IElementType type = node.getElementType();
        if (type == ACTUAL_PARAMETERS) {
         return new ModulaActualParametersImpl(node);
+      }
+      else if (type == ARRAYS_RANGE_EXPRESSION) {
+        return new ModulaArraysRangeExpressionImpl(node);
+      }
+      else if (type == ARRAY_EXPRESSION) {
+        return new ModulaArrayExpressionImpl(node);
       }
       else if (type == ARRAY_RANGE_TYPE) {
         return new ModulaArrayRangeTypeImpl(node);
@@ -470,9 +477,6 @@ public interface TokenModulaTypes {
       }
       else if (type == STATEMENT) {
         return new ModulaStatementImpl(node);
-      }
-      else if (type == STATEMENT_SEQUENCE) {
-        return new ModulaStatementSequenceImpl(node);
       }
       else if (type == STONY_BROOK_TYPE) {
         return new ModulaStonyBrookTypeImpl(node);

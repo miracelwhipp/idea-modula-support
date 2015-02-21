@@ -30,6 +30,18 @@ public class ModulaFactorImpl extends ASTWrapperPsiElement implements ModulaFact
 
   @Override
   @Nullable
+  public ModulaArrayExpression getArrayExpression() {
+    return findChildByClass(ModulaArrayExpression.class);
+  }
+
+  @Override
+  @Nullable
+  public ModulaArraysRangeExpression getArraysRangeExpression() {
+    return findChildByClass(ModulaArraysRangeExpression.class);
+  }
+
+  @Override
+  @Nullable
   public ModulaDesignator getDesignator() {
     return findChildByClass(ModulaDesignator.class);
   }

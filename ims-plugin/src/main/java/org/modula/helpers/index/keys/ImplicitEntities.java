@@ -32,6 +32,7 @@ public final class ImplicitEntities {
 	public static final String SWAPENDIAN = "SWAPENDIAN";
 	public static final String CARD_8 = "CARD8";
 	public static final String BYTE = "BYTE";
+	public static final String IS_THREAD = "IsThread";
 	public static final Map<String, Set<String>> IMPLICIT_SYMBOLS_PER_MODULE = Collections.unmodifiableMap(new HashMap<String, Set<String>>() {
 		{
 			put(SYSTEM_MODULE_NAME, Collections.unmodifiableSet(new HashSet<String>() {
@@ -47,6 +48,7 @@ public final class ImplicitEntities {
 					add(SWAPENDIAN);
 					add(CARD_8);
 					add(BYTE);
+					add(IS_THREAD);
 				}
 			}));
 		}
@@ -66,6 +68,7 @@ public final class ImplicitEntities {
 	public static final String MAX = "MAX";
 	public static final String ORD = "ORD";
 	public static final String NIL = "NIL";
+	public static final String LENGTH = "LENGTH";
 	public static final Set<String> IMPLICIT_IMPORTS = Collections.unmodifiableSet(new HashSet<String>() {
 		{
 			add(SIZE);
@@ -82,6 +85,7 @@ public final class ImplicitEntities {
 			add(MAX);
 			add(ORD);
 			add(NIL);
+			add(LENGTH);
 		}
 	});
 

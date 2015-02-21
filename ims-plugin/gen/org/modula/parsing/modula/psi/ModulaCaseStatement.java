@@ -7,13 +7,13 @@ import com.intellij.psi.PsiElement;
 
 public interface ModulaCaseStatement extends PsiElement {
 
-  @Nullable
-  ModulaStatementSequence getStatementSequence();
-
   @NotNull
   List<ModulaCaseStatements> getCaseStatementsList();
 
   @NotNull
   ModulaExpression getExpression();
+
+  @NotNull
+  List<ModulaStatement> getStatementList();
 
 }

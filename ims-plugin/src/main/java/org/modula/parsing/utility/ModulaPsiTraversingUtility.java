@@ -1,6 +1,7 @@
 package org.modula.parsing.utility;
 
 import com.intellij.psi.PsiElement;
+import com.intellij.psi.PsiFile;
 import org.jetbrains.annotations.Nullable;
 import org.modula.helpers.index.stubs.ContextDefinition;
 import org.modula.lang.ModulaContextKey;
@@ -105,11 +106,14 @@ public final class ModulaPsiTraversingUtility {
 
 		Stack<String> contexts = new Stack<String>();
 
-		do {
-			if (element instanceof ContextDefinition) {
-				contexts.push(((ContextDefinition) element).getContextName());
-			}
-		} while ((element = element.getParent()) != null);
+//		do {
+//			if (element instanceof ContextDefinition) {
+//				contexts.push(((ContextDefinition) element).getContextName());
+//			}
+//			if (element instanceof PsiFile) {
+//				break;
+//			}
+//		} while ((element = element.getParent()) != null);
 
 		return new ModulaContextKey(contexts.toArray(new String[contexts.size()]));
 	}

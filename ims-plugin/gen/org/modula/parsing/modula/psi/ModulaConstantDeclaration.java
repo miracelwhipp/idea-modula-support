@@ -17,4 +17,7 @@ public interface ModulaConstantDeclaration extends PsiElement, Constant, SymbolS
   @NotNull
   ModulaIdent getIdent();
 
+  @Nullable
+  ModulaTypes getTypes();
+
 }

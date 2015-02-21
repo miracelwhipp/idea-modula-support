@@ -158,6 +158,7 @@ CT_END                       = {SB_END}|{END_DIRECTIVE}
 <YYINITIAL> CASE { return TokenModulaTypes.CASE; }
 <YYINITIAL> CMPLX { return TokenModulaTypes.CMPLX; }
 <YYINITIAL> CONST { return TokenModulaTypes.CONST; }
+<YYINITIAL> DO { return TokenModulaTypes.DO; }
 <YYINITIAL> DEFINITION { return TokenModulaTypes.DEFINITION; }
 <YYINITIAL> DLLACCESS { return TokenModulaTypes.DLLACCESS; }
 <YYINITIAL> END { return TokenModulaTypes.END; }
@@ -256,9 +257,14 @@ CT_END                       = {SB_END}|{END_DIRECTIVE}
 	return evaluateCondition(CompileTimeConditionLanguage.INSTANCE);
 }
 
+<COMPILE_TIME_CONDITION> . { return TokenModulaTypes.ANYTHING; }
+
 <P1_COMPILE_TIME_CONDITION> ([^T]|T[^H]|TH[^E]|THE[^N]|(THEN[^\ \t\f\*])|(THEN[\ \t\f]*[^\*])|(THEN[\ \t\f]*\*[^>]))* {
 	return evaluateCondition(P1CompileTimeConditionLanguage.INSTANCE);
 }
+
+<P1_COMPILE_TIME_CONDITION> . { return TokenModulaTypes.ANYTHING; }
+
 
 <INVALID_CONDITIONAL_CODE, ERRORNEOUS_CONDITIONAL_CODE> {CT_IF}           { return invalidIf(); }
 <INVALID_CONDITIONAL_CODE, ERRORNEOUS_CONDITIONAL_CODE> {CT_THEN}         { return TokenModulaTypes.COMPILE_TIME_THEN; }
@@ -270,11 +276,13 @@ CT_END                       = {SB_END}|{END_DIRECTIVE}
 <INVALID_CONDITIONAL_CODE, ERRORNEOUS_CONDITIONAL_CODE> {NON_COMPILE_TIME_STATEMENT} { return TokenModulaTypes.COMPILE_TIME_INVALID_CODE; }
 <INVALID_CONDITIONAL_CODE, ERRORNEOUS_CONDITIONAL_CODE> {WHITE_SPACE}+               { return TokenType.WHITE_SPACE; }
 
+<INVALID_CONDITIONAL_CODE, ERRORNEOUS_CONDITIONAL_CODE> . { return TokenModulaTypes.COMPILE_TIME_INVALID_CODE; }
 
 <COMMENT> {OPEN_COMMENT}    { return openComment(); }
 <COMMENT> {COMMENT_CONTENT} { return TokenModulaTypes.COMMENT; }
 <COMMENT> {CLOSE_COMMENT}   { return closeComment(); }
 
+<COMMENT> . { return TokenModulaTypes.COMMENT; }
 
 
 

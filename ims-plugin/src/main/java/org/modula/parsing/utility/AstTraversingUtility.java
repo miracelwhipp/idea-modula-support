@@ -1,8 +1,13 @@
 package org.modula.parsing.utility;
 
 import com.intellij.lang.ASTNode;
+import com.intellij.psi.PsiElement;
 import com.intellij.psi.tree.IElementType;
 import org.jetbrains.annotations.Nullable;
+import org.modula.helpers.index.stubs.ContextDefinition;
+import org.modula.lang.ModulaContextKey;
+
+import java.util.Stack;
 
 /**
  * Created with IntelliJ IDEA.

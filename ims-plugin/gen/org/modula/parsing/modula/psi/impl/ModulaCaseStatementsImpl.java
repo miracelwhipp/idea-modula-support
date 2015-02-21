@@ -30,8 +30,8 @@ public class ModulaCaseStatementsImpl extends ASTWrapperPsiElement implements Mo
 
   @Override
   @NotNull
-  public ModulaStatementSequence getStatementSequence() {
-    return findNotNullChildByClass(ModulaStatementSequence.class);
+  public List<ModulaStatement> getStatementList() {
+    return PsiTreeUtil.getChildrenOfTypeAsList(this, ModulaStatement.class);
   }
 
 }

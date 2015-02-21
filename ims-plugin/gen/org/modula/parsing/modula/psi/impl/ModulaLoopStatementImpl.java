@@ -24,8 +24,8 @@ public class ModulaLoopStatementImpl extends ASTWrapperPsiElement implements Mod
 
   @Override
   @NotNull
-  public ModulaStatementSequence getStatementSequence() {
-    return findNotNullChildByClass(ModulaStatementSequence.class);
+  public List<ModulaStatement> getStatementList() {
+    return PsiTreeUtil.getChildrenOfTypeAsList(this, ModulaStatement.class);
   }
 
 }

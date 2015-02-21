@@ -5,9 +5,9 @@ import java.util.List;
 import org.jetbrains.annotations.*;
 import com.intellij.psi.PsiElement;
 
-public interface ModulaStatementSequence extends PsiElement {
+public interface ModulaArrayExpression extends PsiElement {
 
   @NotNull
-  List<ModulaStatement> getStatementList();
+  ModulaExpList getExpList();
 
 }

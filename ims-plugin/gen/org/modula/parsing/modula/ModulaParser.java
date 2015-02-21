@@ -113,9 +113,6 @@ public class ModulaParser implements PsiParser {
     else if (root_ == SIMPLE_TYPE) {
       result_ = SimpleType(builder_, 0);
     }
-    else if (root_ == STATEMENT_SEQUENCE) {
-      result_ = StatementSequence(builder_, 0);
-    }
     else if (root_ == SUB_RANGE_TYPE) {
       result_ = SubRangeType(builder_, 0);
     }
@@ -131,8 +128,14 @@ public class ModulaParser implements PsiParser {
     else if (root_ == WITH_STATEMENT) {
       result_ = WithStatement(builder_, 0);
     }
+    else if (root_ == ARRAY_EXPRESSION) {
+      result_ = array_expression(builder_, 0);
+    }
     else if (root_ == ARRAY_RANGE_TYPE) {
       result_ = array_range_type(builder_, 0);
+    }
+    else if (root_ == ARRAYS_RANGE_EXPRESSION) {
+      result_ = arrays_range_expression(builder_, 0);
     }
     else if (root_ == ASSIGNMENT) {
       result_ = assignment(builder_, 0);
@@ -525,16 +528,35 @@ public class ModulaParser implements PsiParser {
   }
 
   /* ********************************************************** */
-  // ident EQUALITY_OPERATOR expression
+  // ident (TYPING_OPERATOR types)? EQUALITY_OPERATOR expression
   public static boolean ConstantDeclaration(PsiBuilder builder_, int level_) {
     if (!recursion_guard_(builder_, level_, "ConstantDeclaration")) return false;
     if (!nextTokenIs(builder_, IDENTIFIER)) return false;
     boolean result_;
     Marker marker_ = enter_section_(builder_);
     result_ = ident(builder_, level_ + 1);
+    result_ = result_ && ConstantDeclaration_1(builder_, level_ + 1);
     result_ = result_ && consumeToken(builder_, EQUALITY_OPERATOR);
     result_ = result_ && expression(builder_, level_ + 1);
     exit_section_(builder_, marker_, CONSTANT_DECLARATION, result_);
+    return result_;
+  }
+
+  // (TYPING_OPERATOR types)?
+  private static boolean ConstantDeclaration_1(PsiBuilder builder_, int level_) {
+    if (!recursion_guard_(builder_, level_, "ConstantDeclaration_1")) return false;
+    ConstantDeclaration_1_0(builder_, level_ + 1);
+    return true;
+  }
+
+  // TYPING_OPERATOR types
+  private static boolean ConstantDeclaration_1_0(PsiBuilder builder_, int level_) {
+    if (!recursion_guard_(builder_, level_, "ConstantDeclaration_1_0")) return false;
+    boolean result_;
+    Marker marker_ = enter_section_(builder_);
+    result_ = consumeToken(builder_, TYPING_OPERATOR);
+    result_ = result_ && types(builder_, level_ + 1);
+    exit_section_(builder_, marker_, null, result_);
     return result_;
   }
 
@@ -1328,15 +1350,38 @@ public class ModulaParser implements PsiParser {
   }
 
   /* ********************************************************** */
-  // POINTER TO types
+  // POINTER TO (ARRAY OF)* types
   public static boolean PointerType(PsiBuilder builder_, int level_) {
     if (!recursion_guard_(builder_, level_, "PointerType")) return false;
     if (!nextTokenIs(builder_, POINTER)) return false;
     boolean result_;
     Marker marker_ = enter_section_(builder_);
     result_ = consumeTokens(builder_, 0, POINTER, TO);
+    result_ = result_ && PointerType_2(builder_, level_ + 1);
     result_ = result_ && types(builder_, level_ + 1);
     exit_section_(builder_, marker_, POINTER_TYPE, result_);
+    return result_;
+  }
+
+  // (ARRAY OF)*
+  private static boolean PointerType_2(PsiBuilder builder_, int level_) {
+    if (!recursion_guard_(builder_, level_, "PointerType_2")) return false;
+    int pos_ = current_position_(builder_);
+    while (true) {
+      if (!PointerType_2_0(builder_, level_ + 1)) break;
+      if (!empty_element_parsed_guard_(builder_, "PointerType_2", pos_)) break;
+      pos_ = current_position_(builder_);
+    }
+    return true;
+  }
+
+  // ARRAY OF
+  private static boolean PointerType_2_0(PsiBuilder builder_, int level_) {
+    if (!recursion_guard_(builder_, level_, "PointerType_2_0")) return false;
+    boolean result_;
+    Marker marker_ = enter_section_(builder_);
+    result_ = consumeTokens(builder_, 0, ARRAY, OF);
+    exit_section_(builder_, marker_, null, result_);
     return result_;
   }
 
@@ -1607,13 +1652,13 @@ public class ModulaParser implements PsiParser {
 
   /* ********************************************************** */
   // statement (END_OF_STATEMENT statement)*
-  public static boolean StatementSequence(PsiBuilder builder_, int level_) {
+  static boolean StatementSequence(PsiBuilder builder_, int level_) {
     if (!recursion_guard_(builder_, level_, "StatementSequence")) return false;
     boolean result_;
-    Marker marker_ = enter_section_(builder_, level_, _NONE_, "<statement sequence>");
+    Marker marker_ = enter_section_(builder_);
     result_ = statement(builder_, level_ + 1);
     result_ = result_ && StatementSequence_1(builder_, level_ + 1);
-    exit_section_(builder_, level_, marker_, STATEMENT_SEQUENCE, result_, false, null);
+    exit_section_(builder_, marker_, null, result_);
     return result_;
   }
 
@@ -1795,6 +1840,20 @@ public class ModulaParser implements PsiParser {
   }
 
   /* ********************************************************** */
+  // CURLY_BRACE_OPEN ExpList CURLY_BRACE_CLOSE
+  public static boolean array_expression(PsiBuilder builder_, int level_) {
+    if (!recursion_guard_(builder_, level_, "array_expression")) return false;
+    if (!nextTokenIs(builder_, CURLY_BRACE_OPEN)) return false;
+    boolean result_;
+    Marker marker_ = enter_section_(builder_);
+    result_ = consumeToken(builder_, CURLY_BRACE_OPEN);
+    result_ = result_ && ExpList(builder_, level_ + 1);
+    result_ = result_ && consumeToken(builder_, CURLY_BRACE_CLOSE);
+    exit_section_(builder_, marker_, ARRAY_EXPRESSION, result_);
+    return result_;
+  }
+
+  /* ********************************************************** */
   // qualident | enumeration_definition | SubRangeType | TOKEN_CHAR | TOKEN_BOOLEAN
   public static boolean array_range_type(PsiBuilder builder_, int level_) {
     if (!recursion_guard_(builder_, level_, "array_range_type")) return false;
@@ -1806,6 +1865,61 @@ public class ModulaParser implements PsiParser {
     if (!result_) result_ = consumeToken(builder_, TOKEN_CHAR);
     if (!result_) result_ = consumeToken(builder_, TOKEN_BOOLEAN);
     exit_section_(builder_, level_, marker_, ARRAY_RANGE_TYPE, result_, false, null);
+    return result_;
+  }
+
+  /* ********************************************************** */
+  // qualident SQUARE_BRACE_OPEN (element (COMMA element)*)? SQUARE_BRACE_CLOSE
+  public static boolean arrays_range_expression(PsiBuilder builder_, int level_) {
+    if (!recursion_guard_(builder_, level_, "arrays_range_expression")) return false;
+    boolean result_;
+    Marker marker_ = enter_section_(builder_, level_, _NONE_, "<arrays range expression>");
+    result_ = qualident(builder_, level_ + 1);
+    result_ = result_ && consumeToken(builder_, SQUARE_BRACE_OPEN);
+    result_ = result_ && arrays_range_expression_2(builder_, level_ + 1);
+    result_ = result_ && consumeToken(builder_, SQUARE_BRACE_CLOSE);
+    exit_section_(builder_, level_, marker_, ARRAYS_RANGE_EXPRESSION, result_, false, null);
+    return result_;
+  }
+
+  // (element (COMMA element)*)?
+  private static boolean arrays_range_expression_2(PsiBuilder builder_, int level_) {
+    if (!recursion_guard_(builder_, level_, "arrays_range_expression_2")) return false;
+    arrays_range_expression_2_0(builder_, level_ + 1);
+    return true;
+  }
+
+  // element (COMMA element)*
+  private static boolean arrays_range_expression_2_0(PsiBuilder builder_, int level_) {
+    if (!recursion_guard_(builder_, level_, "arrays_range_expression_2_0")) return false;
+    boolean result_;
+    Marker marker_ = enter_section_(builder_);
+    result_ = element(builder_, level_ + 1);
+    result_ = result_ && arrays_range_expression_2_0_1(builder_, level_ + 1);
+    exit_section_(builder_, marker_, null, result_);
+    return result_;
+  }
+
+  // (COMMA element)*
+  private static boolean arrays_range_expression_2_0_1(PsiBuilder builder_, int level_) {
+    if (!recursion_guard_(builder_, level_, "arrays_range_expression_2_0_1")) return false;
+    int pos_ = current_position_(builder_);
+    while (true) {
+      if (!arrays_range_expression_2_0_1_0(builder_, level_ + 1)) break;
+      if (!empty_element_parsed_guard_(builder_, "arrays_range_expression_2_0_1", pos_)) break;
+      pos_ = current_position_(builder_);
+    }
+    return true;
+  }
+
+  // COMMA element
+  private static boolean arrays_range_expression_2_0_1_0(PsiBuilder builder_, int level_) {
+    if (!recursion_guard_(builder_, level_, "arrays_range_expression_2_0_1_0")) return false;
+    boolean result_;
+    Marker marker_ = enter_section_(builder_);
+    result_ = consumeToken(builder_, COMMA);
+    result_ = result_ && element(builder_, level_ + 1);
+    exit_section_(builder_, marker_, null, result_);
     return result_;
   }
 
@@ -2564,7 +2678,7 @@ public class ModulaParser implements PsiParser {
   }
 
   /* ********************************************************** */
-  // number | string | CHAR_CONST | set_expression | negation_operator factor |
+  // number | string | CHAR_CONST | set_expression | arrays_range_expression | array_expression | negation_operator factor |
   // 				designator (ActualParameters)? | OPEN_BRACE expression CLOSE_BRACE
   public static boolean factor(PsiBuilder builder_, int level_) {
     if (!recursion_guard_(builder_, level_, "factor")) return false;
@@ -2574,16 +2688,18 @@ public class ModulaParser implements PsiParser {
     if (!result_) result_ = string(builder_, level_ + 1);
     if (!result_) result_ = consumeToken(builder_, CHAR_CONST);
     if (!result_) result_ = set_expression(builder_, level_ + 1);
-    if (!result_) result_ = factor_4(builder_, level_ + 1);
-    if (!result_) result_ = factor_5(builder_, level_ + 1);
+    if (!result_) result_ = arrays_range_expression(builder_, level_ + 1);
+    if (!result_) result_ = array_expression(builder_, level_ + 1);
     if (!result_) result_ = factor_6(builder_, level_ + 1);
+    if (!result_) result_ = factor_7(builder_, level_ + 1);
+    if (!result_) result_ = factor_8(builder_, level_ + 1);
     exit_section_(builder_, level_, marker_, FACTOR, result_, false, null);
     return result_;
   }
 
   // negation_operator factor
-  private static boolean factor_4(PsiBuilder builder_, int level_) {
-    if (!recursion_guard_(builder_, level_, "factor_4")) return false;
+  private static boolean factor_6(PsiBuilder builder_, int level_) {
+    if (!recursion_guard_(builder_, level_, "factor_6")) return false;
     boolean result_;
     Marker marker_ = enter_section_(builder_);
     result_ = negation_operator(builder_, level_ + 1);
@@ -2593,26 +2709,26 @@ public class ModulaParser implements PsiParser {
   }
 
   // designator (ActualParameters)?
-  private static boolean factor_5(PsiBuilder builder_, int level_) {
-    if (!recursion_guard_(builder_, level_, "factor_5")) return false;
+  private static boolean factor_7(PsiBuilder builder_, int level_) {
+    if (!recursion_guard_(builder_, level_, "factor_7")) return false;
     boolean result_;
     Marker marker_ = enter_section_(builder_);
     result_ = designator(builder_, level_ + 1);
-    result_ = result_ && factor_5_1(builder_, level_ + 1);
+    result_ = result_ && factor_7_1(builder_, level_ + 1);
     exit_section_(builder_, marker_, null, result_);
     return result_;
   }
 
   // (ActualParameters)?
-  private static boolean factor_5_1(PsiBuilder builder_, int level_) {
-    if (!recursion_guard_(builder_, level_, "factor_5_1")) return false;
-    factor_5_1_0(builder_, level_ + 1);
+  private static boolean factor_7_1(PsiBuilder builder_, int level_) {
+    if (!recursion_guard_(builder_, level_, "factor_7_1")) return false;
+    factor_7_1_0(builder_, level_ + 1);
     return true;
   }
 
   // (ActualParameters)
-  private static boolean factor_5_1_0(PsiBuilder builder_, int level_) {
-    if (!recursion_guard_(builder_, level_, "factor_5_1_0")) return false;
+  private static boolean factor_7_1_0(PsiBuilder builder_, int level_) {
+    if (!recursion_guard_(builder_, level_, "factor_7_1_0")) return false;
     boolean result_;
     Marker marker_ = enter_section_(builder_);
     result_ = ActualParameters(builder_, level_ + 1);
@@ -2621,8 +2737,8 @@ public class ModulaParser implements PsiParser {
   }
 
   // OPEN_BRACE expression CLOSE_BRACE
-  private static boolean factor_6(PsiBuilder builder_, int level_) {
-    if (!recursion_guard_(builder_, level_, "factor_6")) return false;
+  private static boolean factor_8(PsiBuilder builder_, int level_) {
+    if (!recursion_guard_(builder_, level_, "factor_8")) return false;
     boolean result_;
     Marker marker_ = enter_section_(builder_);
     result_ = consumeToken(builder_, OPEN_BRACE);
@@ -3076,7 +3192,7 @@ public class ModulaParser implements PsiParser {
   }
 
   /* ********************************************************** */
-  // !(END_OF_STATEMENT | END)
+  // !(END_OF_STATEMENT | END | PIPE | SQUARE_BRACE_CLOSE | CURLY_BRACE_CLOSE | CLOSE_BRACE | ELSE | ELSIF)
   public static boolean recover_end_of_statement(PsiBuilder builder_, int level_) {
     if (!recursion_guard_(builder_, level_, "recover_end_of_statement")) return false;
     boolean result_;
@@ -3086,13 +3202,19 @@ public class ModulaParser implements PsiParser {
     return result_;
   }
 
-  // END_OF_STATEMENT | END
+  // END_OF_STATEMENT | END | PIPE | SQUARE_BRACE_CLOSE | CURLY_BRACE_CLOSE | CLOSE_BRACE | ELSE | ELSIF
   private static boolean recover_end_of_statement_0(PsiBuilder builder_, int level_) {
     if (!recursion_guard_(builder_, level_, "recover_end_of_statement_0")) return false;
     boolean result_;
     Marker marker_ = enter_section_(builder_);
     result_ = consumeToken(builder_, END_OF_STATEMENT);
     if (!result_) result_ = consumeToken(builder_, END);
+    if (!result_) result_ = consumeToken(builder_, PIPE);
+    if (!result_) result_ = consumeToken(builder_, SQUARE_BRACE_CLOSE);
+    if (!result_) result_ = consumeToken(builder_, CURLY_BRACE_CLOSE);
+    if (!result_) result_ = consumeToken(builder_, CLOSE_BRACE);
+    if (!result_) result_ = consumeToken(builder_, ELSE);
+    if (!result_) result_ = consumeToken(builder_, ELSIF);
     exit_section_(builder_, marker_, null, result_);
     return result_;
   }

@@ -67,7 +67,7 @@ definitions ::=  CONST (ConstantDeclaration END_OF_STATEMENT)* |
 				ProcedureHeading END_OF_STATEMENT
 //definition_clause ::= procedure_definition | type_definitions | constant_definitions | variable_definitions
 
-ConstantDeclaration ::= ident EQUALITY_OPERATOR expression {
+ConstantDeclaration ::= ident (TYPING_OPERATOR types)? EQUALITY_OPERATOR expression {
 	implements = ["com.intellij.psi.PsiElement" "org.modula.helpers.index.stubs.Constant" "org.modula.helpers.index.stubs.SymbolStubPsiElement"]
 	extends = "org.modula.helpers.index.stub.delegators.ConstantStubBasedPsiElement"
 	stubClass = "org.modula.helpers.index.stubs.ConstantStub"
@@ -157,7 +157,7 @@ CaseLabels ::= expression (RANGE_OPERATOR expression)*
 SetType ::= (SET|PACKEDSET) OF SimpleType (BIG|SMALL)?
 //set_definition ::= (SET|PACKEDSET) OF type_specification (BIG|SMALL)?
 
-PointerType ::= POINTER TO types
+PointerType ::= POINTER TO (ARRAY OF)* types
 ProcedureType ::= PROCEDURE (FormalTypeList)? procedure_attributes?
 FormalTypeList ::= OPEN_BRACE (parameter_modifier? (parameter_value_modifier)? FormalType (COMMA parameter_modifier? (parameter_value_modifier)? FormalType)*)? CLOSE_BRACE (TYPING_OPERATOR qualident)?
 
@@ -324,7 +324,8 @@ ModuleDeclaration ::= MODULE ident END_OF_STATEMENT (import_clause)* (export_cla
 export_clause ::= EXPORT (QUALIFIED)? IdentList END_OF_STATEMENT
 
 
-StatementSequence ::= statement (END_OF_STATEMENT statement)*
+private StatementSequence ::= statement (END_OF_STATEMENT statement)*
+
 statement ::= (assignment | ProcedureCall | IfStatement | CaseStatement | WhileStatement |
 				RepeatStatement | LoopStatement | ForStatement | WithStatement | EXIT | RETURN (expression)?)? {
 	pin = 1
@@ -358,7 +359,7 @@ procedure_modifiers ::= (FORWARD | macro_declaration | ASSEMBLER | PUREASM) END_
 //statements ::= statement (END_OF_STATEMENT statement)*
 
 
-recover_end_of_statement ::= !(END_OF_STATEMENT | END)
+recover_end_of_statement ::= !(END_OF_STATEMENT | END | PIPE | SQUARE_BRACE_CLOSE | CURLY_BRACE_CLOSE | CLOSE_BRACE | ELSE | ELSIF)
 
 //whatever ::= (expression | literal | ASSIGNMENT_OPERATOR | SQUARE_BRACE_OPEN | SQUARE_BRACE_CLOSE | DOT | COMMA |
 //				CURLY_BRACE_OPEN | CURLY_BRACE_CLOSE | THEN | ELSE | ELSIF | FOR | TO | BY | CASE |
@@ -401,12 +402,14 @@ private negation_operator ::= NOT | BITWISE_NOT
 expression ::= simple_expression (relational_operator simple_expression)?
 simple_expression ::= (PLUS | MINUS)? term (sum_operator term)*
 term ::= factor (product_operator factor)*
-factor ::= number | string | CHAR_CONST | set_expression | negation_operator factor |
+factor ::= number | string | CHAR_CONST | set_expression | arrays_range_expression | array_expression | negation_operator factor |
 				designator (ActualParameters)? | OPEN_BRACE expression CLOSE_BRACE
 number ::= integer_literal | real_literal | complex_literal
 string ::= STRING_CONST_DOUBLE | STRING_CONST_DOUBLE_ANSI | STRING_CONST_DOUBLE_UNICODE | STRING_CONST_SINGLE |
 				STRING_CONST_SINGLE_ANSI | STRING_CONST_SINGLE_UNICODE
 set_expression ::= qualident CURLY_BRACE_OPEN (element (COMMA element)*)?  CURLY_BRACE_CLOSE
+arrays_range_expression ::= qualident SQUARE_BRACE_OPEN (element (COMMA element)*)? SQUARE_BRACE_CLOSE
+array_expression ::= CURLY_BRACE_OPEN ExpList CURLY_BRACE_CLOSE
 
 qualident ::= ident (DOT ident)* | basic_type | stony_brook_type
 ident ::= IDENTIFIER

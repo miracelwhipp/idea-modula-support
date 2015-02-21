@@ -11,33 +11,27 @@ import static org.modula.parsing.modula.psi.TokenModulaTypes.*;
 import com.intellij.extapi.psi.ASTWrapperPsiElement;
 import org.modula.parsing.modula.psi.*;
 
-public class ModulaForStatementImpl extends ASTWrapperPsiElement implements ModulaForStatement {
+public class ModulaArraysRangeExpressionImpl extends ASTWrapperPsiElement implements ModulaArraysRangeExpression {
 
-  public ModulaForStatementImpl(ASTNode node) {
+  public ModulaArraysRangeExpressionImpl(ASTNode node) {
     super(node);
   }
 
   public void accept(@NotNull PsiElementVisitor visitor) {
-    if (visitor instanceof ModulaVisitor) ((ModulaVisitor)visitor).visitForStatement(this);
+    if (visitor instanceof ModulaVisitor) ((ModulaVisitor)visitor).visitArraysRangeExpression(this);
     else super.accept(visitor);
   }
 
   @Override
   @NotNull
-  public List<ModulaExpression> getExpressionList() {
-    return PsiTreeUtil.getChildrenOfTypeAsList(this, ModulaExpression.class);
+  public List<ModulaElement> getElementList() {
+    return PsiTreeUtil.getChildrenOfTypeAsList(this, ModulaElement.class);
   }
 
   @Override
   @NotNull
-  public ModulaIdent getIdent() {
-    return findNotNullChildByClass(ModulaIdent.class);
-  }
-
-  @Override
-  @NotNull
-  public List<ModulaStatement> getStatementList() {
-    return PsiTreeUtil.getChildrenOfTypeAsList(this, ModulaStatement.class);
+  public ModulaQualident getQualident() {
+    return findNotNullChildByClass(ModulaQualident.class);
   }
 
 }

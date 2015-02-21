@@ -8,6 +8,6 @@ import com.intellij.psi.PsiElement;
 public interface ModulaLoopStatement extends PsiElement {
 
   @NotNull
-  ModulaStatementSequence getStatementSequence();
+  List<ModulaStatement> getStatementList();
 
 }

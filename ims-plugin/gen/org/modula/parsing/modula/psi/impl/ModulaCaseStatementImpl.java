@@ -23,12 +23,6 @@ public class ModulaCaseStatementImpl extends ASTWrapperPsiElement implements Mod
   }
 
   @Override
-  @Nullable
-  public ModulaStatementSequence getStatementSequence() {
-    return findChildByClass(ModulaStatementSequence.class);
-  }
-
-  @Override
   @NotNull
   public List<ModulaCaseStatements> getCaseStatementsList() {
     return PsiTreeUtil.getChildrenOfTypeAsList(this, ModulaCaseStatements.class);
@@ -38,6 +32,12 @@ public class ModulaCaseStatementImpl extends ASTWrapperPsiElement implements Mod
   @NotNull
   public ModulaExpression getExpression() {
     return findNotNullChildByClass(ModulaExpression.class);
+  }
+
+  @Override
+  @NotNull
+  public List<ModulaStatement> getStatementList() {
+    return PsiTreeUtil.getChildrenOfTypeAsList(this, ModulaStatement.class);
   }
 
 }

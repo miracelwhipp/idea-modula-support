@@ -24,14 +24,14 @@ public class ModulaWhileStatementImpl extends ASTWrapperPsiElement implements Mo
 
   @Override
   @NotNull
-  public ModulaStatementSequence getStatementSequence() {
-    return findNotNullChildByClass(ModulaStatementSequence.class);
+  public ModulaExpression getExpression() {
+    return findNotNullChildByClass(ModulaExpression.class);
   }
 
   @Override
   @NotNull
-  public ModulaExpression getExpression() {
-    return findNotNullChildByClass(ModulaExpression.class);
+  public List<ModulaStatement> getStatementList() {
+    return PsiTreeUtil.getChildrenOfTypeAsList(this, ModulaStatement.class);
   }
 
 }

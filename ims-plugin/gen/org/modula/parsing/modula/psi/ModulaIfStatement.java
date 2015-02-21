@@ -8,9 +8,9 @@ import com.intellij.psi.PsiElement;
 public interface ModulaIfStatement extends PsiElement {
 
   @NotNull
-  List<ModulaStatementSequence> getStatementSequenceList();
+  List<ModulaExpression> getExpressionList();
 
   @NotNull
-  List<ModulaExpression> getExpressionList();
+  List<ModulaStatement> getStatementList();
 
 }

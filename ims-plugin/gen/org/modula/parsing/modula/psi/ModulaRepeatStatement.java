@@ -8,9 +8,9 @@ import com.intellij.psi.PsiElement;
 public interface ModulaRepeatStatement extends PsiElement {
 
   @NotNull
-  ModulaStatementSequence getStatementSequence();
+  ModulaExpression getExpression();
 
   @NotNull
-  ModulaExpression getExpression();
+  List<ModulaStatement> getStatementList();
 
 }
