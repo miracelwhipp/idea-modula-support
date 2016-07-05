@@ -8,6 +8,6 @@ import com.intellij.psi.PsiElement;
 public interface ModulaPriority extends PsiElement {
 
   @NotNull
-  ModulaExpression getExpression();
+  ModulaRecoveringExpression getRecoveringExpression();
 
 }

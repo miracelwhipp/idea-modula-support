@@ -17,17 +17,17 @@
 
 root ::= CompilationUnit
 
-CompilationUnit ::= DefinitionModule | (IMPLEMENTATION)? ProgramModule {
+CompilationUnit ::=  UNSAFEGUARDED? (DefinitionModule | (IMPLEMENTATION)? ProgramModule) {
 	extends = "org.modula.parsing.psi.context.AbstractCompilationUnit"
 }
 
-ProgramModule ::= program_header END_OF_STATEMENT (import_clause)* block ident DOT {
+ProgramModule ::= program_header END_OF_STATEMENT (import_clause)* module_block ident DOT {
 	extends = "org.modula.parsing.psi.context.AbstractProgramModule"
 }
 
 program_header ::= MODULE ident (priority)?
 
-priority ::= SQUARE_BRACE_OPEN expression SQUARE_BRACE_CLOSE
+priority ::= SQUARE_BRACE_OPEN recovering_expression SQUARE_BRACE_CLOSE
 
 DefinitionModule ::= module_header END_OF_STATEMENT (import_clause)* (definitions)* END ident DOT {
 	extends = "org.modula.parsing.psi.context.AbstractDefinitionModule"
@@ -39,13 +39,6 @@ module_header ::= (UNSAFEGUARDED)? DEFINITION MODULE ident
 	elementTypeClass = "org.modula.helpers.index.stub.element.types.ModuleStubElementType"
 }
 
-//module_definition ::= (UNSAFEGUARDED)? DEFINITION MODULE module_name
-//{
-//	stubClass = "org.modula.helpers.index.stubs.ModuleStub"
-//	elementTypeClass = "org.modula.helpers.index.stub.element.types.ModuleStubElementType"
-//}
-//definitionFile ::= header import_clause* definition_clause* footer
-
 import_clause ::= module_import_clause | symbol_import_clause
 
 symbol_import_clause ::= FROM module_name IMPORT import_symbol (COMMA import_symbol)* END_OF_STATEMENT
@@ -56,36 +49,28 @@ module_import ::= module_name
 	extends = "org.modula.parsing.psi.ModuleImportStore"
 }
 
-import_symbol ::= IDENTIFIER
+import_symbol ::= ident
 {
 	extends = "org.modula.parsing.psi.SymbolImportStore"
 }
 
-definitions ::=  CONST (ConstantDeclaration END_OF_STATEMENT)* |
-				TYPE (type_definition)* |
-				VAR (VariableDeclaration END_OF_STATEMENT)* |
+definitions ::=  CONST ConstantDeclarations |
+				TYPE ((AssertStatement | type_definition) END_OF_STATEMENT)* |
+				VAR VariableDeclarations |
 				ProcedureHeading END_OF_STATEMENT
 //definition_clause ::= procedure_definition | type_definitions | constant_definitions | variable_definitions
 
-ConstantDeclaration ::= ident (TYPING_OPERATOR types)? EQUALITY_OPERATOR expression {
+ConstantDeclaration ::= ident (TYPING_OPERATOR (ARRAY OF)* types)? EQUALITY_OPERATOR (anonymous_array_constant | recovering_expression) {
 	implements = ["com.intellij.psi.PsiElement" "org.modula.helpers.index.stubs.Constant" "org.modula.helpers.index.stubs.SymbolStubPsiElement"]
 	extends = "org.modula.helpers.index.stub.delegators.ConstantStubBasedPsiElement"
 	stubClass = "org.modula.helpers.index.stubs.ConstantStub"
 	elementTypeClass = "org.modula.helpers.index.stub.element.types.ConstantStubElementType"
-//	pin = 1
-//	recoverWhile="recover_while_statement"
+	pin=3
+	recoverWhile="recover_end_of_declaration"
 }
 
-//constant_definition ::= constant_name EQUALITY_OPERATOR constant_value END_OF_STATEMENT
-//{
-//	implements = ["com.intellij.psi.PsiElement" "org.modula.helpers.index.stubs.Constant" "org.modula.helpers.index.stubs.SymbolStubPsiElement"]
-//	extends = "org.modula.helpers.index.stub.delegators.ConstantStubBasedPsiElement"
-//	stubClass = "org.modula.helpers.index.stubs.ConstantStub"
-//	elementTypeClass = "org.modula.helpers.index.stub.element.types.ConstantStubElementType"
-//}
 
-
-types ::= SimpleType | ArrayType | RecordType | SetType | PointerType | ProcedureType
+types ::= ArrayType | RecordType | SetType | PointerType | ProcedureType | SimpleType
 
 type_definition ::= ident (EQUALITY_OPERATOR types)? END_OF_STATEMENT
 {
@@ -97,12 +82,16 @@ type_definition ::= ident (EQUALITY_OPERATOR types)? END_OF_STATEMENT
 
 
 
-VariableDeclaration ::= variable_name_definition export_name_declaration? (COMMA variable_name_definition export_name_declaration?)*
-							variable_modifiers TYPING_OPERATOR types (EQUALITY_OPERATOR expression)?
-//{
-//	pin=1
-//	recoverWhile=recover_while_statement
-//}
+VariableDeclaration ::= variable_name_declaration (COMMA variable_name_declaration)*
+							variable_modifiers TYPING_OPERATOR types (EQUALITY_OPERATOR recovering_expression)? {
+	pin=5
+	recoverWhile="recover_end_of_declaration"
+}
+
+variable_name_declaration ::= variable_name_definition (export_name_declaration | variable_address_specification | variable_volatile_specification)*
+variable_address_specification ::= SQUARE_BRACE_OPEN ProcedureCall SQUARE_BRACE_CLOSE
+variable_volatile_specification ::= SQUARE_BRACE_OPEN VOLATILE SQUARE_BRACE_CLOSE
+
 
 variable_name_definition ::= ident
 {
@@ -138,11 +127,12 @@ parameterName ::= ident {
 }
 FormalType ::= (ARRAY OF)? qualident
 
-SimpleType ::= qualident | enumeration_definition | SubRangeType
-SubRangeType ::= (qualident)? SQUARE_BRACE_OPEN expression RANGE_OPERATOR expression SQUARE_BRACE_CLOSE
+SimpleType ::= enumeration_definition | SubRangeTypeOrQualIdent
+SubRangeTypeOrQualIdent ::= ((qualident)? SQUARE_BRACE_OPEN recovering_expression RANGE_OPERATOR recovering_expression SQUARE_BRACE_CLOSE) | qualident
+
 
 ArrayType ::= ARRAY array_range_type (COMMA array_range_type)* OF types
-array_range_type ::= qualident | enumeration_definition | SubRangeType | TOKEN_CHAR | TOKEN_BOOLEAN
+array_range_type ::= enumeration_definition | TOKEN_CHAR | TOKEN_BOOLEAN | SubRangeTypeOrQualIdent
 
 RecordType ::= RECORD FieldListSequence END
 FieldListSequence ::= FieldList (END_OF_STATEMENT FieldList)*
@@ -152,7 +142,7 @@ FieldList ::= (
 	)?
 variant ::= (CaseLabelList TYPING_OPERATOR FieldListSequence)?
 CaseLabelList ::= CaseLabels (COMMA CaseLabels)*
-CaseLabels ::= expression (RANGE_OPERATOR expression)*
+CaseLabels ::= case_label_expression (RANGE_OPERATOR case_label_expression)*
 
 SetType ::= (SET|PACKEDSET) OF SimpleType (BIG|SMALL)?
 //set_definition ::= (SET|PACKEDSET) OF type_specification (BIG|SMALL)?
@@ -186,7 +176,7 @@ parameter_value_modifier ::= NEAR|FAR|VALUE|NOHIGH
 
 //footer ::= END module_name DOT
 
-module_name ::= IDENTIFIER
+module_name ::= ident
 
 basic_type ::= TOKEN_INTEGER | TOKEN_CARDINAL | TOKEN_REAL | TOKEN_LONGREAL | TOKEN_COMPLEX | TOKEN_LONGCOMPLEX |
 					TOKEN_BOOLEAN | TOKEN_CHAR | TOKEN_BITSET
@@ -300,7 +290,7 @@ complex_literal ::= CMPLX OPEN_BRACE real_literal COMMA real_literal CLOSE_BRACE
 
 
 
-export_name_declaration ::= SQUARE_BRACE_OPEN (STRING_CONST_SINGLE | STRING_CONST_DOUBLE) SQUARE_BRACE_CLOSE
+export_name_declaration ::= SQUARE_BRACE_OPEN (NEAR | FAR)? (STRING_CONST_SINGLE | STRING_CONST_DOUBLE) (PUBLIC | EXTERNAL)? SQUARE_BRACE_CLOSE
 
 procedure_attributes ::= SQUARE_BRACE_OPEN attribute (COMMA attribute)* SQUARE_BRACE_CLOSE
 //TODO: identify procedure attributes
@@ -310,78 +300,98 @@ macro_declaration ::= MACRO END_OF_STATEMENT block ident
 
 block ::= (declaration)* (BEGIN StatementSequence)? END
 
-declaration ::= CONST (ConstantDeclaration END_OF_STATEMENT)* |
-				TYPE (TypeDeclaration END_OF_STATEMENT)* |
-				VAR (VariableDeclaration END_OF_STATEMENT)* |
+procedure_block ::= (declaration)* (BEGIN StatementSequence)? (EXCEPT StatementSequence)? END
+
+module_block ::= (declaration)* ExportDeclarations? (BEGIN StatementSequence)? (FINALLY StatementSequence)? END
+
+declaration ::= CONST ConstantDeclarations |
+				TYPE TypeDeclarations |
+				VAR VariableDeclarations |
+				ClassDeclaration END_OF_STATEMENT |
 				ProcedureDeclaration END_OF_STATEMENT |
 				ModuleDeclaration END_OF_STATEMENT
 
-TypeDeclaration ::= ident EQUALITY_OPERATOR types
-ProcedureDeclaration ::= ProcedureHeading END_OF_STATEMENT block ident {
+ExportDeclarations ::= EXPORTS ExportDeclaration (COMMA ExportDeclaration)*
+ExportDeclaration ::= ModuleExport | ProcedureExport
+ModuleExport ::= MODULE ident
+ProcedureExport ::= ident (INDEX expression)? (NAME string)? RESIDENT?
+
+
+//TODO: implement right now just for a little sugar
+ClassDeclaration ::= CLASS | INHERIT | OVERRIDE | REVEAL | READONLY
+
+VariableDeclarations ::= ((AssertStatement | VariableDeclaration) END_OF_STATEMENT)*
+
+TypeDeclarations ::= ((AssertStatement | TypeDeclaration) END_OF_STATEMENT)*
+
+predefined_identifier ::= SYSTEM | FUNC | ASSERT
+
+ident_assert ::= (SYSTEM DOT)? ASSERT
+
+AssertStatement ::= ident_assert OPEN_BRACE expression CLOSE_BRACE
+
+ConstantDeclarations ::= ((AssertStatement | ConstantDeclaration) END_OF_STATEMENT)*
+
+
+TypeDeclaration ::= ident EQUALITY_OPERATOR types {
+	pin=2
+	recoverWhile="recover_end_of_declaration"
+}
+
+ProcedureDeclaration ::= ProcedureHeading END_OF_STATEMENT (procedure_block | assembly_block) ident {
 	extends = "org.modula.parsing.psi.context.AbstractProcedureDeclaration"
 }
+
 ModuleDeclaration ::= MODULE ident END_OF_STATEMENT (import_clause)* (export_clause)? block ident
 export_clause ::= EXPORT (QUALIFIED)? IdentList END_OF_STATEMENT
+
+assembly_block ::= (ASSEMBLER | PUREASM) END_OF_STATEMENT declaration*  AsmStatement
+
+AsmStatement ::= ASM (AssemblerStatement)* END
+// for now just ignore assembly language. Parsing that may be implemented later
+AssemblerStatement ::= ident | ANYTHING | COMMA | TYPING_OPERATOR | string | number | CHAR_CONST | SQUARE_BRACE_OPEN |
+							SQUARE_BRACE_CLOSE | relational_operator | sum_operator | product_operator |
+							negation_operator | DOT | LOOP | END_OF_STATEMENT
 
 
 private StatementSequence ::= statement (END_OF_STATEMENT statement)*
 
-statement ::= (assignment | ProcedureCall | IfStatement | CaseStatement | WhileStatement |
-				RepeatStatement | LoopStatement | ForStatement | WithStatement | EXIT | RETURN (expression)?)? {
+statement ::= (BREAK | CONTINUE | AsmStatement | FuncStatement | assignment | ProcedureCall | IfStatement | CaseStatement | WhileStatement |
+				RepeatStatement | LoopStatement | ForStatement | WithStatement | EXIT | RETURN (recovering_expression)? )? {
 	pin = 1
 	recoverWhile = "recover_end_of_statement"
 }
 
-assignment ::= designator ASSIGNMENT_OPERATOR expression
+assignment ::= (array_slice | designator) ASSIGNMENT_OPERATOR (array_slice | expression)
 
 ProcedureCall ::= designator (ActualParameters)?
-ActualParameters ::= OPEN_BRACE (ExpList)? CLOSE_BRACE
-ExpList ::= expression (COMMA expression)*
+ActualParameters ::= OPEN_BRACE (ParameterList)? CLOSE_BRACE
+ParameterList ::= parameter (COMMA parameter)*
+parameter ::= array_slice | expression | typeName
 
-IfStatement ::= IF expression THEN StatementSequence (ELSIF expression THEN StatementSequence)* (ELSE StatementSequence)? END
-CaseStatement ::= CASE expression OF caseStatements (PIPE caseStatements)* (ELSE StatementSequence)? END
+IfStatement ::= IF recovering_expression THEN StatementSequence (ELSIF recovering_expression THEN StatementSequence)* (ELSE StatementSequence)? END
+CaseStatement ::= CASE recovering_expression OF caseStatements (PIPE caseStatements)* (ELSE StatementSequence)? END
 caseStatements ::= CaseLabelList TYPING_OPERATOR StatementSequence
-WhileStatement ::= WHILE expression DO StatementSequence END
-RepeatStatement ::= REPEAT StatementSequence UNTIL expression
+WhileStatement ::= WHILE recovering_expression DO StatementSequence END
+RepeatStatement ::= REPEAT StatementSequence UNTIL recovering_expression
 LoopStatement ::= LOOP StatementSequence END
-ForStatement ::= FOR ident ASSIGNMENT_OPERATOR expression TO expression (FOR_LOOP_INCREMENT expression)? DO StatementSequence END
+ForStatement ::= FOR ident ASSIGNMENT_OPERATOR recovering_expression TO recovering_expression (FOR_LOOP_INCREMENT recovering_expression)? DO StatementSequence END
 WithStatement ::= WITH designator DO StatementSequence END
-
+FuncStatement ::= ident_func ProcedureCall
+ident_func ::= (SYSTEM DOT)? FUNC
 
 //macro_inner_declarations ::= (macro_type_definitions | macro_variable_definitions | macro_constant_definitions)*
 
 procedure_modifiers ::= (FORWARD | macro_declaration | ASSEMBLER | PUREASM) END_OF_STATEMENT
 
-//parameters ::= OPEN_BRACE (parameter (END_OF_STATEMENT parameter)*)? CLOSE_BRACE
 
-//parameters_comma_separated ::= anonymous_parameter (COMMA anonymous_parameter)*
-
-//statements ::= statement (END_OF_STATEMENT statement)*
-
-
-recover_end_of_statement ::= !(END_OF_STATEMENT | END | PIPE | SQUARE_BRACE_CLOSE | CURLY_BRACE_CLOSE | CLOSE_BRACE | ELSE | ELSIF)
-
-//whatever ::= (expression | literal | ASSIGNMENT_OPERATOR | SQUARE_BRACE_OPEN | SQUARE_BRACE_CLOSE | DOT | COMMA |
-//				CURLY_BRACE_OPEN | CURLY_BRACE_CLOSE | THEN | ELSE | ELSIF | FOR | TO | BY | CASE |
-//				OF | WHILE | REPEAT | UNTIL | WITH | EXIT | RETURN | ANYTHING | OPEN_BRACE | CLOSE_BRACE | IDENTIFIER)*
-
-//parameter ::= (parameter_modifier)? parameter_name (COMMA parameter_name)* TYPING_OPERATOR (parameter_value_modifier)? (ARRAY OF)* type_specification
-
-//parameter_name ::= IDENTIFIER
-//procedure_name ::= IDENTIFIER
-
-//type_definitions ::= TYPE type_definition*
-//macro_type_definitions ::= TYPE macro_type_definition*
-
-
-//macro_type_definition ::= (type_alias_definition | opaque_type_definition) END_OF_STATEMENT
-
-//opaque_type_definition ::= IDENTIFIER
+recover_end_of_statement ::= !(END_OF_STATEMENT | END | PIPE | SQUARE_BRACE_CLOSE | CURLY_BRACE_CLOSE | CLOSE_BRACE | ELSE | ELSIF | UNTIL | THEN | EXCEPT | FINALLY)
+recover_end_of_expression ::= !(END_OF_STATEMENT | END | PIPE | ELSE | ELSIF | UNTIL | THEN | DO | RANGE_OPERATOR | SQUARE_BRACE_CLOSE | COMMA | CLOSE_BRACE | TO | OF | TYPING_OPERATOR | FOR_LOOP_INCREMENT)
+recover_end_of_declaration ::= !(END_OF_STATEMENT | BEGIN | PROCEDURE | VAR | CONST | TYPE | END)
 
 ignored ::= DOCUMENTATION_COMMENT COMMENT COMPILE_TIME_IF COMPILE_TIME_CONDITION GENERIC ANYTHING UNSAFEGUARDED DEFINITION
 				COMPILE_TIME_THEN COMPILE_TIME_ELSE COMPILE_TIME_INVALID_CODE COMPILE_TIME_END COMPILER_DIRECTIVE
 
-//type_alias_definition ::= type_name EQUALITY_OPERATOR type_specification
 
 enumeration_definition ::= OPEN_BRACE enumeration_member_definition
 								(COMMA enumeration_member_definition)* CLOSE_BRACE (BIG | SMALL)?
@@ -400,23 +410,42 @@ private negation_operator ::= NOT | BITWISE_NOT
 
 
 expression ::= simple_expression (relational_operator simple_expression)?
+
+recovering_expression ::= simple_expression (relational_operator simple_expression)? {
+	pin=1
+	recoverWhile="recover_end_of_expression"
+}
 simple_expression ::= (PLUS | MINUS)? term (sum_operator term)*
 term ::= factor (product_operator factor)*
-factor ::= number | string | CHAR_CONST | set_expression | arrays_range_expression | array_expression | negation_operator factor |
+factor ::= number | string | CHAR_CONST | set_expression | negation_operator factor |
 				designator (ActualParameters)? | OPEN_BRACE expression CLOSE_BRACE
 number ::= integer_literal | real_literal | complex_literal
 string ::= STRING_CONST_DOUBLE | STRING_CONST_DOUBLE_ANSI | STRING_CONST_DOUBLE_UNICODE | STRING_CONST_SINGLE |
 				STRING_CONST_SINGLE_ANSI | STRING_CONST_SINGLE_UNICODE
-set_expression ::= qualident CURLY_BRACE_OPEN (element (COMMA element)*)?  CURLY_BRACE_CLOSE
-arrays_range_expression ::= qualident SQUARE_BRACE_OPEN (element (COMMA element)*)? SQUARE_BRACE_CLOSE
-array_expression ::= CURLY_BRACE_OPEN ExpList CURLY_BRACE_CLOSE
+set_expression ::= designator CURLY_BRACE_OPEN (element (COMMA element)*)?  CURLY_BRACE_CLOSE
+array_slice ::= designator SQUARE_BRACE_OPEN (element (COMMA element)*)? SQUARE_BRACE_CLOSE
+//set_expression ::= qualident CURLY_BRACE_OPEN (element (COMMA element)*)?  CURLY_BRACE_CLOSE
+//arrays_range_expression ::= qualident SQUARE_BRACE_OPEN (element (COMMA element)*)? SQUARE_BRACE_CLOSE
+anonymous_array_constant ::= CURLY_BRACE_OPEN ParameterList CURLY_BRACE_CLOSE
 
-qualident ::= ident (DOT ident)* | basic_type | stony_brook_type
-ident ::= IDENTIFIER
+qualident ::= ident (DOT ident)* | typeName
+typeName ::= basic_type | stony_brook_type
+
+ident ::= IDENTIFIER | predefined_identifier
 
 element ::= expression (RANGE_OPERATOR expression)*
-designator ::= qualident ((DOT ident) | (SQUARE_BRACE_OPEN expression (COMMA expression)* SQUARE_BRACE_CLOSE) |
-				POINTER_DEREFERENCE_OPERATOR)*
+designator ::= ident (record_selection | array_selection | POINTER_DEREFERENCE_OPERATOR | coercion_qualifier)*
+record_selection ::= DOT ident
+array_selection ::= SQUARE_BRACE_OPEN expression (COMMA expression)* SQUARE_BRACE_CLOSE
+coercion_qualifier ::= TYPING_OPERATOR (typeName | IDENTIFIER)
+
+
+case_label_expression ::= case_simple_expression (relational_operator case_simple_expression)?
+case_simple_expression ::= (PLUS | MINUS)? case_term (sum_operator case_term)*
+case_term ::= case_factor (product_operator case_factor)*
+case_factor ::= number | string | CHAR_CONST | negation_operator case_factor |
+                 				case_designator (ActualParameters)? | OPEN_BRACE case_label_expression CLOSE_BRACE
+case_designator ::= ident (record_selection | array_selection | POINTER_DEREFERENCE_OPERATOR)*
 
 //const_expression ::= IDENTIFIER
 //const_expression ::= simple_const_expression (relational_operator simple_const_expression)?

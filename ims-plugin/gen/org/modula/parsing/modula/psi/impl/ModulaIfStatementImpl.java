@@ -24,8 +24,8 @@ public class ModulaIfStatementImpl extends ASTWrapperPsiElement implements Modul
 
   @Override
   @NotNull
-  public List<ModulaExpression> getExpressionList() {
-    return PsiTreeUtil.getChildrenOfTypeAsList(this, ModulaExpression.class);
+  public List<ModulaRecoveringExpression> getRecoveringExpressionList() {
+    return PsiTreeUtil.getChildrenOfTypeAsList(this, ModulaRecoveringExpression.class);
   }
 
   @Override

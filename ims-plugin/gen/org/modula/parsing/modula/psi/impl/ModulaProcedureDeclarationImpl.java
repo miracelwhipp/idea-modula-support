@@ -29,15 +29,21 @@ public class ModulaProcedureDeclarationImpl extends AbstractProcedureDeclaration
   }
 
   @Override
-  @NotNull
-  public ModulaBlock getBlock() {
-    return findNotNullChildByClass(ModulaBlock.class);
+  @Nullable
+  public ModulaAssemblyBlock getAssemblyBlock() {
+    return findChildByClass(ModulaAssemblyBlock.class);
   }
 
   @Override
   @NotNull
   public ModulaIdent getIdent() {
     return findNotNullChildByClass(ModulaIdent.class);
+  }
+
+  @Override
+  @Nullable
+  public ModulaProcedureBlock getProcedureBlock() {
+    return findChildByClass(ModulaProcedureBlock.class);
   }
 
 }

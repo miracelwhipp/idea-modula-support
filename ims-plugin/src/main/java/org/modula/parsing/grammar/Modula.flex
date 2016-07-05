@@ -46,7 +46,7 @@ COMMENT_CONTENT              = (([^\*\(])|(\(+[^\(\*])|(\*+[^\*\)]))*
 IDENTIFIER                   = [a-zA-Z_][a-zA-Z_0-9]*
 
 CHAR_CONST                   = [0-7]+C
-INT_CONST_BASE_16            = [0-9][0-9A-F]*[Hh]
+INT_CONST_BASE_16            = [0-9][0-9A-Fa-f]*[Hh]
 INT_CONST_BASE_8             = [0-9]+B
 INT_CONST_BASE_10            = [0-9]+
 REAL_CONST                   = [0-9]+\.[0-9]*(E[+-]?[0-9]+)?
@@ -152,45 +152,62 @@ CT_END                       = {SB_END}|{END_DIRECTIVE}
 
 
 <YYINITIAL> ARRAY { return TokenModulaTypes.ARRAY; }
+<YYINITIAL> ASM { return TokenModulaTypes.ASM; }
 <YYINITIAL> ASSEMBLER { return TokenModulaTypes.ASSEMBLER; }
-<YYINITIAL> BIG { return TokenModulaTypes.BIG; }
+<YYINITIAL> ASSERT { return TokenModulaTypes.ASSERT; }
 <YYINITIAL> BEGIN { return TokenModulaTypes.BEGIN; }
+<YYINITIAL> BIG { return TokenModulaTypes.BIG; }
+<YYINITIAL> BREAK { return TokenModulaTypes.BREAK; }
 <YYINITIAL> CASE { return TokenModulaTypes.CASE; }
+<YYINITIAL> CLASS { return TokenModulaTypes.CLASS; }
 <YYINITIAL> CMPLX { return TokenModulaTypes.CMPLX; }
 <YYINITIAL> CONST { return TokenModulaTypes.CONST; }
+<YYINITIAL> CONTINUE { return TokenModulaTypes.CONTINUE; }
 <YYINITIAL> DO { return TokenModulaTypes.DO; }
 <YYINITIAL> DEFINITION { return TokenModulaTypes.DEFINITION; }
 <YYINITIAL> DLLACCESS { return TokenModulaTypes.DLLACCESS; }
 <YYINITIAL> END { return TokenModulaTypes.END; }
 <YYINITIAL> ELSE { return TokenModulaTypes.ELSE; }
 <YYINITIAL> ELSIF { return TokenModulaTypes.ELSIF; }
+<YYINITIAL> EXCEPT { return TokenModulaTypes.EXCEPT; }
 <YYINITIAL> EXIT { return TokenModulaTypes.EXIT; }
 <YYINITIAL> EXTERNAL { return TokenModulaTypes.EXTERNAL; }
 <YYINITIAL> FAR { return TokenModulaTypes.FAR; }
+<YYINITIAL> FINALLY { return TokenModulaTypes.FINALLY; }
 <YYINITIAL> FORWARD { return TokenModulaTypes.FORWARD; }
 <YYINITIAL> FOR / [^W] { return TokenModulaTypes.FOR; }
 <YYINITIAL> FROM { return TokenModulaTypes.FROM; }
+<YYINITIAL> FUNC { return TokenModulaTypes.FUNC; }
 <YYINITIAL> GENERIC { return TokenModulaTypes.GENERIC; }
 <YYINITIAL> IF { return TokenModulaTypes.IF; }
 <YYINITIAL> IMPLEMENTATION { return TokenModulaTypes.IMPLEMENTATION; }
 <YYINITIAL> IMPORT { return TokenModulaTypes.IMPORT; }
+<YYINITIAL> INDEX { return TokenModulaTypes.INDEX; }
+<YYINITIAL> INHERIT { return TokenModulaTypes.INHERIT; }
 <YYINITIAL> INOUT { return TokenModulaTypes.INOUT; }
+<YYINITIAL> LOOP { return TokenModulaTypes.LOOP; }
 <YYINITIAL> MACRO { return TokenModulaTypes.MACRO; }
 <YYINITIAL> MODULE { return TokenModulaTypes.MODULE; }
+<YYINITIAL> NAME { return TokenModulaTypes.NAME; }
 <YYINITIAL> NOHIGH { return TokenModulaTypes.NOHIGH; }
 <YYINITIAL> OF { return TokenModulaTypes.OF; }
 <YYINITIAL> OUT { return TokenModulaTypes.OUT; }
+<YYINITIAL> OVERRIDE { return TokenModulaTypes.OVERRIDE; }
 <YYINITIAL> PACKEDSET { return TokenModulaTypes.PACKEDSET; }
 <YYINITIAL> POINTER { return TokenModulaTypes.POINTER; }
 <YYINITIAL> PROCEDURE { return TokenModulaTypes.PROCEDURE; }
 <YYINITIAL> PUBLIC { return TokenModulaTypes.PUBLIC; }
 <YYINITIAL> PUREASM { return TokenModulaTypes.PUREASM; }
 <YYINITIAL> QUALIFIED { return TokenModulaTypes.QUALIFIED; }
+<YYINITIAL> READONLY { return TokenModulaTypes.READONLY; }
 <YYINITIAL> RECORD { return TokenModulaTypes.RECORD; }
 <YYINITIAL> REPEAT { return TokenModulaTypes.REPEAT; }
+<YYINITIAL> RESIDENT { return TokenModulaTypes.RESIDENT; }
 <YYINITIAL> RETURN { return TokenModulaTypes.RETURN; }
+<YYINITIAL> REVEAL { return TokenModulaTypes.REVEAL; }
 <YYINITIAL> SET { return TokenModulaTypes.SET; }
 <YYINITIAL> SMALL { return TokenModulaTypes.SMALL; }
+<YYINITIAL> SYSTEM { return TokenModulaTypes.SYSTEM; }
 <YYINITIAL> THEN { return TokenModulaTypes.THEN; }
 <YYINITIAL> TO { return TokenModulaTypes.TO; }
 <YYINITIAL> TYPE { return TokenModulaTypes.TYPE; }

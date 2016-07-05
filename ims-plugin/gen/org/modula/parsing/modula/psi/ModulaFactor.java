@@ -11,12 +11,6 @@ public interface ModulaFactor extends PsiElement {
   ModulaActualParameters getActualParameters();
 
   @Nullable
-  ModulaArrayExpression getArrayExpression();
-
-  @Nullable
-  ModulaArraysRangeExpression getArraysRangeExpression();
-
-  @Nullable
   ModulaDesignator getDesignator();
 
   @Nullable

@@ -11,7 +11,7 @@ public interface ModulaCaseStatement extends PsiElement {
   List<ModulaCaseStatements> getCaseStatementsList();
 
   @NotNull
-  ModulaExpression getExpression();
+  ModulaRecoveringExpression getRecoveringExpression();
 
   @NotNull
   List<ModulaStatement> getStatementList();

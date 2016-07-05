@@ -24,6 +24,12 @@ public class ModulaStatementImpl extends ASTWrapperPsiElement implements ModulaS
 
   @Override
   @Nullable
+  public ModulaAsmStatement getAsmStatement() {
+    return findChildByClass(ModulaAsmStatement.class);
+  }
+
+  @Override
+  @Nullable
   public ModulaCaseStatement getCaseStatement() {
     return findChildByClass(ModulaCaseStatement.class);
   }
@@ -32,6 +38,12 @@ public class ModulaStatementImpl extends ASTWrapperPsiElement implements ModulaS
   @Nullable
   public ModulaForStatement getForStatement() {
     return findChildByClass(ModulaForStatement.class);
+  }
+
+  @Override
+  @Nullable
+  public ModulaFuncStatement getFuncStatement() {
+    return findChildByClass(ModulaFuncStatement.class);
   }
 
   @Override
@@ -78,8 +90,8 @@ public class ModulaStatementImpl extends ASTWrapperPsiElement implements ModulaS
 
   @Override
   @Nullable
-  public ModulaExpression getExpression() {
-    return findChildByClass(ModulaExpression.class);
+  public ModulaRecoveringExpression getRecoveringExpression() {
+    return findChildByClass(ModulaRecoveringExpression.class);
   }
 
 }

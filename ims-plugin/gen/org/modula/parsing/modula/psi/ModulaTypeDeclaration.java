@@ -10,7 +10,7 @@ public interface ModulaTypeDeclaration extends PsiElement {
   @NotNull
   ModulaIdent getIdent();
 
-  @NotNull
+  @Nullable
   ModulaTypes getTypes();
 
 }

@@ -8,13 +8,16 @@ import com.intellij.psi.PsiElement;
 public interface ModulaDefinitions extends PsiElement {
 
   @NotNull
-  List<ModulaConstantDeclaration> getConstantDeclarationList();
+  List<ModulaAssertStatement> getAssertStatementList();
+
+  @Nullable
+  ModulaConstantDeclarations getConstantDeclarations();
 
   @Nullable
   ModulaProcedureHeading getProcedureHeading();
 
-  @NotNull
-  List<ModulaVariableDeclaration> getVariableDeclarationList();
+  @Nullable
+  ModulaVariableDeclarations getVariableDeclarations();
 
   @NotNull
   List<ModulaTypeDefinition> getTypeDefinitionList();

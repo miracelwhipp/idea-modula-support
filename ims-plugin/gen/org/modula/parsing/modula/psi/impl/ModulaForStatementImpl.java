@@ -24,14 +24,14 @@ public class ModulaForStatementImpl extends ASTWrapperPsiElement implements Modu
 
   @Override
   @NotNull
-  public List<ModulaExpression> getExpressionList() {
-    return PsiTreeUtil.getChildrenOfTypeAsList(this, ModulaExpression.class);
+  public ModulaIdent getIdent() {
+    return findNotNullChildByClass(ModulaIdent.class);
   }
 
   @Override
   @NotNull
-  public ModulaIdent getIdent() {
-    return findNotNullChildByClass(ModulaIdent.class);
+  public List<ModulaRecoveringExpression> getRecoveringExpressionList() {
+    return PsiTreeUtil.getChildrenOfTypeAsList(this, ModulaRecoveringExpression.class);
   }
 
   @Override

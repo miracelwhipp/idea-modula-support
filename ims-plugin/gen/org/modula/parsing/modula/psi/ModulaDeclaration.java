@@ -7,8 +7,11 @@ import com.intellij.psi.PsiElement;
 
 public interface ModulaDeclaration extends PsiElement {
 
-  @NotNull
-  List<ModulaConstantDeclaration> getConstantDeclarationList();
+  @Nullable
+  ModulaClassDeclaration getClassDeclaration();
+
+  @Nullable
+  ModulaConstantDeclarations getConstantDeclarations();
 
   @Nullable
   ModulaModuleDeclaration getModuleDeclaration();
@@ -16,10 +19,10 @@ public interface ModulaDeclaration extends PsiElement {
   @Nullable
   ModulaProcedureDeclaration getProcedureDeclaration();
 
-  @NotNull
-  List<ModulaTypeDeclaration> getTypeDeclarationList();
+  @Nullable
+  ModulaTypeDeclarations getTypeDeclarations();
 
-  @NotNull
-  List<ModulaVariableDeclaration> getVariableDeclarationList();
+  @Nullable
+  ModulaVariableDeclarations getVariableDeclarations();
 
 }

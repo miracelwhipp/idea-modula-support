@@ -8,12 +8,9 @@ import com.intellij.psi.PsiElement;
 public interface ModulaArrayRangeType extends PsiElement {
 
   @Nullable
-  ModulaSubRangeType getSubRangeType();
+  ModulaSubRangeTypeOrQualIdent getSubRangeTypeOrQualIdent();
 
   @Nullable
   ModulaEnumerationDefinition getEnumerationDefinition();
-
-  @Nullable
-  ModulaQualident getQualident();
 
 }

@@ -7,13 +7,10 @@ import com.intellij.psi.PsiElement;
 
 public interface ModulaQualident extends PsiElement {
 
-  @Nullable
-  ModulaBasicType getBasicType();
-
   @NotNull
   List<ModulaIdent> getIdentList();
 
   @Nullable
-  ModulaStonyBrookType getStonyBrookType();
+  ModulaTypeName getTypeName();
 
 }

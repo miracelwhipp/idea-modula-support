@@ -24,8 +24,8 @@ public class ModulaActualParametersImpl extends ASTWrapperPsiElement implements 
 
   @Override
   @Nullable
-  public ModulaExpList getExpList() {
-    return findChildByClass(ModulaExpList.class);
+  public ModulaParameterList getParameterList() {
+    return findChildByClass(ModulaParameterList.class);
   }
 
 }

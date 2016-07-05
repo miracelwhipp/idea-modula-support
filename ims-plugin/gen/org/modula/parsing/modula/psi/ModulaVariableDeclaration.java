@@ -7,11 +7,8 @@ import com.intellij.psi.PsiElement;
 
 public interface ModulaVariableDeclaration extends PsiElement {
 
-  @NotNull
-  List<ModulaExportNameDeclaration> getExportNameDeclarationList();
-
   @Nullable
-  ModulaExpression getExpression();
+  ModulaRecoveringExpression getRecoveringExpression();
 
   @NotNull
   ModulaTypes getTypes();
@@ -20,6 +17,6 @@ public interface ModulaVariableDeclaration extends PsiElement {
   ModulaVariableModifiers getVariableModifiers();
 
   @NotNull
-  List<ModulaVariableNameDefinition> getVariableNameDefinitionList();
+  List<ModulaVariableNameDeclaration> getVariableNameDeclarationList();
 
 }

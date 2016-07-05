@@ -10,10 +10,13 @@ public interface ModulaProcedureDeclaration extends PsiElement {
   @NotNull
   ModulaProcedureHeading getProcedureHeading();
 
-  @NotNull
-  ModulaBlock getBlock();
+  @Nullable
+  ModulaAssemblyBlock getAssemblyBlock();
 
   @NotNull
   ModulaIdent getIdent();
+
+  @Nullable
+  ModulaProcedureBlock getProcedureBlock();
 
 }

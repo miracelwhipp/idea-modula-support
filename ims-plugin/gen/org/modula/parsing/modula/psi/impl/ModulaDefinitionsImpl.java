@@ -24,8 +24,14 @@ public class ModulaDefinitionsImpl extends ASTWrapperPsiElement implements Modul
 
   @Override
   @NotNull
-  public List<ModulaConstantDeclaration> getConstantDeclarationList() {
-    return PsiTreeUtil.getChildrenOfTypeAsList(this, ModulaConstantDeclaration.class);
+  public List<ModulaAssertStatement> getAssertStatementList() {
+    return PsiTreeUtil.getChildrenOfTypeAsList(this, ModulaAssertStatement.class);
+  }
+
+  @Override
+  @Nullable
+  public ModulaConstantDeclarations getConstantDeclarations() {
+    return findChildByClass(ModulaConstantDeclarations.class);
   }
 
   @Override
@@ -35,9 +41,9 @@ public class ModulaDefinitionsImpl extends ASTWrapperPsiElement implements Modul
   }
 
   @Override
-  @NotNull
-  public List<ModulaVariableDeclaration> getVariableDeclarationList() {
-    return PsiTreeUtil.getChildrenOfTypeAsList(this, ModulaVariableDeclaration.class);
+  @Nullable
+  public ModulaVariableDeclarations getVariableDeclarations() {
+    return findChildByClass(ModulaVariableDeclarations.class);
   }
 
   @Override

@@ -8,12 +8,15 @@ import com.intellij.psi.PsiElement;
 public interface ModulaDesignator extends PsiElement {
 
   @NotNull
-  List<ModulaExpression> getExpressionList();
+  List<ModulaArraySelection> getArraySelectionList();
 
   @NotNull
-  List<ModulaIdent> getIdentList();
+  List<ModulaCoercionQualifier> getCoercionQualifierList();
 
   @NotNull
-  ModulaQualident getQualident();
+  ModulaIdent getIdent();
+
+  @NotNull
+  List<ModulaRecordSelection> getRecordSelectionList();
 
 }

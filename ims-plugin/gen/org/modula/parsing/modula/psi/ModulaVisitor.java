@@ -22,6 +22,18 @@ public class ModulaVisitor extends PsiElementVisitor {
     visitPsiElement(o);
   }
 
+  public void visitAsmStatement(@NotNull ModulaAsmStatement o) {
+    visitPsiElement(o);
+  }
+
+  public void visitAssemblerStatement(@NotNull ModulaAssemblerStatement o) {
+    visitPsiElement(o);
+  }
+
+  public void visitAssertStatement(@NotNull ModulaAssertStatement o) {
+    visitPsiElement(o);
+  }
+
   public void visitCaseLabelList(@NotNull ModulaCaseLabelList o) {
     visitPsiElement(o);
   }
@@ -31,6 +43,10 @@ public class ModulaVisitor extends PsiElementVisitor {
   }
 
   public void visitCaseStatement(@NotNull ModulaCaseStatement o) {
+    visitPsiElement(o);
+  }
+
+  public void visitClassDeclaration(@NotNull ModulaClassDeclaration o) {
     visitPsiElement(o);
   }
 
@@ -44,11 +60,19 @@ public class ModulaVisitor extends PsiElementVisitor {
     // visitSymbolStubPsiElement(o);
   }
 
+  public void visitConstantDeclarations(@NotNull ModulaConstantDeclarations o) {
+    visitPsiElement(o);
+  }
+
   public void visitDefinitionModule(@NotNull ModulaDefinitionModule o) {
     visitPsiElement(o);
   }
 
-  public void visitExpList(@NotNull ModulaExpList o) {
+  public void visitExportDeclaration(@NotNull ModulaExportDeclaration o) {
+    visitPsiElement(o);
+  }
+
+  public void visitExportDeclarations(@NotNull ModulaExportDeclarations o) {
     visitPsiElement(o);
   }
 
@@ -80,6 +104,10 @@ public class ModulaVisitor extends PsiElementVisitor {
     visitPsiElement(o);
   }
 
+  public void visitFuncStatement(@NotNull ModulaFuncStatement o) {
+    visitPsiElement(o);
+  }
+
   public void visitIdentList(@NotNull ModulaIdentList o) {
     visitPsiElement(o);
   }
@@ -96,7 +124,15 @@ public class ModulaVisitor extends PsiElementVisitor {
     visitPsiElement(o);
   }
 
+  public void visitModuleExport(@NotNull ModulaModuleExport o) {
+    visitPsiElement(o);
+  }
+
   public void visitParameterIdentList(@NotNull ModulaParameterIdentList o) {
+    visitPsiElement(o);
+  }
+
+  public void visitParameterList(@NotNull ModulaParameterList o) {
     visitPsiElement(o);
   }
 
@@ -109,6 +145,10 @@ public class ModulaVisitor extends PsiElementVisitor {
   }
 
   public void visitProcedureDeclaration(@NotNull ModulaProcedureDeclaration o) {
+    visitPsiElement(o);
+  }
+
+  public void visitProcedureExport(@NotNull ModulaProcedureExport o) {
     visitPsiElement(o);
   }
 
@@ -142,7 +182,7 @@ public class ModulaVisitor extends PsiElementVisitor {
     visitPsiElement(o);
   }
 
-  public void visitSubRangeType(@NotNull ModulaSubRangeType o) {
+  public void visitSubRangeTypeOrQualIdent(@NotNull ModulaSubRangeTypeOrQualIdent o) {
     visitPsiElement(o);
   }
 
@@ -150,7 +190,15 @@ public class ModulaVisitor extends PsiElementVisitor {
     visitPsiElement(o);
   }
 
+  public void visitTypeDeclarations(@NotNull ModulaTypeDeclarations o) {
+    visitPsiElement(o);
+  }
+
   public void visitVariableDeclaration(@NotNull ModulaVariableDeclaration o) {
+    visitPsiElement(o);
+  }
+
+  public void visitVariableDeclarations(@NotNull ModulaVariableDeclarations o) {
     visitPsiElement(o);
   }
 
@@ -162,7 +210,7 @@ public class ModulaVisitor extends PsiElementVisitor {
     visitPsiElement(o);
   }
 
-  public void visitArrayExpression(@NotNull ModulaArrayExpression o) {
+  public void visitAnonymousArrayConstant(@NotNull ModulaAnonymousArrayConstant o) {
     visitPsiElement(o);
   }
 
@@ -170,7 +218,15 @@ public class ModulaVisitor extends PsiElementVisitor {
     visitPsiElement(o);
   }
 
-  public void visitArraysRangeExpression(@NotNull ModulaArraysRangeExpression o) {
+  public void visitArraySelection(@NotNull ModulaArraySelection o) {
+    visitPsiElement(o);
+  }
+
+  public void visitArraySlice(@NotNull ModulaArraySlice o) {
+    visitPsiElement(o);
+  }
+
+  public void visitAssemblyBlock(@NotNull ModulaAssemblyBlock o) {
     visitPsiElement(o);
   }
 
@@ -191,6 +247,30 @@ public class ModulaVisitor extends PsiElementVisitor {
   }
 
   public void visitCaseStatements(@NotNull ModulaCaseStatements o) {
+    visitPsiElement(o);
+  }
+
+  public void visitCaseDesignator(@NotNull ModulaCaseDesignator o) {
+    visitPsiElement(o);
+  }
+
+  public void visitCaseFactor(@NotNull ModulaCaseFactor o) {
+    visitPsiElement(o);
+  }
+
+  public void visitCaseLabelExpression(@NotNull ModulaCaseLabelExpression o) {
+    visitPsiElement(o);
+  }
+
+  public void visitCaseSimpleExpression(@NotNull ModulaCaseSimpleExpression o) {
+    visitPsiElement(o);
+  }
+
+  public void visitCaseTerm(@NotNull ModulaCaseTerm o) {
+    visitPsiElement(o);
+  }
+
+  public void visitCoercionQualifier(@NotNull ModulaCoercionQualifier o) {
     visitPsiElement(o);
   }
 
@@ -244,6 +324,14 @@ public class ModulaVisitor extends PsiElementVisitor {
     visitPsiElement(o);
   }
 
+  public void visitIdentAssert(@NotNull ModulaIdentAssert o) {
+    visitPsiElement(o);
+  }
+
+  public void visitIdentFunc(@NotNull ModulaIdentFunc o) {
+    visitPsiElement(o);
+  }
+
   public void visitIgnored(@NotNull ModulaIgnored o) {
     visitPsiElement(o);
   }
@@ -261,6 +349,10 @@ public class ModulaVisitor extends PsiElementVisitor {
   }
 
   public void visitMacroDeclaration(@NotNull ModulaMacroDeclaration o) {
+    visitPsiElement(o);
+  }
+
+  public void visitModuleBlock(@NotNull ModulaModuleBlock o) {
     visitPsiElement(o);
   }
 
@@ -284,6 +376,10 @@ public class ModulaVisitor extends PsiElementVisitor {
     visitPsiElement(o);
   }
 
+  public void visitParameter(@NotNull ModulaParameter o) {
+    visitPsiElement(o);
+  }
+
   public void visitParameterName(@NotNull ModulaParameterName o) {
     visitPsiElement(o);
     // visitParameter(o);
@@ -298,11 +394,19 @@ public class ModulaVisitor extends PsiElementVisitor {
     visitPsiElement(o);
   }
 
+  public void visitPredefinedIdentifier(@NotNull ModulaPredefinedIdentifier o) {
+    visitPsiElement(o);
+  }
+
   public void visitPriority(@NotNull ModulaPriority o) {
     visitPsiElement(o);
   }
 
   public void visitProcedureAttributes(@NotNull ModulaProcedureAttributes o) {
+    visitPsiElement(o);
+  }
+
+  public void visitProcedureBlock(@NotNull ModulaProcedureBlock o) {
     visitPsiElement(o);
   }
 
@@ -322,11 +426,27 @@ public class ModulaVisitor extends PsiElementVisitor {
     visitPsiElement(o);
   }
 
+  public void visitRecordSelection(@NotNull ModulaRecordSelection o) {
+    visitPsiElement(o);
+  }
+
+  public void visitRecoverEndOfDeclaration(@NotNull ModulaRecoverEndOfDeclaration o) {
+    visitPsiElement(o);
+  }
+
+  public void visitRecoverEndOfExpression(@NotNull ModulaRecoverEndOfExpression o) {
+    visitPsiElement(o);
+  }
+
   public void visitRecoverEndOfStatement(@NotNull ModulaRecoverEndOfStatement o) {
     visitPsiElement(o);
   }
 
   public void visitRecoverWhileStatement(@NotNull ModulaRecoverWhileStatement o) {
+    visitPsiElement(o);
+  }
+
+  public void visitRecoveringExpression(@NotNull ModulaRecoveringExpression o) {
     visitPsiElement(o);
   }
 
@@ -358,6 +478,10 @@ public class ModulaVisitor extends PsiElementVisitor {
     visitPsiElement(o);
   }
 
+  public void visitTypeName(@NotNull ModulaTypeName o) {
+    visitPsiElement(o);
+  }
+
   public void visitTypeDefinition(@NotNull ModulaTypeDefinition o) {
     visitPsiElement(o);
     // visitType(o);
@@ -368,7 +492,15 @@ public class ModulaVisitor extends PsiElementVisitor {
     visitPsiElement(o);
   }
 
+  public void visitVariableAddressSpecification(@NotNull ModulaVariableAddressSpecification o) {
+    visitPsiElement(o);
+  }
+
   public void visitVariableModifiers(@NotNull ModulaVariableModifiers o) {
+    visitPsiElement(o);
+  }
+
+  public void visitVariableNameDeclaration(@NotNull ModulaVariableNameDeclaration o) {
     visitPsiElement(o);
   }
 
@@ -376,6 +508,10 @@ public class ModulaVisitor extends PsiElementVisitor {
     visitPsiElement(o);
     // visitVariable(o);
     // visitSymbolStubPsiElement(o);
+  }
+
+  public void visitVariableVolatileSpecification(@NotNull ModulaVariableVolatileSpecification o) {
+    visitPsiElement(o);
   }
 
   public void visitVariant(@NotNull ModulaVariant o) {

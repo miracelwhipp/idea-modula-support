@@ -24,8 +24,8 @@ public class ModulaCaseLabelsImpl extends ASTWrapperPsiElement implements Modula
 
   @Override
   @NotNull
-  public List<ModulaExpression> getExpressionList() {
-    return PsiTreeUtil.getChildrenOfTypeAsList(this, ModulaExpression.class);
+  public List<ModulaCaseLabelExpression> getCaseLabelExpressionList() {
+    return PsiTreeUtil.getChildrenOfTypeAsList(this, ModulaCaseLabelExpression.class);
   }
 
 }

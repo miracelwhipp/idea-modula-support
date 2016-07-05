@@ -23,12 +23,6 @@ public class ModulaQualidentImpl extends ASTWrapperPsiElement implements ModulaQ
   }
 
   @Override
-  @Nullable
-  public ModulaBasicType getBasicType() {
-    return findChildByClass(ModulaBasicType.class);
-  }
-
-  @Override
   @NotNull
   public List<ModulaIdent> getIdentList() {
     return PsiTreeUtil.getChildrenOfTypeAsList(this, ModulaIdent.class);
@@ -36,8 +30,8 @@ public class ModulaQualidentImpl extends ASTWrapperPsiElement implements ModulaQ
 
   @Override
   @Nullable
-  public ModulaStonyBrookType getStonyBrookType() {
-    return findChildByClass(ModulaStonyBrookType.class);
+  public ModulaTypeName getTypeName() {
+    return findChildByClass(ModulaTypeName.class);
   }
 
 }

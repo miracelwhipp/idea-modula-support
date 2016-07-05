@@ -24,14 +24,14 @@ public class ModulaSetExpressionImpl extends ASTWrapperPsiElement implements Mod
 
   @Override
   @NotNull
-  public List<ModulaElement> getElementList() {
-    return PsiTreeUtil.getChildrenOfTypeAsList(this, ModulaElement.class);
+  public ModulaDesignator getDesignator() {
+    return findNotNullChildByClass(ModulaDesignator.class);
   }
 
   @Override
   @NotNull
-  public ModulaQualident getQualident() {
-    return findNotNullChildByClass(ModulaQualident.class);
+  public List<ModulaElement> getElementList() {
+    return PsiTreeUtil.getChildrenOfTypeAsList(this, ModulaElement.class);
   }
 
 }

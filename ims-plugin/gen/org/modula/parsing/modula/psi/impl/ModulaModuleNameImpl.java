@@ -22,4 +22,10 @@ public class ModulaModuleNameImpl extends ASTWrapperPsiElement implements Modula
     else super.accept(visitor);
   }
 
+  @Override
+  @NotNull
+  public ModulaIdent getIdent() {
+    return findNotNullChildByClass(ModulaIdent.class);
+  }
+
 }

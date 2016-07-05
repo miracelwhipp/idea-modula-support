@@ -49,6 +49,14 @@ public class ModulaSyntaxHighlighter extends SyntaxHighlighterBase {
 			TextAttributesKey.createTextAttributesKey("INVALID_COMPILE_CONDITIONAL", DefaultLanguageHighlighterColors.BLOCK_COMMENT)
 	};
 
+	public static final TextAttributesKey[] STRING_LITERAL = new TextAttributesKey[]{
+			TextAttributesKey.createTextAttributesKey("STRING_LITERAL", DefaultLanguageHighlighterColors.STRING)
+	};
+
+	public static final TextAttributesKey[] NUMERICAL_LITERAL = new TextAttributesKey[]{
+			TextAttributesKey.createTextAttributesKey("NUMERICAL_LITERAL", DefaultLanguageHighlighterColors.NUMBER)
+	};
+
 	public static final Collection<IElementType> KEYWORDS =
 			Arrays.asList(TokenModulaTypes.DEFINITION, TokenModulaTypes.IMPLEMENTATION, TokenModulaTypes.MODULE, TokenModulaTypes.ARRAY, TokenModulaTypes.GENERIC,
 					TokenModulaTypes.UNSAFEGUARDED, TokenModulaTypes.END, TokenModulaTypes.TYPE, TokenModulaTypes.FROM, TokenModulaTypes.IMPORT,
@@ -62,7 +70,8 @@ public class ModulaSyntaxHighlighter extends SyntaxHighlighterBase {
 					TokenModulaTypes.COMPILE_TIME_ELSE, TokenModulaTypes.COMPILE_TIME_END, TokenModulaTypes.IF, TokenModulaTypes.THEN,
 					TokenModulaTypes.ELSIF, TokenModulaTypes.FOR, TokenModulaTypes.WHILE, TokenModulaTypes.REPEAT, TokenModulaTypes.UNTIL,
 					TokenModulaTypes.RETURN, TokenModulaTypes.WITH, TokenModulaTypes.EXIT, TokenModulaTypes.LOOP, TokenModulaTypes.DO,
-					TokenModulaTypes.BEGIN
+					TokenModulaTypes.BEGIN, TokenModulaTypes.AND, TokenModulaTypes.OR, TokenModulaTypes.NOT, TokenModulaTypes.EXCEPT,
+					TokenModulaTypes.FINALLY, TokenModulaTypes.FOR_LOOP_INCREMENT
 			);
 
 	public static final Collection<IElementType> PREDEFINED_SYMBOLS =
@@ -75,6 +84,17 @@ public class ModulaSyntaxHighlighter extends SyntaxHighlighterBase {
 					TokenModulaTypes.TOKEN_LONGCARD, TokenModulaTypes.TOKEN_ACHAR, TokenModulaTypes.TOKEN_UCHAR,
 					TokenModulaTypes.TOKEN_BYTEBOOL, TokenModulaTypes.TOKEN_WORDBOOL, TokenModulaTypes.TOKEN_DWORDBOOL,
 					TokenModulaTypes.TOKEN_BITSET16, TokenModulaTypes.TOKEN_BITSET32
+			);
+
+	public static final Collection<IElementType> STRING_LITERALS =
+			Arrays.asList(TokenModulaTypes.STRING_CONST_DOUBLE, TokenModulaTypes.STRING_CONST_DOUBLE_ANSI,
+					TokenModulaTypes.STRING_CONST_DOUBLE_UNICODE, TokenModulaTypes.STRING_CONST_SINGLE,
+					TokenModulaTypes.STRING_CONST_SINGLE_ANSI, TokenModulaTypes.STRING_CONST_SINGLE_UNICODE
+			);
+
+	public static final Collection<IElementType> NUMERICAL_LITERALS =
+			Arrays.asList(TokenModulaTypes.CHAR_CONST, TokenModulaTypes.INT_CONST_BASE_10,
+					TokenModulaTypes.INT_CONST_BASE_8, TokenModulaTypes.INT_CONST_BASE_16, TokenModulaTypes.REAL_CONST
 			);
 
 
@@ -102,6 +122,10 @@ public class ModulaSyntaxHighlighter extends SyntaxHighlighterBase {
 			return IDENTIFIER;
 		} else if (tokenType.equals(TokenModulaTypes.COMPILE_TIME_INVALID_CODE)) {
 			return INVALID_COMPILE_CONDITIONAL;
+		} else if (STRING_LITERALS.contains(tokenType)) {
+			return STRING_LITERAL;
+		} else if (NUMERICAL_LITERALS.contains(tokenType)) {
+			return NUMERICAL_LITERAL;
 		} else {
 			return EMPTY;
 		}

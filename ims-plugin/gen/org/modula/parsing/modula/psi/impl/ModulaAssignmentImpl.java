@@ -24,14 +24,20 @@ public class ModulaAssignmentImpl extends ASTWrapperPsiElement implements Modula
 
   @Override
   @NotNull
-  public ModulaDesignator getDesignator() {
-    return findNotNullChildByClass(ModulaDesignator.class);
+  public List<ModulaArraySlice> getArraySliceList() {
+    return PsiTreeUtil.getChildrenOfTypeAsList(this, ModulaArraySlice.class);
   }
 
   @Override
-  @NotNull
+  @Nullable
+  public ModulaDesignator getDesignator() {
+    return findChildByClass(ModulaDesignator.class);
+  }
+
+  @Override
+  @Nullable
   public ModulaExpression getExpression() {
-    return findNotNullChildByClass(ModulaExpression.class);
+    return findChildByClass(ModulaExpression.class);
   }
 
 }

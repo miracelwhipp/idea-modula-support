@@ -24,20 +24,14 @@ public class ModulaSimpleTypeImpl extends ASTWrapperPsiElement implements Modula
 
   @Override
   @Nullable
-  public ModulaSubRangeType getSubRangeType() {
-    return findChildByClass(ModulaSubRangeType.class);
+  public ModulaSubRangeTypeOrQualIdent getSubRangeTypeOrQualIdent() {
+    return findChildByClass(ModulaSubRangeTypeOrQualIdent.class);
   }
 
   @Override
   @Nullable
   public ModulaEnumerationDefinition getEnumerationDefinition() {
     return findChildByClass(ModulaEnumerationDefinition.class);
-  }
-
-  @Override
-  @Nullable
-  public ModulaQualident getQualident() {
-    return findChildByClass(ModulaQualident.class);
   }
 
 }

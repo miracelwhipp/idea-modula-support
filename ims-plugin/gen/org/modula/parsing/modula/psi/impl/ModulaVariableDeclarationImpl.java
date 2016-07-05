@@ -23,15 +23,9 @@ public class ModulaVariableDeclarationImpl extends ASTWrapperPsiElement implemen
   }
 
   @Override
-  @NotNull
-  public List<ModulaExportNameDeclaration> getExportNameDeclarationList() {
-    return PsiTreeUtil.getChildrenOfTypeAsList(this, ModulaExportNameDeclaration.class);
-  }
-
-  @Override
   @Nullable
-  public ModulaExpression getExpression() {
-    return findChildByClass(ModulaExpression.class);
+  public ModulaRecoveringExpression getRecoveringExpression() {
+    return findChildByClass(ModulaRecoveringExpression.class);
   }
 
   @Override
@@ -48,8 +42,8 @@ public class ModulaVariableDeclarationImpl extends ASTWrapperPsiElement implemen
 
   @Override
   @NotNull
-  public List<ModulaVariableNameDefinition> getVariableNameDefinitionList() {
-    return PsiTreeUtil.getChildrenOfTypeAsList(this, ModulaVariableNameDefinition.class);
+  public List<ModulaVariableNameDeclaration> getVariableNameDeclarationList() {
+    return PsiTreeUtil.getChildrenOfTypeAsList(this, ModulaVariableNameDeclaration.class);
   }
 
 }

@@ -24,12 +24,6 @@ public class ModulaProgramModuleImpl extends AbstractProgramModule implements Mo
 
   @Override
   @NotNull
-  public ModulaBlock getBlock() {
-    return findNotNullChildByClass(ModulaBlock.class);
-  }
-
-  @Override
-  @NotNull
   public ModulaIdent getIdent() {
     return findNotNullChildByClass(ModulaIdent.class);
   }
@@ -38,6 +32,12 @@ public class ModulaProgramModuleImpl extends AbstractProgramModule implements Mo
   @NotNull
   public List<ModulaImportClause> getImportClauseList() {
     return PsiTreeUtil.getChildrenOfTypeAsList(this, ModulaImportClause.class);
+  }
+
+  @Override
+  @NotNull
+  public ModulaModuleBlock getModuleBlock() {
+    return findNotNullChildByClass(ModulaModuleBlock.class);
   }
 
   @Override

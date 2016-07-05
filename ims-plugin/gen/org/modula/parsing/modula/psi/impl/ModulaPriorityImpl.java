@@ -24,8 +24,8 @@ public class ModulaPriorityImpl extends ASTWrapperPsiElement implements ModulaPr
 
   @Override
   @NotNull
-  public ModulaExpression getExpression() {
-    return findNotNullChildByClass(ModulaExpression.class);
+  public ModulaRecoveringExpression getRecoveringExpression() {
+    return findNotNullChildByClass(ModulaRecoveringExpression.class);
   }
 
 }

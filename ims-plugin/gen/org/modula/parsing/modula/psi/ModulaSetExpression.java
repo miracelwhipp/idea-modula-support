@@ -8,9 +8,9 @@ import com.intellij.psi.PsiElement;
 public interface ModulaSetExpression extends PsiElement {
 
   @NotNull
-  List<ModulaElement> getElementList();
+  ModulaDesignator getDesignator();
 
   @NotNull
-  ModulaQualident getQualident();
+  List<ModulaElement> getElementList();
 
 }

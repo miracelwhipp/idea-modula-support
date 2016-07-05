@@ -8,13 +8,13 @@ import com.intellij.psi.PsiElement;
 public interface ModulaProgramModule extends PsiElement {
 
   @NotNull
-  ModulaBlock getBlock();
-
-  @NotNull
   ModulaIdent getIdent();
 
   @NotNull
   List<ModulaImportClause> getImportClauseList();
+
+  @NotNull
+  ModulaModuleBlock getModuleBlock();
 
   @NotNull
   ModulaProgramHeader getProgramHeader();

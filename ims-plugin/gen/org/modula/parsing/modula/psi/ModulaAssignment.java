@@ -8,9 +8,12 @@ import com.intellij.psi.PsiElement;
 public interface ModulaAssignment extends PsiElement {
 
   @NotNull
+  List<ModulaArraySlice> getArraySliceList();
+
+  @Nullable
   ModulaDesignator getDesignator();
 
-  @NotNull
+  @Nullable
   ModulaExpression getExpression();
 
 }

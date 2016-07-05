@@ -7,4 +7,7 @@ import com.intellij.psi.PsiElement;
 
 public interface ModulaIdent extends PsiElement {
 
+  @Nullable
+  ModulaPredefinedIdentifier getPredefinedIdentifier();
+
 }

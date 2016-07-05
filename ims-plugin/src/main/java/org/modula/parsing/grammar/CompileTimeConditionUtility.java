@@ -23,6 +23,10 @@ import org.modula.parsing.psi.CompileTimeTokenType;
  */
 public final class CompileTimeConditionUtility {
 
+	public static final String TRUE = "TRUE".intern();
+	public static final String FALSE = "FALSE".intern();
+	public static final String WINDOWS = "Windows".intern();
+
 	private CompileTimeConditionUtility() {
 	}
 
@@ -36,12 +40,19 @@ public final class CompileTimeConditionUtility {
 			throw new ModulaParseException("cannot evaluate null");
 		}
 
-		if (text.equals("TRUE")) {
+		String internText = text.intern();
+
+		if (internText.equals(TRUE)) {
 			return true;
 		}
 
-		if (text.equals("FALSE")) {
+		if (internText.equals(FALSE)) {
 			return false;
+		}
+
+		//just to have one os working. Later the compile target os should be configurable in project properties
+		if (internText.equals(WINDOWS)) {
+			return true;
 		}
 
 		return text.trim().length() % 2 == 0;

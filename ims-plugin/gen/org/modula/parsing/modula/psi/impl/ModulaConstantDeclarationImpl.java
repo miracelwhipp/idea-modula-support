@@ -28,15 +28,21 @@ public class ModulaConstantDeclarationImpl extends ConstantStubBasedPsiElement i
   }
 
   @Override
-  @NotNull
-  public ModulaExpression getExpression() {
-    return findNotNullChildByClass(ModulaExpression.class);
+  @Nullable
+  public ModulaAnonymousArrayConstant getAnonymousArrayConstant() {
+    return findChildByClass(ModulaAnonymousArrayConstant.class);
   }
 
   @Override
   @NotNull
   public ModulaIdent getIdent() {
     return findNotNullChildByClass(ModulaIdent.class);
+  }
+
+  @Override
+  @Nullable
+  public ModulaRecoveringExpression getRecoveringExpression() {
+    return findChildByClass(ModulaRecoveringExpression.class);
   }
 
   @Override

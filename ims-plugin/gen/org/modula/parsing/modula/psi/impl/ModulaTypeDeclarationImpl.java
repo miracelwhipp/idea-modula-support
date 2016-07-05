@@ -29,9 +29,9 @@ public class ModulaTypeDeclarationImpl extends ASTWrapperPsiElement implements M
   }
 
   @Override
-  @NotNull
+  @Nullable
   public ModulaTypes getTypes() {
-    return findNotNullChildByClass(ModulaTypes.class);
+    return findChildByClass(ModulaTypes.class);
   }
 
 }

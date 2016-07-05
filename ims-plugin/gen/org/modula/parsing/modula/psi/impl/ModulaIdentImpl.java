@@ -22,4 +22,10 @@ public class ModulaIdentImpl extends ASTWrapperPsiElement implements ModulaIdent
     else super.accept(visitor);
   }
 
+  @Override
+  @Nullable
+  public ModulaPredefinedIdentifier getPredefinedIdentifier() {
+    return findChildByClass(ModulaPredefinedIdentifier.class);
+  }
+
 }

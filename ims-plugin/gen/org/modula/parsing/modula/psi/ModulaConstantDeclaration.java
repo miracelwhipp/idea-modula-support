@@ -11,11 +11,14 @@ import org.modula.helpers.index.stubs.ConstantStub;
 
 public interface ModulaConstantDeclaration extends PsiElement, Constant, SymbolStubPsiElement, StubBasedPsiElement<ConstantStub> {
 
-  @NotNull
-  ModulaExpression getExpression();
+  @Nullable
+  ModulaAnonymousArrayConstant getAnonymousArrayConstant();
 
   @NotNull
   ModulaIdent getIdent();
+
+  @Nullable
+  ModulaRecoveringExpression getRecoveringExpression();
 
   @Nullable
   ModulaTypes getTypes();

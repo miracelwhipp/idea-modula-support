@@ -24,20 +24,26 @@ public class ModulaDesignatorImpl extends ASTWrapperPsiElement implements Modula
 
   @Override
   @NotNull
-  public List<ModulaExpression> getExpressionList() {
-    return PsiTreeUtil.getChildrenOfTypeAsList(this, ModulaExpression.class);
+  public List<ModulaArraySelection> getArraySelectionList() {
+    return PsiTreeUtil.getChildrenOfTypeAsList(this, ModulaArraySelection.class);
   }
 
   @Override
   @NotNull
-  public List<ModulaIdent> getIdentList() {
-    return PsiTreeUtil.getChildrenOfTypeAsList(this, ModulaIdent.class);
+  public List<ModulaCoercionQualifier> getCoercionQualifierList() {
+    return PsiTreeUtil.getChildrenOfTypeAsList(this, ModulaCoercionQualifier.class);
   }
 
   @Override
   @NotNull
-  public ModulaQualident getQualident() {
-    return findNotNullChildByClass(ModulaQualident.class);
+  public ModulaIdent getIdent() {
+    return findNotNullChildByClass(ModulaIdent.class);
+  }
+
+  @Override
+  @NotNull
+  public List<ModulaRecordSelection> getRecordSelectionList() {
+    return PsiTreeUtil.getChildrenOfTypeAsList(this, ModulaRecordSelection.class);
   }
 
 }

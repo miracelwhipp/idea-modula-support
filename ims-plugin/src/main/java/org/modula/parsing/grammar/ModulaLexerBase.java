@@ -53,7 +53,9 @@ public abstract class ModulaLexerBase implements ModulaSpecialtyAwareLexer {
 			return TokenModulaTypes.COMPILE_TIME_INVALID_CODE;
 		}
 
-		constantConditionStates.pop();
+		if (constantConditionStates.size() > 0) {
+			constantConditionStates.pop();
+		}
 		falseDepth = 0;
 		yybegin(initial);
 		return TokenModulaTypes.COMPILE_TIME_END;

@@ -8,10 +8,16 @@ import com.intellij.psi.PsiElement;
 public interface ModulaStatement extends PsiElement {
 
   @Nullable
+  ModulaAsmStatement getAsmStatement();
+
+  @Nullable
   ModulaCaseStatement getCaseStatement();
 
   @Nullable
   ModulaForStatement getForStatement();
+
+  @Nullable
+  ModulaFuncStatement getFuncStatement();
 
   @Nullable
   ModulaIfStatement getIfStatement();
@@ -35,6 +41,6 @@ public interface ModulaStatement extends PsiElement {
   ModulaAssignment getAssignment();
 
   @Nullable
-  ModulaExpression getExpression();
+  ModulaRecoveringExpression getRecoveringExpression();
 
 }

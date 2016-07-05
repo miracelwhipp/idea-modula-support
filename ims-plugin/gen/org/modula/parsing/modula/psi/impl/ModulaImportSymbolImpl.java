@@ -22,4 +22,10 @@ public class ModulaImportSymbolImpl extends SymbolImportStore implements ModulaI
     else super.accept(visitor);
   }
 
+  @Override
+  @NotNull
+  public ModulaIdent getIdent() {
+    return findNotNullChildByClass(ModulaIdent.class);
+  }
+
 }

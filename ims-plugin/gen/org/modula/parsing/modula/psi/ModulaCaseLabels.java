@@ -8,6 +8,6 @@ import com.intellij.psi.PsiElement;
 public interface ModulaCaseLabels extends PsiElement {
 
   @NotNull
-  List<ModulaExpression> getExpressionList();
+  List<ModulaCaseLabelExpression> getCaseLabelExpressionList();
 
 }

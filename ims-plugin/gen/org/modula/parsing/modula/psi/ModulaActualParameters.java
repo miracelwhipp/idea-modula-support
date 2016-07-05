@@ -8,6 +8,6 @@ import com.intellij.psi.PsiElement;
 public interface ModulaActualParameters extends PsiElement {
 
   @Nullable
-  ModulaExpList getExpList();
+  ModulaParameterList getParameterList();
 
 }
